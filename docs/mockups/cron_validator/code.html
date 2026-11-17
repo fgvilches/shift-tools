@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-surface-variant":"#c0c6d6","on-primary-fixed-variant":"#00468d","on-tertiary-fixed-variant":"#7200a3","secondary-container":"#09bf49","surface-dim":"#131319","surface-container-low":"#1b1b21","inverse-surface":"#e4e1ea","on-secondary":"#003910","secondary-fixed-dim":"#47e266","on-error-container":"#ffdad6","tertiary":"#e9b3ff","surface-container-highest":"#34343b","tertiary-fixed-dim":"#e9b3ff","secondary-fixed":"#6cff82","surface-container":"#1f1f25","secondary":"#47e266","inverse-on-surface":"#303036","error-container":"#93000a","surface-bright":"#39383f","primary-container":"#3e90ff","on-tertiary-container":"#460066","primary-fixed-dim":"#aac7ff","on-primary-container":"#002957","background":"#131319","on-secondary-container":"#004615","on-surface":"#e4e1ea","on-background":"#e4e1ea","on-primary":"#003064","on-primary-fixed":"#001b3e","error":"#ffb4ab","tertiary-container":"#c863fb","surface-tint":"#aac7ff","tertiary-fixed":"#f6d9ff","primary":"#aac7ff","on-secondary-fixed":"#002106","on-tertiary-fixed":"#310048","surface":"#131319","primary-fixed":"#d6e3ff","inverse-primary":"#005db8","surface-container-lowest":"#0e0e14","on-tertiary":"#510074","on-error":"#690005","outline-variant":"#414754","surface-variant":"#34343b","surface-container-high":"#2a2930","outline":"#8b91a0","on-secondary-fixed-variant":"#00531a"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"gutter-sm":"0.5rem",margin:"0.75rem","gutter-lg":"1rem","margin-sm":"0.5rem","space-xs":"0.25rem","margin-lg":"1.25rem","space-lg":"1rem","space-md":"0.75rem","space-xl":"1.5rem",gutter:"0.75rem","space-sm":"0.5rem"},fontFamily:{"label-md":["Inter"],"body-sm":["Inter"],"label-sm":["Inter"],"mono-md":["JetBrains Mono"],"headline-sm":["Inter"],"headline-lg":["Inter"],"mono-lg":["JetBrains Mono"],"headline-md":["Inter"],"body-lg":["Inter"],"body-md":["Inter"],"mono-sm":["JetBrains Mono"]},fontSize:{"label-md":["12px",{lineHeight:"16px",letterSpacing:"0em",fontWeight:"500"}],"body-sm":["11px",{lineHeight:"15px",letterSpacing:"0em",fontWeight:"400"}],"label-sm":["10px",{lineHeight:"12px",letterSpacing:"0.03em",fontWeight:"600"}],"mono-md":["12px",{lineHeight:"16px",letterSpacing:"-0.01em",fontWeight:"400"}],"headline-sm":["14px",{lineHeight:"18px",letterSpacing:"-0.008em",fontWeight:"600"}],"headline-lg":["22px",{lineHeight:"28px",letterSpacing:"-0.015em",fontWeight:"600"}],"mono-lg":["13px",{lineHeight:"18px",letterSpacing:"-0.01em",fontWeight:"500"}],"headline-md":["17px",{lineHeight:"22px",letterSpacing:"-0.012em",fontWeight:"600"}],"body-lg":["14px",{lineHeight:"20px",letterSpacing:"-0.004em",fontWeight:"400"}],"body-md":["13px",{lineHeight:"18px",letterSpacing:"-0.002em",fontWeight:"400"}],"mono-sm":["10px",{lineHeight:"13px",letterSpacing:"0.01em",fontWeight:"400"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface select-none antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-60 z-50 bg-surface-container-low/85 backdrop-blur-2xl flex flex-col justify-between shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"><div class="flex flex-col h-full"><div class="h-14 px-margin-lg flex items-center gap-space-sm bg-surface-container-lowest/40 backdrop-blur-md"><img alt="shift-tools App Icon" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UjvTrhC126AmYWPrT2Ix4EmaYPA1it__A83Hwtu4-Xq_WLFRBDxLXBze1IJuIEVwI0THW5kV8amVNmgClGHTHvfsSk9nyGI0qUiZvNqHxrNCRkXDZhymdSyJvngGRwG7rZt7GGrOewgsRsA6MLmrzvMwLD_-NEkOEqn_6fo6nbaDmzAlHsmKVUXNns4Sy6jTmNsvWmW9B-4Cm6xfTVFZe7GG-gqqmHIM5AuDne_GMyNg"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">shift-tools</span><span class="font-mono-sm text-mono-sm text-on-surface-variant leading-tight">macOS native v1.0.0</span></div></div><div class="flex-1 overflow-y-auto px-margin py-space-sm space-y-space-md"><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">DevOps &amp; System</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="process-killer" href="#">Process Killer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="quarantine-remover" href="#">Quarantine Remover</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="port-manager" href="#">Port Manager</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="disk-cleaner" href="#">Disk Cleaner</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ram-monitor" href="#">RAM Monitor</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Networks</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="network-observer" href="#">Network Observer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="wifi-mapper" href="#">WiFi Mapper</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="lan-scanner" href="#">LAN Scanner</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="dns-toolkit" href="#">DNS Toolkit</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="speed-test" href="#">Speed Test</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ping-traceroute" href="#">Ping / Traceroute</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Security &amp; Pentest</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="header-analyzer" href="#">Header Analyzer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ssl-inspector" href="#">SSL Inspector</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="subdomain-finder" href="#">Subdomain Finder</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="hash-generator" href="#">Hash Generator</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="password-auditor" href="#">Password Auditor</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Testing &amp; APIs</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="api-tester" href="#">API Tester</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="json-toolkit" href="#">JSON Toolkit</a><a aria-current="page" class="flex items-center px-space-sm py-1.5 rounded-lg transition-colors bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]" data-path="cron-validator" href="#">Cron Validator</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="uuid-generator" href="#">UUID Generator</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="base64-url-encoder" href="#">Base64 / URL Encoder</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="regex-tester" href="#">Regex Tester</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Utilities</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="color-picker" href="#">Color Picker</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="text-diff" href="#">Text Diff</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="timestamp-converter" href="#">Timestamp Converter</a></nav></div><div class="p-margin m-margin bg-surface-container-lowest/60 rounded-xl space-y-space-xs shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Host Node</span><span class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-high text-primary">Apple M3 Max</span></div><div class="flex items-center justify-between font-mono-sm text-mono-sm text-on-surface-variant"><span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Rust Core</span><span class="text-secondary">0.8ms IPC</span></div></div></div></aside><div class="pl-60 flex flex-col min-h-screen"><header class="fixed top-0 left-60 right-0 h-14 bg-surface-container-low/75 backdrop-blur-2xl z-40 px-margin-lg flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.25)]"><div class="flex items-center gap-space-md"><div class="flex items-center gap-2 pl-1"><span class="w-3 h-3 rounded-full bg-[#ff5f56] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span><span class="w-3 h-3 rounded-full bg-[#ffbd2e] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span><span class="w-3 h-3 rounded-full bg-[#27c93f] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span></div><div class="flex items-center gap-space-xs font-mono-sm text-mono-sm text-on-surface-variant pl-space-sm"><span class="text-on-surface font-semibold">shift-tools</span><span>/</span><span class="text-outline">v1.0.0 (Rust Core)</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm px-space-md py-1 rounded-lg bg-surface-container-lowest/80 text-on-surface-variant font-body-sm text-body-sm shadow-[inset_0_1px_2px_rgba(0,0,0,0.6)]"><span class="material-symbols-outlined text-[16px] text-outline">search</span><span class="text-on-surface-variant pr-space-lg">Quick dispatch...</span><kbd class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface">⌘K</kbd></div><div class="flex items-center gap-space-sm px-space-md py-1 rounded-full bg-surface-container-lowest/50 font-mono-sm text-mono-sm text-on-surface-variant"><span class="text-on-surface">RAM <span class="text-primary">14.2 / 32 GB</span></span><span class="text-outline-variant">•</span><span class="text-on-surface">CPU <span class="text-secondary">8%</span></span><span class="text-outline-variant">•</span><span class="text-on-surface">Svcs <span class="text-tertiary">6 active</span></span></div><div class="flex items-center gap-space-sm"><button class="w-7 h-7 flex items-center justify-center rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[18px]">settings</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 pt-14 pb-8 w-full px-gutter-lg bg-background"><div class="flex flex-col w-full space-y-space-lg text-on-surface">
+<!-- TOOL HEADER & ENGINE SPEC -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md p-space-lg rounded-xl bg-surface-container-low/70 backdrop-blur-xl shadow-md">
+<div class="space-y-1">
+<div class="flex flex-wrap items-center gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight">Cron Validator</h1>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-secondary/15 text-secondary font-mono-sm text-mono-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+          cron-parser 0.14 + chrono v0.4
+        </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-mono-sm text-mono-sm">
+          Human-Readable AST
+        </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+        Interactive cron syntax validator, natural language translator, visual schedule timeline, and simulated run execution engine.
+      </p>
+</div>
+<!-- Actions -->
+<div class="flex flex-wrap items-center gap-space-xs">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-bright transition-colors font-body-sm text-body-sm shadow-sm" title="Save expression to local presets">
+<span class="material-symbols-outlined text-[16px] text-primary">bookmark</span>
+<span>Save Preset</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-bright transition-colors font-body-sm text-body-sm shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">fast_forward</span>
+<span>Simulate 100 Runs</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-bright transition-colors font-body-sm text-body-sm shadow-sm" onclick="navigator.clipboard.writeText('*/15 08-18 * * 1-5')">
+<span class="material-symbols-outlined text-[16px] text-outline">content_copy</span>
+<span>Copy String</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-primary text-on-primary font-headline-sm text-headline-sm hover:bg-primary-fixed-dim transition-all shadow-sm">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Export .ics / JSON</span>
+</button>
+</div>
+</div>
+<!-- MAIN EXPRESSION INPUT & TOKENIZER HERO CARD -->
+<div class="rounded-xl bg-surface-container/85 backdrop-blur-2xl p-space-lg space-y-space-md shadow-md">
+<!-- Top Bar with Mode & Dialect Toggles -->
+<div class="flex flex-wrap items-center justify-between gap-space-md pb-space-sm border-b-0">
+<div class="flex items-center gap-space-md">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Expression Input</span>
+<div class="flex items-center rounded-lg bg-surface-container-lowest/80 p-0.5">
+<button class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface font-mono-sm text-mono-sm">POSIX / Standard</button>
+<button class="px-2.5 py-1 rounded-md text-on-surface-variant hover:text-on-surface font-mono-sm text-mono-sm transition-colors">Quartz Scheduler</button>
+<button class="px-2.5 py-1 rounded-md text-on-surface-variant hover:text-on-surface font-mono-sm text-mono-sm transition-colors">AWS CloudWatch</button>
+</div>
+</div>
+<!-- Optional 6th field toggle (Seconds) -->
+<label class="flex items-center gap-2 cursor-pointer font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface select-none">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span>Include Seconds Field (6-Token Quartz)</span>
+<input class="sr-only" id="toggle-seconds" type="checkbox"/>
+<div class="w-8 h-4.5 rounded-full bg-surface-container-highest p-0.5 transition-colors" id="toggle-track">
+<div class="w-3.5 h-3.5 rounded-full bg-outline transition-transform" id="toggle-knob"></div>
+</div>
+</label>
+</div>
+<!-- High Density Interactive Tokenizer Canvas -->
+<div class="relative rounded-xl bg-surface-container-lowest/90 p-space-md shadow-inner flex flex-col gap-space-md">
+<!-- Big Expression Monospace Row with Segment Highlight Blocks -->
+<div class="flex items-center justify-between overflow-x-auto py-2 px-1">
+<div class="flex items-center gap-3 font-mono-lg text-mono-lg sm:text-[26px] tracking-wide select-all text-on-surface">
+<!-- Minute -->
+<div class="group relative flex flex-col items-center">
+<span class="px-3 py-1.5 rounded-lg bg-primary/15 text-primary cursor-pointer hover:bg-primary/25 transition-all">*/15</span>
+<span class="mt-1 font-mono-sm text-mono-sm text-primary tracking-normal opacity-85">min</span>
+</div>
+<!-- Hour -->
+<div class="group relative flex flex-col items-center">
+<span class="px-3 py-1.5 rounded-lg bg-secondary/15 text-secondary cursor-pointer hover:bg-secondary/25 transition-all">08-18</span>
+<span class="mt-1 font-mono-sm text-mono-sm text-secondary tracking-normal opacity-85">hour</span>
+</div>
+<!-- Day of Month -->
+<div class="group relative flex flex-col items-center">
+<span class="px-3 py-1.5 rounded-lg bg-tertiary/15 text-tertiary cursor-pointer hover:bg-tertiary/25 transition-all">*</span>
+<span class="mt-1 font-mono-sm text-mono-sm text-tertiary tracking-normal opacity-85">day (m)</span>
+</div>
+<!-- Month -->
+<div class="group relative flex flex-col items-center">
+<span class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface cursor-pointer hover:bg-surface-bright transition-all">*</span>
+<span class="mt-1 font-mono-sm text-mono-sm text-on-surface-variant tracking-normal opacity-85">month</span>
+</div>
+<!-- Day of Week -->
+<div class="group relative flex flex-col items-center">
+<span class="px-3 py-1.5 rounded-lg bg-secondary-fixed-dim/20 text-secondary-fixed cursor-pointer hover:bg-secondary-fixed-dim/30 transition-all">1-5</span>
+<span class="mt-1 font-mono-sm text-mono-sm text-secondary-fixed tracking-normal opacity-85">day (w)</span>
+</div>
+</div>
+<div class="flex items-center gap-2 pl-4">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-sm text-body-sm flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px] text-outline">tune</span>
+<span>Builder</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-sm text-body-sm flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px] text-outline">restart_alt</span>
+<span>Reset</span>
+</button>
+</div>
+</div>
+<!-- Segment Token Breakdown Cards -->
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-space-sm pt-2">
+<div class="p-2.5 rounded-lg bg-surface-container-high/60 space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase">Minute</span>
+<span class="font-mono-sm text-mono-sm text-primary px-1.5 py-0.2 rounded bg-primary/10">0-59</span>
+</div>
+<div class="font-mono-md text-mono-md text-on-surface font-semibold">*/15</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Every 15 minutes</p>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-high/60 space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase">Hour</span>
+<span class="font-mono-sm text-mono-sm text-secondary px-1.5 py-0.2 rounded bg-secondary/10">0-23</span>
+</div>
+<div class="font-mono-md text-mono-md text-on-surface font-semibold">08-18</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Between 08:00 &amp; 18:59</p>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-high/60 space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase">Day of Month</span>
+<span class="font-mono-sm text-mono-sm text-tertiary px-1.5 py-0.2 rounded bg-tertiary/10">1-31</span>
+</div>
+<div class="font-mono-md text-mono-md text-on-surface font-semibold">*</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Every day of month</p>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-high/60 space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase">Month</span>
+<span class="font-mono-sm text-mono-sm text-on-surface-variant px-1.5 py-0.2 rounded bg-surface-container">1-12</span>
+</div>
+<div class="font-mono-md text-mono-md text-on-surface font-semibold">*</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Every month (Jan-Dec)</p>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-high/60 space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase">Day of Week</span>
+<span class="font-mono-sm text-mono-sm text-secondary-fixed px-1.5 py-0.2 rounded bg-secondary-fixed/10">0-6 (Sun-Sat)</span>
+</div>
+<div class="font-mono-md text-mono-md text-on-surface font-semibold">1-5</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Monday through Friday</p>
+</div>
+</div>
+</div>
+<!-- Natural Language Translation Banner -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm p-3 rounded-lg bg-surface-container-high/80">
+<div class="flex items-center gap-3">
+<button class="w-8 h-8 rounded-full bg-primary/20 text-primary flex items-center justify-center hover:bg-primary/30 transition-colors" title="Speech synthesizer readout">
+<span class="material-symbols-outlined text-[18px]">volume_up</span>
+</button>
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider block">Natural Language Schedule</span>
+<span class="font-body-lg text-body-lg text-on-surface font-medium">“At every 15th minute from 8:00 AM through 6:59 PM, Monday through Friday.”</span>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end sm:self-center">
+<span class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary/15 text-secondary font-mono-sm text-mono-sm">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+          Valid POSIX / Quartz Pattern
+        </span>
+</div>
+</div>
+<!-- Quick Preset Select Chips -->
+<div class="space-y-1.5">
+<div class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Common Architecture Presets</div>
+<div class="flex flex-wrap gap-2">
+<button class="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container-lowest hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors">
+<span>Every 5 mins</span>
+<code class="font-mono-sm text-mono-sm text-primary">*/5 * * * *</code>
+</button>
+<button class="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container-lowest hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors">
+<span>Daily at Midnight</span>
+<code class="font-mono-sm text-mono-sm text-primary">0 0 * * *</code>
+</button>
+<button class="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container-lowest hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors">
+<span>Every Monday at 9AM</span>
+<code class="font-mono-sm text-mono-sm text-primary">0 9 * * 1</code>
+</button>
+<button class="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container-lowest hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors">
+<span>End of Month at 23:59</span>
+<code class="font-mono-sm text-mono-sm text-primary">59 23 28-31 * *</code>
+</button>
+<button class="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container-lowest hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors">
+<span>Twice daily</span>
+<code class="font-mono-sm text-mono-sm text-primary">0 6,18 * * *</code>
+</button>
+</div>
+</div>
+</div>
+<!-- VISUAL TIMELINE & WEEKLY MATRIX / HEATMAP -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- UPCOMING EXECUTIONS TIMELINE (5 COLS) -->
+<div class="lg:col-span-5 rounded-xl bg-surface-container/70 backdrop-blur-xl p-space-md space-y-space-md shadow-md flex flex-col justify-between">
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">schedule</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Upcoming Scheduled Runs</h2>
+</div>
+<span class="font-mono-sm text-mono-sm px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">Next 5 of 220</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Calculated against current machine time with clock skew compensation.</p>
+</div>
+<!-- Execution Cards -->
+<div class="space-y-2">
+<!-- Next Run (Active / Highlighted) -->
+<div class="p-3 rounded-lg bg-surface-container-high flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-secondary/15 flex items-center justify-center text-secondary font-mono-sm text-mono-sm font-bold">#1</div>
+<div>
+<div class="font-mono-md text-mono-md text-on-surface font-semibold">Today at 14:15:00</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Scheduled trigger interval</div>
+</div>
+</div>
+<div class="text-right">
+<span class="font-mono-sm text-mono-sm px-2 py-1 rounded bg-secondary/15 text-secondary font-medium">in 8m 42s</span>
+<div class="font-mono-sm text-mono-sm text-outline mt-0.5">EDT (UTC-4)</div>
+</div>
+</div>
+<!-- Run 2 -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between hover:bg-surface-container-high/60 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded-md bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-mono-sm text-mono-sm">#2</div>
+<div>
+<div class="font-mono-md text-mono-md text-on-surface">Today at 14:30:00</div>
+<div class="font-mono-sm text-mono-sm text-outline">Sequential trigger</div>
+</div>
+</div>
+<span class="font-mono-sm text-mono-sm text-on-surface-variant">in 23m 42s</span>
+</div>
+<!-- Run 3 -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between hover:bg-surface-container-high/60 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded-md bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-mono-sm text-mono-sm">#3</div>
+<div>
+<div class="font-mono-md text-mono-md text-on-surface">Today at 14:45:00</div>
+<div class="font-mono-sm text-mono-sm text-outline">Sequential trigger</div>
+</div>
+</div>
+<span class="font-mono-sm text-mono-sm text-on-surface-variant">in 38m 42s</span>
+</div>
+<!-- Run 4 -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between hover:bg-surface-container-high/60 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded-md bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-mono-sm text-mono-sm">#4</div>
+<div>
+<div class="font-mono-md text-mono-md text-on-surface">Today at 15:00:00</div>
+<div class="font-mono-sm text-mono-sm text-outline">Top-of-hour sync</div>
+</div>
+</div>
+<span class="font-mono-sm text-mono-sm text-on-surface-variant">in 53m 42s</span>
+</div>
+<!-- Run 5 -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between hover:bg-surface-container-high/60 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded-md bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-mono-sm text-mono-sm">#5</div>
+<div>
+<div class="font-mono-md text-mono-md text-on-surface">Today at 15:15:00</div>
+<div class="font-mono-sm text-mono-sm text-outline">Sequential trigger</div>
+</div>
+</div>
+<span class="font-mono-sm text-mono-sm text-on-surface-variant">in 1h 08m</span>
+</div>
+</div>
+<!-- Quick summary metric -->
+<div class="p-2.5 rounded-lg bg-surface-container-lowest/70 flex items-center justify-between font-mono-sm text-mono-sm text-on-surface-variant">
+<span>Daily Firing Count: <strong class="text-on-surface font-semibold">44 executions</strong></span>
+<span>Monthly Total: <strong class="text-primary font-semibold">968 runs</strong></span>
+</div>
+</div>
+<!-- WEEKLY MATRIX / DENSITY HEATMAP (7 COLS) -->
+<div class="lg:col-span-7 rounded-xl bg-surface-container/70 backdrop-blur-xl p-space-md space-y-space-md shadow-md flex flex-col justify-between">
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="space-y-0.5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">calendar_view_week</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">7-Day Execution Density Heatmap</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">24-hour visual matrix showing job distribution and dormant intervals.</p>
+</div>
+<div class="flex items-center gap-3 font-mono-sm text-mono-sm text-outline">
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm bg-surface-container-highest"></span> Idle</span>
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm bg-primary/40"></span> Active</span>
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm bg-secondary"></span> 4x / hr</span>
+</div>
+</div>
+<!-- Matrix Grid -->
+<div class="overflow-x-auto pb-1">
+<div class="min-w-[480px] space-y-1.5">
+<!-- Hour markers -->
+<div class="grid grid-cols-[40px_repeat(24,1fr)] gap-1 text-center font-mono-sm text-[9px] text-outline">
+<div></div>
+<div>00</div><div>02</div><div>04</div><div>06</div><div>08</div><div>10</div>
+<div>12</div><div>14</div><div>16</div><div>18</div><div>20</div><div>22</div>
+<div>01</div><div>03</div><div>05</div><div>07</div><div>09</div><div>11</div>
+<div>13</div><div>15</div><div>17</div><div>19</div><div>21</div><div>23</div>
+</div>
+<!-- Mon -->
+<div class="grid grid-cols-[40px_repeat(24,1fr)] gap-1 items-center">
+<span class="font-mono-sm text-mono-sm text-on-surface-variant">Mon</span>
+<!-- 00 to 07 idle -->
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<!-- 08 to 18 active (11 slots) -->
+<div class="h-5 rounded-sm bg-secondary shadow-sm" title="08:00 - 4 runs"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm" title="09:00 - 4 runs"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm" title="10:00 - 4 runs"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm" title="11:00 - 4 runs"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm" title="12:00 - 4 runs"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm" title="13:00 - 4 runs"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm" title="14:00 - 4 runs"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm" title="15:00 - 4 runs"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm" title="16:00 - 4 runs"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm" title="17:00 - 4 runs"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm" title="18:00 - 4 runs"></div>
+<!-- 19 to 23 idle -->
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+</div>
+<!-- Tue -->
+<div class="grid grid-cols-[40px_repeat(24,1fr)] gap-1 items-center">
+<span class="font-mono-sm text-mono-sm text-on-surface-variant">Tue</span>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+</div>
+<!-- Wed -->
+<div class="grid grid-cols-[40px_repeat(24,1fr)] gap-1 items-center">
+<span class="font-mono-sm text-mono-sm text-on-surface-variant">Wed</span>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+</div>
+<!-- Thu -->
+<div class="grid grid-cols-[40px_repeat(24,1fr)] gap-1 items-center">
+<span class="font-mono-sm text-mono-sm text-on-surface-variant">Thu</span>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+</div>
+<!-- Fri -->
+<div class="grid grid-cols-[40px_repeat(24,1fr)] gap-1 items-center">
+<span class="font-mono-sm text-mono-sm text-on-surface-variant">Fri</span>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-secondary shadow-sm"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+<div class="h-5 rounded-sm bg-surface-container-highest/50"></div>
+</div>
+<!-- Sat (Weekend off) -->
+<div class="grid grid-cols-[40px_repeat(24,1fr)] gap-1 items-center opacity-40">
+<span class="font-mono-sm text-mono-sm text-outline">Sat</span>
+<div class="h-5 rounded-sm bg-surface-container-highest/30 col-span-24 flex items-center justify-center font-mono-sm text-[10px] text-outline">
+              Dormant Schedule (Weekend Block)
+            </div>
+</div>
+<!-- Sun (Weekend off) -->
+<div class="grid grid-cols-[40px_repeat(24,1fr)] gap-1 items-center opacity-40">
+<span class="font-mono-sm text-mono-sm text-outline">Sun</span>
+<div class="h-5 rounded-sm bg-surface-container-highest/30 col-span-24 flex items-center justify-center font-mono-sm text-[10px] text-outline">
+              Dormant Schedule (Weekend Block)
+            </div>
+</div>
+</div>
+</div>
+<!-- Density summary stats -->
+<div class="p-2.5 rounded-lg bg-surface-container-lowest/70 flex flex-wrap items-center justify-between gap-2 font-mono-sm text-mono-sm text-on-surface-variant">
+<span class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          Weekly Duty Cycle: <strong class="text-on-surface font-semibold">32.7% Active Window</strong>
+</span>
+<span class="text-outline">Peak concurrency: 1 instance / job</span>
+</div>
+</div>
+</div>
+<!-- TIMEZONE & EXECUTION SANDBOX & CODE GENERATOR -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- Timezone & DST Analyzer (5 cols) -->
+<div class="lg:col-span-5 rounded-xl bg-surface-container/70 backdrop-blur-xl p-space-md space-y-space-md shadow-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">public</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Timezone &amp; DST Sandbox</h2>
+</div>
+<!-- Timezone Dropdown Selector -->
+<div class="space-y-1.5">
+<label class="font-label-sm text-label-sm text-outline uppercase tracking-wider block">Target Execution Timezone</label>
+<div class="relative">
+<select class="w-full px-3 py-2 rounded-lg bg-surface-container-lowest text-on-surface font-mono-md text-mono-md appearance-none focus:outline-none focus:ring-1 focus:ring-primary shadow-inner">
+<option selected="">America/New_York (EDT, UTC-04:00)</option>
+<option>UTC (Coordinated Universal Time, UTC+00:00)</option>
+<option>Europe/London (BST, UTC+01:00)</option>
+<option>Europe/Berlin (CEST, UTC+02:00)</option>
+<option>Asia/Tokyo (JST, UTC+09:00)</option>
+<option>Australia/Sydney (AEST, UTC+10:00)</option>
+<option>America/Los_Angeles (PDT, UTC-07:00)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2.5 text-[18px] text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- DST Shift Warning and Safety Guarantee -->
+<div class="p-3 rounded-lg bg-surface-container-high/80 space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface font-medium flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[16px]">verified</span>
+            Daylight Saving Time (DST) Audit
+          </span>
+<span class="font-mono-sm text-mono-sm text-secondary px-1.5 py-0.5 rounded bg-secondary/15">PASS</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          No ambiguous or skipped hours detected during scheduled executions. The job runs only between 08:00 and 18:00, safely outside the 02:00 - 03:00 clock shift boundary.
+        </p>
+<div class="font-mono-sm text-mono-sm text-outline flex items-center justify-between pt-1 border-t-0">
+<span>Next DST Switch:</span>
+<span class="text-on-surface">Sun, Nov 3, 2025 at 02:00 (-1h fallback)</span>
+</div>
+</div>
+<!-- Edge case checker badges -->
+<div class="grid grid-cols-2 gap-2 font-mono-sm text-mono-sm">
+<div class="p-2 rounded bg-surface-container-lowest/80 flex items-center justify-between">
+<span class="text-outline">Leap Year:</span>
+<span class="text-secondary font-medium">Safe</span>
+</div>
+<div class="p-2 rounded bg-surface-container-lowest/80 flex items-center justify-between">
+<span class="text-outline">Overlap Policy:</span>
+<span class="text-primary font-medium">Skip-if-running</span>
+</div>
+</div>
+</div>
+<!-- Multi-Language Code Snippet Generator (7 cols) -->
+<div class="lg:col-span-7 rounded-xl bg-surface-container/70 backdrop-blur-xl p-space-md space-y-space-md shadow-md flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[18px]">code</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Ready-to-Use Code Snippets</h2>
+</div>
+<!-- Language selector tabs -->
+<div class="flex items-center rounded-lg bg-surface-container-lowest/90 p-0.5" id="code-tabs">
+<button class="px-2.5 py-1 rounded-md bg-surface-container-high text-primary font-mono-sm text-mono-sm font-medium" onclick="switchCode('rust')">Rust</button>
+<button class="px-2.5 py-1 rounded-md text-on-surface-variant hover:text-on-surface font-mono-sm text-mono-sm transition-colors" onclick="switchCode('node')">Node.js</button>
+<button class="px-2.5 py-1 rounded-md text-on-surface-variant hover:text-on-surface font-mono-sm text-mono-sm transition-colors" onclick="switchCode('go')">Go</button>
+<button class="px-2.5 py-1 rounded-md text-on-surface-variant hover:text-on-surface font-mono-sm text-mono-sm transition-colors" onclick="switchCode('crontab')">Crontab</button>
+</div>
+</div>
+<!-- Code editor box -->
+<div class="relative rounded-lg bg-surface-container-lowest p-3 shadow-inner font-mono-sm text-mono-sm overflow-x-auto">
+<button class="absolute top-2.5 right-2.5 px-2 py-1 rounded bg-surface-container-high hover:bg-surface-bright text-on-surface flex items-center gap-1 font-mono-sm text-mono-sm transition-colors" onclick="navigator.clipboard.writeText(document.getElementById('code-content').innerText)">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+<span>Copy</span>
+</button>
+<pre class="text-on-surface-variant whitespace-pre leading-relaxed" id="code-content"><span class="text-tertiary">// Rust: tokio-cron-scheduler</span>
+<span class="text-primary">use</span> tokio_cron_scheduler::{Job, JobScheduler};
+
+<span class="text-primary">#[tokio::main]</span>
+<span class="text-primary">async fn</span> <span class="text-secondary">main</span>() -&gt; Result&lt;(), Box&lt;<span class="text-primary">dyn</span> std::error::Error&gt;&gt; {
+    <span class="text-primary">let</span> sched = JobScheduler::new().<span class="text-primary">await</span>?;
+    <span class="text-primary">let</span> job = Job::new_async(<span class="text-secondary">"*/15 08-18 * * 1-5"</span>, |_uuid, _lock| {
+        Box::pin(<span class="text-primary">async move</span> {
+            println!(<span class="text-secondary">"Executing periodic dispatch: {}"</span>, chrono::Utc::now());
+        })
+    })?;
+    sched.add(job).<span class="text-primary">await</span>?;
+    sched.start().<span class="text-primary">await</span>?;
+    Ok(())
+}</pre>
+</div>
+<div class="flex items-center justify-between text-outline font-mono-sm text-mono-sm">
+<span>AST validated in <strong class="text-secondary">0.12ms</strong></span>
+<span>Standard POSIX Compliant</span>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple interactive tab toggle for code snippets
+  function switchCode(lang) {
+    const codeEl = document.getElementById('code-content');
+    if (!codeEl) return;
+    
+    if (lang === 'rust') {
+      codeEl.innerHTML = `<span class="text-tertiary">// Rust: tokio-cron-scheduler</span>\n<span class="text-primary">use</span> tokio_cron_scheduler::{Job, JobScheduler};\n\n<span class="text-primary">#[tokio::main]</span>\n<span class="text-primary">async fn</span> <span class="text-secondary">main</span>() -> Result&lt;(), Box&lt;<span class="text-primary">dyn</span> std::error::Error&gt;&gt; {\n    <span class="text-primary">let</span> sched = JobScheduler::new().<span class="text-primary">await</span>?;\n    <span class="text-primary">let</span> job = Job::new_async(<span class="text-secondary">"*/15 08-18 * * 1-5"</span>, |_uuid, _lock| {\n        Box::pin(<span class="text-primary">async move</span> {\n            println!(<span class="text-secondary">"Executing periodic dispatch: {}"</span>, chrono::Utc::now());\n        })\n    })?;\n    sched.add(job).<span class="text-primary">await</span>?;\n    sched.start().<span class="text-primary">await</span>?;\n    Ok(())\n}`;
+    } else if (lang === 'node') {
+      codeEl.innerHTML = `<span class="text-tertiary">// Node.js: node-cron</span>\n<span class="text-primary">const</span> cron = <span class="text-secondary">require</span>('node-cron');\n\n<span class="text-tertiary">// Schedule task to be executed</span>\ncron.schedule(<span class="text-secondary">'*/15 08-18 * * 1-5'</span>, () => {\n  console.log(<span class="text-secondary">'Running scheduled task every 15m (08-18 M-F)'</span>);\n}, {\n  scheduled: <span class="text-primary">true</span>,\n  timezone: <span class="text-secondary">"America/New_York"</span>\n});`;
+    } else if (lang === 'go') {
+      codeEl.innerHTML = `<span class="text-tertiary">// Go: github.com/robfig/cron/v3</span>\n<span class="text-primary">package</span> main\n\n<span class="text-primary">import</span> (\n    <span class="text-secondary">"fmt"</span>\n    <span class="text-secondary">"github.com/robfig/cron/v3"</span>\n)\n\n<span class="text-primary">func</span> <span class="text-secondary">main</span>() {\n    c := cron.New()\n    c.AddFunc(<span class="text-secondary">"*/15 08-18 * * 1-5"</span>, <span class="text-primary">func</span>() {\n        fmt.Println(<span class="text-secondary">"Cron dispatched at: "</span>, time.Now())\n    })\n    c.Start()\n    <span class="text-primary">select</span> {}\n}`;
+    } else if (lang === 'crontab') {
+      codeEl.innerHTML = `<span class="text-tertiary"># Standard Crontab entry: /etc/crontab</span>\n<span class="text-tertiary"># m   h     dom mon dow   user   command</span>\n*/15 08-18  *   *   1-5   root   /usr/local/bin/backup-daemon --sync > /var/log/backup.log 2>&1`;
+    }
+  }
+
+  // Seconds toggle animation
+  const toggleSec = document.getElementById('toggle-seconds');
+  const track = document.getElementById('toggle-track');
+  const knob = document.getElementById('toggle-knob');
+  if (toggleSec && track && knob) {
+    toggleSec.addEventListener('change', () => {
+      if (toggleSec.checked) {
+        track.classList.remove('bg-surface-container-highest');
+        track.classList.add('bg-primary');
+        knob.classList.add('translate-x-3.5', 'bg-on-primary');
+        knob.classList.remove('bg-outline');
+      } else {
+        track.classList.add('bg-surface-container-highest');
+        track.classList.remove('bg-primary');
+        knob.classList.remove('translate-x-3.5', 'bg-on-primary');
+        knob.classList.add('bg-outline');
+      }
+    });
+  }
+</script></main><footer class="fixed bottom-0 left-60 right-0 h-8 bg-surface-container-lowest/90 backdrop-blur-md z-40 px-margin-lg flex items-center justify-between font-mono-sm text-mono-sm text-on-surface-variant shadow-[0_-1px_6px_rgba(0,0,0,0.3)]"><div class="flex items-center gap-space-md"><span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Freed RAM: <span class="text-on-surface font-semibold">4.2 GB session</span></span><span class="text-outline-variant">|</span><span>Active Listeners: <span class="text-primary font-semibold">28 ports</span></span></div><div class="flex items-center gap-space-md"><span>Interface: <span class="text-on-surface font-semibold">en0 • Wi-Fi 6 (802.11ax)</span></span><span class="text-outline-variant">|</span><span class="text-secondary">Secure Sandbox Active</span></div></footer></div></body></html>

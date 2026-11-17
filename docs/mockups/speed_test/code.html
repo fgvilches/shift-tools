@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-surface-variant":"#c0c6d6","on-primary-fixed-variant":"#00468d","on-tertiary-fixed-variant":"#7200a3","secondary-container":"#09bf49","surface-dim":"#131319","surface-container-low":"#1b1b21","inverse-surface":"#e4e1ea","on-secondary":"#003910","secondary-fixed-dim":"#47e266","on-error-container":"#ffdad6","tertiary":"#e9b3ff","surface-container-highest":"#34343b","tertiary-fixed-dim":"#e9b3ff","secondary-fixed":"#6cff82","surface-container":"#1f1f25","secondary":"#47e266","inverse-on-surface":"#303036","error-container":"#93000a","surface-bright":"#39383f","primary-container":"#3e90ff","on-tertiary-container":"#460066","primary-fixed-dim":"#aac7ff","on-primary-container":"#002957","background":"#131319","on-secondary-container":"#004615","on-surface":"#e4e1ea","on-background":"#e4e1ea","on-primary":"#003064","on-primary-fixed":"#001b3e","error":"#ffb4ab","tertiary-container":"#c863fb","surface-tint":"#aac7ff","tertiary-fixed":"#f6d9ff","primary":"#aac7ff","on-secondary-fixed":"#002106","on-tertiary-fixed":"#310048","surface":"#131319","primary-fixed":"#d6e3ff","inverse-primary":"#005db8","surface-container-lowest":"#0e0e14","on-tertiary":"#510074","on-error":"#690005","outline-variant":"#414754","surface-variant":"#34343b","surface-container-high":"#2a2930","outline":"#8b91a0","on-secondary-fixed-variant":"#00531a"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"gutter-sm":"0.5rem",margin:"0.75rem","gutter-lg":"1rem","margin-sm":"0.5rem","space-xs":"0.25rem","margin-lg":"1.25rem","space-lg":"1rem","space-md":"0.75rem","space-xl":"1.5rem",gutter:"0.75rem","space-sm":"0.5rem"},fontFamily:{"label-md":["Inter"],"body-sm":["Inter"],"label-sm":["Inter"],"mono-md":["JetBrains Mono"],"headline-sm":["Inter"],"headline-lg":["Inter"],"mono-lg":["JetBrains Mono"],"headline-md":["Inter"],"body-lg":["Inter"],"body-md":["Inter"],"mono-sm":["JetBrains Mono"]},fontSize:{"label-md":["12px",{lineHeight:"16px",letterSpacing:"0em",fontWeight:"500"}],"body-sm":["11px",{lineHeight:"15px",letterSpacing:"0em",fontWeight:"400"}],"label-sm":["10px",{lineHeight:"12px",letterSpacing:"0.03em",fontWeight:"600"}],"mono-md":["12px",{lineHeight:"16px",letterSpacing:"-0.01em",fontWeight:"400"}],"headline-sm":["14px",{lineHeight:"18px",letterSpacing:"-0.008em",fontWeight:"600"}],"headline-lg":["22px",{lineHeight:"28px",letterSpacing:"-0.015em",fontWeight:"600"}],"mono-lg":["13px",{lineHeight:"18px",letterSpacing:"-0.01em",fontWeight:"500"}],"headline-md":["17px",{lineHeight:"22px",letterSpacing:"-0.012em",fontWeight:"600"}],"body-lg":["14px",{lineHeight:"20px",letterSpacing:"-0.004em",fontWeight:"400"}],"body-md":["13px",{lineHeight:"18px",letterSpacing:"-0.002em",fontWeight:"400"}],"mono-sm":["10px",{lineHeight:"13px",letterSpacing:"0.01em",fontWeight:"400"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface select-none antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-60 z-50 bg-surface-container-low/85 backdrop-blur-2xl flex flex-col justify-between shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"><div class="flex flex-col h-full"><div class="h-14 px-margin-lg flex items-center gap-space-sm bg-surface-container-lowest/40 backdrop-blur-md"><img alt="shift-tools App Icon" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UjvTrhC126AmYWPrT2Ix4EmaYPA1it__A83Hwtu4-Xq_WLFRBDxLXBze1IJuIEVwI0THW5kV8amVNmgClGHTHvfsSk9nyGI0qUiZvNqHxrNCRkXDZhymdSyJvngGRwG7rZt7GGrOewgsRsA6MLmrzvMwLD_-NEkOEqn_6fo6nbaDmzAlHsmKVUXNns4Sy6jTmNsvWmW9B-4Cm6xfTVFZe7GG-gqqmHIM5AuDne_GMyNg"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">shift-tools</span><span class="font-mono-sm text-mono-sm text-on-surface-variant leading-tight">macOS native v1.0.0</span></div></div><div class="flex-1 overflow-y-auto px-margin py-space-sm space-y-space-md"><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">DevOps &amp; System</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="process-killer" href="#">Process Killer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="quarantine-remover" href="#">Quarantine Remover</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="port-manager" href="#">Port Manager</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="disk-cleaner" href="#">Disk Cleaner</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ram-monitor" href="#">RAM Monitor</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Networks</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="network-observer" href="#">Network Observer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="wifi-mapper" href="#">WiFi Mapper</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="lan-scanner" href="#">LAN Scanner</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="dns-toolkit" href="#">DNS Toolkit</a><a aria-current="page" class="flex items-center px-space-sm py-1.5 rounded-lg transition-colors bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]" data-path="speed-test" href="#">Speed Test</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ping-traceroute" href="#">Ping / Traceroute</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Security &amp; Pentest</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="header-analyzer" href="#">Header Analyzer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ssl-inspector" href="#">SSL Inspector</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="subdomain-finder" href="#">Subdomain Finder</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="hash-generator" href="#">Hash Generator</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="password-auditor" href="#">Password Auditor</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Testing &amp; APIs</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="api-tester" href="#">API Tester</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="json-toolkit" href="#">JSON Toolkit</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="base64-url-encoder" href="#">Base64 / URL Encoder</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="regex-tester" href="#">Regex Tester</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Utilities</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="color-picker" href="#">Color Picker</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="text-diff" href="#">Text Diff</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="timestamp-converter" href="#">Timestamp Converter</a></nav></div><div class="p-margin m-margin bg-surface-container-lowest/60 rounded-xl space-y-space-xs shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Host Node</span><span class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-high text-primary">Apple M3 Max</span></div><div class="flex items-center justify-between font-mono-sm text-mono-sm text-on-surface-variant"><span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Rust Core</span><span class="text-secondary">0.8ms IPC</span></div></div></div></aside><div class="pl-60 flex flex-col min-h-screen"><header class="fixed top-0 left-60 right-0 h-14 bg-surface-container-low/75 backdrop-blur-2xl z-40 px-margin-lg flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.25)]"><div class="flex items-center gap-space-md"><div class="flex items-center gap-2 pl-1"><span class="w-3 h-3 rounded-full bg-[#ff5f56] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span><span class="w-3 h-3 rounded-full bg-[#ffbd2e] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span><span class="w-3 h-3 rounded-full bg-[#27c93f] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span></div><div class="flex items-center gap-space-xs font-mono-sm text-mono-sm text-on-surface-variant pl-space-sm"><span class="text-on-surface font-semibold">shift-tools</span><span>/</span><span class="text-outline">v1.0.0 (Rust Core)</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm px-space-md py-1 rounded-lg bg-surface-container-lowest/80 text-on-surface-variant font-body-sm text-body-sm shadow-[inset_0_1px_2px_rgba(0,0,0,0.6)]"><span class="material-symbols-outlined text-[16px] text-outline">search</span><span class="text-on-surface-variant pr-space-lg">Quick dispatch...</span><kbd class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface">⌘K</kbd></div><div class="flex items-center gap-space-sm px-space-md py-1 rounded-full bg-surface-container-lowest/50 font-mono-sm text-mono-sm text-on-surface-variant"><span class="text-on-surface">RAM <span class="text-primary">14.2 / 32 GB</span></span><span class="text-outline-variant">•</span><span class="text-on-surface">CPU <span class="text-secondary">8%</span></span><span class="text-outline-variant">•</span><span class="text-on-surface">Svcs <span class="text-tertiary">6 active</span></span></div><div class="flex items-center gap-space-sm"><button class="w-7 h-7 flex items-center justify-center rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[18px]">settings</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 pt-14 pb-8 w-full px-gutter-lg bg-background"><div class="flex flex-col w-full space-y-gutter-lg pb-12">
+<!-- Top Tool Header Strip -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md p-gutter-lg rounded-xl bg-surface-container-low/90 backdrop-blur-xl shadow-md">
+<div class="space-y-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Speed Test</h1>
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-surface-container-high text-primary font-mono-sm text-mono-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+          reqwest tokio-multithread • Local iperf3 &amp; WAN
+        </span>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-mono-sm text-mono-sm">
+          POSIX socket v2.4
+        </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+        Sub-millisecond latency profiling, local iperf3 server benchmarking, multi-stream WAN throughput test, and bufferbloat jitter analysis.
+      </p>
+</div>
+<!-- Header Actions -->
+<div class="flex items-center gap-space-sm flex-wrap">
+<button class="flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors font-body-sm text-body-sm shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">dns</span>
+<span>Cloudflare Edge (Miami / ATL)</span>
+<span class="material-symbols-outlined text-[14px] text-outline">expand_more</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-lg py-1.5 rounded-lg bg-primary text-on-primary font-headline-sm text-headline-sm hover:opacity-90 active:scale-95 transition-all shadow-md" id="btn-toggle-test">
+<span class="material-symbols-outlined text-[18px]" id="test-icon">play_arrow</span>
+<span id="test-label">Start Comprehensive Test</span>
+</button>
+<button class="flex items-center gap-1 px-space-sm py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" id="btn-export" title="Export Speedtest Report (CSV/JSON)">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span class="hidden sm:inline">Export</span>
+</button>
+</div>
+</div>
+<!-- Test Mode Segmented Switcher & Hardware Bar -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md bg-surface-container-lowest/80 p-1.5 rounded-xl shadow-inner">
+<div class="flex items-center gap-1 bg-surface-container-low p-1 rounded-lg">
+<button class="tab-btn px-space-md py-1 rounded-md bg-primary-container text-on-primary-container font-label-md text-label-md transition-all shadow-sm flex items-center gap-1.5" data-tab="wan">
+<span class="material-symbols-outlined text-[15px]">public</span>
+        Global Internet (WAN)
+      </button>
+<button class="tab-btn px-space-md py-1 rounded-md text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all flex items-center gap-1.5" data-tab="iperf-client">
+<span class="material-symbols-outlined text-[15px]">terminal</span>
+        Local Network (iperf3 Client)
+      </button>
+<button class="tab-btn px-space-md py-1 rounded-md text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all flex items-center gap-1.5" data-tab="iperf-server">
+<span class="material-symbols-outlined text-[15px]">lan</span>
+        iperf3 Embedded Server
+      </button>
+</div>
+<!-- Active Physical Link Telemetry Pills -->
+<div class="flex items-center gap-space-md px-space-md font-mono-sm text-mono-sm text-on-surface-variant overflow-x-auto">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">wifi</span>
+<span>PHY Link: <strong class="text-on-surface font-medium">1,201 Mbps (802.11ax)</strong></span>
+</span>
+<span class="text-outline-variant">•</span>
+<span>RSSI: <strong class="text-secondary font-medium">-48 dBm</strong></span>
+<span class="text-outline-variant">•</span>
+<span>MTU: <strong class="text-on-surface font-medium">1500</strong></span>
+</div>
+</div>
+<!-- Section 1: Active Primary Gauges & Metrics (Bento Mosaic) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter-lg">
+<!-- Download Card (Hero Gauge) -->
+<div class="md:col-span-4 rounded-xl bg-surface-container-low/95 backdrop-blur-2xl p-space-lg flex flex-col justify-between shadow-md relative overflow-hidden group">
+<div class="absolute -right-12 -top-12 w-44 h-44 rounded-full bg-primary/10 blur-3xl pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(170,199,255,0.6)]"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Download Throughput</span>
+</div>
+<span class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-high text-primary">8 Streams</span>
+</div>
+<div class="flex items-baseline gap-2 mt-space-xs">
+<span class="font-headline-lg text-[42px] leading-none text-on-surface font-bold tracking-tight" id="metric-download">942.8</span>
+<span class="font-mono-md text-mono-md text-primary font-semibold">Mbps</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Multi-socket chunk payload via Cloudflare Anycast node</p>
+</div>
+<!-- Real-Time Mini SVG Arc / Speedometer Curve -->
+<div class="my-space-md flex items-center justify-center relative">
+<svg class="w-48 h-24 overflow-visible" viewbox="0 0 100 50">
+<path class="text-surface-container-highest" d="M 10 45 A 35 35 0 0 1 90 45" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="7"></path>
+<path class="text-primary" d="M 10 45 A 35 35 0 0 1 90 45" fill="none" id="download-gauge-arc" stroke="currentColor" stroke-dasharray="125" stroke-dashoffset="18" stroke-linecap="round" stroke-width="7" style="transition: stroke-dashoffset 0.6s ease;"></path>
+</svg>
+<div class="absolute bottom-0 flex flex-col items-center">
+<span class="font-mono-sm text-mono-sm text-outline">Peak Rate</span>
+<span class="font-mono-md text-mono-md text-on-surface font-semibold">968.4 Mbps</span>
+</div>
+</div>
+<div class="pt-space-sm bg-surface-container-lowest/50 p-space-sm rounded-lg flex items-center justify-between font-mono-sm text-mono-sm text-on-surface-variant">
+<span>Transferred: <span class="text-on-surface font-medium">1,180 MB</span></span>
+<span>Duration: <span class="text-on-surface font-medium">10.02s</span></span>
+</div>
+</div>
+<!-- Upload Card -->
+<div class="md:col-span-4 rounded-xl bg-surface-container-low/95 backdrop-blur-2xl p-space-lg flex flex-col justify-between shadow-md relative overflow-hidden group">
+<div class="absolute -right-12 -top-12 w-44 h-44 rounded-full bg-secondary/10 blur-3xl pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_rgba(71,226,102,0.6)]"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Upload Throughput</span>
+</div>
+<span class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-high text-secondary">8 Streams</span>
+</div>
+<div class="flex items-baseline gap-2 mt-space-xs">
+<span class="font-headline-lg text-[42px] leading-none text-on-surface font-bold tracking-tight" id="metric-upload">884.2</span>
+<span class="font-mono-md text-mono-md text-secondary font-semibold">Mbps</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Direct TCP socket push saturation with tokio non-blocking runtime</p>
+</div>
+<!-- Real-Time Mini SVG Arc Upload -->
+<div class="my-space-md flex items-center justify-center relative">
+<svg class="w-48 h-24 overflow-visible" viewbox="0 0 100 50">
+<path class="text-surface-container-highest" d="M 10 45 A 35 35 0 0 1 90 45" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="7"></path>
+<path class="text-secondary" d="M 10 45 A 35 35 0 0 1 90 45" fill="none" id="upload-gauge-arc" stroke="currentColor" stroke-dasharray="125" stroke-dashoffset="26" stroke-linecap="round" stroke-width="7" style="transition: stroke-dashoffset 0.6s ease;"></path>
+</svg>
+<div class="absolute bottom-0 flex flex-col items-center">
+<span class="font-mono-sm text-mono-sm text-outline">Peak Rate</span>
+<span class="font-mono-md text-mono-md text-on-surface font-semibold">902.1 Mbps</span>
+</div>
+</div>
+<div class="pt-space-sm bg-surface-container-lowest/50 p-space-sm rounded-lg flex items-center justify-between font-mono-sm text-mono-sm text-on-surface-variant">
+<span>Transferred: <span class="text-on-surface font-medium">924 MB</span></span>
+<span>Duration: <span class="text-on-surface font-medium">8.40s</span></span>
+</div>
+</div>
+<!-- Latency, Jitter, Packet Loss & Bufferbloat Grade -->
+<div class="md:col-span-4 rounded-xl bg-surface-container-low/95 backdrop-blur-2xl p-space-lg flex flex-col justify-between shadow-md space-y-space-md">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Network Quality Profile</span>
+<span class="font-mono-sm text-mono-sm text-secondary bg-surface-container-high px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Zero Loss
+          </span>
+</div>
+<!-- Grade Banner -->
+<div class="bg-surface-container-lowest/90 p-space-md rounded-xl flex items-center justify-between shadow-inner">
+<div class="space-y-0.5">
+<div class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Bufferbloat Assessment</div>
+<div class="font-headline-sm text-headline-sm text-on-surface">Minimal Degrade Under Load</div>
+<div class="font-body-sm text-body-sm text-secondary">Delta: +6.4ms during 100% saturation</div>
+</div>
+<div class="w-12 h-12 rounded-xl bg-secondary-container text-on-secondary-container flex items-center justify-center font-headline-lg text-headline-lg font-black shadow-md">
+            A+
+          </div>
+</div>
+</div>
+<!-- Compact 3-Column Telemetry Grid -->
+<div class="grid grid-cols-3 gap-space-sm">
+<div class="p-space-sm rounded-lg bg-surface-container-lowest/60 text-center">
+<span class="font-label-sm text-label-sm text-outline block">Idle Ping</span>
+<span class="font-mono-lg text-mono-lg text-on-surface font-bold">6.4</span>
+<span class="font-mono-sm text-mono-sm text-outline-variant block">ms</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest/60 text-center">
+<span class="font-label-sm text-label-sm text-outline block">Loaded Ping</span>
+<span class="font-mono-lg text-mono-lg text-primary font-bold">12.8</span>
+<span class="font-mono-sm text-mono-sm text-outline-variant block">ms (+6.4ms)</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest/60 text-center">
+<span class="font-label-sm text-label-sm text-outline block">Jitter</span>
+<span class="font-mono-lg text-mono-lg text-tertiary font-bold">0.82</span>
+<span class="font-mono-sm text-mono-sm text-outline-variant block">±0.14ms</span>
+</div>
+</div>
+<!-- Packet Loss Detail -->
+<div class="p-space-sm rounded-lg bg-surface-container font-mono-sm text-mono-sm flex items-center justify-between text-on-surface-variant">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+          Loss Rate: <strong class="text-on-surface">0.00%</strong>
+</span>
+<span>0 / 2,400 packets dropped</span>
+</div>
+</div>
+</div>
+<!-- Section 2: Real-Time Bandwidth Stream Chart & Target Topology -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg">
+<!-- Stream Graph (8 Cols) -->
+<div class="lg:col-span-8 rounded-xl bg-surface-container-low/90 backdrop-blur-xl p-space-lg shadow-md flex flex-col justify-between">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-2">
+            Real-Time Bandwidth Timeline (30 Seconds)
+            <span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sampling rate: 50ms interval via asynchronous ring buffer</p>
+</div>
+<!-- Legend -->
+<div class="flex items-center gap-space-md font-mono-sm text-mono-sm">
+<span class="flex items-center gap-1.5 text-on-surface">
+<span class="w-3 h-1 rounded bg-primary inline-block"></span> Download
+          </span>
+<span class="flex items-center gap-1.5 text-on-surface">
+<span class="w-3 h-1 rounded bg-secondary inline-block"></span> Upload
+          </span>
+<span class="flex items-center gap-1.5 text-outline">
+<span class="w-3 h-0.5 rounded bg-outline inline-block"></span> 1 Gbps SLA Line
+          </span>
+</div>
+</div>
+<!-- SVG Timeline Graph -->
+<div class="w-full h-56 bg-surface-container-lowest/80 rounded-xl p-space-sm flex flex-col justify-between relative overflow-hidden">
+<!-- Background Grid Ticks -->
+<div class="absolute inset-0 flex flex-col justify-between p-space-md pointer-events-none opacity-20">
+<div class="border-b border-outline-variant w-full flex justify-between font-mono-sm text-mono-sm"><span>1000 Mbps</span></div>
+<div class="border-b border-outline-variant w-full flex justify-between font-mono-sm text-mono-sm"><span>750 Mbps</span></div>
+<div class="border-b border-outline-variant w-full flex justify-between font-mono-sm text-mono-sm"><span>500 Mbps</span></div>
+<div class="border-b border-outline-variant w-full flex justify-between font-mono-sm text-mono-sm"><span>250 Mbps</span></div>
+<div class="w-full flex justify-between font-mono-sm text-mono-sm"><span>0 Mbps</span></div>
+</div>
+<!-- Inline SVG Area Charts for Smooth Real-time Bandwidth -->
+<svg class="w-full h-full relative z-10" preserveaspectratio="none" viewbox="0 0 700 200">
+<defs>
+<lineargradient id="downloadGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#aac7ff" stop-opacity="0.45"></stop>
+<stop offset="100%" stop-color="#aac7ff" stop-opacity="0.0"></stop>
+</lineargradient>
+<lineargradient id="uploadGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#47e266" stop-opacity="0.35"></stop>
+<stop offset="100%" stop-color="#47e266" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- 1 Gbps SLA Baseline line -->
+<line opacity="0.4" stroke="#8b91a0" stroke-dasharray="4,4" stroke-width="1" x1="0" x2="700" y1="12" y2="12"></line>
+<!-- Download Wave (0s to 18s) -->
+<path d="M 0 190 Q 30 180, 50 120 T 110 32 T 180 24 T 240 22 T 310 20 T 380 26 T 420 30 L 420 195 L 0 195 Z" fill="url(#downloadGrad)"></path>
+<path d="M 0 190 Q 30 180, 50 120 T 110 32 T 180 24 T 240 22 T 310 20 T 380 26 T 420 30" fill="none" stroke="#aac7ff" stroke-width="2.5"></path>
+<!-- Upload Wave (18s to 30s) -->
+<path d="M 420 195 L 420 85 Q 450 40, 480 38 T 540 34 T 600 32 T 660 35 T 700 33 L 700 195 Z" fill="url(#uploadGrad)"></path>
+<path d="M 420 195 L 420 85 Q 450 40, 480 38 T 540 34 T 600 32 T 660 35 T 700 33" fill="none" stroke="#47e266" stroke-width="2.5"></path>
+<!-- Peak Marker Downloads -->
+<circle cx="310" cy="20" fill="#aac7ff" r="4" stroke="#001b3e" stroke-width="2"></circle>
+<circle cx="600" cy="32" fill="#47e266" r="4" stroke="#002106" stroke-width="2"></circle>
+</svg>
+<!-- Timeline Foot Ticks -->
+<div class="flex items-center justify-between font-mono-sm text-mono-sm text-outline px-1 z-10 pt-1">
+<span>T - 30s</span>
+<span>T - 20s (Download Phase)</span>
+<span>T - 10s (Upload Phase)</span>
+<span>Live Now</span>
+</div>
+</div>
+</div>
+<!-- Active Endpoint / Target Node Card (4 Cols) -->
+<div class="lg:col-span-4 rounded-xl bg-surface-container-low/90 backdrop-blur-xl p-space-lg shadow-md flex flex-col justify-between space-y-space-md">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Target Node Topology</span>
+<span class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-secondary/10 text-secondary">Anycast Proximity</span>
+</div>
+<div class="flex items-center gap-space-sm mb-space-md">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">cloud</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface">Cloudflare Speedtest Edge</div>
+<div class="font-mono-sm text-mono-sm text-on-surface-variant">Miami / Atlanta Transit Hub (MIA-C1)</div>
+</div>
+</div>
+<!-- Node Details Spec Table -->
+<div class="space-y-space-xs font-mono-sm text-mono-sm">
+<div class="p-space-xs px-space-sm rounded bg-surface-container-lowest/60 flex items-center justify-between">
+<span class="text-outline">Target IPv4:</span>
+<span class="text-on-surface select-all">162.158.84.2</span>
+</div>
+<div class="p-space-xs px-space-sm rounded bg-surface-container-lowest/60 flex items-center justify-between">
+<span class="text-outline">ASN / Network:</span>
+<span class="text-primary font-medium">AS13335 CLOUDFLARENET</span>
+</div>
+<div class="p-space-xs px-space-sm rounded bg-surface-container-lowest/60 flex items-center justify-between">
+<span class="text-outline">Local Device NIC:</span>
+<span class="text-on-surface font-medium">Apple M3 Max Wi-Fi 6</span>
+</div>
+<div class="p-space-xs px-space-sm rounded bg-surface-container-lowest/60 flex items-center justify-between">
+<span class="text-outline">Active Sockets:</span>
+<span class="text-secondary font-medium">8 concurrent TCP tokio</span>
+</div>
+<div class="p-space-xs px-space-sm rounded bg-surface-container-lowest/60 flex items-center justify-between">
+<span class="text-outline">BBR Congestion:</span>
+<span class="text-on-surface">BBRv2 (Kernel Pacing ON)</span>
+</div>
+</div>
+</div>
+<!-- Quick Server Switch Strip -->
+<div class="pt-space-sm">
+<button class="w-full py-1.5 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">swap_horiz</span>
+          Select Nearby Test Servers (12 Available)
+        </button>
+</div>
+</div>
+</div>
+<!-- Section 3: Historical Runs & Local Comparison Table -->
+<div class="rounded-xl bg-surface-container-low/90 backdrop-blur-xl p-space-lg shadow-md space-y-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="space-y-0.5">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Historical Speed Runs &amp; Node Benchmarks</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Archived runs stored in local SQLite cache. Compare WAN saturation against local iperf3 NAS appliances.</p>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-sm py-1 rounded bg-surface-container font-mono-sm text-mono-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">tune</span>
+          Filter by Protocol
+        </button>
+<button class="px-space-sm py-1 rounded bg-surface-container font-mono-sm text-mono-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">delete_sweep</span>
+          Clear Cache
+        </button>
+</div>
+</div>
+<!-- Data Table Container -->
+<div class="overflow-x-auto rounded-lg bg-surface-container-lowest/60">
+<table class="w-full text-left font-body-md text-body-md border-collapse">
+<thead>
+<tr class="bg-surface-container-high/60 text-outline font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-2.5 px-space-md">Timestamp</th>
+<th class="py-2.5 px-space-md">Target Endpoint</th>
+<th class="py-2.5 px-space-md">Interface</th>
+<th class="py-2.5 px-space-md text-right">Download</th>
+<th class="py-2.5 px-space-md text-right">Upload</th>
+<th class="py-2.5 px-space-md text-right">Latency / Jitter</th>
+<th class="py-2.5 px-space-md text-center">Score</th>
+<th class="py-2.5 px-space-md text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 font-mono-sm text-mono-sm">
+<!-- Run 1 -->
+<tr class="hover:bg-surface-container/60 transition-colors">
+<td class="py-2 px-space-md text-on-surface flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>10m ago (14:32:08)</span>
+</td>
+<td class="py-2 px-space-md">
+<span class="text-on-surface font-medium">Cloudflare Anycast</span>
+<span class="text-outline block font-mono-sm">Miami POP • 8 Streams</span>
+</td>
+<td class="py-2 px-space-md text-on-surface-variant font-mono-sm">
+              en0 (Wi-Fi 6, -48 dBm)
+            </td>
+<td class="py-2 px-space-md text-right font-semibold text-primary">
+              942.8 Mbps
+            </td>
+<td class="py-2 px-space-md text-right font-semibold text-secondary">
+              884.2 Mbps
+            </td>
+<td class="py-2 px-space-md text-right">
+<span class="text-on-surface font-medium">6.4 ms</span>
+<span class="text-outline-variant block">±0.14ms</span>
+</td>
+<td class="py-2 px-space-md text-center">
+<span class="px-1.5 py-0.5 rounded bg-secondary/15 text-secondary font-bold">A+</span>
+</td>
+<td class="py-2 px-space-md text-right">
+<button class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface hover:text-primary transition-colors">Inspect</button>
+</td>
+</tr>
+<!-- Run 2 -->
+<tr class="hover:bg-surface-container/60 transition-colors">
+<td class="py-2 px-space-md text-on-surface flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-bright"></span>
+<span>1h ago (13:18:41)</span>
+</td>
+<td class="py-2 px-space-md">
+<span class="text-on-surface font-medium">Fast.com Edge (Netflix CDN)</span>
+<span class="text-outline block font-mono-sm">Atlanta Transit • 4 Streams</span>
+</td>
+<td class="py-2 px-space-md text-on-surface-variant font-mono-sm">
+              en0 (Wi-Fi 6, -51 dBm)
+            </td>
+<td class="py-2 px-space-md text-right font-semibold text-primary">
+              915.2 Mbps
+            </td>
+<td class="py-2 px-space-md text-right font-semibold text-secondary">
+              860.0 Mbps
+            </td>
+<td class="py-2 px-space-md text-right">
+<span class="text-on-surface font-medium">7.1 ms</span>
+<span class="text-outline-variant block">±0.28ms</span>
+</td>
+<td class="py-2 px-space-md text-center">
+<span class="px-1.5 py-0.5 rounded bg-secondary/15 text-secondary font-bold">A</span>
+</td>
+<td class="py-2 px-space-md text-right">
+<button class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface hover:text-primary transition-colors">Inspect</button>
+</td>
+</tr>
+<!-- Run 3 -->
+<tr class="hover:bg-surface-container/60 transition-colors">
+<td class="py-2 px-space-md text-on-surface flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-bright"></span>
+<span>Yesterday (22:45:10)</span>
+</td>
+<td class="py-2 px-space-md">
+<span class="text-on-surface font-medium">Local iperf3 NAS (Synology DS923+)</span>
+<span class="text-tertiary block font-mono-sm">LAN 10.0.1.42:5201 • 1 Stream</span>
+</td>
+<td class="py-2 px-space-md text-on-surface-variant font-mono-sm">
+              en0 (Wi-Fi 6, -46 dBm)
+            </td>
+<td class="py-2 px-space-md text-right font-semibold text-primary">
+              890.4 Mbps
+            </td>
+<td class="py-2 px-space-md text-right font-semibold text-secondary">
+              842.1 Mbps
+            </td>
+<td class="py-2 px-space-md text-right">
+<span class="text-on-surface font-medium">1.2 ms</span>
+<span class="text-outline-variant block">±0.03ms</span>
+</td>
+<td class="py-2 px-space-md text-center">
+<span class="px-1.5 py-0.5 rounded bg-secondary/15 text-secondary font-bold">A+</span>
+</td>
+<td class="py-2 px-space-md text-right">
+<button class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface hover:text-primary transition-colors">Inspect</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Low-level socket engine info strip -->
+<div class="pt-space-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-space-sm font-mono-sm text-mono-sm text-outline">
+<div class="flex items-center gap-space-md">
+<span>Engine: <span class="text-on-surface">Tokio v1.38 async I/O worker pool</span></span>
+<span>•</span>
+<span>TLS Provider: <span class="text-on-surface">rustls 0.23 (Ring backend)</span></span>
+<span>•</span>
+<span>Pacing: <span class="text-secondary">SO_MAX_PACING_RATE</span></span>
+</div>
+<div class="text-on-surface-variant">
+        Last sync: Just now • Export ready in CSV, JSON, and pcap summary
+      </div>
+</div>
+</div>
+</div>
+<script>
+  // Tab controller interaction
+  const tabs = document.querySelectorAll('.tab-btn');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => {
+        t.className = 'tab-btn px-space-md py-1 rounded-md text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all flex items-center gap-1.5';
+      });
+      tab.className = 'tab-btn px-space-md py-1 rounded-md bg-primary-container text-on-primary-container font-label-md text-label-md transition-all shadow-sm flex items-center gap-1.5';
+    });
+  });
+
+  // Test Run Simulation
+  const toggleBtn = document.getElementById('btn-toggle-test');
+  const testIcon = document.getElementById('test-icon');
+  const testLabel = document.getElementById('test-label');
+  const downloadEl = document.getElementById('metric-download');
+  const uploadEl = document.getElementById('metric-upload');
+  const downArc = document.getElementById('download-gauge-arc');
+  const upArc = document.getElementById('upload-gauge-arc');
+
+  let isRunning = false;
+  let testInterval = null;
+
+  toggleBtn.addEventListener('click', () => {
+    isRunning = !isRunning;
+    if (isRunning) {
+      toggleBtn.className = 'flex items-center gap-1.5 px-space-lg py-1.5 rounded-lg bg-error text-on-error font-headline-sm text-headline-sm hover:opacity-90 active:scale-95 transition-all shadow-md';
+      testIcon.textContent = 'stop';
+      testLabel.textContent = 'Stop Test';
+
+      let count = 0;
+      testInterval = setInterval(() => {
+        count++;
+        const randDown = (920 + Math.random() * 45).toFixed(1);
+        const randUp = (860 + Math.random() * 35).toFixed(1);
+        downloadEl.textContent = randDown;
+        uploadEl.textContent = randUp;
+
+        // Subtle arc flutter
+        downArc.style.strokeDashoffset = (15 + Math.random() * 8).toFixed(0);
+        upArc.style.strokeDashoffset = (22 + Math.random() * 10).toFixed(0);
+
+        if (count > 25) {
+          clearInterval(testInterval);
+          isRunning = false;
+          toggleBtn.className = 'flex items-center gap-1.5 px-space-lg py-1.5 rounded-lg bg-primary text-on-primary font-headline-sm text-headline-sm hover:opacity-90 active:scale-95 transition-all shadow-md';
+          testIcon.textContent = 'play_arrow';
+          testLabel.textContent = 'Start Comprehensive Test';
+        }
+      }, 150);
+    } else {
+      clearInterval(testInterval);
+      toggleBtn.className = 'flex items-center gap-1.5 px-space-lg py-1.5 rounded-lg bg-primary text-on-primary font-headline-sm text-headline-sm hover:opacity-90 active:scale-95 transition-all shadow-md';
+      testIcon.textContent = 'play_arrow';
+      testLabel.textContent = 'Start Comprehensive Test';
+    }
+  });
+
+  // Export Trigger micro feedback
+  document.getElementById('btn-export').addEventListener('click', (e) => {
+    const originalText = e.currentTarget.innerHTML;
+    e.currentTarget.innerHTML = '<span class="material-symbols-outlined text-[16px] text-secondary">check</span> <span class="text-secondary">Saved!</span>';
+    setTimeout(() => {
+      e.currentTarget.innerHTML = originalText;
+    }, 1800);
+  });
+</script></main><footer class="fixed bottom-0 left-60 right-0 h-8 bg-surface-container-lowest/90 backdrop-blur-md z-40 px-margin-lg flex items-center justify-between font-mono-sm text-mono-sm text-on-surface-variant shadow-[0_-1px_6px_rgba(0,0,0,0.3)]"><div class="flex items-center gap-space-md"><span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Freed RAM: <span class="text-on-surface font-semibold">4.2 GB session</span></span><span class="text-outline-variant">|</span><span>Active Listeners: <span class="text-primary font-semibold">28 ports</span></span></div><div class="flex items-center gap-space-md"><span>Interface: <span class="text-on-surface font-semibold">en0 • Wi-Fi 6 (802.11ax)</span></span><span class="text-outline-variant">|</span><span class="text-secondary">Secure Sandbox Active</span></div></footer></div></body></html>

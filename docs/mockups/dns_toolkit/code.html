@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-secondary-container":"#004615","on-secondary-fixed-variant":"#00531a","on-primary-fixed-variant":"#00468d","primary-fixed":"#d6e3ff","on-surface":"#e4e1ea","error-container":"#93000a","primary-fixed-dim":"#aac7ff","on-background":"#e4e1ea","on-error":"#690005","on-surface-variant":"#c0c6d6","on-primary-fixed":"#001b3e","surface-dim":"#131319","primary-container":"#3e90ff","secondary-fixed":"#6cff82","surface-variant":"#34343b","on-tertiary":"#510074","inverse-primary":"#005db8","surface-tint":"#aac7ff","tertiary-fixed":"#f6d9ff","tertiary":"#e9b3ff","surface":"#131319","on-secondary":"#003910","tertiary-fixed-dim":"#e9b3ff","on-secondary-fixed":"#002106","secondary-container":"#09bf49","error":"#ffb4ab","secondary-fixed-dim":"#47e266","surface-container":"#1f1f25","outline":"#8b91a0","on-primary-container":"#002957","inverse-surface":"#e4e1ea","background":"#131319","surface-container-highest":"#34343b","primary":"#aac7ff","on-tertiary-fixed-variant":"#7200a3","secondary":"#47e266","on-tertiary-container":"#460066","tertiary-container":"#c863fb","inverse-on-surface":"#303036","outline-variant":"#414754","on-tertiary-fixed":"#310048","on-error-container":"#ffdad6","surface-container-high":"#2a2930","surface-bright":"#39383f","surface-container-low":"#1b1b21","on-primary":"#003064","surface-container-lowest":"#0e0e14"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-xs":"0.25rem",margin:"0.75rem","gutter-lg":"1rem","gutter-sm":"0.5rem","margin-sm":"0.5rem","space-xl":"1.5rem","margin-lg":"1.25rem","space-md":"0.75rem","space-lg":"1rem","space-sm":"0.5rem",gutter:"0.75rem"},fontFamily:{"body-md":["Inter"],"body-lg":["Inter"],"headline-sm":["Inter"],"mono-sm":["JetBrains Mono"],"mono-lg":["JetBrains Mono"],"label-md":["Inter"],"body-sm":["Inter"],"mono-md":["JetBrains Mono"],"label-sm":["Inter"],"headline-md":["Inter"],"headline-lg":["Inter"]},fontSize:{"body-md":["13px",{lineHeight:"18px",letterSpacing:"-0.002em",fontWeight:"400"}],"body-lg":["14px",{lineHeight:"20px",letterSpacing:"-0.004em",fontWeight:"400"}],"headline-sm":["14px",{lineHeight:"18px",letterSpacing:"-0.008em",fontWeight:"600"}],"mono-sm":["10px",{lineHeight:"13px",letterSpacing:"0.01em",fontWeight:"400"}],"mono-lg":["13px",{lineHeight:"18px",letterSpacing:"-0.01em",fontWeight:"500"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0em",fontWeight:"500"}],"body-sm":["11px",{lineHeight:"15px",letterSpacing:"0em",fontWeight:"400"}],"mono-md":["12px",{lineHeight:"16px",letterSpacing:"-0.01em",fontWeight:"400"}],"label-sm":["10px",{lineHeight:"12px",letterSpacing:"0.03em",fontWeight:"600"}],"headline-md":["17px",{lineHeight:"22px",letterSpacing:"-0.012em",fontWeight:"600"}],"headline-lg":["22px",{lineHeight:"28px",letterSpacing:"-0.015em",fontWeight:"600"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface select-none antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-60 z-50 bg-surface-container-low/85 backdrop-blur-2xl flex flex-col justify-between shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"><div class="flex flex-col h-full"><div class="h-14 px-margin-lg flex items-center gap-space-sm bg-surface-container-lowest/40 backdrop-blur-md shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"><img alt="shift-tools App Icon" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UjvTrhC126AmYWPrT2Ix4EmaYPA1it__A83Hwtu4-Xq_WLFRBDxLXBze1IJuIEVwI0THW5kV8amVNmgClGHTHvfsSk9nyGI0qUiZvNqHxrNCRkXDZhymdSyJvngGRwG7rZt7GGrOewgsRsA6MLmrzvMwLD_-NEkOEqn_6fo6nbaDmzAlHsmKVUXNns4Sy6jTmNsvWmW9B-4Cm6xfTVFZe7GG-gqqmHIM5AuDne_GMyNg"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">shift-tools</span><span class="font-mono-sm text-mono-sm text-on-surface-variant leading-tight">macOS native v1.0.0</span></div></div><div class="flex-1 overflow-y-auto px-margin py-space-sm space-y-space-md"><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">DevOps &amp; System</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="process-killer" href="#">Process Killer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="quarantine-remover" href="#">Quarantine Remover</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="port-manager" href="#">Port Manager</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="disk-cleaner" href="#">Disk Cleaner</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ram-monitor" href="#">RAM Monitor</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Networks</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="network-observer" href="#">Network Observer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="wifi-mapper" href="#">WiFi Mapper</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="lan-scanner" href="#">LAN Scanner</a><a aria-current="page" class="flex items-center px-space-sm py-1.5 rounded-lg transition-colors bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]" data-path="dns-toolkit" href="#">DNS Toolkit</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="speed-test" href="#">Speed Test</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ping-traceroute" href="#">Ping / Traceroute</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Security &amp; Pentest</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="header-analyzer" href="#">Header Analyzer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ssl-inspector" href="#">SSL Inspector</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="subdomain-finder" href="#">Subdomain Finder</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="hash-generator" href="#">Hash Generator</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="password-auditor" href="#">Password Auditor</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Testing &amp; APIs</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="api-tester" href="#">API Tester</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="json-toolkit" href="#">JSON Toolkit</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="base64-url-encoder" href="#">Base64 / URL Encoder</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="regex-tester" href="#">Regex Tester</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Utilities</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="color-picker" href="#">Color Picker</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="text-diff" href="#">Text Diff</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="timestamp-converter" href="#">Timestamp Converter</a></nav></div><div class="p-margin m-margin bg-surface-container-lowest/60 rounded-xl space-y-space-xs shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Host Node</span><span class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-high text-primary">Apple M3 Max</span></div><div class="flex items-center justify-between font-mono-sm text-mono-sm text-on-surface-variant"><span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Rust Core</span><span class="text-secondary">0.8ms IPC</span></div></div></div></aside><div class="pl-60 flex flex-col min-h-screen"><header class="fixed top-0 left-60 right-0 h-14 bg-surface-container-low/75 backdrop-blur-2xl z-40 px-margin-lg flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.25)]"><div class="flex items-center gap-space-md"><div class="flex items-center gap-2 pl-1"><span class="w-3 h-3 rounded-full bg-[#ff5f56] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span><span class="w-3 h-3 rounded-full bg-[#ffbd2e] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span><span class="w-3 h-3 rounded-full bg-[#27c93f] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span></div><div class="flex items-center gap-space-xs font-mono-sm text-mono-sm text-on-surface-variant pl-space-sm"><span class="text-on-surface font-semibold">shift-tools</span><span>/</span><span class="text-outline">v1.0.0 (Rust Core)</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm px-space-md py-1 rounded-lg bg-surface-container-lowest/80 text-on-surface-variant font-body-sm text-body-sm shadow-[inset_0_1px_2px_rgba(0,0,0,0.6)]"><span class="material-symbols-outlined text-[16px] text-outline">search</span><span class="text-on-surface-variant pr-space-lg">Quick dispatch...</span><kbd class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface">⌘K</kbd></div><div class="flex items-center gap-space-sm px-space-md py-1 rounded-full bg-surface-container-lowest/50 font-mono-sm text-mono-sm text-on-surface-variant"><span class="text-on-surface">RAM <span class="text-primary">14.2 / 32 GB</span></span><span class="text-outline-variant">•</span><span class="text-on-surface">CPU <span class="text-secondary">8%</span></span><span class="text-outline-variant">•</span><span class="text-on-surface">Svcs <span class="text-tertiary">6 active</span></span></div><div class="flex items-center gap-space-sm"><button class="w-7 h-7 flex items-center justify-center rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[18px]">settings</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 pt-14 pb-8 w-full px-gutter-lg bg-background"><div class="flex flex-col w-full space-y-gutter-lg pb-12">
+<!-- Subheader & Query Engine Strip -->
+<section class="relative rounded-xl bg-surface-container-low/70 backdrop-blur-2xl p-space-lg shadow-xl shadow-surface-container-lowest/50">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md mb-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-container to-surface-container-highest flex items-center justify-center text-on-primary shadow-md">
+<span class="material-symbols-outlined text-[24px]">dns</span>
+</div>
+<div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">DNS Toolkit</h1>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-primary/10 text-primary font-mono-sm text-mono-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+              trust-dns-resolver 0.23.2
+            </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono-sm text-mono-sm">RFC 8484 / DoH Enabled</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">High-performance DNS queries across multiple record types, global propagation verification, and benchmark resolver comparison.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm self-end lg:self-center">
+<div class="flex items-center px-2 py-1 rounded-lg bg-surface-container-lowest/70 font-mono-sm text-mono-sm text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-secondary inline-block mr-1.5"></span>
+          Async Tokio Poll: <span class="text-on-surface font-semibold ml-1">0.42ms</span>
+</div>
+</div>
+</div>
+<!-- Interactive Query Toolbar -->
+<div class="bg-surface-container-lowest/90 rounded-lg p-space-sm flex flex-col xl:flex-row gap-space-sm items-stretch xl:items-center shadow-[inset_0_1px_2px_rgba(0,0,0,0.7)]">
+<!-- Target Domain Input -->
+<div class="flex-1 flex items-center bg-surface-container-high/60 rounded-md px-3 py-1.5 gap-2 focus-within:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px] text-outline">language</span>
+<span class="font-mono-sm text-mono-sm text-outline-variant select-none">host://</span>
+<input class="bg-transparent border-0 outline-none w-full font-mono-md text-mono-md text-on-surface placeholder:text-outline" id="domainInput" placeholder="example.com or IPv4/IPv6" spellcheck="false" type="text" value="kernel.org"/>
+<button class="text-outline hover:text-on-surface transition-colors" id="clearDomainBtn">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<!-- Resolver Selector -->
+<div class="flex items-center bg-surface-container-high/60 rounded-md px-2.5 py-1.5 gap-2 min-w-[210px]">
+<span class="material-symbols-outlined text-[16px] text-primary">hub</span>
+<select class="bg-transparent text-on-surface font-mono-sm text-mono-sm outline-none cursor-pointer w-full" id="resolverSelect">
+<option class="bg-surface-container text-on-surface" value="cloudflare">Cloudflare (1.1.1.1 DoH)</option>
+<option class="bg-surface-container text-on-surface" value="system">System Default (127.0.0.1)</option>
+<option class="bg-surface-container text-on-surface" value="google">Google (8.8.8.8 DoT)</option>
+<option class="bg-surface-container text-on-surface" value="quad9">Quad9 Secure (9.9.9.9)</option>
+</select>
+</div>
+<!-- Resolve Action Button -->
+<button class="bg-primary-container hover:bg-primary-fixed-dim text-on-primary-container font-headline-sm text-headline-sm px-4 py-2 rounded-md flex items-center justify-center gap-2 transition-all shadow-md active:scale-95" id="resolveBtn">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+<span>Resolve</span>
+<kbd class="font-mono-sm text-mono-sm bg-on-primary-container/20 text-on-primary-container px-1 py-0.5 rounded ml-1">⌘↵</kbd>
+</button>
+</div>
+<!-- Record Type Segmented Pills -->
+<div class="flex items-center gap-1.5 mt-space-sm pt-space-xs overflow-x-auto pb-1" id="recordFilters">
+<button class="record-filter active px-2.5 py-1 rounded bg-primary text-on-primary font-mono-sm text-mono-sm transition-all shadow-sm" data-type="ALL">ALL (18)</button>
+<button class="record-filter px-2.5 py-1 rounded bg-surface-container-high/80 text-on-surface-variant hover:text-on-surface font-mono-sm text-mono-sm transition-colors" data-type="A">A (2)</button>
+<button class="record-filter px-2.5 py-1 rounded bg-surface-container-high/80 text-on-surface-variant hover:text-on-surface font-mono-sm text-mono-sm transition-colors" data-type="AAAA">AAAA (2)</button>
+<button class="record-filter px-2.5 py-1 rounded bg-surface-container-high/80 text-on-surface-variant hover:text-on-surface font-mono-sm text-mono-sm transition-colors" data-type="MX">MX (1)</button>
+<button class="record-filter px-2.5 py-1 rounded bg-surface-container-high/80 text-on-surface-variant hover:text-on-surface font-mono-sm text-mono-sm transition-colors" data-type="TXT">TXT (5)</button>
+<button class="record-filter px-2.5 py-1 rounded bg-surface-container-high/80 text-on-surface-variant hover:text-on-surface font-mono-sm text-mono-sm transition-colors" data-type="NS">NS (3)</button>
+<button class="record-filter px-2.5 py-1 rounded bg-surface-container-high/80 text-on-surface-variant hover:text-on-surface font-mono-sm text-mono-sm transition-colors" data-type="SOA">SOA (1)</button>
+<button class="record-filter px-2.5 py-1 rounded bg-surface-container-high/80 text-on-surface-variant hover:text-on-surface font-mono-sm text-mono-sm transition-colors" data-type="CNAME">CNAME (0)</button>
+<button class="record-filter px-2.5 py-1 rounded bg-surface-container-high/80 text-on-surface-variant hover:text-on-surface font-mono-sm text-mono-sm transition-colors" data-type="CAA">CAA (3)</button>
+<button class="record-filter px-2.5 py-1 rounded bg-surface-container-high/80 text-on-surface-variant hover:text-on-surface font-mono-sm text-mono-sm transition-colors" data-type="PTR">PTR (1)</button>
+<div class="ml-auto flex items-center gap-2">
+<label class="flex items-center gap-1.5 cursor-pointer font-label-sm text-label-sm text-on-surface-variant">
+<input checked="" class="accent-primary rounded" type="checkbox"/>
+<span>Follow CNAME</span>
+</label>
+<label class="flex items-center gap-1.5 cursor-pointer font-label-sm text-label-sm text-on-surface-variant">
+<input checked="" class="accent-primary rounded" type="checkbox"/>
+<span>DNSSEC Validate</span>
+</label>
+</div>
+</div>
+</section>
+<!-- Metric Summary Bento Strip -->
+<section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-gutter">
+<!-- Card 1: Primary Resolution -->
+<div class="rounded-xl bg-surface-container-low/70 backdrop-blur-xl p-space-md shadow-md hover:bg-surface-container-low transition-all">
+<div class="flex items-center justify-between text-outline mb-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Primary Resolution</span>
+<span class="material-symbols-outlined text-[16px] text-primary">public</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-mono-lg text-mono-lg font-bold text-on-surface">198.145.29.83</span>
+<span class="font-mono-sm text-mono-sm text-secondary bg-secondary-container/20 px-1.5 py-0.5 rounded">A Record</span>
+</div>
+<div class="flex items-center justify-between mt-2 pt-2 text-on-surface-variant font-mono-sm text-mono-sm bg-surface-container-lowest/50 px-2 py-1 rounded">
+<span>TTL: <strong class="text-on-surface">300s</strong></span>
+<span class="text-outline-variant">•</span>
+<span>Roundtrip: <strong class="text-secondary font-semibold">12.4 ms</strong></span>
+</div>
+</div>
+<!-- Card 2: DNSSEC Status -->
+<div class="rounded-xl bg-surface-container-low/70 backdrop-blur-xl p-space-md shadow-md hover:bg-surface-container-low transition-all">
+<div class="flex items-center justify-between text-outline mb-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">DNSSEC Cryptography</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-semibold text-secondary">Validated &amp; Secure</span>
+<span class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_rgba(71,226,102,0.8)]"></span>
+</div>
+<div class="flex items-center justify-between mt-2 pt-2 text-on-surface-variant font-mono-sm text-mono-sm bg-surface-container-lowest/50 px-2 py-1 rounded">
+<span class="truncate">Alg 13 (ECDSAP256SHA256)</span>
+<span class="text-primary font-bold">RRSIG OK</span>
+</div>
+</div>
+<!-- Card 3: Global Propagation -->
+<div class="rounded-xl bg-surface-container-low/70 backdrop-blur-xl p-space-md shadow-md hover:bg-surface-container-low transition-all">
+<div class="flex items-center justify-between text-outline mb-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Global Propagation</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary">travel_explore</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-mono-lg text-mono-lg font-bold text-on-surface">100% Synced</span>
+<span class="font-mono-sm text-mono-sm text-secondary">24/24 PoPs</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden mt-3">
+<div class="bg-secondary h-full rounded-full w-full"></div>
+</div>
+</div>
+<!-- Card 4: Resolver Benchmark -->
+<div class="rounded-xl bg-surface-container-low/70 backdrop-blur-xl p-space-md shadow-md hover:bg-surface-container-low transition-all">
+<div class="flex items-center justify-between text-outline mb-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Fastest Upstream</span>
+<span class="material-symbols-outlined text-[16px] text-primary">speed</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-mono-md text-mono-md font-semibold text-on-surface">Local Unix Daemon</span>
+<span class="font-mono-sm text-mono-sm text-secondary bg-secondary-container/20 px-1.5 py-0.5 rounded font-bold">2.1 ms</span>
+</div>
+<div class="flex items-center justify-between mt-2 pt-1 font-mono-sm text-mono-sm text-on-surface-variant">
+<span>Cloudflare: <span class="text-primary">9ms</span></span>
+<span>Google: <span class="text-outline">14ms</span></span>
+<span>Quad9: <span class="text-outline">19ms</span></span>
+</div>
+</div>
+</section>
+<!-- Main Split Architecture Canvas -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter items-start">
+<!-- Left / Center: Detailed Record Payload Cards (8 cols) -->
+<div class="xl:col-span-8 flex flex-col space-y-gutter">
+<!-- Section: A & AAAA Addresses -->
+<div class="rounded-xl bg-surface-container-low/80 backdrop-blur-xl p-space-lg shadow-lg">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm bg-surface-container-lowest/30 -mx-space-lg px-space-lg -mt-space-lg pt-space-md rounded-t-xl">
+<div class="flex items-center gap-space-sm">
+<span class="px-2 py-0.5 rounded bg-primary text-on-primary font-mono-sm text-mono-sm font-semibold">A / AAAA</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Address &amp; Routing Telemetry</span>
+</div>
+<span class="font-mono-sm text-mono-sm text-outline">Authoritative GeoIP Oregon DC (US-West)</span>
+</div>
+<div class="space-y-space-sm">
+<!-- Row 1: IPv4 Primary -->
+<div class="p-space-sm rounded-lg bg-surface-container/60 hover:bg-surface-container transition-colors flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-md min-w-0">
+<span class="w-6 h-6 rounded bg-primary-container/20 text-primary font-mono-sm text-mono-sm flex items-center justify-center font-bold">4</span>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-mono-md text-mono-md text-on-surface font-semibold">198.145.29.83</span>
+<button class="text-outline hover:text-primary transition-colors text-[14px]" title="Copy IP">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-2">
+<span>PTR: <span class="font-mono-sm text-mono-sm text-outline">pub1.kernel.org</span></span>
+<span>•</span>
+<span>AS32244 (Liquid Web, L.L.C.)</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-md self-end md:self-center font-mono-sm text-mono-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">TTL 300s</span>
+<span class="text-secondary flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Active Route</span>
+</div>
+</div>
+<!-- Row 2: IPv4 Failover -->
+<div class="p-space-sm rounded-lg bg-surface-container/60 hover:bg-surface-container transition-colors flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-md min-w-0">
+<span class="w-6 h-6 rounded bg-primary-container/20 text-primary font-mono-sm text-mono-sm flex items-center justify-center font-bold">4</span>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-mono-md text-mono-md text-on-surface font-semibold">198.145.29.84</span>
+<button class="text-outline hover:text-primary transition-colors text-[14px]" title="Copy IP">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-2">
+<span>PTR: <span class="font-mono-sm text-mono-sm text-outline">pub2.kernel.org</span></span>
+<span>•</span>
+<span>AS32244 (Liquid Web, L.L.C.)</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-md self-end md:self-center font-mono-sm text-mono-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">TTL 300s</span>
+<span class="text-secondary flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Active Route</span>
+</div>
+</div>
+<!-- Row 3: IPv6 Global -->
+<div class="p-space-sm rounded-lg bg-surface-container/60 hover:bg-surface-container transition-colors flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-md min-w-0">
+<span class="w-6 h-6 rounded bg-tertiary-container/30 text-tertiary font-mono-sm text-mono-sm flex items-center justify-center font-bold">6</span>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-mono-md text-mono-md text-on-surface font-semibold truncate">2620:106:e000:7000::2a</span>
+<button class="text-outline hover:text-primary transition-colors text-[14px]">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+<span>Native Dual-Stack • IPv6 Anycast Transit Corvallis IX</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-md self-end md:self-center font-mono-sm text-mono-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">TTL 300s</span>
+<span class="text-secondary flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>v6 Responded</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: MX Mail Exchange Priority -->
+<div class="rounded-xl bg-surface-container-low/80 backdrop-blur-xl p-space-lg shadow-lg">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-mono-sm text-mono-sm font-semibold">MX</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Mail Exchanger Configuration</span>
+</div>
+<span class="font-mono-sm text-mono-sm text-secondary">SMTP TLS 1.3 Verified</span>
+</div>
+<div class="bg-surface-container-lowest/70 rounded-lg p-space-md flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="text-center px-3 py-1.5 rounded bg-surface-container-high">
+<span class="block font-label-sm text-label-sm text-outline uppercase">Priority</span>
+<span class="font-mono-lg text-mono-lg text-primary font-bold">10</span>
+</div>
+<div>
+<span class="font-mono-md text-mono-md text-on-surface font-semibold">mail.kernel.org</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Target IP: 198.145.29.99 (Port 25/587 STARTTLS Supported)</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-1 rounded bg-secondary-container/20 text-secondary font-mono-sm text-mono-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">shield</span> MTA-STS Ok
+            </span>
+</div>
+</div>
+</div>
+<!-- Section: TXT Security & Verification (SPF, DKIM, DMARC parsed) -->
+<div class="rounded-xl bg-surface-container-low/80 backdrop-blur-xl p-space-lg shadow-lg">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="px-2 py-0.5 rounded bg-tertiary-container text-on-tertiary-container font-mono-sm text-mono-sm font-semibold">TXT</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Policy &amp; Ownership Assertions</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="px-2 py-0.5 rounded bg-primary/20 text-primary font-mono-sm text-mono-sm">SPF Valid</span>
+<span class="px-2 py-0.5 rounded bg-secondary/20 text-secondary font-mono-sm text-mono-sm">DMARC Reject</span>
+</div>
+</div>
+<div class="space-y-space-sm font-mono-sm text-mono-sm">
+<!-- SPF Parsed Block -->
+<div class="bg-surface-container-lowest/80 rounded-lg p-space-md">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-md text-label-md text-primary font-semibold">SPF (Sender Policy Framework)</span>
+<span class="text-outline">RFC 7208</span>
+</div>
+<div class="p-2 rounded bg-surface-container-high/50 text-on-surface select-all overflow-x-auto">
+              "v=spf1 mx ip4:198.145.29.80/28 ip4:140.211.9.0/24 ip6:2620:106:e000:7000::/52 -all"
+            </div>
+<div class="flex flex-wrap gap-1.5 mt-2">
+<span class="px-1.5 py-0.5 rounded bg-surface-variant text-on-surface-variant">version: spf1</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-variant text-on-surface-variant">mx: included</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-variant text-on-surface-variant">ipv4_subnets: 2</span>
+<span class="px-1.5 py-0.5 rounded bg-error-container/30 text-error font-bold">policy: -all (HardFail)</span>
+</div>
+</div>
+<!-- DMARC Breakdown -->
+<div class="bg-surface-container-lowest/80 rounded-lg p-space-md">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-md text-label-md text-secondary font-semibold">DMARC Policy (_dmarc.kernel.org)</span>
+<span class="text-outline">RFC 7489</span>
+</div>
+<div class="p-2 rounded bg-surface-container-high/50 text-on-surface select-all overflow-x-auto">
+              "v=DMARC1; p=reject; rua=mailto:dmarc-reports@kernel.org; pct=100; adkim=s; aspf=s"
+            </div>
+<div class="flex flex-wrap gap-1.5 mt-2">
+<span class="px-1.5 py-0.5 rounded bg-secondary-container/20 text-secondary font-semibold">p=reject (Max Protection)</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-variant text-on-surface-variant">adkim=s (Strict)</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-variant text-on-surface-variant">aspf=s (Strict)</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-variant text-on-surface-variant">pct=100%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: NS & SOA Records -->
+<div class="rounded-xl bg-surface-container-low/80 backdrop-blur-xl p-space-lg shadow-lg">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface font-mono-sm text-mono-sm font-semibold">NS / SOA</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Zone Authority &amp; Refresh Intervals</span>
+</div>
+<span class="font-mono-sm text-mono-sm text-outline">Zone Serial: 2024040901</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm">
+<!-- NS Items -->
+<div class="bg-surface-container-lowest/80 rounded-lg p-space-sm space-y-1.5">
+<span class="font-label-sm text-label-sm text-outline uppercase block mb-1">Authoritative Nameservers</span>
+<div class="flex items-center justify-between font-mono-sm text-mono-sm p-1.5 rounded bg-surface-container-high/40">
+<span class="text-on-surface">ns1.kernel.org</span>
+<span class="text-secondary">OK (9ms)</span>
+</div>
+<div class="flex items-center justify-between font-mono-sm text-mono-sm p-1.5 rounded bg-surface-container-high/40">
+<span class="text-on-surface">ns2.kernel.org</span>
+<span class="text-secondary">OK (11ms)</span>
+</div>
+<div class="flex items-center justify-between font-mono-sm text-mono-sm p-1.5 rounded bg-surface-container-high/40">
+<span class="text-on-surface">ns3.kernel.org</span>
+<span class="text-secondary">OK (18ms)</span>
+</div>
+</div>
+<!-- SOA Details -->
+<div class="bg-surface-container-lowest/80 rounded-lg p-space-sm space-y-1 text-on-surface-variant font-mono-sm text-mono-sm">
+<span class="font-label-sm text-label-sm text-outline uppercase block mb-1">Start of Authority</span>
+<div class="flex justify-between py-0.5"><span>Primary NS:</span> <span class="text-on-surface">ns1.kernel.org</span></div>
+<div class="flex justify-between py-0.5"><span>Hostmaster:</span> <span class="text-on-surface">postmaster.kernel.org</span></div>
+<div class="flex justify-between py-0.5"><span>Refresh:</span> <span class="text-on-surface">7200s (2h)</span></div>
+<div class="flex justify-between py-0.5"><span>Retry:</span> <span class="text-on-surface">3600s (1h)</span></div>
+<div class="flex justify-between py-0.5"><span>Expire:</span> <span class="text-on-surface">1209600s (14d)</span></div>
+<div class="flex justify-between py-0.5"><span>Min TTL:</span> <span class="text-on-surface">300s</span></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Panel: Global Propagation Map & Resolver Benchmarks (4 cols) -->
+<div class="xl:col-span-4 flex flex-col space-y-gutter">
+<!-- Global Edge Map Card -->
+<div class="rounded-xl bg-surface-container-low/80 backdrop-blur-xl p-space-lg shadow-lg relative overflow-hidden">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">public</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Edge Node Verification</h2>
+</div>
+<span class="font-mono-sm text-mono-sm px-2 py-0.5 rounded bg-secondary-container/20 text-secondary font-semibold">24 PoPs Synced</span>
+</div>
+<!-- Realistic Minimal Vector Node Telemetry Canvas -->
+<div class="relative w-full h-44 rounded-lg bg-surface-container-lowest overflow-hidden flex items-center justify-center p-2 mb-space-md">
+<svg class="w-full h-full opacity-40 text-outline-variant" fill="none" stroke="currentColor" viewbox="0 0 600 320">
+<!-- Simplified abstract world outline paths -->
+<path d="M80,100 Q140,80 190,130 T250,170 T300,120 T390,90 T480,140 T540,190" stroke-dasharray="3 3" stroke-width="1.2"></path>
+<path d="M120,60 C160,50 200,80 210,120 C220,150 170,180 140,210 C100,200 90,140 100,100 Z" stroke-width="1"></path>
+<path d="M310,80 C360,60 410,70 420,110 C430,150 380,210 340,230 C300,210 290,150 300,110 Z" stroke-width="1"></path>
+<path d="M430,130 C490,120 530,160 520,220 C490,250 440,230 420,190 Z" stroke-width="1"></path>
+</svg>
+<!-- North America Points -->
+<div class="absolute left-[24%] top-[34%] group cursor-pointer">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary block shadow-[0_0_8px_rgba(71,226,102,1)] animate-ping"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-secondary absolute top-0 left-0"></span>
+<div class="absolute -top-7 -left-6 bg-surface-container-highest px-1.5 py-0.5 rounded font-mono-sm text-mono-sm text-on-surface whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">SFO 11ms</div>
+</div>
+<div class="absolute left-[34%] top-[38%] group cursor-pointer">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary block shadow-[0_0_8px_rgba(71,226,102,1)]"></span>
+<div class="absolute -top-7 -left-6 bg-surface-container-highest px-1.5 py-0.5 rounded font-mono-sm text-mono-sm text-on-surface whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">NYC 14ms</div>
+</div>
+<!-- Europe Points -->
+<div class="absolute left-[52%] top-[32%] group cursor-pointer">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary block shadow-[0_0_8px_rgba(71,226,102,1)]"></span>
+<div class="absolute -top-7 -left-6 bg-surface-container-highest px-1.5 py-0.5 rounded font-mono-sm text-mono-sm text-on-surface whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">LHR 24ms</div>
+</div>
+<div class="absolute left-[58%] top-[37%] group cursor-pointer">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary block shadow-[0_0_8px_rgba(71,226,102,1)]"></span>
+<div class="absolute -top-7 -left-6 bg-surface-container-highest px-1.5 py-0.5 rounded font-mono-sm text-mono-sm text-on-surface whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">FRA 28ms</div>
+</div>
+<!-- Asia & Aus Points -->
+<div class="absolute left-[78%] top-[42%] group cursor-pointer">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary block shadow-[0_0_8px_rgba(71,226,102,1)]"></span>
+<div class="absolute -top-7 -left-6 bg-surface-container-highest px-1.5 py-0.5 rounded font-mono-sm text-mono-sm text-on-surface whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">NRT 82ms</div>
+</div>
+<div class="absolute left-[74%] top-[62%] group cursor-pointer">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary block shadow-[0_0_8px_rgba(71,226,102,1)]"></span>
+<div class="absolute -top-7 -left-6 bg-surface-container-highest px-1.5 py-0.5 rounded font-mono-sm text-mono-sm text-on-surface whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">SIN 94ms</div>
+</div>
+<div class="absolute left-[84%] top-[78%] group cursor-pointer">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary block shadow-[0_0_8px_rgba(71,226,102,1)]"></span>
+<div class="absolute -top-7 -left-6 bg-surface-container-highest px-1.5 py-0.5 rounded font-mono-sm text-mono-sm text-on-surface whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">SYD 142ms</div>
+</div>
+</div>
+<!-- Pop Details Matrix -->
+<div class="space-y-1.5 font-mono-sm text-mono-sm">
+<div class="flex items-center justify-between p-1.5 rounded bg-surface-container-lowest/60">
+<span class="text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[14px]">check_circle</span>
+              North America: NYC • SFO • ORD
+            </span>
+<span class="text-secondary font-semibold">12ms avg</span>
+</div>
+<div class="flex items-center justify-between p-1.5 rounded bg-surface-container-lowest/60">
+<span class="text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[14px]">check_circle</span>
+              Europe: FRA • LHR • AMS • CDG
+            </span>
+<span class="text-secondary font-semibold">26ms avg</span>
+</div>
+<div class="flex items-center justify-between p-1.5 rounded bg-surface-container-lowest/60">
+<span class="text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[14px]">check_circle</span>
+              Asia-Pacific: NRT • SIN • HKG
+            </span>
+<span class="text-secondary font-semibold">88ms avg</span>
+</div>
+<div class="flex items-center justify-between p-1.5 rounded bg-surface-container-lowest/60">
+<span class="text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[14px]">check_circle</span>
+              Oceania: SYD • MEL • AKL
+            </span>
+<span class="text-secondary font-semibold">140ms avg</span>
+</div>
+</div>
+</div>
+<!-- Resolver Protocol & Speed Benchmark -->
+<div class="rounded-xl bg-surface-container-low/80 backdrop-blur-xl p-space-lg shadow-lg">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">query_stats</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Resolver Benchmark</h2>
+</div>
+<button class="text-primary hover:text-primary-fixed-dim text-mono-sm font-mono-sm flex items-center gap-1" id="rebenchBtn">
+<span class="material-symbols-outlined text-[14px]">refresh</span> Retest
+          </button>
+</div>
+<div class="space-y-space-md">
+<!-- Item 1: System / Local -->
+<div>
+<div class="flex justify-between font-mono-sm text-mono-sm mb-1">
+<span class="text-on-surface">Local Unix Resolver (127.0.0.1)</span>
+<span class="text-secondary font-bold">2.1 ms</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 12%"></div>
+</div>
+</div>
+<!-- Item 2: Cloudflare -->
+<div>
+<div class="flex justify-between font-mono-sm text-mono-sm mb-1">
+<span class="text-on-surface">Cloudflare DoH (1.1.1.1)</span>
+<span class="text-primary font-bold">9.4 ms</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 32%"></div>
+</div>
+</div>
+<!-- Item 3: Google -->
+<div>
+<div class="flex justify-between font-mono-sm text-mono-sm mb-1">
+<span class="text-on-surface">Google Public DoT (8.8.8.8)</span>
+<span class="text-on-surface-variant font-bold">14.1 ms</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-on-surface-variant h-full rounded-full" style="width: 48%"></div>
+</div>
+</div>
+<!-- Item 4: Quad9 -->
+<div>
+<div class="flex justify-between font-mono-sm text-mono-sm mb-1">
+<span class="text-on-surface">Quad9 Secure (9.9.9.9)</span>
+<span class="text-on-surface-variant font-bold">19.8 ms</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-outline h-full rounded-full" style="width: 65%"></div>
+</div>
+</div>
+</div>
+<!-- Protocol Inspector Tag Bar -->
+<div class="mt-space-md pt-space-sm grid grid-cols-2 gap-space-xs text-center font-mono-sm text-mono-sm">
+<div class="p-2 rounded bg-surface-container-lowest/80">
+<span class="block text-outline uppercase font-label-sm text-label-sm">DoH Handshake</span>
+<span class="text-secondary font-bold">HTTP/2 TLS 1.3</span>
+</div>
+<div class="p-2 rounded bg-surface-container-lowest/80">
+<span class="block text-outline uppercase font-label-sm text-label-sm">ECS Privacy</span>
+<span class="text-primary font-bold">Subnet Masked /0</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Drawer: Native terminal dig/drill inspection engine -->
+<section class="rounded-xl bg-surface-container-lowest/95 backdrop-blur-2xl shadow-2xl overflow-hidden shadow-surface-container-lowest">
+<div class="flex items-center justify-between px-space-md py-2 bg-surface-container-low/70">
+<div class="flex items-center gap-space-sm font-mono-sm text-mono-sm">
+<span class="material-symbols-outlined text-[16px] text-outline">terminal</span>
+<span class="text-on-surface font-semibold">dig / drill Protocol Telemetry Terminal</span>
+<span class="text-outline-variant">•</span>
+<span class="text-secondary">QUERY: 1, ANSWER: 2, AUTHORITY: 3, ADDITIONAL: 4</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<!-- Flags indicator -->
+<div class="flex items-center gap-1 font-mono-sm text-mono-sm text-on-surface-variant mr-2">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-primary font-bold">QR</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-primary font-bold">RD</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-primary font-bold">RA</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-secondary font-bold">AD (DNSSEC)</span>
+</div>
+<button class="flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high hover:bg-surface-variant text-on-surface font-mono-sm text-mono-sm transition-colors" id="copyDigBtn">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+<span>Copy Dig Command</span>
+</button>
+</div>
+</div>
+<!-- Terminal Code Buffer -->
+<div class="p-space-md font-mono-sm text-mono-sm text-on-surface-variant overflow-x-auto space-y-1 bg-surface-container-lowest leading-relaxed">
+<div class="text-outline">; &lt;&lt;&gt;&gt; DiG 9.10.6 &lt;&lt;&gt;&gt; +dnssec +multiline kernel.org @1.1.1.1</div>
+<div class="text-outline">;; global options: +cmd</div>
+<div class="text-on-surface">;; Got answer:</div>
+<div>;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: <span class="text-secondary font-semibold">NOERROR</span>, id: 48192</div>
+<div>;; flags: <span class="text-primary">qr rd ra ad</span>; QUERY: 1, ANSWER: 3, AUTHORITY: 0, ADDITIONAL: 1</div>
+<div class="mt-2 text-outline">;; OPT PSEUDOSECTION:</div>
+<div>; EDNS: version: 0, flags: do; udp: 1232</div>
+<div class="mt-2 text-outline">;; QUESTION SECTION:</div>
+<div>;kernel.org.			IN	A</div>
+<div class="mt-2 text-outline">;; ANSWER SECTION:</div>
+<div class="text-on-surface">kernel.org.		300	IN	A	<span class="text-primary font-bold">198.145.29.83</span></div>
+<div class="text-on-surface">kernel.org.		300	IN	A	<span class="text-primary font-bold">198.145.29.84</span></div>
+<div class="text-outline-variant">kernel.org.		300	IN	RRSIG	A 13 2 300 (</div>
+<div class="text-outline-variant pl-8">20250325120000 20250311110000 34512 kernel.org.</div>
+<div class="text-outline-variant pl-8">jEwH9B7wT348qUe8k7f2b1z9w+9b7w...== )</div>
+<div class="mt-2 text-outline">;; Query time: <span class="text-secondary font-bold">9 msec</span></div>
+<div>;; SERVER: 1.1.1.1#53(1.1.1.1) (DoH WireFormat)</div>
+<div>;; WHEN: Tue Mar 11 04:18:22 UTC 2025</div>
+<div>;; MSG SIZE  rcvd: 218</div>
+</div>
+</section>
+</div>
+<script>
+  // Filter toggle micro-interactions
+  const filterPills = document.querySelectorAll('.record-filter');
+  filterPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      filterPills.forEach(p => {
+        p.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+        p.classList.add('bg-surface-container-high/80', 'text-on-surface-variant');
+      });
+      pill.classList.remove('bg-surface-container-high/80', 'text-on-surface-variant');
+      pill.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+    });
+  });
+
+  // Query Execution simulation
+  const resolveBtn = document.getElementById('resolveBtn');
+  const domainInput = document.getElementById('domainInput');
+  const clearDomainBtn = document.getElementById('clearDomainBtn');
+
+  clearDomainBtn?.addEventListener('click', () => {
+    domainInput.value = '';
+    domainInput.focus();
+  });
+
+  resolveBtn?.addEventListener('click', () => {
+    const originalText = resolveBtn.innerHTML;
+    resolveBtn.disabled = true;
+    resolveBtn.innerHTML = `<span class="material-symbols-outlined text-[18px] animate-spin">progress_activity</span><span>Resolving...</span>`;
+    
+    setTimeout(() => {
+      resolveBtn.innerHTML = originalText;
+      resolveBtn.disabled = false;
+    }, 600);
+  });
+
+  // Hotkey Cmd+Enter or Enter
+  domainInput?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      resolveBtn?.click();
+    }
+  });
+
+  // Copy Dig Command Toast
+  const copyDigBtn = document.getElementById('copyDigBtn');
+  copyDigBtn?.addEventListener('click', () => {
+    const original = copyDigBtn.innerHTML;
+    navigator.clipboard.writeText(`dig +dnssec +multiline ${domainInput.value || 'kernel.org'} @1.1.1.1`);
+    copyDigBtn.innerHTML = `<span class="material-symbols-outlined text-[14px] text-secondary">check</span><span>Copied!</span>`;
+    setTimeout(() => {
+      copyDigBtn.innerHTML = original;
+    }, 1500);
+  });
+</script></main><footer class="fixed bottom-0 left-60 right-0 h-8 bg-surface-container-lowest/90 backdrop-blur-md z-40 px-margin-lg flex items-center justify-between font-mono-sm text-mono-sm text-on-surface-variant shadow-[0_-1px_6px_rgba(0,0,0,0.3)]"><div class="flex items-center gap-space-md"><span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Freed RAM: <span class="text-on-surface font-semibold">4.2 GB session</span></span><span class="text-outline-variant">|</span><span>Active Listeners: <span class="text-primary font-semibold">28 ports</span></span></div><div class="flex items-center gap-space-md"><span>Interface: <span class="text-on-surface font-semibold">en0 • Wi-Fi 6 (802.11ax)</span></span><span class="text-outline-variant">|</span><span class="text-secondary">Secure Sandbox Active</span></div></footer></div></body></html>

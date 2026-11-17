@@ -1,0 +1,89 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build .dmg (${{ matrix.label }})
+    runs-on: macos-14
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - label: apple-silicon
+            target: aarch64-apple-darwin
+          - label: intel
+            target: x86_64-apple-darwin
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Set up Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.target }}
+
+      - name: Cache Rust build
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+          key: ${{ matrix.target }}
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build app and dmg
+        run: npm run tauri build -- --target ${{ matrix.target }}
+
+      - name: Collect artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          cp src-tauri/target/${{ matrix.target }}/release/bundle/dmg/*.dmg out/ || true
+          cd src-tauri/target/${{ matrix.target }}/release/bundle/macos
+          for app in *.app; do ditto -c -k --sequesterRsrc --keepParent "$app" "../../../../../out/${app%.app}-${{ matrix.target }}.zip"; done
+          cd - >/dev/null
+          ls -lh out
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: shift-tools-${{ matrix.label }}
+          path: out/*
+          if-no-files-found: error
+
+  publish:
+    name: Attach to GitHub Release
+    needs: build
+    runs-on: macos-14
+    if: startsWith(github.ref, 'refs/tags/v')
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          TAG="${GITHUB_REF_NAME}"
+          gh release view "$TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1 \
+            || gh release create "$TAG" --repo "$GITHUB_REPOSITORY" --title "shift-tools $TAG" --generate-notes
+          while IFS= read -r -d '' file; do
+            echo "uploading $file"
+            gh release upload "$TAG" "$file" --clobber --repo "$GITHUB_REPOSITORY"
+          done < <(find artifacts -type f \( -name "*.dmg" -o -name "*.zip" \) -print0)

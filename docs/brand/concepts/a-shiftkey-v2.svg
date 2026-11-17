@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <title>shift-tools — concept A v2: shift key on a plinth</title>
+  <!-- Arrow with a flat apex and a plinth: reads as a key, not as an upload arrow. -->
+  <g fill="#000" transform="translate(0 -12)">
+    <path d="M120 40 h16 l72 72 v22 h-40 v56 h-80 v-56 h-40 v-22 z"/>
+    <rect x="52" y="202" width="152" height="38" rx="16"/>
+  </g>
+</svg>

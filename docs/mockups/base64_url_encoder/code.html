@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-surface-variant":"#c0c6d6","on-primary-fixed-variant":"#00468d","on-tertiary-fixed-variant":"#7200a3","secondary-container":"#09bf49","surface-dim":"#131319","surface-container-low":"#1b1b21","inverse-surface":"#e4e1ea","on-secondary":"#003910","secondary-fixed-dim":"#47e266","on-error-container":"#ffdad6","tertiary":"#e9b3ff","surface-container-highest":"#34343b","tertiary-fixed-dim":"#e9b3ff","secondary-fixed":"#6cff82","surface-container":"#1f1f25","secondary":"#47e266","inverse-on-surface":"#303036","error-container":"#93000a","surface-bright":"#39383f","primary-container":"#3e90ff","on-tertiary-container":"#460066","primary-fixed-dim":"#aac7ff","on-primary-container":"#002957","background":"#131319","on-secondary-container":"#004615","on-surface":"#e4e1ea","on-background":"#e4e1ea","on-primary":"#003064","on-primary-fixed":"#001b3e","error":"#ffb4ab","tertiary-container":"#c863fb","surface-tint":"#aac7ff","tertiary-fixed":"#f6d9ff","primary":"#aac7ff","on-secondary-fixed":"#002106","on-tertiary-fixed":"#310048","surface":"#131319","primary-fixed":"#d6e3ff","inverse-primary":"#005db8","surface-container-lowest":"#0e0e14","on-tertiary":"#510074","on-error":"#690005","outline-variant":"#414754","surface-variant":"#34343b","surface-container-high":"#2a2930","outline":"#8b91a0","on-secondary-fixed-variant":"#00531a"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"gutter-sm":"0.5rem",margin:"0.75rem","gutter-lg":"1rem","margin-sm":"0.5rem","space-xs":"0.25rem","margin-lg":"1.25rem","space-lg":"1rem","space-md":"0.75rem","space-xl":"1.5rem",gutter:"0.75rem","space-sm":"0.5rem"},fontFamily:{"label-md":["Inter"],"body-sm":["Inter"],"label-sm":["Inter"],"mono-md":["JetBrains Mono"],"headline-sm":["Inter"],"headline-lg":["Inter"],"mono-lg":["JetBrains Mono"],"headline-md":["Inter"],"body-lg":["Inter"],"body-md":["Inter"],"mono-sm":["JetBrains Mono"]},fontSize:{"label-md":["12px",{lineHeight:"16px",letterSpacing:"0em",fontWeight:"500"}],"body-sm":["11px",{lineHeight:"15px",letterSpacing:"0em",fontWeight:"400"}],"label-sm":["10px",{lineHeight:"12px",letterSpacing:"0.03em",fontWeight:"600"}],"mono-md":["12px",{lineHeight:"16px",letterSpacing:"-0.01em",fontWeight:"400"}],"headline-sm":["14px",{lineHeight:"18px",letterSpacing:"-0.008em",fontWeight:"600"}],"headline-lg":["22px",{lineHeight:"28px",letterSpacing:"-0.015em",fontWeight:"600"}],"mono-lg":["13px",{lineHeight:"18px",letterSpacing:"-0.01em",fontWeight:"500"}],"headline-md":["17px",{lineHeight:"22px",letterSpacing:"-0.012em",fontWeight:"600"}],"body-lg":["14px",{lineHeight:"20px",letterSpacing:"-0.004em",fontWeight:"400"}],"body-md":["13px",{lineHeight:"18px",letterSpacing:"-0.002em",fontWeight:"400"}],"mono-sm":["10px",{lineHeight:"13px",letterSpacing:"0.01em",fontWeight:"400"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface select-none antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-60 z-50 bg-surface-container-low/85 backdrop-blur-2xl flex flex-col justify-between shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"><div class="flex flex-col h-full"><div class="h-14 px-margin-lg flex items-center gap-space-sm bg-surface-container-lowest/40 backdrop-blur-md"><img alt="shift-tools App Icon" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UjvTrhC126AmYWPrT2Ix4EmaYPA1it__A83Hwtu4-Xq_WLFRBDxLXBze1IJuIEVwI0THW5kV8amVNmgClGHTHvfsSk9nyGI0qUiZvNqHxrNCRkXDZhymdSyJvngGRwG7rZt7GGrOewgsRsA6MLmrzvMwLD_-NEkOEqn_6fo6nbaDmzAlHsmKVUXNns4Sy6jTmNsvWmW9B-4Cm6xfTVFZe7GG-gqqmHIM5AuDne_GMyNg"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">shift-tools</span><span class="font-mono-sm text-mono-sm text-on-surface-variant leading-tight">macOS native v1.0.0</span></div></div><div class="flex-1 overflow-y-auto px-margin py-space-sm space-y-space-md"><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">DevOps &amp; System</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="process-killer" href="#">Process Killer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="quarantine-remover" href="#">Quarantine Remover</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="port-manager" href="#">Port Manager</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="disk-cleaner" href="#">Disk Cleaner</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ram-monitor" href="#">RAM Monitor</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Networks</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="network-observer" href="#">Network Observer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="wifi-mapper" href="#">WiFi Mapper</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="lan-scanner" href="#">LAN Scanner</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="dns-toolkit" href="#">DNS Toolkit</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="speed-test" href="#">Speed Test</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ping-traceroute" href="#">Ping / Traceroute</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Security &amp; Pentest</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="header-analyzer" href="#">Header Analyzer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ssl-inspector" href="#">SSL Inspector</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="subdomain-finder" href="#">Subdomain Finder</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="hash-generator" href="#">Hash Generator</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="password-auditor" href="#">Password Auditor</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Testing &amp; APIs</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="api-tester" href="#">API Tester</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="json-toolkit" href="#">JSON Toolkit</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="base64-url-encoder" href="#">Base64 / URL Encoder</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="regex-tester" href="#">Regex Tester</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Utilities</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="color-picker" href="#">Color Picker</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="text-diff" href="#">Text Diff</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="timestamp-converter" href="#">Timestamp Converter</a></nav></div><div class="p-margin m-margin bg-surface-container-lowest/60 rounded-xl space-y-space-xs shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Host Node</span><span class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-high text-primary">Apple M3 Max</span></div><div class="flex items-center justify-between font-mono-sm text-mono-sm text-on-surface-variant"><span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Rust Core</span><span class="text-secondary">0.8ms IPC</span></div></div></div></aside><div class="pl-60 flex flex-col min-h-screen"><header class="fixed top-0 left-60 right-0 h-14 bg-surface-container-low/75 backdrop-blur-2xl z-40 px-margin-lg flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.25)]"><div class="flex items-center gap-space-md"><div class="flex items-center gap-2 pl-1"><span class="w-3 h-3 rounded-full bg-[#ff5f56] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span><span class="w-3 h-3 rounded-full bg-[#ffbd2e] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span><span class="w-3 h-3 rounded-full bg-[#27c93f] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span></div><div class="flex items-center gap-space-xs font-mono-sm text-mono-sm text-on-surface-variant pl-space-sm"><span class="text-on-surface font-semibold">shift-tools</span><span>/</span><span class="text-outline">v1.0.0 (Rust Core)</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm px-space-md py-1 rounded-lg bg-surface-container-lowest/80 text-on-surface-variant font-body-sm text-body-sm shadow-[inset_0_1px_2px_rgba(0,0,0,0.6)]"><span class="material-symbols-outlined text-[16px] text-outline">search</span><span class="text-on-surface-variant pr-space-lg">Quick dispatch...</span><kbd class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface">⌘K</kbd></div><div class="flex items-center gap-space-sm px-space-md py-1 rounded-full bg-surface-container-lowest/50 font-mono-sm text-mono-sm text-on-surface-variant"><span class="text-on-surface">RAM <span class="text-primary">14.2 / 32 GB</span></span><span class="text-outline-variant">•</span><span class="text-on-surface">CPU <span class="text-secondary">8%</span></span><span class="text-outline-variant">•</span><span class="text-on-surface">Svcs <span class="text-tertiary">6 active</span></span></div><div class="flex items-center gap-space-sm"><button class="w-7 h-7 flex items-center justify-center rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[18px]">settings</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 pt-14 pb-8 w-full px-gutter-lg bg-background"><div class="flex flex-col w-full space-y-space-md">
+<!-- Top App Tool Header & Badges -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm bg-surface-container-low/70 backdrop-blur-xl p-space-md rounded-xl shadow-sm">
+<div class="flex flex-col space-y-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Base64 / URL &amp; JWT Toolkit</h1>
+<div class="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-secondary/15 text-secondary font-mono-sm text-mono-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+<span>Rust base64 0.22 engine</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-mono-sm text-mono-sm">RFC 4648 / RFC 7519</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-mono-sm text-mono-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-secondary">verified_user</span> Offline &amp; Zero Leak
+        </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Instant cryptographic transform, URL escaping, and telemetry-backed JWT token analysis running locally in zero-allocation Rust runtime.</p>
+</div>
+<!-- Quick Utilities -->
+<div class="flex items-center gap-space-xs flex-wrap">
+<button class="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" id="btn-detect">
+<span class="material-symbols-outlined text-[15px] text-primary">magic_button</span> Auto-Detect
+      </button>
+<button class="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" id="btn-swap">
+<span class="material-symbols-outlined text-[15px] text-tertiary">swap_horiz</span> Swap
+      </button>
+<button class="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" id="btn-clear">
+<span class="material-symbols-outlined text-[15px] text-outline">backspace</span> Clear
+      </button>
+<button class="flex items-center gap-1 px-3 py-1 rounded-lg bg-primary-container text-on-primary-container hover:bg-primary-container/90 transition-all font-headline-sm text-headline-sm shadow-sm" id="btn-copy">
+<span class="material-symbols-outlined text-[15px]">content_copy</span> Copy Result
+      </button>
+</div>
+</div>
+<!-- Segmented Navigation Modes & Options Strip -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-sm items-center">
+<!-- Mode Segments -->
+<div class="xl:col-span-6 flex items-center p-1 rounded-xl bg-surface-container-lowest/80 backdrop-blur-md shadow-inner space-x-1">
+<button class="tab-btn flex-1 py-1.5 px-3 rounded-lg text-center font-headline-sm text-headline-sm transition-all bg-primary-container text-on-primary-container shadow-sm" data-mode="base64">
+        Base64 / Text
+      </button>
+<button class="tab-btn flex-1 py-1.5 px-3 rounded-lg text-center font-headline-sm text-headline-sm transition-all text-on-surface-variant hover:text-on-surface hover:bg-surface-container" data-mode="url">
+        URL / URI Component
+      </button>
+<button class="tab-btn flex-1 py-1.5 px-3 rounded-lg text-center font-headline-sm text-headline-sm transition-all text-on-surface-variant hover:text-on-surface hover:bg-surface-container" data-mode="jwt">
+        JWT Inspector
+      </button>
+<button class="tab-btn flex-1 py-1.5 px-3 rounded-lg text-center font-headline-sm text-headline-sm transition-all text-on-surface-variant hover:text-on-surface hover:bg-surface-container" data-mode="hex">
+        Entities / Hex
+      </button>
+</div>
+<!-- Parameter Config Bar -->
+<div class="xl:col-span-6 flex items-center justify-between xl:justify-end gap-space-sm flex-wrap bg-surface-container-low/50 backdrop-blur-md px-space-md py-1.5 rounded-xl">
+<!-- Variant Select -->
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Variant:</span>
+<select class="bg-surface-container-lowest text-on-surface font-mono-sm text-mono-sm px-2 py-1 rounded-lg focus:outline-none focus:bg-surface-container-high transition-colors" id="variant-select">
+<option value="standard">RFC 4648 (Standard '+/')</option>
+<option value="urlsafe">URL-Safe ('_-' No pad)</option>
+<option value="mime">MIME Wrap (76-col CRLF)</option>
+</select>
+</div>
+<!-- Charset Select -->
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Charset:</span>
+<select class="bg-surface-container-lowest text-on-surface font-mono-sm text-mono-sm px-2 py-1 rounded-lg focus:outline-none focus:bg-surface-container-high transition-colors" id="charset-select">
+<option value="utf-8">UTF-8</option>
+<option value="ascii">ASCII</option>
+<option value="latin1">ISO-8859-1 (Latin1)</option>
+<option value="hex">Raw Hex Streams</option>
+</select>
+</div>
+<!-- Fast Toggles -->
+<div class="flex items-center gap-space-sm">
+<label class="flex items-center gap-1.5 cursor-pointer font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface">
+<input checked="" class="accent-primary rounded" id="chk-live" type="checkbox"/>
+<span>Live</span>
+</label>
+<label class="flex items-center gap-1.5 cursor-pointer font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface">
+<input checked="" class="accent-primary rounded" id="chk-json" type="checkbox"/>
+<span>Auto-JSON</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Primary Workspace: Split Dual Buffer Panels + Action Spine -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-sm items-stretch">
+<!-- Left: Input Buffer Pane -->
+<div class="lg:col-span-5 flex flex-col bg-surface-container-low/70 backdrop-blur-xl rounded-xl p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Input Buffer</span>
+<span class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-high text-primary" id="detected-format">Plain UTF-8</span>
+</div>
+<div class="flex items-center gap-space-xs font-mono-sm text-mono-sm text-on-surface-variant">
+<span id="input-bytes">1,024 bytes</span>
+<span class="text-outline-variant">•</span>
+<span id="input-lines">12 lines</span>
+</div>
+</div>
+<!-- Droppable Monospace Canvas -->
+<div class="relative flex-1 min-h-[310px] rounded-lg bg-surface-container-lowest/90 overflow-hidden flex flex-col shadow-inner">
+<div class="flex items-center justify-between px-space-sm py-1 bg-surface-container-lowest/60 font-mono-sm text-mono-sm text-outline border-none">
+<div class="flex items-center gap-2">
+<span>Buffer #1</span>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface-variant">STDIN</span>
+</div>
+<button class="text-primary hover:underline font-mono-sm text-mono-sm" id="btn-load-sample">Load JWT Sample</button>
+</div>
+<div class="flex-1 flex overflow-hidden">
+<!-- Line Numbers -->
+<div class="w-8 py-2 px-1 select-none font-mono-sm text-mono-sm text-outline/50 text-right space-y-0.5 bg-surface-container-lowest/30" id="line-gutter">
+<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div>
+</div>
+<textarea class="flex-1 p-2 bg-transparent resize-none font-mono-md text-mono-md text-on-surface focus:outline-none leading-[18px]" id="raw-input" placeholder="Type, paste string payload, Base64 hash, URL string or drag &amp; drop payload file..." spellcheck="false"></textarea>
+</div>
+<!-- Drag & Drop Overlay Zone -->
+<div class="p-2 bg-surface-container/50 flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-outline">upload_file</span>
+<span>Drag file directly into buffer or paste raw clipboard</span>
+</div>
+<button class="font-mono-sm text-mono-sm px-2 py-0.5 rounded bg-surface-container-high hover:bg-surface-bright text-on-surface transition-colors" id="btn-file-select">Browse File</button>
+</div>
+</div>
+</div>
+<!-- Center: Operational Spine Hub -->
+<div class="lg:col-span-2 flex lg:flex-col items-center justify-center gap-space-xs py-space-sm flex-wrap">
+<button class="w-full py-1.5 px-3 rounded-lg bg-primary-container text-on-primary-container hover:bg-primary/80 transition-all font-headline-sm text-headline-sm flex items-center justify-center gap-1.5 shadow-sm" id="op-encode">
+<span>Encode</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+<button class="w-full py-1.5 px-3 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-all font-headline-sm text-headline-sm flex items-center justify-center gap-1.5 shadow-sm" id="op-decode">
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+<span>Decode</span>
+</button>
+<div class="w-full my-1 flex items-center justify-center">
+<span class="w-12 h-px bg-surface-container-highest"></span>
+</div>
+<button class="w-full py-1 px-2.5 rounded-lg bg-surface-container-high/60 hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm flex items-center justify-center gap-1 transition-colors" id="op-beautify">
+<span class="material-symbols-outlined text-[14px] text-tertiary">data_object</span> Beautify JSON
+      </button>
+<button class="w-full py-1 px-2.5 rounded-lg bg-surface-container-high/60 hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm flex items-center justify-center gap-1 transition-colors" id="op-urlencode">
+<span class="material-symbols-outlined text-[14px] text-primary">link</span> URL Escape
+      </button>
+<button class="w-full py-1 px-2.5 rounded-lg bg-surface-container-high/60 hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm flex items-center justify-center gap-1 transition-colors" id="op-urldecode">
+<span class="material-symbols-outlined text-[14px] text-secondary">link_off</span> URL Unescape
+      </button>
+<button class="w-full py-1 px-2.5 rounded-lg bg-surface-container-high/60 hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm flex items-center justify-center gap-1 transition-colors" id="op-escape">
+<span class="material-symbols-outlined text-[14px] text-outline">format_quote</span> Escape \ "
+      </button>
+<button class="w-full py-1 px-2.5 rounded-lg bg-surface-container-high/60 hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm flex items-center justify-center gap-1 transition-colors" id="op-hexdump">
+<span class="material-symbols-outlined text-[14px] text-tertiary">memory</span> To Hex Dump
+      </button>
+</div>
+<!-- Right: Output Buffer Pane -->
+<div class="lg:col-span-5 flex flex-col bg-surface-container-low/70 backdrop-blur-xl rounded-xl p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Transformed Output</span>
+<span class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-high text-secondary" id="output-mode-badge">Base64 Encoded</span>
+</div>
+<div class="flex items-center gap-space-xs font-mono-sm text-mono-sm text-on-surface-variant">
+<span id="output-chars">0 chars</span>
+<span class="text-outline-variant">•</span>
+<span class="text-secondary">Ready</span>
+</div>
+</div>
+<!-- Syntax/Monospace Result Buffer -->
+<div class="relative flex-1 min-h-[310px] rounded-lg bg-surface-container-lowest/90 overflow-hidden flex flex-col shadow-inner">
+<div class="flex items-center justify-between px-space-sm py-1 bg-surface-container-lowest/60 font-mono-sm text-mono-sm text-outline">
+<div class="flex items-center gap-2">
+<span>STDOUT</span>
+<span class="text-outline-variant">/</span>
+<span class="text-secondary font-mono-sm text-mono-sm">Zero Alloc</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="hidden text-secondary font-mono-sm text-mono-sm" id="toast-msg">Copied to clipboard!</span>
+<button class="text-on-surface-variant hover:text-on-surface flex items-center gap-0.5" id="btn-export-file">
+<span class="material-symbols-outlined text-[13px]">download</span> Export .txt
+            </button>
+</div>
+</div>
+<div class="flex-1 flex overflow-hidden">
+<textarea class="flex-1 p-2 bg-transparent resize-none font-mono-md text-mono-md text-secondary-fixed focus:outline-none leading-[18px]" id="raw-output" placeholder="Transformed results render instantly here..." readonly="" spellcheck="false"></textarea>
+</div>
+<div class="p-2 bg-surface-container/50 flex items-center justify-between font-mono-sm text-mono-sm text-on-surface-variant">
+<span>MD5: <span class="text-on-surface" id="hash-md5">d41d8cd98f00b204e9800998ecf8427e</span></span>
+<span class="text-outline">SHA256: <span class="text-primary" id="hash-sha">e3b0c44298fc...</span></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Dedicated Deep Inspector: RFC 7519 JSON Web Token (JWT) Analyzer -->
+<div class="flex flex-col bg-surface-container-low/75 backdrop-blur-2xl rounded-xl p-space-md shadow-md space-y-space-md" id="jwt-inspector-section">
+<div class="flex items-center justify-between border-none">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded-lg bg-tertiary-container/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px] text-tertiary">token</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-md text-headline-md text-on-surface">JWT Deep Inspector &amp; Signature Validator</h2>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/20 text-secondary font-mono-sm text-mono-sm flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Valid Structure
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">RFC 7519 specification parse with real-time claims audit, timestamp expiration math &amp; key verification.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm font-mono-sm text-mono-sm">
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface-container-lowest">
+<span class="w-2.5 h-2.5 rounded-full bg-error"></span> Header
+          <span class="w-2.5 h-2.5 rounded-full bg-tertiary ml-2"></span> Payload
+          <span class="w-2.5 h-2.5 rounded-full bg-primary ml-2"></span> Signature
+        </div>
+</div>
+</div>
+<!-- Tri-Part Dissection Bento Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-sm">
+<!-- Part 1: Header (Red / Pink) -->
+<div class="lg:col-span-4 flex flex-col bg-surface-container-lowest/80 rounded-xl p-space-md space-y-space-xs shadow-inner">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-error flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">tune</span> Part 1 • Jose Header
+          </span>
+<span class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-error-container/40 text-error">RS256</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low font-mono-md text-mono-md text-error leading-relaxed overflow-x-auto">
+<pre>{
+  <span class="text-on-surface-variant">"alg"</span>: <span class="text-error">"RS256"</span>,
+  <span class="text-on-surface-variant">"typ"</span>: <span class="text-error">"JWT"</span>,
+  <span class="text-on-surface-variant">"kid"</span>: <span class="text-error">"shift-auth-key-01"</span>
+}</pre>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant pt-1">
+          Cryptographic algorithm declared: <strong class="text-on-surface">RS256</strong> (RSA PKCS#1 v1.5 with SHA-256). Key ID bound to local vault.
+        </div>
+</div>
+<!-- Part 2: Payload Claims (Purple / Violet) -->
+<div class="lg:col-span-5 flex flex-col bg-surface-container-lowest/80 rounded-xl p-space-md space-y-space-xs shadow-inner">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">badge</span> Part 2 • Payload Claims
+          </span>
+<div class="flex items-center gap-1 font-mono-sm text-mono-sm text-secondary bg-secondary/10 px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[12px]">schedule</span> Expires in 42m
+          </div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low font-mono-md text-mono-md text-tertiary leading-relaxed overflow-x-auto max-h-[160px] overflow-y-auto">
+<pre>{
+  <span class="text-on-surface-variant">"iss"</span>: <span class="text-tertiary">"https://auth.shift-tools.internal"</span>,
+  <span class="text-on-surface-variant">"sub"</span>: <span class="text-tertiary">"usr_9f408ce8-769a-4f51-b952"</span>,
+  <span class="text-on-surface-variant">"exp"</span>: <span class="text-tertiary">1741802400</span>,
+  <span class="text-on-surface-variant">"iat"</span>: <span class="text-tertiary">1741798800</span>,
+  <span class="text-on-surface-variant">"scope"</span>: [
+    <span class="text-tertiary">"read:system"</span>,
+    <span class="text-tertiary">"write:network"</span>,
+    <span class="text-tertiary">"admin"</span>
+  ]
+}</pre>
+</div>
+<!-- Claims Decoder Strip -->
+<div class="grid grid-cols-2 gap-1.5 pt-1 text-on-surface-variant font-mono-sm text-mono-sm">
+<div class="bg-surface-container-low/60 p-1.5 rounded">
+<span class="text-outline">iss:</span> Shift Tools Identity
+          </div>
+<div class="bg-surface-container-low/60 p-1.5 rounded">
+<span class="text-outline">sub:</span> UID usr_9f40...
+          </div>
+<div class="bg-surface-container-low/60 p-1.5 rounded">
+<span class="text-outline">iat:</span> 2025-03-12 17:00:00
+          </div>
+<div class="bg-surface-container-low/60 p-1.5 rounded">
+<span class="text-outline">exp:</span> 2025-03-12 18:00:00
+          </div>
+</div>
+</div>
+<!-- Part 3: Cryptographic Signature & Verification (Cyan / Blue) -->
+<div class="lg:col-span-3 flex flex-col bg-surface-container-lowest/80 rounded-xl p-space-md space-y-space-xs shadow-inner">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">key</span> Part 3 • Signature
+          </span>
+<span class="font-mono-sm text-mono-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Verified
+          </span>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-low font-mono-sm text-mono-sm text-primary break-all leading-tight">
+          SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c...
+        </div>
+<div class="space-y-1 pt-1">
+<label class="font-label-sm text-label-sm text-outline uppercase">Public Key / Secret</label>
+<input class="w-full bg-surface-container-low px-2 py-1 rounded text-on-surface font-mono-sm text-mono-sm focus:outline-none" placeholder="Paste RSA / HMAC key" type="password" value="secret-production-shift-k4"/>
+</div>
+<button class="mt-auto w-full py-1 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-body-sm text-body-sm flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[14px]">lock_reset</span> Verify via OpenSSL
+        </button>
+</div>
+</div>
+<!-- Security Warnings / Best Practice Audits -->
+<div class="p-space-sm rounded-lg bg-surface-container-lowest/60 flex items-center justify-between flex-wrap gap-2">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary">security</span>
+<div class="flex items-center gap-space-sm font-body-sm text-body-sm">
+<span class="text-on-surface font-medium">Security Audits:</span>
+<span class="text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">check</span> No "alg: none" bypass
+          </span>
+<span class="text-outline-variant">•</span>
+<span class="text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">check</span> Expiry bounded (&lt; 2h)
+          </span>
+<span class="text-outline-variant">•</span>
+<span class="text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">check</span> Strong RSA bit-length (2048-bit)
+          </span>
+</div>
+</div>
+<div class="flex items-center gap-1 font-mono-sm text-mono-sm text-outline">
+<span>Engine: OpenSSL 3.3.0 + ring crate</span>
+</div>
+</div>
+</div>
+<!-- Telemetry Strip: Entropy, Throughput & Performance -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-sm">
+<div class="p-space-sm rounded-xl bg-surface-container-low/60 backdrop-blur-md flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">speed</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Execution Latency</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">0.12 ms</span>
+</div>
+</div>
+<span class="font-mono-sm text-mono-sm text-secondary">Rust Zero-Copy</span>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low/60 backdrop-blur-md flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary">compress</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Expansion Factor</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">133.3% (+33%)</span>
+</div>
+</div>
+<span class="font-mono-sm text-mono-sm text-tertiary">4:3 Ratio</span>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low/60 backdrop-blur-md flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">grain</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Shannon Entropy</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">7.98 bits/byte</span>
+</div>
+</div>
+<span class="font-mono-sm text-mono-sm text-secondary">High Randomness</span>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low/60 backdrop-blur-md flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-outline">shield</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Memory Sandbox</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Heap Isolated</span>
+</div>
+</div>
+<span class="font-mono-sm text-mono-sm text-outline">Safe Rust Core</span>
+</div>
+</div>
+</div>
+<script>
+  (function () {
+    const inputArea = document.getElementById('raw-input');
+    const outputArea = document.getElementById('raw-output');
+    const inputBytes = document.getElementById('input-bytes');
+    const inputLines = document.getElementById('input-lines');
+    const outputChars = document.getElementById('output-chars');
+    const detectedFormat = document.getElementById('detected-format');
+    const outputModeBadge = document.getElementById('output-mode-badge');
+    const toastMsg = document.getElementById('toast-msg');
+    const hashMd5 = document.getElementById('hash-md5');
+    const hashSha = document.getElementById('hash-sha');
+
+    const sampleJWT = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InNoaWZ0LWF1dGgta2V5LTAxIn0.eyJpc3MiOiJodHRwczovL2F1dGguc2hpZnQtdG9vbHMuaW50ZXJuYWwiLCJzdWIiOiJ1c3JfOWY0MDhjZTgtNzY5YS00ZjUxLWI5NTIiLCJleHAiOjE3NDE4MDI0MDAsImlhdCI6MTc0MTc5ODgwMCwic2NvcGUiOlsicmVhZDpzeXN0ZW0iLCJ3cml0ZTpuZXR3b3JrIiwiYWRtaW4iXX0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
+
+    function updateStats() {
+      const val = inputArea.value || "";
+      const enc = new TextEncoder();
+      const bytes = enc.encode(val).length;
+      const lines = val.length ? val.split('\n').length : 0;
+      inputBytes.textContent = bytes.toLocaleString() + " bytes";
+      inputLines.textContent = lines + " lines";
+
+      const outVal = outputArea.value || "";
+      outputChars.textContent = outVal.length.toLocaleString() + " chars";
+
+      // Detect mode signature
+      if (val.startsWith("eyJ") && val.includes(".")) {
+        detectedFormat.textContent = "JWT Token Detected";
+        detectedFormat.className = "font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-tertiary-container/30 text-tertiary";
+      } else if (/^[A-Za-z0-9+/=]+$/.test(val.trim()) && val.trim().length > 8 && val.trim().length % 4 === 0) {
+        detectedFormat.textContent = "Base64 Detected";
+        detectedFormat.className = "font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-primary-container/30 text-primary";
+      } else if (val.includes("%20") || val.includes("%3A") || val.includes("%2F")) {
+        detectedFormat.textContent = "URL-Encoded";
+        detectedFormat.className = "font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-secondary-container/30 text-secondary";
+      } else {
+        detectedFormat.textContent = "Plain UTF-8";
+        detectedFormat.className = "font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-high text-primary";
+      }
+
+      // Simulated fast hash preview
+      if (outVal.length > 0) {
+        hashMd5.textContent = "a3f5" + Math.abs(hashCode(outVal)).toString(16).padEnd(28, "e");
+        hashSha.textContent = "8f3b" + Math.abs(hashCode(outVal + "salt")).toString(16).padEnd(8, "0") + "...";
+      } else {
+        hashMd5.textContent = "d41d8cd98f00b204e9800998ecf8427e";
+        hashSha.textContent = "e3b0c44298fc...";
+      }
+    }
+
+    function hashCode(str) {
+      let hash = 0;
+      for (let i = 0; i < str.length; i++) {
+        hash = ((hash << 5) - hash) + str.charCodeAt(i);
+        hash |= 0;
+      }
+      return hash;
+    }
+
+    // Encoding Operations
+    function executeEncode() {
+      try {
+        const text = inputArea.value;
+        const b64 = btoa(unescape(encodeURIComponent(text)));
+        outputArea.value = b64;
+        outputModeBadge.textContent = "Base64 Encoded";
+        updateStats();
+      } catch (err) {
+        outputArea.value = "[Encoding Error: String contains characters outside the standard byte range]";
+      }
+    }
+
+    function executeDecode() {
+      try {
+        const text = inputArea.value.trim();
+        const decoded = decodeURIComponent(escape(atob(text)));
+        outputArea.value = decoded;
+        outputModeBadge.textContent = "Base64 Decoded";
+        updateStats();
+      } catch (err) {
+        outputArea.value = "[Decoding Error: Malformed Base64 payload or improper padding]";
+      }
+    }
+
+    // Bind event listeners
+    document.getElementById('op-encode').addEventListener('click', executeEncode);
+    document.getElementById('op-decode').addEventListener('click', executeDecode);
+
+    document.getElementById('op-beautify').addEventListener('click', () => {
+      try {
+        const parsed = JSON.parse(inputArea.value);
+        outputArea.value = JSON.stringify(parsed, null, 2);
+        outputModeBadge.textContent = "Beautified JSON";
+        updateStats();
+      } catch (e) {
+        outputArea.value = "[JSON Syntax Error: Invalid JSON document structure]";
+      }
+    });
+
+    document.getElementById('op-urlencode').addEventListener('click', () => {
+      outputArea.value = encodeURIComponent(inputArea.value);
+      outputModeBadge.textContent = "URI Component Escaped";
+      updateStats();
+    });
+
+    document.getElementById('op-urldecode').addEventListener('click', () => {
+      try {
+        outputArea.value = decodeURIComponent(inputArea.value);
+        outputModeBadge.textContent = "URI Component Unescaped";
+        updateStats();
+      } catch (e) {
+        outputArea.value = "[URI Error: Malformed percent-encoding]";
+      }
+    });
+
+    document.getElementById('op-escape').addEventListener('click', () => {
+      outputArea.value = JSON.stringify(inputArea.value).slice(1, -1);
+      outputModeBadge.textContent = "Escaped Strings";
+      updateStats();
+    });
+
+    document.getElementById('op-hexdump').addEventListener('click', () => {
+      const val = inputArea.value;
+      let hex = "";
+      for (let i = 0; i < val.length; i++) {
+        hex += val.charCodeAt(i).toString(16).padStart(2, "0") + " ";
+        if ((i + 1) % 16 === 0) hex += "\n";
+      }
+      outputArea.value = hex.trim();
+      outputModeBadge.textContent = "Hex Stream Dump";
+      updateStats();
+    });
+
+    // Auto Detect button
+    document.getElementById('btn-detect').addEventListener('click', () => {
+      const val = inputArea.value.trim();
+      if (val.startsWith("eyJ")) {
+        // Is JWT
+        const parts = val.split(".");
+        if (parts.length >= 2) {
+          try {
+            const h = JSON.parse(atob(parts[0]));
+            const p = JSON.parse(atob(parts[1]));
+            outputArea.value = "// HEADER\n" + JSON.stringify(h, null, 2) + "\n\n// PAYLOAD CLAIMS\n" + JSON.stringify(p, null, 2);
+            outputModeBadge.textContent = "Parsed JWT Claims";
+          } catch (e) {
+            executeDecode();
+          }
+        }
+      } else if (val.includes("%") || val.includes("http")) {
+        try {
+          outputArea.value = decodeURIComponent(val);
+          outputModeBadge.textContent = "URL Decoded";
+        } catch(e) {
+          executeEncode();
+        }
+      } else {
+        executeEncode();
+      }
+      updateStats();
+    });
+
+    // Swap
+    document.getElementById('btn-swap').addEventListener('click', () => {
+      const temp = inputArea.value;
+      inputArea.value = outputArea.value;
+      outputArea.value = temp;
+      updateStats();
+    });
+
+    // Clear
+    document.getElementById('btn-clear').addEventListener('click', () => {
+      inputArea.value = "";
+      outputArea.value = "";
+      updateStats();
+    });
+
+    // Copy Result
+    document.getElementById('btn-copy').addEventListener('click', () => {
+      navigator.clipboard.writeText(outputArea.value);
+      toastMsg.classList.remove('hidden');
+      setTimeout(() => toastMsg.classList.add('hidden'), 2000);
+    });
+
+    // Load Sample JWT
+    document.getElementById('btn-load-sample').addEventListener('click', () => {
+      inputArea.value = sampleJWT;
+      document.getElementById('btn-detect').click();
+    });
+
+    // Live typing
+    inputArea.addEventListener('input', () => {
+      updateStats();
+      if (document.getElementById('chk-live').checked && inputArea.value.length > 0) {
+        executeEncode();
+      }
+    });
+
+    // Tab switcher styles
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        document.querySelectorAll('.tab-btn').forEach(b => {
+          b.className = "tab-btn flex-1 py-1.5 px-3 rounded-lg text-center font-headline-sm text-headline-sm transition-all text-on-surface-variant hover:text-on-surface hover:bg-surface-container";
+        });
+        btn.className = "tab-btn flex-1 py-1.5 px-3 rounded-lg text-center font-headline-sm text-headline-sm transition-all bg-primary-container text-on-primary-container shadow-sm";
+        const mode = btn.getAttribute('data-mode');
+        if (mode === 'jwt') {
+          document.getElementById('jwt-inspector-section').scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Initialize with a preset sample
+    inputArea.value = "Shift-Tools Native Engine v1.0.0 (Rust 2024 Edition)";
+    executeEncode();
+  })();
+</script></main><footer class="fixed bottom-0 left-60 right-0 h-8 bg-surface-container-lowest/90 backdrop-blur-md z-40 px-margin-lg flex items-center justify-between font-mono-sm text-mono-sm text-on-surface-variant shadow-[0_-1px_6px_rgba(0,0,0,0.3)]"><div class="flex items-center gap-space-md"><span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Freed RAM: <span class="text-on-surface font-semibold">4.2 GB session</span></span><span class="text-outline-variant">|</span><span>Active Listeners: <span class="text-primary font-semibold">28 ports</span></span></div><div class="flex items-center gap-space-md"><span>Interface: <span class="text-on-surface font-semibold">en0 • Wi-Fi 6 (802.11ax)</span></span><span class="text-outline-variant">|</span><span class="text-secondary">Secure Sandbox Active</span></div></footer></div></body></html>

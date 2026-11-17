@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-surface-variant":"#c0c6d6","on-primary-fixed-variant":"#00468d","on-tertiary-fixed-variant":"#7200a3","secondary-container":"#09bf49","surface-dim":"#131319","surface-container-low":"#1b1b21","inverse-surface":"#e4e1ea","on-secondary":"#003910","secondary-fixed-dim":"#47e266","on-error-container":"#ffdad6","tertiary":"#e9b3ff","surface-container-highest":"#34343b","tertiary-fixed-dim":"#e9b3ff","secondary-fixed":"#6cff82","surface-container":"#1f1f25","secondary":"#47e266","inverse-on-surface":"#303036","error-container":"#93000a","surface-bright":"#39383f","primary-container":"#3e90ff","on-tertiary-container":"#460066","primary-fixed-dim":"#aac7ff","on-primary-container":"#002957","background":"#131319","on-secondary-container":"#004615","on-surface":"#e4e1ea","on-background":"#e4e1ea","on-primary":"#003064","on-primary-fixed":"#001b3e","error":"#ffb4ab","tertiary-container":"#c863fb","surface-tint":"#aac7ff","tertiary-fixed":"#f6d9ff","primary":"#aac7ff","on-secondary-fixed":"#002106","on-tertiary-fixed":"#310048","surface":"#131319","primary-fixed":"#d6e3ff","inverse-primary":"#005db8","surface-container-lowest":"#0e0e14","on-tertiary":"#510074","on-error":"#690005","outline-variant":"#414754","surface-variant":"#34343b","surface-container-high":"#2a2930","outline":"#8b91a0","on-secondary-fixed-variant":"#00531a"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"gutter-sm":"0.5rem",margin:"0.75rem","gutter-lg":"1rem","margin-sm":"0.5rem","space-xs":"0.25rem","margin-lg":"1.25rem","space-lg":"1rem","space-md":"0.75rem","space-xl":"1.5rem",gutter:"0.75rem","space-sm":"0.5rem"},fontFamily:{"label-md":["Inter"],"body-sm":["Inter"],"label-sm":["Inter"],"mono-md":["JetBrains Mono"],"headline-sm":["Inter"],"headline-lg":["Inter"],"mono-lg":["JetBrains Mono"],"headline-md":["Inter"],"body-lg":["Inter"],"body-md":["Inter"],"mono-sm":["JetBrains Mono"]},fontSize:{"label-md":["12px",{lineHeight:"16px",letterSpacing:"0em",fontWeight:"500"}],"body-sm":["11px",{lineHeight:"15px",letterSpacing:"0em",fontWeight:"400"}],"label-sm":["10px",{lineHeight:"12px",letterSpacing:"0.03em",fontWeight:"600"}],"mono-md":["12px",{lineHeight:"16px",letterSpacing:"-0.01em",fontWeight:"400"}],"headline-sm":["14px",{lineHeight:"18px",letterSpacing:"-0.008em",fontWeight:"600"}],"headline-lg":["22px",{lineHeight:"28px",letterSpacing:"-0.015em",fontWeight:"600"}],"mono-lg":["13px",{lineHeight:"18px",letterSpacing:"-0.01em",fontWeight:"500"}],"headline-md":["17px",{lineHeight:"22px",letterSpacing:"-0.012em",fontWeight:"600"}],"body-lg":["14px",{lineHeight:"20px",letterSpacing:"-0.004em",fontWeight:"400"}],"body-md":["13px",{lineHeight:"18px",letterSpacing:"-0.002em",fontWeight:"400"}],"mono-sm":["10px",{lineHeight:"13px",letterSpacing:"0.01em",fontWeight:"400"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface select-none antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-60 z-50 bg-surface-container-low/85 backdrop-blur-2xl flex flex-col justify-between shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"><div class="flex flex-col h-full"><div class="h-14 px-margin-lg flex items-center gap-space-sm bg-surface-container-lowest/40 backdrop-blur-md"><img alt="shift-tools App Icon" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UjvTrhC126AmYWPrT2Ix4EmaYPA1it__A83Hwtu4-Xq_WLFRBDxLXBze1IJuIEVwI0THW5kV8amVNmgClGHTHvfsSk9nyGI0qUiZvNqHxrNCRkXDZhymdSyJvngGRwG7rZt7GGrOewgsRsA6MLmrzvMwLD_-NEkOEqn_6fo6nbaDmzAlHsmKVUXNns4Sy6jTmNsvWmW9B-4Cm6xfTVFZe7GG-gqqmHIM5AuDne_GMyNg"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">shift-tools</span><span class="font-mono-sm text-mono-sm text-on-surface-variant leading-tight">macOS native v1.0.0</span></div></div><div class="flex-1 overflow-y-auto px-margin py-space-sm space-y-space-md"><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">DevOps &amp; System</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="process-killer" href="#">Process Killer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="quarantine-remover" href="#">Quarantine Remover</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="port-manager" href="#">Port Manager</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="disk-cleaner" href="#">Disk Cleaner</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ram-monitor" href="#">RAM Monitor</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Networks</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="network-observer" href="#">Network Observer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="wifi-mapper" href="#">WiFi Mapper</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="lan-scanner" href="#">LAN Scanner</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="dns-toolkit" href="#">DNS Toolkit</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="speed-test" href="#">Speed Test</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ping-traceroute" href="#">Ping / Traceroute</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Security &amp; Pentest</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="header-analyzer" href="#">Header Analyzer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ssl-inspector" href="#">SSL Inspector</a><a aria-current="page" class="flex items-center px-space-sm py-1.5 rounded-lg transition-colors bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]" data-path="subdomain-finder" href="#">Subdomain Finder</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="hash-generator" href="#">Hash Generator</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="password-auditor" href="#">Password Auditor</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Testing &amp; APIs</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="api-tester" href="#">API Tester</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="json-toolkit" href="#">JSON Toolkit</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="cron-validator" href="#">Cron Validator</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="uuid-generator" href="#">UUID Generator</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="base64-url-encoder" href="#">Base64 / URL Encoder</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="regex-tester" href="#">Regex Tester</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Utilities</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="color-picker" href="#">Color Picker</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="text-diff" href="#">Text Diff</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="timestamp-converter" href="#">Timestamp Converter</a></nav></div><div class="p-margin m-margin bg-surface-container-lowest/60 rounded-xl space-y-space-xs shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Host Node</span><span class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-high text-primary">Apple M3 Max</span></div><div class="flex items-center justify-between font-mono-sm text-mono-sm text-on-surface-variant"><span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Rust Core</span><span class="text-secondary">0.8ms IPC</span></div></div></div></aside><div class="pl-60 flex flex-col min-h-screen"><header class="fixed top-0 left-60 right-0 h-14 bg-surface-container-low/75 backdrop-blur-2xl z-40 px-margin-lg flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.25)]"><div class="flex items-center gap-space-md"><div class="flex items-center gap-2 pl-1"><span class="w-3 h-3 rounded-full bg-[#ff5f56] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span><span class="w-3 h-3 rounded-full bg-[#ffbd2e] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span><span class="w-3 h-3 rounded-full bg-[#27c93f] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span></div><div class="flex items-center gap-space-xs font-mono-sm text-mono-sm text-on-surface-variant pl-space-sm"><span class="text-on-surface font-semibold">shift-tools</span><span>/</span><span class="text-outline">v1.0.0 (Rust Core)</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm px-space-md py-1 rounded-lg bg-surface-container-lowest/80 text-on-surface-variant font-body-sm text-body-sm shadow-[inset_0_1px_2px_rgba(0,0,0,0.6)]"><span class="material-symbols-outlined text-[16px] text-outline">search</span><span class="text-on-surface-variant pr-space-lg">Quick dispatch...</span><kbd class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface">⌘K</kbd></div><div class="flex items-center gap-space-sm px-space-md py-1 rounded-full bg-surface-container-lowest/50 font-mono-sm text-mono-sm text-on-surface-variant"><span class="text-on-surface">RAM <span class="text-primary">14.2 / 32 GB</span></span><span class="text-outline-variant">•</span><span class="text-on-surface">CPU <span class="text-secondary">8%</span></span><span class="text-outline-variant">•</span><span class="text-on-surface">Svcs <span class="text-tertiary">6 active</span></span></div><div class="flex items-center gap-space-sm"><button class="w-7 h-7 flex items-center justify-center rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[18px]">settings</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 pt-14 pb-8 w-full px-gutter-lg bg-background"><div class="flex flex-col w-full">
+<!-- Interactive State Container -->
+<div class="flex flex-col gap-space-lg w-full pb-16">
+<!-- Top Command & Tool Header Section -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md p-space-lg rounded-xl bg-surface-container-low shadow-sm">
+<div class="flex flex-col gap-space-xs">
+<div class="flex flex-wrap items-center gap-space-sm">
+<span class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Subdomain Finder</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container font-mono-sm text-mono-sm text-primary">trust-dns-resolver + crt.sh + tokio</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high font-label-sm text-label-sm text-secondary">Active Recon / CT Logs</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+          High-performance asynchronous multi-source reconnaissance engine combining Certificate Transparency stream processing, low-latency DNS brute-forcing, and zero-allocation HTTP health probing.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="h-8 px-3 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-outline">file_upload</span>
+<span>Wordlist (.txt)</span>
+</button>
+<button class="h-8 px-3 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-outline">file_download</span>
+<span>Export (JSON/CSV)</span>
+</button>
+<button class="h-8 px-4 rounded-lg bg-primary text-on-primary font-headline-sm text-headline-sm transition-transform active:scale-95 flex items-center gap-1.5 shadow-md" id="btn-recon">
+<span class="material-symbols-outlined text-[16px]">rocket_launch</span>
+<span id="recon-label">Start Deep Enumeration</span>
+</button>
+</div>
+</div>
+<!-- Parameter Configuration Bar & Query Workspace -->
+<div class="p-space-lg rounded-xl bg-surface-container-low shadow-sm flex flex-col gap-space-md">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md items-center">
+<!-- Target Domain Input -->
+<div class="lg:col-span-6 flex items-center rounded-lg bg-surface-container-lowest px-3 py-1.5 shadow-sm">
+<span class="material-symbols-outlined text-outline text-[18px] mr-2">language</span>
+<span class="font-mono-md text-mono-md text-outline mr-1">https://</span>
+<input class="w-full bg-transparent font-mono-md text-mono-md text-on-surface focus:outline-none placeholder-outline" id="target-domain" placeholder="example.com" type="text" value="stripe.com"/>
+<button class="ml-2 px-2 py-0.5 rounded bg-surface-container-high text-primary hover:bg-surface-variant font-mono-sm text-mono-sm transition-colors shrink-0">
+            *.stripe.com
+          </button>
+</div>
+<!-- Concurrency & Rate Limit -->
+<div class="lg:col-span-3 flex items-center justify-between rounded-lg bg-surface-container-lowest px-3 py-1.5 shadow-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[16px]">speed</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Rate</span>
+</div>
+<span class="font-mono-md text-mono-md text-on-surface">500 req/sec</span>
+<span class="font-mono-sm text-mono-sm text-outline">burst 1.2k</span>
+</div>
+<!-- DNS Resolver Preset -->
+<div class="lg:col-span-3 flex items-center justify-between rounded-lg bg-surface-container-lowest px-3 py-1.5 shadow-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[16px]">dns</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">DoH Resolver</span>
+</div>
+<span class="font-mono-md text-mono-md text-on-surface truncate">1.1.1.1 (Cloudflare)</span>
+</div>
+</div>
+<!-- Engine Sources Matrix -->
+<div class="flex flex-wrap items-center justify-between pt-1 gap-space-sm">
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline mr-1">Passive &amp; Active Sources:</span>
+<label class="cursor-pointer flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-mono-sm text-mono-sm">
+<input checked="" class="accent-primary rounded" type="checkbox"/>
+<span class="text-primary font-semibold">crt.sh CT Log</span>
+<span class="text-[9px] px-1 rounded bg-surface-container-high text-secondary">LIVE</span>
+</label>
+<label class="cursor-pointer flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-mono-sm text-mono-sm">
+<input checked="" class="accent-primary rounded" type="checkbox"/>
+<span>DNS Brute (SecLists Top 5k)</span>
+</label>
+<label class="cursor-pointer flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-mono-sm text-mono-sm">
+<input checked="" class="accent-primary rounded" type="checkbox"/>
+<span>AlienVault OTX</span>
+</label>
+<label class="cursor-pointer flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-mono-sm text-mono-sm">
+<input checked="" class="accent-primary rounded" type="checkbox"/>
+<span>HackerTarget API</span>
+</label>
+<label class="cursor-pointer flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-mono-sm text-mono-sm">
+<input class="accent-primary rounded" type="checkbox"/>
+<span>Shodan Recon</span>
+</label>
+</div>
+<div class="flex items-center gap-2 font-mono-sm text-mono-sm text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-secondary inline-block animate-pulse"></span>
+<span>Async Tokio worker pool ready</span>
+</div>
+</div>
+</div>
+<!-- Live Telemetry Stat Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Metric 1: Total Discovered -->
+<div class="p-space-lg rounded-xl bg-surface-container-low shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Subdomains Found</span>
+<span class="flex items-center gap-1 font-mono-sm text-mono-sm text-secondary bg-surface-container px-1.5 py-0.5 rounded">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            +18 new
+          </span>
+</div>
+<div class="mt-space-md flex items-baseline justify-between">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">184</span>
+<span class="font-mono-sm text-mono-sm text-outline">Entropy: 4.88 bit</span>
+</div>
+<!-- Inline Telemetry SVG -->
+<div class="w-full mt-space-sm h-6">
+<svg class="w-full h-full text-primary" preserveaspectratio="none" viewbox="0 0 100 24">
+<path d="M0,20 L15,18 L30,12 L45,15 L60,8 L75,10 L90,2 L100,0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<!-- Metric 2: Live Hosts -->
+<div class="p-space-lg rounded-xl bg-surface-container-low shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Active Hosts</span>
+<span class="font-mono-sm text-mono-sm text-primary bg-surface-container px-1.5 py-0.5 rounded">88% Alive</span>
+</div>
+<div class="mt-space-md flex items-baseline justify-between">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-lg text-headline-lg text-secondary font-bold tracking-tight">162</span>
+<span class="font-mono-md text-mono-md text-outline">/ 184</span>
+</div>
+<span class="font-mono-sm text-mono-sm text-on-surface-variant">HTTPS 94.2%</span>
+</div>
+<!-- Micro sparkline for HTTP response codes -->
+<div class="w-full mt-space-sm flex gap-1 h-2">
+<div class="bg-secondary h-full rounded" style="width: 76%"></div>
+<div class="bg-primary h-full rounded" style="width: 12%"></div>
+<div class="bg-tertiary h-full rounded" style="width: 8%"></div>
+<div class="bg-error h-full rounded" style="width: 4%"></div>
+</div>
+</div>
+<!-- Metric 3: Infrastructure Footprint -->
+<div class="p-space-lg rounded-xl bg-surface-container-low shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Cloud &amp; IP Spread</span>
+<span class="font-mono-sm text-mono-sm text-tertiary bg-surface-container px-1.5 py-0.5 rounded">4 CDNs</span>
+</div>
+<div class="mt-space-md flex items-baseline justify-between">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">48 v4 <span class="font-headline-sm text-headline-sm text-outline">/ 12 v6</span></span>
+<span class="font-mono-sm text-mono-sm text-primary">AS13335, AS16509</span>
+</div>
+<div class="w-full mt-space-sm flex justify-between font-mono-sm text-mono-sm text-outline">
+<span>Cloudflare 62%</span>
+<span>AWS 28%</span>
+<span>Fastly 10%</span>
+</div>
+</div>
+<!-- Metric 4: Subdomain Takeover Analysis -->
+<div class="p-space-lg rounded-xl bg-surface-container-low shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Takeover Risk</span>
+<span class="font-mono-sm text-mono-sm text-secondary bg-surface-container px-1.5 py-0.5 rounded">Audited</span>
+</div>
+<div class="mt-space-md flex items-baseline justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[22px]">verified_user</span>
+<span class="font-headline-lg text-headline-lg text-secondary font-bold tracking-tight">0 Vulnerable</span>
+</div>
+<span class="font-mono-sm text-mono-sm text-secondary">Secured</span>
+</div>
+<div class="w-full mt-space-sm font-mono-sm text-mono-sm text-on-surface-variant truncate">
+          No dangling CNAME or orphaned buckets detected
+        </div>
+</div>
+</div>
+<!-- Main Workspace: Data Grid & Detail Drawer -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Primary Data Grid (7 Cols on desktop) -->
+<div class="lg:col-span-8 flex flex-col rounded-xl bg-surface-container-low shadow-sm overflow-hidden">
+<!-- Table Controls & Quick Filter Toolbar -->
+<div class="p-space-md flex flex-wrap items-center justify-between gap-space-sm bg-surface-container">
+<div class="flex items-center gap-2 flex-1 min-w-[200px]">
+<div class="flex items-center w-full max-w-sm rounded-lg bg-surface-container-lowest px-2.5 py-1">
+<span class="material-symbols-outlined text-[16px] text-outline mr-1.5">search</span>
+<input class="w-full bg-transparent font-mono-sm text-mono-sm text-on-surface focus:outline-none placeholder-outline" id="grid-search" placeholder="Filter subdomain, IP, or title..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-1.5 flex-wrap font-mono-sm text-mono-sm">
+<button class="px-2 py-1 rounded bg-surface-container-high text-on-surface hover:bg-surface-variant">All (184)</button>
+<button class="px-2 py-1 rounded bg-surface-container-lowest text-secondary hover:bg-surface-container-high">200 OK (141)</button>
+<button class="px-2 py-1 rounded bg-surface-container-lowest text-tertiary hover:bg-surface-container-high">403 (16)</button>
+<button class="px-2 py-1 rounded bg-surface-container-lowest text-primary hover:bg-surface-container-high">301 (12)</button>
+<button class="px-2 py-1 rounded bg-surface-container-lowest text-outline hover:bg-surface-container-high">Ports: 443, 80</button>
+</div>
+</div>
+<!-- Native Density Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left font-mono-sm text-mono-sm">
+<thead>
+<tr class="bg-surface-container-lowest text-outline uppercase font-label-sm text-label-sm">
+<th class="py-2 px-3 w-8">
+<input class="accent-primary rounded" type="checkbox"/>
+</th>
+<th class="py-2 px-3">Subdomain</th>
+<th class="py-2 px-3">Resolved IP &amp; ASN</th>
+<th class="py-2 px-3">HTTP State</th>
+<th class="py-2 px-3">Source</th>
+<th class="py-2 px-3">TLS Certificate</th>
+<th class="py-2 px-3 text-right">Inspect</th>
+</tr>
+</thead>
+<tbody class="text-on-surface" id="table-rows">
+<!-- Row 1: Active selection -->
+<tr class="hover:bg-surface-container cursor-pointer transition-colors bg-surface-container/60" onclick="selectHost('api.stripe.com', '104.18.2.112', '200 OK', 'DigiCert Global Root G2', '142 days', 'Cloudflare (AS13335)')">
+<td class="py-2 px-3">
+<input checked="" class="accent-primary rounded" type="checkbox"/>
+</td>
+<td class="py-2 px-3 font-semibold text-primary flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  api.stripe.com
+                </td>
+<td class="py-2 px-3 text-on-surface-variant">
+<div>104.18.2.112</div>
+<div class="text-outline text-[9px]">AS13335 (Cloudflare)</div>
+</td>
+<td class="py-2 px-3">
+<span class="px-1.5 py-0.5 rounded bg-surface-container font-mono-sm text-secondary">200 OK</span>
+<span class="text-outline block text-[9px] truncate max-w-[120px]">Stripe API Engine</span>
+</td>
+<td class="py-2 px-3">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-primary">crt.sh</span>
+</td>
+<td class="py-2 px-3 text-on-surface-variant">
+<span>DigiCert</span>
+<span class="text-secondary block text-[9px]">142d valid</span>
+</td>
+<td class="py-2 px-3 text-right">
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container cursor-pointer transition-colors" onclick="selectHost('dashboard.stripe.com', '104.18.3.112', '200 OK', 'DigiCert SHA2 High Assurance', '88 days', 'Cloudflare (AS13335)')">
+<td class="py-2 px-3">
+<input class="accent-primary rounded" type="checkbox"/>
+</td>
+<td class="py-2 px-3 font-semibold text-on-surface flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  dashboard.stripe.com
+                </td>
+<td class="py-2 px-3 text-on-surface-variant">
+<div>104.18.3.112</div>
+<div class="text-outline text-[9px]">AS13335 (Cloudflare)</div>
+</td>
+<td class="py-2 px-3">
+<span class="px-1.5 py-0.5 rounded bg-surface-container font-mono-sm text-secondary">200 OK</span>
+<span class="text-outline block text-[9px] truncate max-w-[120px]">Stripe Dashboard</span>
+</td>
+<td class="py-2 px-3">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant">DNS Brute</span>
+</td>
+<td class="py-2 px-3 text-on-surface-variant">
+<span>DigiCert</span>
+<span class="text-secondary block text-[9px]">88d valid</span>
+</td>
+<td class="py-2 px-3 text-right">
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container cursor-pointer transition-colors" onclick="selectHost('hooks.stripe.com', '54.240.168.10', '200 OK', 'Amazon RSA 2048 M02', '210 days', 'AWS CloudFront (AS16509)')">
+<td class="py-2 px-3">
+<input class="accent-primary rounded" type="checkbox"/>
+</td>
+<td class="py-2 px-3 font-semibold text-on-surface flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  hooks.stripe.com
+                </td>
+<td class="py-2 px-3 text-on-surface-variant">
+<div>54.240.168.10</div>
+<div class="text-outline text-[9px]">AS16509 (AWS Route53)</div>
+</td>
+<td class="py-2 px-3">
+<span class="px-1.5 py-0.5 rounded bg-surface-container font-mono-sm text-secondary">200 OK</span>
+<span class="text-outline block text-[9px] truncate max-w-[120px]">Stripe Webhook Hub</span>
+</td>
+<td class="py-2 px-3">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-primary">crt.sh</span>
+</td>
+<td class="py-2 px-3 text-on-surface-variant">
+<span>Amazon TLS</span>
+<span class="text-secondary block text-[9px]">210d valid</span>
+</td>
+<td class="py-2 px-3 text-right">
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container cursor-pointer transition-colors" onclick="selectHost('vpn.stripe.com', '198.51.100.44', '403 Forbidden', 'DigiCert TLS RSA', '31 days', 'Internal Edge Router')">
+<td class="py-2 px-3">
+<input class="accent-primary rounded" type="checkbox"/>
+</td>
+<td class="py-2 px-3 font-semibold text-tertiary flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                  vpn.stripe.com
+                </td>
+<td class="py-2 px-3 text-on-surface-variant">
+<div>198.51.100.44</div>
+<div class="text-outline text-[9px]">AS3945 (Direct Link)</div>
+</td>
+<td class="py-2 px-3">
+<span class="px-1.5 py-0.5 rounded bg-surface-container font-mono-sm text-tertiary">403 Blocked</span>
+<span class="text-outline block text-[9px] truncate max-w-[120px]">AnyConnect Gateway</span>
+</td>
+<td class="py-2 px-3">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-tertiary">AlienVault</span>
+</td>
+<td class="py-2 px-3 text-on-surface-variant">
+<span>DigiCert</span>
+<span class="text-primary block text-[9px]">31d renewal</span>
+</td>
+<td class="py-2 px-3 text-right">
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container cursor-pointer transition-colors" onclick="selectHost('staging.stripe.internal', '10.24.19.4', 'Timed Out', 'Self-Signed Root', '0 days', 'Private VPC Subnet')">
+<td class="py-2 px-3">
+<input class="accent-primary rounded" type="checkbox"/>
+</td>
+<td class="py-2 px-3 font-semibold text-outline flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                  staging.stripe.internal
+                </td>
+<td class="py-2 px-3 text-on-surface-variant">
+<div>10.24.19.4 (RFC1918)</div>
+<div class="text-outline text-[9px]">VPC Internal Mesh</div>
+</td>
+<td class="py-2 px-3">
+<span class="px-1.5 py-0.5 rounded bg-surface-container font-mono-sm text-outline">Timeout</span>
+<span class="text-outline block text-[9px] truncate max-w-[120px]">No route to host</span>
+</td>
+<td class="py-2 px-3">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-outline">DNS AXFR</span>
+</td>
+<td class="py-2 px-3 text-on-surface-variant">
+<span>Unresolved</span>
+<span class="text-error block text-[9px]">Non-routable</span>
+</td>
+<td class="py-2 px-3 text-right">
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="hover:bg-surface-container cursor-pointer transition-colors" onclick="selectHost('docs.stripe.com', '151.101.65.140', '200 OK', 'Fastly Global TLS', '194 days', 'Fastly CDN (AS54113)')">
+<td class="py-2 px-3">
+<input class="accent-primary rounded" type="checkbox"/>
+</td>
+<td class="py-2 px-3 font-semibold text-on-surface flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  docs.stripe.com
+                </td>
+<td class="py-2 px-3 text-on-surface-variant">
+<div>151.101.65.140</div>
+<div class="text-outline text-[9px]">AS54113 (Fastly)</div>
+</td>
+<td class="py-2 px-3">
+<span class="px-1.5 py-0.5 rounded bg-surface-container font-mono-sm text-secondary">200 OK</span>
+<span class="text-outline block text-[9px] truncate max-w-[120px]">Developer Docs</span>
+</td>
+<td class="py-2 px-3">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-primary">crt.sh</span>
+</td>
+<td class="py-2 px-3 text-on-surface-variant">
+<span>Let's Encrypt</span>
+<span class="text-secondary block text-[9px]">194d valid</span>
+</td>
+<td class="py-2 px-3 text-right">
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination & Selection Summary -->
+<div class="px-space-md py-2 flex items-center justify-between bg-surface-container-lowest font-mono-sm text-mono-sm text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span>Selected: <span class="text-primary font-semibold">1</span> / 184 records</span>
+<span class="text-outline-variant">•</span>
+<span class="text-secondary">All probes synchronized</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-2 py-0.5 rounded bg-surface-container text-on-surface disabled:opacity-40" disabled="">Prev</button>
+<span class="px-2 text-on-surface">Page 1 of 31</span>
+<button class="px-2 py-0.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface">Next</button>
+</div>
+</div>
+</div>
+<!-- Secondary Inspector / Host Detail Drawer (4 Cols on desktop) -->
+<div class="lg:col-span-4 flex flex-col gap-space-md rounded-xl bg-surface-container-low p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-2 bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">query_stats</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Host Telemetry</span>
+</div>
+<span class="px-2 py-0.5 rounded font-mono-sm text-mono-sm bg-surface-container text-secondary" id="inspect-status-badge">LIVE 200</span>
+</div>
+<!-- Host Header Info -->
+<div class="p-3 rounded-lg bg-surface-container-lowest flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline uppercase">Active Inspection Target</span>
+<span class="font-mono-lg text-mono-lg text-primary font-bold break-all" id="inspect-domain">api.stripe.com</span>
+<div class="flex items-center justify-between mt-1 pt-1 font-mono-sm text-mono-sm text-on-surface-variant">
+<span>Primary IPv4:</span>
+<span class="text-on-surface" id="inspect-ip">104.18.2.112</span>
+</div>
+<div class="flex items-center justify-between font-mono-sm text-mono-sm text-on-surface-variant">
+<span>Routing ASN:</span>
+<span class="text-on-surface" id="inspect-asn">Cloudflare (AS13335)</span>
+</div>
+</div>
+<!-- DNS Records Breakdown -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">DNS Resource Records</span>
+<span class="font-mono-sm text-mono-sm text-primary">TTL: 300s</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-lowest font-mono-sm text-mono-sm flex flex-col gap-1">
+<div class="flex items-start justify-between">
+<span class="text-secondary font-bold">A</span>
+<span class="text-on-surface text-right">104.18.2.112</span>
+</div>
+<div class="flex items-start justify-between">
+<span class="text-secondary font-bold">A</span>
+<span class="text-on-surface text-right">104.18.3.112</span>
+</div>
+<div class="flex items-start justify-between">
+<span class="text-primary font-bold">AAAA</span>
+<span class="text-on-surface text-right truncate max-w-[180px]">2606:4700::6812:270</span>
+</div>
+<div class="flex items-start justify-between">
+<span class="text-tertiary font-bold">CNAME</span>
+<span class="text-outline text-right">api.stripe.com.cdn.cloudflare.net</span>
+</div>
+</div>
+</div>
+<!-- Port Audit -->
+<div class="flex flex-col gap-1.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Exposed Service Ports</span>
+<div class="grid grid-cols-2 gap-2">
+<div class="p-2 rounded-lg bg-surface-container-lowest flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-mono-sm text-mono-sm text-on-surface">Port 443</span>
+</div>
+<span class="font-mono-sm text-mono-sm text-outline">HTTPS</span>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-lowest flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-mono-sm text-mono-sm text-on-surface">Port 80</span>
+</div>
+<span class="font-mono-sm text-mono-sm text-outline">HTTP 301</span>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-lowest flex items-center justify-between opacity-50">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="font-mono-sm text-mono-sm text-on-surface">Port 8080</span>
+</div>
+<span class="font-mono-sm text-mono-sm text-outline">Closed</span>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-lowest flex items-center justify-between opacity-50">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="font-mono-sm text-mono-sm text-on-surface">Port 8443</span>
+</div>
+<span class="font-mono-sm text-mono-sm text-outline">Closed</span>
+</div>
+</div>
+</div>
+<!-- SSL / TLS Fingerprint Preview -->
+<div class="flex flex-col gap-1.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">TLS Security Audit</span>
+<div class="p-2.5 rounded-lg bg-surface-container-lowest font-mono-sm text-mono-sm flex flex-col gap-1">
+<div class="flex justify-between">
+<span class="text-outline">Issuer:</span>
+<span class="text-on-surface font-semibold" id="inspect-issuer">DigiCert Global Root G2</span>
+</div>
+<div class="flex justify-between">
+<span class="text-outline">Protocol:</span>
+<span class="text-secondary">TLS 1.3 / QUIC HTTP/3</span>
+</div>
+<div class="flex justify-between">
+<span class="text-outline">Expires in:</span>
+<span class="text-primary" id="inspect-days">142 days remaining</span>
+</div>
+<div class="flex justify-between">
+<span class="text-outline">HSTS:</span>
+<span class="text-secondary font-bold">max-age=63072000; preload</span>
+</div>
+</div>
+</div>
+<!-- Cross-Tool Action Integrations -->
+<div class="flex flex-col gap-2 pt-2">
+<button class="h-8 rounded-lg bg-primary-container hover:bg-primary text-on-primary-container hover:text-on-primary font-headline-sm text-headline-sm transition-colors flex items-center justify-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">http</span>
+<span>Send Target to API Tester</span>
+</button>
+<button class="h-8 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-headline-sm text-headline-sm transition-colors flex items-center justify-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">security</span>
+<span>Inspect Security Headers</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Engine Diagnostics & Native Runtime Stats (Tauri 2 / Rust Tokio) -->
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-sm flex flex-wrap items-center justify-between gap-space-md font-mono-sm text-mono-sm text-on-surface-variant">
+<div class="flex items-center gap-space-md flex-wrap">
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-on-surface font-semibold">Tauri 2 Core:</span>
+<span>Scanned 5,420 permutations in 1.42s</span>
+</span>
+<span class="text-outline-variant">|</span>
+<span>Throughput: <span class="text-primary font-semibold">3,816 req/sec</span></span>
+<span class="text-outline-variant">|</span>
+<span>Memory Allocation: <span class="text-on-surface font-semibold">16.4 MB</span></span>
+</div>
+<div class="flex items-center gap-space-md">
+<span>Worker Threads: <span class="text-on-surface font-semibold">16 (M3 Max)</span></span>
+<span class="text-outline-variant">|</span>
+<span class="text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+          Rust IPC: 0.12ms
+        </span>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function selectHost(domain, ip, status, issuer, days, asn) {
+    const domainEl = document.getElementById('inspect-domain');
+    const ipEl = document.getElementById('inspect-ip');
+    const badgeEl = document.getElementById('inspect-status-badge');
+    const issuerEl = document.getElementById('inspect-issuer');
+    const daysEl = document.getElementById('inspect-days');
+    const asnEl = document.getElementById('inspect-asn');
+
+    if (domainEl) domainEl.textContent = domain;
+    if (ipEl) ipEl.textContent = ip;
+    if (badgeEl) badgeEl.textContent = status;
+    if (issuerEl) issuerEl.textContent = issuer;
+    if (daysEl) daysEl.textContent = days + ' remaining';
+    if (asnEl) asnEl.textContent = asn;
+  }
+
+  // Interactive Recon Execution Simulation
+  const reconBtn = document.getElementById('btn-recon');
+  const reconLabel = document.getElementById('recon-label');
+  let isScanning = false;
+
+  if (reconBtn && reconLabel) {
+    reconBtn.addEventListener('click', function() {
+      isScanning = !isScanning;
+      if (isScanning) {
+        reconBtn.classList.remove('bg-primary', 'text-on-primary');
+        reconBtn.classList.add('bg-error', 'text-on-error');
+        reconLabel.textContent = 'Halt Reconnaissance';
+      } else {
+        reconBtn.classList.remove('bg-error', 'text-on-error');
+        reconBtn.classList.add('bg-primary', 'text-on-primary');
+        reconLabel.textContent = 'Start Deep Enumeration';
+      }
+    });
+  }
+
+  // Quick Client Filter Filter Table Logic
+  const searchInput = document.getElementById('grid-search');
+  if (searchInput) {
+    searchInput.addEventListener('input', function(e) {
+      const term = e.target.value.toLowerCase();
+      const rows = document.querySelectorAll('#table-rows tr');
+      rows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        row.style.display = text.includes(term) ? '' : 'none';
+      });
+    });
+  }
+</script></main><footer class="fixed bottom-0 left-60 right-0 h-8 bg-surface-container-lowest/90 backdrop-blur-md z-40 px-margin-lg flex items-center justify-between font-mono-sm text-mono-sm text-on-surface-variant shadow-[0_-1px_6px_rgba(0,0,0,0.3)]"><div class="flex items-center gap-space-md"><span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Freed RAM: <span class="text-on-surface font-semibold">4.2 GB session</span></span><span class="text-outline-variant">|</span><span>Active Listeners: <span class="text-primary font-semibold">28 ports</span></span></div><div class="flex items-center gap-space-md"><span>Interface: <span class="text-on-surface font-semibold">en0 • Wi-Fi 6 (802.11ax)</span></span><span class="text-outline-variant">|</span><span class="text-secondary">Secure Sandbox Active</span></div></footer></div></body></html>

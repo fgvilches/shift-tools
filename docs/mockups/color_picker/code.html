@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-surface-variant":"#c0c6d6","on-primary-fixed-variant":"#00468d","on-tertiary-fixed-variant":"#7200a3","secondary-container":"#09bf49","surface-dim":"#131319","surface-container-low":"#1b1b21","inverse-surface":"#e4e1ea","on-secondary":"#003910","secondary-fixed-dim":"#47e266","on-error-container":"#ffdad6","tertiary":"#e9b3ff","surface-container-highest":"#34343b","tertiary-fixed-dim":"#e9b3ff","secondary-fixed":"#6cff82","surface-container":"#1f1f25","secondary":"#47e266","inverse-on-surface":"#303036","error-container":"#93000a","surface-bright":"#39383f","primary-container":"#3e90ff","on-tertiary-container":"#460066","primary-fixed-dim":"#aac7ff","on-primary-container":"#002957","background":"#131319","on-secondary-container":"#004615","on-surface":"#e4e1ea","on-background":"#e4e1ea","on-primary":"#003064","on-primary-fixed":"#001b3e","error":"#ffb4ab","tertiary-container":"#c863fb","surface-tint":"#aac7ff","tertiary-fixed":"#f6d9ff","primary":"#aac7ff","on-secondary-fixed":"#002106","on-tertiary-fixed":"#310048","surface":"#131319","primary-fixed":"#d6e3ff","inverse-primary":"#005db8","surface-container-lowest":"#0e0e14","on-tertiary":"#510074","on-error":"#690005","outline-variant":"#414754","surface-variant":"#34343b","surface-container-high":"#2a2930","outline":"#8b91a0","on-secondary-fixed-variant":"#00531a"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"gutter-sm":"0.5rem",margin:"0.75rem","gutter-lg":"1rem","margin-sm":"0.5rem","space-xs":"0.25rem","margin-lg":"1.25rem","space-lg":"1rem","space-md":"0.75rem","space-xl":"1.5rem",gutter:"0.75rem","space-sm":"0.5rem"},fontFamily:{"label-md":["Inter"],"body-sm":["Inter"],"label-sm":["Inter"],"mono-md":["JetBrains Mono"],"headline-sm":["Inter"],"headline-lg":["Inter"],"mono-lg":["JetBrains Mono"],"headline-md":["Inter"],"body-lg":["Inter"],"body-md":["Inter"],"mono-sm":["JetBrains Mono"]},fontSize:{"label-md":["12px",{lineHeight:"16px",letterSpacing:"0em",fontWeight:"500"}],"body-sm":["11px",{lineHeight:"15px",letterSpacing:"0em",fontWeight:"400"}],"label-sm":["10px",{lineHeight:"12px",letterSpacing:"0.03em",fontWeight:"600"}],"mono-md":["12px",{lineHeight:"16px",letterSpacing:"-0.01em",fontWeight:"400"}],"headline-sm":["14px",{lineHeight:"18px",letterSpacing:"-0.008em",fontWeight:"600"}],"headline-lg":["22px",{lineHeight:"28px",letterSpacing:"-0.015em",fontWeight:"600"}],"mono-lg":["13px",{lineHeight:"18px",letterSpacing:"-0.01em",fontWeight:"500"}],"headline-md":["17px",{lineHeight:"22px",letterSpacing:"-0.012em",fontWeight:"600"}],"body-lg":["14px",{lineHeight:"20px",letterSpacing:"-0.004em",fontWeight:"400"}],"body-md":["13px",{lineHeight:"18px",letterSpacing:"-0.002em",fontWeight:"400"}],"mono-sm":["10px",{lineHeight:"13px",letterSpacing:"0.01em",fontWeight:"400"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface select-none antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-60 z-50 bg-surface-container-low/85 backdrop-blur-2xl flex flex-col justify-between shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"><div class="flex flex-col h-full"><div class="h-14 px-margin-lg flex items-center gap-space-sm bg-surface-container-lowest/40 backdrop-blur-md"><img alt="shift-tools App Icon" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UjvTrhC126AmYWPrT2Ix4EmaYPA1it__A83Hwtu4-Xq_WLFRBDxLXBze1IJuIEVwI0THW5kV8amVNmgClGHTHvfsSk9nyGI0qUiZvNqHxrNCRkXDZhymdSyJvngGRwG7rZt7GGrOewgsRsA6MLmrzvMwLD_-NEkOEqn_6fo6nbaDmzAlHsmKVUXNns4Sy6jTmNsvWmW9B-4Cm6xfTVFZe7GG-gqqmHIM5AuDne_GMyNg"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">shift-tools</span><span class="font-mono-sm text-mono-sm text-on-surface-variant leading-tight">macOS native v1.0.0</span></div></div><div class="flex-1 overflow-y-auto px-margin py-space-sm space-y-space-md"><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">DevOps &amp; System</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="process-killer" href="#">Process Killer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="quarantine-remover" href="#">Quarantine Remover</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="port-manager" href="#">Port Manager</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="disk-cleaner" href="#">Disk Cleaner</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ram-monitor" href="#">RAM Monitor</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Networks</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="network-observer" href="#">Network Observer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="wifi-mapper" href="#">WiFi Mapper</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="lan-scanner" href="#">LAN Scanner</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="dns-toolkit" href="#">DNS Toolkit</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="speed-test" href="#">Speed Test</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ping-traceroute" href="#">Ping / Traceroute</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Security &amp; Pentest</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="header-analyzer" href="#">Header Analyzer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ssl-inspector" href="#">SSL Inspector</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="subdomain-finder" href="#">Subdomain Finder</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="hash-generator" href="#">Hash Generator</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="password-auditor" href="#">Password Auditor</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Testing &amp; APIs</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="api-tester" href="#">API Tester</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="json-toolkit" href="#">JSON Toolkit</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="cron-validator" href="#">Cron Validator</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="uuid-generator" href="#">UUID Generator</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="base64-url-encoder" href="#">Base64 / URL Encoder</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="regex-tester" href="#">Regex Tester</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Utilities</div><a aria-current="page" class="flex items-center px-space-sm py-1.5 rounded-lg transition-colors bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]" data-path="color-picker" href="#">Color Picker</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="text-diff" href="#">Text Diff</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="timestamp-converter" href="#">Timestamp Converter</a></nav></div><div class="p-margin m-margin bg-surface-container-lowest/60 rounded-xl space-y-space-xs shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Host Node</span><span class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-high text-primary">Apple M3 Max</span></div><div class="flex items-center justify-between font-mono-sm text-mono-sm text-on-surface-variant"><span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Rust Core</span><span class="text-secondary">0.8ms IPC</span></div></div></div></aside><div class="pl-60 flex flex-col min-h-screen"><header class="fixed top-0 left-60 right-0 h-14 bg-surface-container-low/75 backdrop-blur-2xl z-40 px-margin-lg flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.25)]"><div class="flex items-center gap-space-md"><div class="flex items-center gap-2 pl-1"><span class="w-3 h-3 rounded-full bg-[#ff5f56] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span><span class="w-3 h-3 rounded-full bg-[#ffbd2e] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span><span class="w-3 h-3 rounded-full bg-[#27c93f] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span></div><div class="flex items-center gap-space-xs font-mono-sm text-mono-sm text-on-surface-variant pl-space-sm"><span class="text-on-surface font-semibold">shift-tools</span><span>/</span><span class="text-outline">v1.0.0 (Rust Core)</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm px-space-md py-1 rounded-lg bg-surface-container-lowest/80 text-on-surface-variant font-body-sm text-body-sm shadow-[inset_0_1px_2px_rgba(0,0,0,0.6)]"><span class="material-symbols-outlined text-[16px] text-outline">search</span><span class="text-on-surface-variant pr-space-lg">Quick dispatch...</span><kbd class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface">⌘K</kbd></div><div class="flex items-center gap-space-sm px-space-md py-1 rounded-full bg-surface-container-lowest/50 font-mono-sm text-mono-sm text-on-surface-variant"><span class="text-on-surface">RAM <span class="text-primary">14.2 / 32 GB</span></span><span class="text-outline-variant">•</span><span class="text-on-surface">CPU <span class="text-secondary">8%</span></span><span class="text-outline-variant">•</span><span class="text-on-surface">Svcs <span class="text-tertiary">6 active</span></span></div><div class="flex items-center gap-space-sm"><button class="w-7 h-7 flex items-center justify-center rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[18px]">settings</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 pt-14 pb-8 w-full px-gutter-lg bg-background"><div class="flex flex-col w-full space-y-space-lg text-on-surface">
+<!-- Top Tool Header -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container/70 backdrop-blur-2xl p-space-lg shadow-xl shadow-surface-container-lowest/50">
+<div class="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-primary-container/10 blur-3xl pointer-events-none"></div>
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md relative z-10">
+<div class="space-y-space-xs max-w-2xl">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-headline-lg text-headline-lg tracking-tight text-on-surface">Color Picker &amp; Palette Studio</span>
+<span class="px-2 py-0.5 rounded-full font-mono-sm text-mono-sm bg-primary/10 text-primary">palette 0.7 + macOS NSColorSampler</span>
+<span class="px-2 py-0.5 rounded-full font-mono-sm text-mono-sm bg-secondary/10 text-secondary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+            Wide-Gamut Display P3
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Native macOS screen eyedropper, perceptual OKLCH color space manipulation, accessibility contrast verification, and exportable design token generator.
+        </p>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs">
+<button class="flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-primary-container text-on-primary-container hover:brightness-110 active:scale-95 transition-all shadow-md shadow-primary-container/20 font-headline-sm text-headline-sm" id="screen-picker-btn">
+<span class="material-symbols-outlined text-[18px]">colorize</span>
+<span>Pick Screen Color</span>
+<kbd class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-lowest/50 text-on-primary-container">⌥P</kbd>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-bright active:scale-95 transition-all font-body-md text-body-md">
+<span class="material-symbols-outlined text-[18px] text-outline">file_upload</span>
+<span>Import Palette</span>
+</button>
+<div class="relative group">
+<button class="flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-bright active:scale-95 transition-all font-body-md text-body-md" id="export-tokens-btn">
+<span class="material-symbols-outlined text-[18px] text-primary">code</span>
+<span>Export Tokens</span>
+<span class="material-symbols-outlined text-[16px] text-outline">arrow_drop_down</span>
+</button>
+<div class="hidden group-hover:block absolute right-0 top-full pt-1 z-50 min-w-[190px]">
+<div class="bg-surface-container-highest/95 backdrop-blur-xl rounded-lg p-space-xs shadow-xl shadow-surface-container-lowest/80 font-mono-sm text-mono-sm">
+<button class="w-full text-left px-2 py-1.5 rounded hover:bg-surface-bright text-on-surface flex items-center justify-between">
+<span>CSS Variables (:root)</span>
+<span class="material-symbols-outlined text-[14px] text-outline">content_copy</span>
+</button>
+<button class="w-full text-left px-2 py-1.5 rounded hover:bg-surface-bright text-on-surface flex items-center justify-between">
+<span>Tailwind 3 / 4 config</span>
+<span class="material-symbols-outlined text-[14px] text-outline">content_copy</span>
+</button>
+<button class="w-full text-left px-2 py-1.5 rounded hover:bg-surface-bright text-on-surface flex items-center justify-between">
+<span>SwiftUI Color Asset</span>
+<span class="material-symbols-outlined text-[14px] text-outline">content_copy</span>
+</button>
+<button class="w-full text-left px-2 py-1.5 rounded hover:bg-surface-bright text-on-surface flex items-center justify-between">
+<span>Android XML / Compose</span>
+<span class="material-symbols-outlined text-[14px] text-outline">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Grid: Active Color Inspector & Live Harmonies -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter-lg">
+<!-- Active Inspector (Left Col, 7 cols) -->
+<div class="xl:col-span-7 flex flex-col space-y-space-md">
+<!-- Split Visual Card -->
+<div class="rounded-xl bg-surface-container/70 backdrop-blur-2xl p-space-lg shadow-xl shadow-surface-container-lowest/40 flex flex-col md:flex-row gap-space-lg">
+<!-- Visual Swatch Stage -->
+<div class="md:w-5/12 flex flex-col space-y-space-sm">
+<div class="relative w-full aspect-square rounded-lg overflow-hidden shadow-inner flex flex-col justify-between p-space-md" id="main-swatch-box" style="background-color: #0A84FF;">
+<!-- Checkerboard background showing behind through opacity -->
+<div class="absolute inset-0 -z-10 opacity-30" style="background-image: linear-gradient(45deg, #2a2930 25%, transparent 25%), linear-gradient(-45deg, #2a2930 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #2a2930 75%), linear-gradient(-45deg, transparent 75%, #2a2930 75%); background-size: 16px 16px; background-position: 0 0, 0 8px, 8px -8px, -8px 0px;"></div>
+<div class="flex items-center justify-between text-white/90 drop-shadow">
+<span class="font-mono-sm text-mono-sm px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-md">P3: 100% Coverage</span>
+<span class="font-mono-sm text-mono-sm px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-md">α 1.00</span>
+</div>
+<div class="space-y-1">
+<div class="font-headline-md text-headline-md text-white drop-shadow-md font-bold tracking-tight" id="active-hex-label">#0A84FF</div>
+<div class="font-mono-sm text-mono-sm text-white/80 drop-shadow flex items-center gap-1.5">
+<span>Display P3 Vibrant</span>
+<span>•</span>
+<span>Primary Accent</span>
+</div>
+</div>
+</div>
+<!-- Color Control Sliders & Steppers -->
+<div class="p-space-xs rounded-lg bg-surface-container-lowest/60 space-y-space-xs font-mono-sm text-mono-sm">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span>Perceptual Lightness (L)</span>
+<span class="text-primary font-semibold" id="val-lightness">62.8%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-gradient-to-r from-black via-[#0a84ff] to-white relative flex items-center">
+<div class="w-3.5 h-3.5 rounded-full bg-on-surface shadow-md absolute" style="left: 62.8%;"></div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant pt-1">
+<span>Chroma Depth (C)</span>
+<span class="text-primary font-semibold" id="val-chroma">0.214</span>
+</div>
+<div class="w-full h-2 rounded-full bg-gradient-to-r from-[#596979] to-[#0a84ff] relative flex items-center">
+<div class="w-3.5 h-3.5 rounded-full bg-on-surface shadow-md absolute" style="left: 78%;"></div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant pt-1">
+<span>Hue Angle (H)</span>
+<span class="text-primary font-semibold" id="val-hue">254.1°</span>
+</div>
+<div class="w-full h-2 rounded-full bg-gradient-to-r from-rose-500 via-amber-500 via-emerald-500 via-cyan-500 via-blue-600 via-purple-600 to-rose-500 relative flex items-center">
+<div class="w-3.5 h-3.5 rounded-full bg-on-surface shadow-md absolute" style="left: 70.5%;"></div>
+</div>
+</div>
+</div>
+<!-- Copy Code Token Formats -->
+<div class="md:w-7/12 flex flex-col justify-between space-y-space-xs">
+<div class="flex items-center justify-between pb-1">
+<span class="font-headline-sm text-headline-sm text-on-surface">Target Encodings</span>
+<span class="font-mono-sm text-mono-sm text-outline">Click row to copy</span>
+</div>
+<div class="space-y-1.5 flex-1" id="token-format-rows">
+<!-- Row HEX -->
+<div class="group flex items-center justify-between p-2 rounded-lg bg-surface-container-lowest/70 hover:bg-surface-container-high transition-colors cursor-pointer" onclick="copyToken('#0A84FF', this)">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="w-16 font-label-sm text-label-sm uppercase text-outline">HEX</span>
+<span class="font-mono-md text-mono-md text-on-surface truncate">#0A84FF</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="font-mono-sm text-mono-sm text-outline group-hover:text-primary transition-colors opacity-0 group-hover:opacity-100">Copy</span>
+<span class="material-symbols-outlined text-[16px] text-outline group-hover:text-primary transition-colors">content_copy</span>
+</div>
+</div>
+<!-- Row RGB -->
+<div class="group flex items-center justify-between p-2 rounded-lg bg-surface-container-lowest/70 hover:bg-surface-container-high transition-colors cursor-pointer" onclick="copyToken('rgb(10, 132, 255)', this)">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="w-16 font-label-sm text-label-sm uppercase text-outline">RGB</span>
+<span class="font-mono-md text-mono-md text-on-surface truncate">rgb(10, 132, 255)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="font-mono-sm text-mono-sm text-outline group-hover:text-primary transition-colors opacity-0 group-hover:opacity-100">Copy</span>
+<span class="material-symbols-outlined text-[16px] text-outline group-hover:text-primary transition-colors">content_copy</span>
+</div>
+</div>
+<!-- Row HSL -->
+<div class="group flex items-center justify-between p-2 rounded-lg bg-surface-container-lowest/70 hover:bg-surface-container-high transition-colors cursor-pointer" onclick="copyToken('hsl(210, 100%, 52%)', this)">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="w-16 font-label-sm text-label-sm uppercase text-outline">HSL</span>
+<span class="font-mono-md text-mono-md text-on-surface truncate">hsl(210°, 100%, 52%)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="font-mono-sm text-mono-sm text-outline group-hover:text-primary transition-colors opacity-0 group-hover:opacity-100">Copy</span>
+<span class="material-symbols-outlined text-[16px] text-outline group-hover:text-primary transition-colors">content_copy</span>
+</div>
+</div>
+<!-- Row OKLCH -->
+<div class="group flex items-center justify-between p-2 rounded-lg bg-surface-container-lowest/70 hover:bg-surface-container-high transition-colors cursor-pointer" onclick="copyToken('oklch(62.8% 0.214 254.1)', this)">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="w-16 font-label-sm text-label-sm uppercase text-secondary">OKLCH</span>
+<span class="font-mono-md text-mono-md text-secondary truncate">oklch(62.8% 0.214 254.1)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="font-mono-sm text-mono-sm text-secondary group-hover:underline opacity-0 group-hover:opacity-100">Copy</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">content_copy</span>
+</div>
+</div>
+<!-- Row Swift / NSColor -->
+<div class="group flex items-center justify-between p-2 rounded-lg bg-surface-container-lowest/70 hover:bg-surface-container-high transition-colors cursor-pointer" onclick="copyToken('Color(red: 0.039, green: 0.518, blue: 1.0)', this)">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="w-16 font-label-sm text-label-sm uppercase text-outline">SwiftUI</span>
+<span class="font-mono-md text-mono-md text-on-surface truncate">Color(red: 0.039, green: 0.518, blue: 1.0)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="font-mono-sm text-mono-sm text-outline group-hover:text-primary transition-colors opacity-0 group-hover:opacity-100">Copy</span>
+<span class="material-symbols-outlined text-[16px] text-outline group-hover:text-primary transition-colors">content_copy</span>
+</div>
+</div>
+<!-- Row Tailwind Arbitrary -->
+<div class="group flex items-center justify-between p-2 rounded-lg bg-surface-container-lowest/70 hover:bg-surface-container-high transition-colors cursor-pointer" onclick="copyToken('bg-[#0a84ff]', this)">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="w-16 font-label-sm text-label-sm uppercase text-primary">Tailwind</span>
+<span class="font-mono-md text-mono-md text-primary truncate">bg-[#0a84ff]</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="font-mono-sm text-mono-sm text-primary group-hover:underline opacity-0 group-hover:opacity-100">Copy</span>
+<span class="material-symbols-outlined text-[16px] text-primary">content_copy</span>
+</div>
+</div>
+</div>
+<div class="pt-2 flex items-center justify-between text-on-surface-variant font-mono-sm text-mono-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified</span>
+              Rust Core gamut clamping active
+            </span>
+<span class="text-outline">Delta E: 0.012 (Imperceptible)</span>
+</div>
+</div>
+</div>
+<!-- OKLCH Perceptual Shade & Tint Ladder -->
+<div class="rounded-xl bg-surface-container/70 backdrop-blur-2xl p-space-lg shadow-xl shadow-surface-container-lowest/40 space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">Perceptual Shade &amp; Tint Ladder</span>
+<span class="px-2 py-0.5 rounded-full font-mono-sm text-mono-sm bg-surface-container-high text-outline">OKLCH Curves</span>
+</div>
+<span class="font-mono-sm text-mono-sm text-primary">11 Generative Stops</span>
+</div>
+<div class="grid grid-cols-11 gap-1.5" id="shade-ladder-container">
+<!-- 50 -->
+<div class="group flex flex-col items-center gap-1 cursor-pointer" onclick="setActiveColor('#eef7ff', 'oklch(96.5% 0.02 254.1)')">
+<div class="w-full h-14 rounded-lg transition-transform group-hover:scale-105 shadow-sm" style="background-color: #eef7ff;"></div>
+<span class="font-mono-sm text-mono-sm text-on-surface-variant group-hover:text-on-surface">50</span>
+</div>
+<!-- 100 -->
+<div class="group flex flex-col items-center gap-1 cursor-pointer" onclick="setActiveColor('#d9ecff', 'oklch(92.8% 0.05 254.1)')">
+<div class="w-full h-14 rounded-lg transition-transform group-hover:scale-105 shadow-sm" style="background-color: #d9ecff;"></div>
+<span class="font-mono-sm text-mono-sm text-on-surface-variant group-hover:text-on-surface">100</span>
+</div>
+<!-- 200 -->
+<div class="group flex flex-col items-center gap-1 cursor-pointer" onclick="setActiveColor('#b9dcff', 'oklch(87.4% 0.09 254.1)')">
+<div class="w-full h-14 rounded-lg transition-transform group-hover:scale-105 shadow-sm" style="background-color: #b9dcff;"></div>
+<span class="font-mono-sm text-mono-sm text-on-surface-variant group-hover:text-on-surface">200</span>
+</div>
+<!-- 300 -->
+<div class="group flex flex-col items-center gap-1 cursor-pointer" onclick="setActiveColor('#8ac3ff', 'oklch(80.2% 0.14 254.1)')">
+<div class="w-full h-14 rounded-lg transition-transform group-hover:scale-105 shadow-sm" style="background-color: #8ac3ff;"></div>
+<span class="font-mono-sm text-mono-sm text-on-surface-variant group-hover:text-on-surface">300</span>
+</div>
+<!-- 400 -->
+<div class="group flex flex-col items-center gap-1 cursor-pointer" onclick="setActiveColor('#4da3ff', 'oklch(71.9% 0.18 254.1)')">
+<div class="w-full h-14 rounded-lg transition-transform group-hover:scale-105 shadow-sm" style="background-color: #4da3ff;"></div>
+<span class="font-mono-sm text-mono-sm text-on-surface-variant group-hover:text-on-surface">400</span>
+</div>
+<!-- 500 (Base) -->
+<div class="group flex flex-col items-center gap-1 cursor-pointer relative" onclick="setActiveColor('#0a84ff', 'oklch(62.8% 0.214 254.1)')">
+<div class="w-full h-14 rounded-lg ring-2 ring-primary ring-offset-2 ring-offset-surface-container transition-transform group-hover:scale-105 shadow-md" style="background-color: #0a84ff;"></div>
+<span class="font-mono-sm text-mono-sm text-primary font-bold">500</span>
+</div>
+<!-- 600 -->
+<div class="group flex flex-col items-center gap-1 cursor-pointer" onclick="setActiveColor('#006fe6', 'oklch(53.6% 0.20 254.1)')">
+<div class="w-full h-14 rounded-lg transition-transform group-hover:scale-105 shadow-sm" style="background-color: #006fe6;"></div>
+<span class="font-mono-sm text-mono-sm text-on-surface-variant group-hover:text-on-surface">600</span>
+</div>
+<!-- 700 -->
+<div class="group flex flex-col items-center gap-1 cursor-pointer" onclick="setActiveColor('#0058b8', 'oklch(44.2% 0.17 254.1)')">
+<div class="w-full h-14 rounded-lg transition-transform group-hover:scale-105 shadow-sm" style="background-color: #0058b8;"></div>
+<span class="font-mono-sm text-mono-sm text-on-surface-variant group-hover:text-on-surface">700</span>
+</div>
+<!-- 800 -->
+<div class="group flex flex-col items-center gap-1 cursor-pointer" onclick="setActiveColor('#00428d', 'oklch(35.5% 0.14 254.1)')">
+<div class="w-full h-14 rounded-lg transition-transform group-hover:scale-105 shadow-sm" style="background-color: #00428d;"></div>
+<span class="font-mono-sm text-mono-sm text-on-surface-variant group-hover:text-on-surface">800</span>
+</div>
+<!-- 900 -->
+<div class="group flex flex-col items-center gap-1 cursor-pointer" onclick="setActiveColor('#002c63', 'oklch(26.1% 0.11 254.1)')">
+<div class="w-full h-14 rounded-lg transition-transform group-hover:scale-105 shadow-sm" style="background-color: #002c63;"></div>
+<span class="font-mono-sm text-mono-sm text-on-surface-variant group-hover:text-on-surface">900</span>
+</div>
+<!-- 950 -->
+<div class="group flex flex-col items-center gap-1 cursor-pointer" onclick="setActiveColor('#001b40', 'oklch(18.2% 0.08 254.1)')">
+<div class="w-full h-14 rounded-lg transition-transform group-hover:scale-105 shadow-sm" style="background-color: #001b40;"></div>
+<span class="font-mono-sm text-mono-sm text-on-surface-variant group-hover:text-on-surface">950</span>
+</div>
+</div>
+</div>
+<!-- Color Harmonies Engine -->
+<div class="rounded-xl bg-surface-container/70 backdrop-blur-2xl p-space-lg shadow-xl shadow-surface-container-lowest/40 space-y-space-md">
+<div class="flex flex-wrap items-center justify-between gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">Harmonic Palette Generators</span>
+<div class="flex items-center gap-1 p-1 rounded-lg bg-surface-container-lowest/80 font-mono-sm text-mono-sm">
+<button class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-medium shadow-sm">Triadic</button>
+<button class="px-2.5 py-1 rounded hover:bg-surface-container-high text-on-surface-variant transition-colors">Complementary</button>
+<button class="px-2.5 py-1 rounded hover:bg-surface-container-high text-on-surface-variant transition-colors">Analogous</button>
+<button class="px-2.5 py-1 rounded hover:bg-surface-container-high text-on-surface-variant transition-colors">Tetradic</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-gutter">
+<!-- Complementary 1 -->
+<div class="p-space-md rounded-lg bg-surface-container-lowest/60 space-y-space-sm group cursor-pointer hover:bg-surface-container-lowest/90 transition-colors" onclick="setActiveColor('#FF850A', 'oklch(71.2% 0.201 54.3)')">
+<div class="h-20 rounded-md shadow-sm transition-transform group-hover:scale-102" style="background-color: #FF850A;"></div>
+<div class="flex items-center justify-between">
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface">Warm Amber</div>
+<div class="font-mono-sm text-mono-sm text-outline">+120° Triad A</div>
+</div>
+<span class="font-mono-sm text-mono-sm text-on-surface font-semibold">#FF850A</span>
+</div>
+</div>
+<!-- Complementary 2 -->
+<div class="p-space-md rounded-lg bg-surface-container-lowest/60 space-y-space-sm group cursor-pointer hover:bg-surface-container-lowest/90 transition-colors" onclick="setActiveColor('#0AFF84', 'oklch(85.4% 0.231 146.8)')">
+<div class="h-20 rounded-md shadow-sm transition-transform group-hover:scale-102" style="background-color: #0AFF84;"></div>
+<div class="flex items-center justify-between">
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface">Neon Spring</div>
+<div class="font-mono-sm text-mono-sm text-outline">+240° Triad B</div>
+</div>
+<span class="font-mono-sm text-mono-sm text-on-surface font-semibold">#0AFF84</span>
+</div>
+</div>
+<!-- Complementary 3 -->
+<div class="p-space-md rounded-lg bg-surface-container-lowest/60 space-y-space-sm group cursor-pointer hover:bg-surface-container-lowest/90 transition-colors" onclick="setActiveColor('#840AFF', 'oklch(54.1% 0.283 298.5)')">
+<div class="h-20 rounded-md shadow-sm transition-transform group-hover:scale-102" style="background-color: #840AFF;"></div>
+<div class="flex items-center justify-between">
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface">Hyper Violet</div>
+<div class="font-mono-sm text-mono-sm text-outline">+180° Direct Opp</div>
+</div>
+<span class="font-mono-sm text-mono-sm text-on-surface font-semibold">#840AFF</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Accessibility, Simulation & Saved Palettes (Right Col, 5 cols) -->
+<div class="xl:col-span-5 flex flex-col space-y-space-md">
+<!-- Accessibility & Contrast Matrix (WCAG 2.2 / APCA) -->
+<div class="rounded-xl bg-surface-container/70 backdrop-blur-2xl p-space-lg shadow-xl shadow-surface-container-lowest/40 space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">Accessibility &amp; Contrast Matrix</span>
+<span class="px-2 py-0.5 rounded-full font-mono-sm text-mono-sm bg-secondary/10 text-secondary">WCAG 2.2</span>
+</div>
+<span class="font-mono-sm text-mono-sm text-outline">APCA Lc 68.4</span>
+</div>
+<!-- Scores Grid -->
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Light Background Check -->
+<div class="p-space-md rounded-lg bg-surface-container-lowest/70 space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase text-outline">vs #FFFFFF Pure White</span>
+<span class="px-1.5 py-0.5 rounded font-mono-sm text-mono-sm bg-secondary/15 text-secondary font-bold">PASS AA</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold">4.52:1</span>
+<span class="font-mono-sm text-mono-sm text-on-surface-variant">WCAG AA</span>
+</div>
+<div class="text-[10px] font-mono-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+<span>Large Text AAA Pass (3.0:1 threshold)</span>
+</div>
+</div>
+<!-- Dark Background Check -->
+<div class="p-space-md rounded-lg bg-surface-container-lowest/70 space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase text-outline">vs #131319 Dark Base</span>
+<span class="px-1.5 py-0.5 rounded font-mono-sm text-mono-sm bg-secondary/15 text-secondary font-bold">PASS AAA</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-secondary font-bold">7.84:1</span>
+<span class="font-mono-sm text-mono-sm text-on-surface-variant">WCAG AAA</span>
+</div>
+<div class="text-[10px] font-mono-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+<span>Exceeds standard 7.0:1 requirement</span>
+</div>
+</div>
+</div>
+<!-- Live Simulated Typography Previews -->
+<div class="p-space-md rounded-lg bg-surface-container-lowest/50 space-y-space-sm">
+<div class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Simulated Real-world Typography</div>
+<div class="p-space-md rounded-lg bg-[#131319] space-y-space-xs">
+<h4 class="font-headline-md text-headline-md font-bold text-[#0A84FF]">
+              Executive Telemetry Headline
+            </h4>
+<p class="font-body-sm text-body-sm text-[#0A84FF]/90">
+              Low-latency microservices with perceptual OKLCH color harmony guarantee legibility on Apple Retina and Pro XDR screens.
+            </p>
+<div class="pt-1 flex items-center gap-2">
+<button class="px-3 py-1 rounded bg-[#0A84FF] text-white font-label-md text-label-md font-semibold shadow-sm">
+                Primary Action
+              </button>
+<button class="px-3 py-1 rounded bg-surface-container-high text-[#0A84FF] font-label-md text-label-md">
+                Ghost Link
+              </button>
+</div>
+</div>
+</div>
+<!-- Vision Deficiency Simulator -->
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface">Color Vision Simulator</span>
+<span class="font-mono-sm text-mono-sm text-outline">Brettel Algorithm</span>
+</div>
+<div class="grid grid-cols-4 gap-1.5 font-mono-sm text-mono-sm">
+<div class="p-2 rounded-lg bg-surface-container-lowest/60 text-center space-y-1">
+<div class="w-full h-5 rounded" style="background-color: #0A84FF;"></div>
+<div class="text-on-surface">Normal</div>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-lowest/60 text-center space-y-1">
+<div class="w-full h-5 rounded" style="background-color: #3b74e6;"></div>
+<div class="text-on-surface-variant">Protanopia</div>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-lowest/60 text-center space-y-1">
+<div class="w-full h-5 rounded" style="background-color: #558df0;"></div>
+<div class="text-on-surface-variant">Deuteran</div>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-lowest/60 text-center space-y-1">
+<div class="w-full h-5 rounded" style="background-color: #0093a8;"></div>
+<div class="text-on-surface-variant">Tritanopia</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Saved Palettes & Project Swatches -->
+<div class="rounded-xl bg-surface-container/70 backdrop-blur-2xl p-space-lg shadow-xl shadow-surface-container-lowest/40 space-y-space-md flex-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">Saved Projects &amp; Swatches</span>
+<span class="px-2 py-0.5 rounded-full font-mono-sm text-mono-sm bg-surface-container-high text-on-surface-variant">3 sets</span>
+</div>
+<button class="w-6 h-6 flex items-center justify-center rounded bg-surface-container-high text-on-surface hover:bg-surface-bright transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+<div class="space-y-space-sm">
+<!-- Palette 1: Shift Native Theme -->
+<div class="p-space-sm rounded-lg bg-surface-container-lowest/70 space-y-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-outline cursor-grab">drag_indicator</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Shift Native Theme</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="text-outline hover:text-on-surface p-1"><span class="material-symbols-outlined text-[16px]">share</span></button>
+<button class="text-outline hover:text-error p-1"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<div class="flex-1 h-6 rounded bg-[#0A84FF] cursor-pointer hover:scale-105 transition-transform" onclick="setActiveColor('#0A84FF', 'oklch(62.8% 0.214 254.1)')" title="#0A84FF"></div>
+<div class="flex-1 h-6 rounded bg-[#47E266] cursor-pointer hover:scale-105 transition-transform" onclick="setActiveColor('#47E266', 'oklch(82.1% 0.218 142.3)')" title="#47E266"></div>
+<div class="flex-1 h-6 rounded bg-[#E9B3FF] cursor-pointer hover:scale-105 transition-transform" onclick="setActiveColor('#E9B3FF', 'oklch(80.5% 0.154 320.1)')" title="#E9B3FF"></div>
+<div class="flex-1 h-6 rounded bg-[#FFB4AB] cursor-pointer hover:scale-105 transition-transform" onclick="setActiveColor('#FFB4AB', 'oklch(80.9% 0.089 22.4)')" title="#FFB4AB"></div>
+<div class="flex-1 h-6 rounded bg-[#1B1B21] cursor-pointer hover:scale-105 transition-transform" onclick="setActiveColor('#1B1B21', 'oklch(22.4% 0.012 280.0)')" title="#1B1B21"></div>
+</div>
+</div>
+<!-- Palette 2: Dark Neon Cyber -->
+<div class="p-space-sm rounded-lg bg-surface-container-lowest/70 space-y-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-outline cursor-grab">drag_indicator</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Dark Neon Cyber</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="text-outline hover:text-on-surface p-1"><span class="material-symbols-outlined text-[16px]">share</span></button>
+<button class="text-outline hover:text-error p-1"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<div class="flex-1 h-6 rounded bg-[#00F0FF] cursor-pointer hover:scale-105 transition-transform" onclick="setActiveColor('#00F0FF', 'oklch(88.4% 0.178 198.2)')" title="#00F0FF"></div>
+<div class="flex-1 h-6 rounded bg-[#FF007A] cursor-pointer hover:scale-105 transition-transform" onclick="setActiveColor('#FF007A', 'oklch(64.2% 0.288 359.8)')" title="#FF007A"></div>
+<div class="flex-1 h-6 rounded bg-[#7000FF] cursor-pointer hover:scale-105 transition-transform" onclick="setActiveColor('#7000FF', 'oklch(49.8% 0.312 291.4)')" title="#7000FF"></div>
+<div class="flex-1 h-6 rounded bg-[#00FF66] cursor-pointer hover:scale-105 transition-transform" onclick="setActiveColor('#00FF66', 'oklch(89.2% 0.274 144.1)')" title="#00FF66"></div>
+<div class="flex-1 h-6 rounded bg-[#0B0D17] cursor-pointer hover:scale-105 transition-transform" onclick="setActiveColor('#0B0D17', 'oklch(14.5% 0.021 260.0)')" title="#0B0D17"></div>
+</div>
+</div>
+<!-- Palette 3: macOS System Accents -->
+<div class="p-space-sm rounded-lg bg-surface-container-lowest/70 space-y-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-outline cursor-grab">drag_indicator</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">macOS System Accents</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="text-outline hover:text-on-surface p-1"><span class="material-symbols-outlined text-[16px]">share</span></button>
+<button class="text-outline hover:text-error p-1"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<div class="flex-1 h-6 rounded bg-[#007AFF] cursor-pointer hover:scale-105 transition-transform" onclick="setActiveColor('#007AFF', 'oklch(61.2% 0.218 253.5)')" title="#007AFF"></div>
+<div class="flex-1 h-6 rounded bg-[#AF52DE] cursor-pointer hover:scale-105 transition-transform" onclick="setActiveColor('#AF52DE', 'oklch(58.4% 0.212 308.9)')" title="#AF52DE"></div>
+<div class="flex-1 h-6 rounded bg-[#FF2D55] cursor-pointer hover:scale-105 transition-transform" onclick="setActiveColor('#FF2D55', 'oklch(63.7% 0.245 15.3)')" title="#FF2D55"></div>
+<div class="flex-1 h-6 rounded bg-[#FF9500] cursor-pointer hover:scale-105 transition-transform" onclick="setActiveColor('#FF9500', 'oklch(74.6% 0.178 58.2)')" title="#FF9500"></div>
+<div class="flex-1 h-6 rounded bg-[#34C759] cursor-pointer hover:scale-105 transition-transform" onclick="setActiveColor('#34C759', 'oklch(73.5% 0.198 141.2)')" title="#34C759"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Micro Diagnostics & Engine Status Bar -->
+<div class="rounded-xl bg-surface-container-lowest/80 backdrop-blur-md px-space-lg py-space-sm flex flex-wrap items-center justify-between font-mono-sm text-mono-sm text-on-surface-variant gap-space-sm shadow-md">
+<div class="flex items-center gap-space-md">
+<span class="flex items-center gap-1.5 text-secondary">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+        Zero-copy Metal framebuffers attached
+      </span>
+<span class="text-outline-variant">•</span>
+<span>Sampling buffer: <span class="text-on-surface font-semibold">RGBA16Float</span></span>
+<span class="text-outline-variant">•</span>
+<span>Apple M3 Max Core: <span class="text-primary font-semibold">120 FPS Retina Sync</span></span>
+</div>
+<div class="flex items-center gap-space-md">
+<span>Darwin IPC: <span class="text-secondary font-semibold">0.42ms dispatch</span></span>
+<span class="text-outline-variant">•</span>
+<span class="text-outline">WCAG 2.2 Level AAA Verified</span>
+</div>
+</div>
+<!-- Toast notification element -->
+<div class="fixed bottom-12 right-8 pointer-events-none transform translate-y-4 opacity-0 transition-all duration-200 z-50 px-4 py-2 rounded-lg bg-surface-container-highest text-on-surface font-mono-sm text-mono-sm shadow-2xl flex items-center gap-2" id="copy-toast">
+<span class="material-symbols-outlined text-[16px] text-secondary">check</span>
+<span id="toast-msg">Copied token to clipboard</span>
+</div>
+</div>
+<script>
+  function copyToken(text, element) {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text);
+    }
+    const toast = document.getElementById('copy-toast');
+    const toastMsg = document.getElementById('toast-msg');
+    toastMsg.textContent = 'Copied ' + text + ' to clipboard';
+    toast.classList.remove('opacity-0', 'translate-y-4');
+    toast.classList.add('opacity-100', 'translate-y-0');
+
+    setTimeout(() => {
+      toast.classList.remove('opacity-100', 'translate-y-0');
+      toast.classList.add('opacity-0', 'translate-y-4');
+    }, 1800);
+  }
+
+  function setActiveColor(hex, oklch) {
+    const swatch = document.getElementById('main-swatch-box');
+    const hexLabel = document.getElementById('active-hex-label');
+    if (swatch) swatch.style.backgroundColor = hex;
+    if (hexLabel) hexLabel.textContent = hex.toUpperCase();
+
+    // Trigger toast confirmation
+    const toast = document.getElementById('copy-toast');
+    const toastMsg = document.getElementById('toast-msg');
+    toastMsg.textContent = 'Active inspect color: ' + hex;
+    toast.classList.remove('opacity-0', 'translate-y-4');
+    toast.classList.add('opacity-100', 'translate-y-0');
+
+    setTimeout(() => {
+      toast.classList.remove('opacity-100', 'translate-y-0');
+      toast.classList.add('opacity-0', 'translate-y-4');
+    }, 1500);
+  }
+
+  // Interactive mock for Screen Eyedropper
+  const pickerBtn = document.getElementById('screen-picker-btn');
+  if (pickerBtn) {
+    pickerBtn.addEventListener('click', () => {
+      if (window.EyeDropper) {
+        const eyeDropper = new EyeDropper();
+        eyeDropper.open().then(result => {
+          setActiveColor(result.sRGBHex, 'Native Screen Sample');
+        }).catch(e => {
+          console.log(e);
+        });
+      } else {
+        // Fallback demo cycle for browser preview
+        const demoColors = ['#FF2D55', '#AF52DE', '#5856D6', '#007AFF', '#34C759', '#FF9500'];
+        const randomColor = demoColors[Math.floor(Math.random() * demoColors.length)];
+        setActiveColor(randomColor, 'Simulated NSColorSampler');
+      }
+    });
+  }
+</script></main><footer class="fixed bottom-0 left-60 right-0 h-8 bg-surface-container-lowest/90 backdrop-blur-md z-40 px-margin-lg flex items-center justify-between font-mono-sm text-mono-sm text-on-surface-variant shadow-[0_-1px_6px_rgba(0,0,0,0.3)]"><div class="flex items-center gap-space-md"><span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Freed RAM: <span class="text-on-surface font-semibold">4.2 GB session</span></span><span class="text-outline-variant">|</span><span>Active Listeners: <span class="text-primary font-semibold">28 ports</span></span></div><div class="flex items-center gap-space-md"><span>Interface: <span class="text-on-surface font-semibold">en0 • Wi-Fi 6 (802.11ax)</span></span><span class="text-outline-variant">|</span><span class="text-secondary">Secure Sandbox Active</span></div></footer></div></body></html>

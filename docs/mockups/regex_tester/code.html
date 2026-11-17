@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-surface-variant":"#c0c6d6","on-primary-fixed-variant":"#00468d","on-tertiary-fixed-variant":"#7200a3","secondary-container":"#09bf49","surface-dim":"#131319","surface-container-low":"#1b1b21","inverse-surface":"#e4e1ea","on-secondary":"#003910","secondary-fixed-dim":"#47e266","on-error-container":"#ffdad6","tertiary":"#e9b3ff","surface-container-highest":"#34343b","tertiary-fixed-dim":"#e9b3ff","secondary-fixed":"#6cff82","surface-container":"#1f1f25","secondary":"#47e266","inverse-on-surface":"#303036","error-container":"#93000a","surface-bright":"#39383f","primary-container":"#3e90ff","on-tertiary-container":"#460066","primary-fixed-dim":"#aac7ff","on-primary-container":"#002957","background":"#131319","on-secondary-container":"#004615","on-surface":"#e4e1ea","on-background":"#e4e1ea","on-primary":"#003064","on-primary-fixed":"#001b3e","error":"#ffb4ab","tertiary-container":"#c863fb","surface-tint":"#aac7ff","tertiary-fixed":"#f6d9ff","primary":"#aac7ff","on-secondary-fixed":"#002106","on-tertiary-fixed":"#310048","surface":"#131319","primary-fixed":"#d6e3ff","inverse-primary":"#005db8","surface-container-lowest":"#0e0e14","on-tertiary":"#510074","on-error":"#690005","outline-variant":"#414754","surface-variant":"#34343b","surface-container-high":"#2a2930","outline":"#8b91a0","on-secondary-fixed-variant":"#00531a"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"gutter-sm":"0.5rem",margin:"0.75rem","gutter-lg":"1rem","margin-sm":"0.5rem","space-xs":"0.25rem","margin-lg":"1.25rem","space-lg":"1rem","space-md":"0.75rem","space-xl":"1.5rem",gutter:"0.75rem","space-sm":"0.5rem"},fontFamily:{"label-md":["Inter"],"body-sm":["Inter"],"label-sm":["Inter"],"mono-md":["JetBrains Mono"],"headline-sm":["Inter"],"headline-lg":["Inter"],"mono-lg":["JetBrains Mono"],"headline-md":["Inter"],"body-lg":["Inter"],"body-md":["Inter"],"mono-sm":["JetBrains Mono"]},fontSize:{"label-md":["12px",{lineHeight:"16px",letterSpacing:"0em",fontWeight:"500"}],"body-sm":["11px",{lineHeight:"15px",letterSpacing:"0em",fontWeight:"400"}],"label-sm":["10px",{lineHeight:"12px",letterSpacing:"0.03em",fontWeight:"600"}],"mono-md":["12px",{lineHeight:"16px",letterSpacing:"-0.01em",fontWeight:"400"}],"headline-sm":["14px",{lineHeight:"18px",letterSpacing:"-0.008em",fontWeight:"600"}],"headline-lg":["22px",{lineHeight:"28px",letterSpacing:"-0.015em",fontWeight:"600"}],"mono-lg":["13px",{lineHeight:"18px",letterSpacing:"-0.01em",fontWeight:"500"}],"headline-md":["17px",{lineHeight:"22px",letterSpacing:"-0.012em",fontWeight:"600"}],"body-lg":["14px",{lineHeight:"20px",letterSpacing:"-0.004em",fontWeight:"400"}],"body-md":["13px",{lineHeight:"18px",letterSpacing:"-0.002em",fontWeight:"400"}],"mono-sm":["10px",{lineHeight:"13px",letterSpacing:"0.01em",fontWeight:"400"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface select-none antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-60 z-50 bg-surface-container-low/85 backdrop-blur-2xl flex flex-col justify-between shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"><div class="flex flex-col h-full"><div class="h-14 px-margin-lg flex items-center gap-space-sm bg-surface-container-lowest/40 backdrop-blur-md"><img alt="shift-tools App Icon" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UjvTrhC126AmYWPrT2Ix4EmaYPA1it__A83Hwtu4-Xq_WLFRBDxLXBze1IJuIEVwI0THW5kV8amVNmgClGHTHvfsSk9nyGI0qUiZvNqHxrNCRkXDZhymdSyJvngGRwG7rZt7GGrOewgsRsA6MLmrzvMwLD_-NEkOEqn_6fo6nbaDmzAlHsmKVUXNns4Sy6jTmNsvWmW9B-4Cm6xfTVFZe7GG-gqqmHIM5AuDne_GMyNg"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">shift-tools</span><span class="font-mono-sm text-mono-sm text-on-surface-variant leading-tight">macOS native v1.0.0</span></div></div><div class="flex-1 overflow-y-auto px-margin py-space-sm space-y-space-md"><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">DevOps &amp; System</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="process-killer" href="#">Process Killer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="quarantine-remover" href="#">Quarantine Remover</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="port-manager" href="#">Port Manager</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="disk-cleaner" href="#">Disk Cleaner</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ram-monitor" href="#">RAM Monitor</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Networks</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="network-observer" href="#">Network Observer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="wifi-mapper" href="#">WiFi Mapper</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="lan-scanner" href="#">LAN Scanner</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="dns-toolkit" href="#">DNS Toolkit</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="speed-test" href="#">Speed Test</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ping-traceroute" href="#">Ping / Traceroute</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Security &amp; Pentest</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="header-analyzer" href="#">Header Analyzer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ssl-inspector" href="#">SSL Inspector</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="subdomain-finder" href="#">Subdomain Finder</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="hash-generator" href="#">Hash Generator</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="password-auditor" href="#">Password Auditor</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Testing &amp; APIs</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="api-tester" href="#">API Tester</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="json-toolkit" href="#">JSON Toolkit</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="base64-url-encoder" href="#">Base64 / URL Encoder</a><a aria-current="page" class="flex items-center px-space-sm py-1.5 rounded-lg transition-colors bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]" data-path="regex-tester" href="#">Regex Tester</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Utilities</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="color-picker" href="#">Color Picker</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="text-diff" href="#">Text Diff</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="timestamp-converter" href="#">Timestamp Converter</a></nav></div><div class="p-margin m-margin bg-surface-container-lowest/60 rounded-xl space-y-space-xs shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Host Node</span><span class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-high text-primary">Apple M3 Max</span></div><div class="flex items-center justify-between font-mono-sm text-mono-sm text-on-surface-variant"><span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Rust Core</span><span class="text-secondary">0.8ms IPC</span></div></div></div></aside><div class="pl-60 flex flex-col min-h-screen"><header class="fixed top-0 left-60 right-0 h-14 bg-surface-container-low/75 backdrop-blur-2xl z-40 px-margin-lg flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.25)]"><div class="flex items-center gap-space-md"><div class="flex items-center gap-2 pl-1"><span class="w-3 h-3 rounded-full bg-[#ff5f56] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span><span class="w-3 h-3 rounded-full bg-[#ffbd2e] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span><span class="w-3 h-3 rounded-full bg-[#27c93f] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span></div><div class="flex items-center gap-space-xs font-mono-sm text-mono-sm text-on-surface-variant pl-space-sm"><span class="text-on-surface font-semibold">shift-tools</span><span>/</span><span class="text-outline">v1.0.0 (Rust Core)</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm px-space-md py-1 rounded-lg bg-surface-container-lowest/80 text-on-surface-variant font-body-sm text-body-sm shadow-[inset_0_1px_2px_rgba(0,0,0,0.6)]"><span class="material-symbols-outlined text-[16px] text-outline">search</span><span class="text-on-surface-variant pr-space-lg">Quick dispatch...</span><kbd class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface">⌘K</kbd></div><div class="flex items-center gap-space-sm px-space-md py-1 rounded-full bg-surface-container-lowest/50 font-mono-sm text-mono-sm text-on-surface-variant"><span class="text-on-surface">RAM <span class="text-primary">14.2 / 32 GB</span></span><span class="text-outline-variant">•</span><span class="text-on-surface">CPU <span class="text-secondary">8%</span></span><span class="text-outline-variant">•</span><span class="text-on-surface">Svcs <span class="text-tertiary">6 active</span></span></div><div class="flex items-center gap-space-sm"><button class="w-7 h-7 flex items-center justify-center rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[18px]">settings</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 pt-14 pb-8 w-full px-gutter-lg bg-background"><div class="flex flex-col w-full">
+<!-- Top Command & Tool Header -->
+<div class="flex flex-col gap-space-sm pb-space-lg">
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center justify-center w-10 h-10 rounded-xl bg-surface-container-high text-primary shadow-sm">
+<span class="material-symbols-outlined text-[24px]">regular_expression</span>
+</div>
+<div>
+<div class="flex items-center gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Regex Tester</h1>
+<span class="px-2 py-0.5 rounded-full font-mono-sm text-mono-sm bg-primary/10 text-primary">v1.10.6</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Deterministic Linear Automata • Fast Pattern Extraction • In-Memory Execution</p>
+</div>
+</div>
+<!-- Action Pill Group -->
+<div class="flex items-center gap-space-xs bg-surface-container-low p-1 rounded-xl shadow-inner">
+<button class="flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-surface-container-high text-on-surface hover:text-primary transition-all font-body-sm text-body-sm" id="btn-cheatsheet">
+<span class="material-symbols-outlined text-[15px] text-primary">menu_book</span>
+<span>Cheat Sheet</span>
+<kbd class="font-mono-sm text-mono-sm px-1 py-0.2 rounded bg-surface-container-lowest text-outline">⌘/</kbd>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-surface-container-high text-on-surface hover:text-secondary transition-all font-body-sm text-body-sm" id="btn-export-code">
+<span class="material-symbols-outlined text-[15px] text-secondary">code_blocks</span>
+<span>Export Snippet</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-error hover:bg-error-container/20 transition-all font-body-sm text-body-sm" id="btn-clear-test">
+<span class="material-symbols-outlined text-[15px]">backspace</span>
+<span>Clear</span>
+</button>
+</div>
+</div>
+<!-- Engine Badges Bar -->
+<div class="flex flex-wrap items-center gap-space-sm pt-space-xs font-mono-sm text-mono-sm">
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-low text-secondary shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+<span>rust-regex 1.10.6 engine</span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-low text-on-surface-variant shadow-sm">
+<span class="material-symbols-outlined text-[13px] text-primary">verified</span>
+<span>PCRE2 / ECMAScript Compatible</span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-low text-tertiary shadow-sm">
+<span class="material-symbols-outlined text-[13px]">shield</span>
+<span>Zero Backtracking Catastrophe Shield (O(n) bounded)</span>
+</div>
+<div class="ml-auto hidden xl:flex items-center gap-2 text-outline font-mono-sm text-mono-sm">
+<span>IPC Latency:</span>
+<span class="text-secondary font-mono-md text-mono-md">0.04ms</span>
+</div>
+</div>
+</div>
+<!-- Regular Expression Input Bar -->
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-xl flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm font-label-sm text-label-sm text-outline uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px] text-primary">terminal</span>
+<span>Active Regular Expression</span>
+</div>
+<div class="flex items-center gap-space-sm font-mono-sm text-mono-sm">
+<span class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Valid Pattern
+        </span>
+<span class="text-outline-variant">•</span>
+<span class="text-on-surface-variant">14 tokens</span>
+<span class="text-outline-variant">•</span>
+<span class="text-primary">4 Capture Groups</span>
+<span class="text-outline-variant">•</span>
+<span class="text-outline">Compiled in 0.04ms</span>
+</div>
+</div>
+<!-- Regex Bar with Delimiters and Segmented Flags -->
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center gap-space-sm bg-surface-container-lowest p-2 rounded-lg shadow-inner">
+<div class="flex flex-1 items-center gap-1 px-space-sm font-mono-lg text-mono-lg overflow-x-auto">
+<span class="text-primary font-bold select-none text-[16px]">/</span>
+<input class="w-full bg-transparent text-primary outline-none font-mono-md text-mono-md selection:bg-primary-container selection:text-on-primary-container" id="regex-input" spellcheck="false" type="text" value="(?P&lt;protocol&gt;https?)://(?P&lt;host&gt;[a-zA-Z0-9.-]+)(?::(?P&lt;port&gt;\d+))?(?P&lt;path&gt;/[^\s?#]*)?"/>
+<span class="text-primary font-bold select-none text-[16px]">/</span>
+</div>
+<!-- Regex Flags Toggles -->
+<div class="flex items-center justify-end gap-1 font-mono-sm text-mono-sm select-none border-t lg:border-t-0 pt-2 lg:pt-0">
+<button class="flag-btn px-2 py-1 rounded bg-primary-container text-on-primary-container font-bold shadow-sm" data-flag="g" title="Global Match">g</button>
+<button class="flag-btn px-2 py-1 rounded bg-primary-container text-on-primary-container font-bold shadow-sm" data-flag="m" title="Multiline">m</button>
+<button class="flag-btn px-2 py-1 rounded bg-primary-container text-on-primary-container font-bold shadow-sm" data-flag="i" title="Case Insensitive">i</button>
+<button class="flag-btn px-2 py-1 rounded bg-surface-container-high text-on-surface-variant hover:text-on-surface" data-flag="s" title="dotAll (Single-line)">s</button>
+<button class="flag-btn px-2 py-1 rounded bg-primary-container text-on-primary-container font-bold shadow-sm" data-flag="u" title="Unicode">u</button>
+<button class="flag-btn px-2 py-1 rounded bg-surface-container-high text-on-surface-variant hover:text-on-surface" data-flag="x" title="Extended (Ignore whitespaces)">x</button>
+<div class="h-4 w-[1px] bg-outline-variant mx-1"></div>
+<button class="px-2 py-1 rounded bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors flex items-center" id="btn-copy-pattern" title="Copy pattern">
+<span class="material-symbols-outlined text-[15px]">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Match Metrics & Summary Bar -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-sm my-space-md">
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-sm flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Matches Found</span>
+<div class="flex items-baseline justify-between mt-space-xs">
+<span class="font-headline-lg text-headline-lg text-primary">6 Total</span>
+<span class="font-mono-sm text-mono-sm text-secondary bg-surface-container-lowest px-2 py-0.5 rounded">100% matched</span>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-sm flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Capture Groups</span>
+<div class="flex items-baseline justify-between mt-space-xs">
+<span class="font-headline-lg text-headline-lg text-tertiary">4 per match</span>
+<span class="font-mono-sm text-mono-sm text-outline bg-surface-container-lowest px-2 py-0.5 rounded">24 total slots</span>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-sm flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Execution Time</span>
+<div class="flex items-baseline justify-between mt-space-xs">
+<span class="font-headline-lg text-headline-lg text-secondary">0.12ms</span>
+<span class="font-mono-sm text-mono-sm text-on-surface-variant bg-surface-container-lowest px-2 py-0.5 rounded">Tokio async</span>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-sm flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Catastrophic Risk</span>
+<div class="flex items-baseline justify-between mt-space-xs">
+<span class="font-headline-lg text-headline-lg text-secondary">Zero Risk</span>
+<span class="font-mono-sm text-mono-sm text-secondary bg-surface-container-lowest px-2 py-0.5 rounded">Linear NFA</span>
+</div>
+</div>
+</div>
+<!-- Main Dual-Panel View -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md mb-space-md">
+<!-- Left Panel: Test String Editor & Replacement -->
+<div class="lg:col-span-7 flex flex-col rounded-xl bg-surface-container-low shadow-md overflow-hidden">
+<!-- Editor Header & Tabs -->
+<div class="flex items-center justify-between px-space-md py-space-sm bg-surface-container-high/60 backdrop-blur-md">
+<div class="flex items-center gap-space-xs bg-surface-container-lowest p-0.5 rounded-lg font-label-md text-label-md">
+<button class="px-space-md py-1 rounded bg-surface-container-high text-on-surface font-semibold shadow-sm transition-all flex items-center gap-1.5" id="tab-match">
+<span class="material-symbols-outlined text-[15px] text-primary">highlight</span>
+            Match View
+          </button>
+<button class="px-space-md py-1 rounded text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-1.5" id="tab-replace">
+<span class="material-symbols-outlined text-[15px]">find_replace</span>
+            Replace Preview
+          </button>
+</div>
+<div class="flex items-center gap-space-xs font-mono-sm text-mono-sm text-on-surface-variant">
+<button class="px-2 py-1 rounded bg-surface-container-high hover:text-on-surface transition-colors" id="btn-load-sample">Load Network Logs</button>
+<span>1,208 chars</span>
+</div>
+</div>
+<!-- Replace Configuration Bar (Hidden initially or toggleable) -->
+<div class="hidden px-space-md py-2 bg-surface-container flex items-center gap-space-sm font-mono-sm text-mono-sm" id="replace-bar">
+<span class="text-tertiary">Substitution:</span>
+<input class="flex-1 bg-surface-container-lowest px-2 py-1 rounded text-tertiary outline-none font-mono-sm text-mono-sm shadow-inner" id="replace-pattern" type="text" value="$protocol://$host/v2$path"/>
+<button class="px-2 py-1 rounded bg-tertiary text-on-tertiary font-bold hover:opacity-90" id="btn-run-replace">Apply</button>
+</div>
+<!-- Editor Canvas Area with Line Numbers and Highlighting -->
+<div class="relative flex-1 min-h-[360px] max-h-[460px] overflow-y-auto bg-surface-container-lowest p-space-md font-mono-md text-mono-md text-on-surface leading-relaxed select-text">
+<div class="space-y-2">
+<!-- Line 1 -->
+<div class="flex items-start gap-3 hover:bg-surface-container/30 px-1 py-0.5 rounded transition-colors group">
+<span class="font-mono-sm text-mono-sm text-outline select-none w-6 text-right pt-0.5">1</span>
+<div class="flex-1 text-on-surface-variant">
+              [SYSTEM_LOG 08:14:22] Client dispatched request to 
+              <span class="inline-block bg-primary/20 text-on-surface rounded px-1.5 py-0.2 shadow-sm ring-1 ring-primary/40 cursor-pointer hover:bg-primary/30" data-match-id="1">
+<span class="text-primary font-semibold">https</span>://<span class="text-secondary">api.github.com</span>:<span class="text-tertiary">443</span><span class="text-on-surface">/repos/rust-lang/rust</span>
+</span> 
+              status=200 payload=42kb
+            </div>
+</div>
+<!-- Line 2 -->
+<div class="flex items-start gap-3 hover:bg-surface-container/30 px-1 py-0.5 rounded transition-colors group">
+<span class="font-mono-sm text-mono-sm text-outline select-none w-6 text-right pt-0.5">2</span>
+<div class="flex-1 text-on-surface-variant">
+              [GATEWAY_AUDIT] Inbound tunnel forwarding to internal proxy 
+              <span class="inline-block bg-primary/20 text-on-surface rounded px-1.5 py-0.2 shadow-sm ring-1 ring-primary/40 cursor-pointer hover:bg-primary/30" data-match-id="2">
+<span class="text-primary font-semibold">http</span>://<span class="text-secondary">192.168.1.1</span>:<span class="text-tertiary">8080</span><span class="text-on-surface">/admin/status</span>
+</span> 
+              over local loopback interface
+            </div>
+</div>
+<!-- Line 3 -->
+<div class="flex items-start gap-3 hover:bg-surface-container/30 px-1 py-0.5 rounded transition-colors group">
+<span class="font-mono-sm text-mono-sm text-outline select-none w-6 text-right pt-0.5">3</span>
+<div class="flex-1 text-on-surface-variant">
+              [METRICS_COLLECTOR] Exporting OpenTelemetry batch telemetry to 
+              <span class="inline-block bg-primary/20 text-on-surface rounded px-1.5 py-0.2 shadow-sm ring-1 ring-primary/40 cursor-pointer hover:bg-primary/30" data-match-id="3">
+<span class="text-primary font-semibold">https</span>://<span class="text-secondary">telemetry.datadoghq.com</span><span class="text-on-surface">/v1/traces</span>
+</span> 
+              with TLS 1.3 session reuse
+            </div>
+</div>
+<!-- Line 4 -->
+<div class="flex items-start gap-3 hover:bg-surface-container/30 px-1 py-0.5 rounded transition-colors group">
+<span class="font-mono-sm text-mono-sm text-outline select-none w-6 text-right pt-0.5">4</span>
+<div class="flex-1 text-on-surface-variant">
+              [CONTAINER_DOCK] Health probe hitting 
+              <span class="inline-block bg-primary/20 text-on-surface rounded px-1.5 py-0.2 shadow-sm ring-1 ring-primary/40 cursor-pointer hover:bg-primary/30" data-match-id="4">
+<span class="text-primary font-semibold">http</span>://<span class="text-secondary">localhost</span>:<span class="text-tertiary">3000</span><span class="text-on-surface">/healthz</span>
+</span> 
+              every 5000ms. Response code: UP
+            </div>
+</div>
+<!-- Line 5 -->
+<div class="flex items-start gap-3 hover:bg-surface-container/30 px-1 py-0.5 rounded transition-colors group">
+<span class="font-mono-sm text-mono-sm text-outline select-none w-6 text-right pt-0.5">5</span>
+<div class="flex-1 text-on-surface-variant">
+              [S3_SYNC] Uploaded binary payload chunk archive to 
+              <span class="inline-block bg-primary/20 text-on-surface rounded px-1.5 py-0.2 shadow-sm ring-1 ring-primary/40 cursor-pointer hover:bg-primary/30" data-match-id="5">
+<span class="text-primary font-semibold">https</span>://<span class="text-secondary">s3.eu-central-1.amazonaws.com</span><span class="text-on-surface">/vault-backups/core.tar.gz</span>
+</span> 
+              checksum valid
+            </div>
+</div>
+<!-- Line 6 -->
+<div class="flex items-start gap-3 hover:bg-surface-container/30 px-1 py-0.5 rounded transition-colors group">
+<span class="font-mono-sm text-mono-sm text-outline select-none w-6 text-right pt-0.5">6</span>
+<div class="flex-1 text-on-surface-variant">
+              [DEV_SERVER] Listening at remote peer endpoint 
+              <span class="inline-block bg-primary/20 text-on-surface rounded px-1.5 py-0.2 shadow-sm ring-1 ring-primary/40 cursor-pointer hover:bg-primary/30" data-match-id="6">
+<span class="text-primary font-semibold">http</span>://<span class="text-secondary">10.0.0.245</span>:<span class="text-tertiary">9092</span><span class="text-on-surface">/kafka/topics</span>
+</span> 
+              partition=0 offset=99142
+            </div>
+</div>
+</div>
+</div>
+<!-- Panel Footer Hover Inspector Info -->
+<div class="px-space-md py-2 bg-surface-container-high/80 border-t border-surface-variant/40 flex items-center justify-between font-mono-sm text-mono-sm">
+<div class="flex items-center gap-space-sm">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-on-surface">Inspecting Match #1</span>
+<span class="text-outline">Pos: [37..91]</span>
+<span class="text-primary font-semibold">Length: 54 chars</span>
+</div>
+<div class="flex items-center gap-space-md text-on-surface-variant">
+<span>Click any match token to isolate groups</span>
+</div>
+</div>
+</div>
+<!-- Right Panel: Group & Capture Breakdown Inspector -->
+<div class="lg:col-span-5 flex flex-col rounded-xl bg-surface-container-low shadow-md overflow-hidden">
+<div class="px-space-md py-space-sm bg-surface-container-high/60 backdrop-blur-md flex items-center justify-between">
+<div class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">data_object</span>
+<span>Match &amp; Capture Breakdown</span>
+</div>
+<span class="font-mono-sm text-mono-sm text-secondary bg-surface-container-lowest px-2 py-0.5 rounded">6 captures</span>
+</div>
+<!-- Match Groups Accordion Container -->
+<div class="p-space-md overflow-y-auto max-h-[460px] space-y-space-sm bg-surface-container-lowest/60">
+<!-- Match 1 Card -->
+<div class="rounded-xl bg-surface-container p-space-sm shadow-sm transition-all hover:bg-surface-container-high">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-primary-container font-mono-sm text-mono-sm text-on-primary-container font-bold">Match 1</span>
+<span class="font-mono-sm text-mono-sm text-outline">[0..54]</span>
+</div>
+<button class="text-outline hover:text-on-surface" title="Copy full match">
+<span class="material-symbols-outlined text-[15px]">content_copy</span>
+</button>
+</div>
+<div class="font-mono-sm text-mono-sm text-on-surface pb-space-xs truncate bg-surface-container-lowest/70 px-2 py-1 rounded">
+            https://api.github.com:443/repos/rust-lang/rust
+          </div>
+<!-- Group breakdown pills -->
+<div class="grid grid-cols-2 gap-1.5 pt-space-xs font-mono-sm text-mono-sm">
+<div class="flex items-center justify-between p-1.5 rounded bg-surface-container-high/60">
+<span class="text-primary font-semibold">protocol</span>
+<span class="text-on-surface">https</span>
+</div>
+<div class="flex items-center justify-between p-1.5 rounded bg-surface-container-high/60">
+<span class="text-secondary font-semibold">host</span>
+<span class="text-on-surface truncate ml-2">api.github.com</span>
+</div>
+<div class="flex items-center justify-between p-1.5 rounded bg-surface-container-high/60">
+<span class="text-tertiary font-semibold">port</span>
+<span class="text-on-surface">443</span>
+</div>
+<div class="flex items-center justify-between p-1.5 rounded bg-surface-container-high/60">
+<span class="text-primary-fixed font-semibold">path</span>
+<span class="text-on-surface truncate ml-2">/repos/rust-lang...</span>
+</div>
+</div>
+</div>
+<!-- Match 2 Card -->
+<div class="rounded-xl bg-surface-container p-space-sm shadow-sm transition-all hover:bg-surface-container-high">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-primary-container font-mono-sm text-mono-sm text-on-primary-container font-bold">Match 2</span>
+<span class="font-mono-sm text-mono-sm text-outline">[58..99]</span>
+</div>
+<button class="text-outline hover:text-on-surface" title="Copy full match">
+<span class="material-symbols-outlined text-[15px]">content_copy</span>
+</button>
+</div>
+<div class="font-mono-sm text-mono-sm text-on-surface pb-space-xs truncate bg-surface-container-lowest/70 px-2 py-1 rounded">
+            http://192.168.1.1:8080/admin/status
+          </div>
+<!-- Group breakdown pills -->
+<div class="grid grid-cols-2 gap-1.5 pt-space-xs font-mono-sm text-mono-sm">
+<div class="flex items-center justify-between p-1.5 rounded bg-surface-container-high/60">
+<span class="text-primary font-semibold">protocol</span>
+<span class="text-on-surface">http</span>
+</div>
+<div class="flex items-center justify-between p-1.5 rounded bg-surface-container-high/60">
+<span class="text-secondary font-semibold">host</span>
+<span class="text-on-surface truncate ml-2">192.168.1.1</span>
+</div>
+<div class="flex items-center justify-between p-1.5 rounded bg-surface-container-high/60">
+<span class="text-tertiary font-semibold">port</span>
+<span class="text-on-surface">8080</span>
+</div>
+<div class="flex items-center justify-between p-1.5 rounded bg-surface-container-high/60">
+<span class="text-primary-fixed font-semibold">path</span>
+<span class="text-on-surface truncate ml-2">/admin/status</span>
+</div>
+</div>
+</div>
+<!-- Match 3 Card -->
+<div class="rounded-xl bg-surface-container p-space-sm shadow-sm transition-all hover:bg-surface-container-high">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-primary-container font-mono-sm text-mono-sm text-on-primary-container font-bold">Match 3</span>
+<span class="font-mono-sm text-mono-sm text-outline">[104..151]</span>
+</div>
+<button class="text-outline hover:text-on-surface">
+<span class="material-symbols-outlined text-[15px]">content_copy</span>
+</button>
+</div>
+<div class="font-mono-sm text-mono-sm text-on-surface pb-space-xs truncate bg-surface-container-lowest/70 px-2 py-1 rounded">
+            https://telemetry.datadoghq.com/v1/traces
+          </div>
+<!-- Group breakdown pills -->
+<div class="grid grid-cols-2 gap-1.5 pt-space-xs font-mono-sm text-mono-sm">
+<div class="flex items-center justify-between p-1.5 rounded bg-surface-container-high/60">
+<span class="text-primary font-semibold">protocol</span>
+<span class="text-on-surface">https</span>
+</div>
+<div class="flex items-center justify-between p-1.5 rounded bg-surface-container-high/60">
+<span class="text-secondary font-semibold">host</span>
+<span class="text-on-surface truncate ml-2">datadoghq.com</span>
+</div>
+<div class="flex items-center justify-between p-1.5 rounded bg-surface-container-high/60">
+<span class="text-tertiary font-semibold">port</span>
+<span class="text-outline">null</span>
+</div>
+<div class="flex items-center justify-between p-1.5 rounded bg-surface-container-high/60">
+<span class="text-primary-fixed font-semibold">path</span>
+<span class="text-on-surface truncate ml-2">/v1/traces</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Real-time Syntax Explanation Panel -->
+<div class="rounded-xl bg-surface-container-low p-space-md shadow-md mb-space-md">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-sm font-label-md text-label-md text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-tertiary">psychology</span>
+<span>AST Syntax Breakdown &amp; Explanations</span>
+</div>
+<span class="font-mono-sm text-mono-sm text-on-surface-variant">Deterministic Linear Parse</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-sm">
+<div class="p-space-sm rounded-lg bg-surface-container-lowest/80 flex flex-col gap-1">
+<div class="font-mono-md text-mono-md text-primary font-semibold">(?P&lt;protocol&gt;https?)</div>
+<div class="font-body-sm text-body-sm text-on-surface">Named capture group <span class="font-mono-sm text-mono-sm text-primary">"protocol"</span></div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Matches "http" followed by an optional "s" character.</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest/80 flex flex-col gap-1">
+<div class="font-mono-md text-mono-md text-secondary font-semibold">(?P&lt;host&gt;[a-zA-Z0-9.-]+)</div>
+<div class="font-body-sm text-body-sm text-on-surface">Named capture group <span class="font-mono-sm text-mono-sm text-secondary">"host"</span></div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Character class matching 1 or more alphanumeric characters, dots, or hyphens.</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest/80 flex flex-col gap-1">
+<div class="font-mono-md text-mono-md text-tertiary font-semibold">(?::(?P&lt;port&gt;\d+))?</div>
+<div class="font-body-sm text-body-sm text-on-surface">Optional non-capturing group with <span class="font-mono-sm text-mono-sm text-tertiary">"port"</span></div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Matches literal colon followed by 1 or more digits <span class="font-mono-sm text-mono-sm">\d+</span>.</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest/80 flex flex-col gap-1">
+<div class="font-mono-md text-mono-md text-primary-fixed font-semibold">(?P&lt;path&gt;/[^\s?#]*)?</div>
+<div class="font-body-sm text-body-sm text-on-surface">Optional group <span class="font-mono-sm text-mono-sm text-primary-fixed">"path"</span></div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Matches leading slash and greedy excluded characters up to query or hash.</div>
+</div>
+</div>
+</div>
+<!-- Bottom Quick Snippets Generator -->
+<div class="rounded-xl bg-surface-container-low shadow-md overflow-hidden mb-space-lg">
+<!-- Tabs Header -->
+<div class="flex items-center justify-between px-space-md py-space-sm bg-surface-container-high/60 backdrop-blur-md">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider pr-2">Target Language:</span>
+<button class="snippet-tab px-space-md py-1 rounded bg-surface-container-high text-primary font-bold shadow-sm font-label-md text-label-md" id="snippet-tab-rust">Rust</button>
+<button class="snippet-tab px-space-md py-1 rounded text-on-surface-variant hover:text-on-surface font-label-md text-label-md" id="snippet-tab-ts">TypeScript</button>
+<button class="snippet-tab px-space-md py-1 rounded text-on-surface-variant hover:text-on-surface font-label-md text-label-md" id="snippet-tab-py">Python</button>
+</div>
+<button class="flex items-center gap-1.5 px-space-md py-1 rounded bg-surface-container-high text-on-surface hover:text-primary transition-all font-body-sm text-body-sm" id="btn-copy-code">
+<span class="material-symbols-outlined text-[15px]">file_copy</span>
+<span>Copy Source</span>
+</button>
+</div>
+<!-- Code Block Body -->
+<div class="p-space-md bg-surface-container-lowest font-mono-sm text-mono-sm leading-relaxed overflow-x-auto text-on-surface">
+<!-- Rust Snippet (Active) -->
+<pre class="text-on-surface-variant" id="code-rust"><span class="text-primary font-bold">use</span> regex::Regex;
+
+<span class="text-secondary font-bold">fn</span> <span class="text-tertiary">parse_network_endpoints</span>(text: &amp;<span class="text-primary">str</span>) {
+    <span class="text-outline">// Compiled with zero-backtracking guarantee</span>
+    <span class="text-secondary font-bold">let</span> re = <span class="text-primary">Regex::new</span>(<span class="text-secondary">r"(?P&lt;protocol&gt;https?)://(?P&lt;host&gt;[a-zA-Z0-9.-]+)(?::(?P&lt;port&gt;\d+))?(?P&lt;path&gt;/[^\s?#]*)?"</span>).unwrap();
+
+    <span class="text-secondary font-bold">for</span> caps <span class="text-secondary font-bold">in</span> re.<span class="text-primary">captures_iter</span>(text) {
+        println!(<span class="text-secondary">"Protocol: {}, Host: {}, Port: {:?}, Path: {:?}"</span>,
+            &amp;caps[<span class="text-secondary">"protocol"</span>],
+            &amp;caps[<span class="text-secondary">"host"</span>],
+            caps.name(<span class="text-secondary">"port"</span>).map(|m| m.as_str()),
+            caps.name(<span class="text-secondary">"path"</span>).map(|m| m.as_str()),
+        );
+    }
+}</pre>
+<!-- TypeScript Snippet (Hidden) -->
+<pre class="hidden text-on-surface-variant" id="code-ts"><span class="text-primary font-bold">const</span> pattern = <span class="text-secondary">/(?&lt;protocol&gt;https?):\/\/(?&lt;host&gt;[a-zA-Z0-9.-]+)(?::(?&lt;port&gt;\d+))?(?&lt;path&gt;\/[^\s?#]*)?/g</span>;
+
+<span class="text-secondary font-bold">function</span> <span class="text-tertiary">extractUrls</span>(input: <span class="text-primary">string</span>) {
+  <span class="text-primary font-bold">const</span> matches = input.matchAll(pattern);
+  <span class="text-secondary font-bold">for</span> (<span class="text-primary font-bold">const</span> match <span class="text-secondary font-bold">of</span> matches) {
+    <span class="text-primary font-bold">const</span> { protocol, host, port, path } = match.groups || {};
+    console.log({ protocol, host, port, path });
+  }
+}</pre>
+<!-- Python Snippet (Hidden) -->
+<pre class="hidden text-on-surface-variant" id="code-py"><span class="text-primary font-bold">import</span> re
+
+pattern = re.compile(<span class="text-secondary">r"(?P&lt;protocol&gt;https?)://(?P&lt;host&gt;[a-zA-Z0-9.-]+)(?::(?P&lt;port&gt;\d+))?(?P&lt;path&gt;/[^\s?#]*)?"</span>)
+
+<span class="text-secondary font-bold">def</span> <span class="text-tertiary">parse_logs</span>(text: str):
+    <span class="text-secondary font-bold">for</span> match <span class="text-secondary font-bold">in</span> pattern.finditer(text):
+        groups = match.groupdict()
+        print(f<span class="text-secondary">"Found endpoint: {groups['protocol']}://{groups['host']}:{groups.get('port')} with path {groups.get('path')}"</span>)</pre>
+</div>
+</div>
+<!-- Interactive Script Logic -->
+<script>
+    (function () {
+      // Flag button toggling
+      const flagButtons = document.querySelectorAll('.flag-btn');
+      flagButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const isActive = btn.classList.contains('bg-primary-container');
+          if (isActive) {
+            btn.classList.remove('bg-primary-container', 'text-on-primary-container', 'font-bold');
+            btn.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+          } else {
+            btn.classList.add('bg-primary-container', 'text-on-primary-container', 'font-bold');
+            btn.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+          }
+        });
+      });
+
+      // Tab switcher for match/replace
+      const tabMatch = document.getElementById('tab-match');
+      const tabReplace = document.getElementById('tab-replace');
+      const replaceBar = document.getElementById('replace-bar');
+
+      tabMatch.addEventListener('click', () => {
+        tabMatch.classList.add('bg-surface-container-high', 'text-on-surface', 'font-semibold');
+        tabMatch.classList.remove('text-on-surface-variant');
+        tabReplace.classList.remove('bg-surface-container-high', 'text-on-surface', 'font-semibold');
+        tabReplace.classList.add('text-on-surface-variant');
+        replaceBar.classList.add('hidden');
+      });
+
+      tabReplace.addEventListener('click', () => {
+        tabReplace.classList.add('bg-surface-container-high', 'text-on-surface', 'font-semibold');
+        tabReplace.classList.remove('text-on-surface-variant');
+        tabMatch.classList.remove('bg-surface-container-high', 'text-on-surface', 'font-semibold');
+        tabMatch.classList.add('text-on-surface-variant');
+        replaceBar.classList.remove('hidden');
+      });
+
+      // Code snippet switching
+      const rustTab = document.getElementById('snippet-tab-rust');
+      const tsTab = document.getElementById('snippet-tab-ts');
+      const pyTab = document.getElementById('snippet-tab-py');
+
+      const rustCode = document.getElementById('code-rust');
+      const tsCode = document.getElementById('code-ts');
+      const pyCode = document.getElementById('code-py');
+
+      const allTabs = [rustTab, tsTab, pyTab];
+      const allCodes = [rustCode, tsCode, pyCode];
+
+      function activateSnippet(tab, codeElem) {
+        allTabs.forEach(t => {
+          t.classList.remove('bg-surface-container-high', 'text-primary', 'font-bold');
+          t.classList.add('text-on-surface-variant');
+        });
+        allCodes.forEach(c => c.classList.add('hidden'));
+
+        tab.classList.add('bg-surface-container-high', 'text-primary', 'font-bold');
+        tab.classList.remove('text-on-surface-variant');
+        codeElem.classList.remove('hidden');
+      }
+
+      rustTab.addEventListener('click', () => activateSnippet(rustTab, rustCode));
+      tsTab.addEventListener('click', () => activateSnippet(tsTab, tsCode));
+      pyTab.addEventListener('click', () => activateSnippet(pyTab, pyCode));
+
+      // Quick Copy buttons
+      const btnCopyCode = document.getElementById('btn-copy-code');
+      btnCopyCode.addEventListener('click', () => {
+        const activeCode = allCodes.find(c => !c.classList.contains('hidden'));
+        if (activeCode) {
+          navigator.clipboard.writeText(activeCode.innerText);
+          const original = btnCopyCode.innerHTML;
+          btnCopyCode.innerHTML = '<span class="material-symbols-outlined text-[15px] text-secondary">check</span><span>Copied!</span>';
+          setTimeout(() => btnCopyCode.innerHTML = original, 1800);
+        }
+      });
+
+      const btnCopyPattern = document.getElementById('btn-copy-pattern');
+      btnCopyPattern.addEventListener('click', () => {
+        const pattern = document.getElementById('regex-input').value;
+        navigator.clipboard.writeText(pattern);
+        btnCopyPattern.innerHTML = '<span class="material-symbols-outlined text-[15px] text-secondary">check</span>';
+        setTimeout(() => btnCopyPattern.innerHTML = '<span class="material-symbols-outlined text-[15px]">content_copy</span>', 1500);
+      });
+    })();
+  </script>
+</div></main><footer class="fixed bottom-0 left-60 right-0 h-8 bg-surface-container-lowest/90 backdrop-blur-md z-40 px-margin-lg flex items-center justify-between font-mono-sm text-mono-sm text-on-surface-variant shadow-[0_-1px_6px_rgba(0,0,0,0.3)]"><div class="flex items-center gap-space-md"><span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Freed RAM: <span class="text-on-surface font-semibold">4.2 GB session</span></span><span class="text-outline-variant">|</span><span>Active Listeners: <span class="text-primary font-semibold">28 ports</span></span></div><div class="flex items-center gap-space-md"><span>Interface: <span class="text-on-surface font-semibold">en0 • Wi-Fi 6 (802.11ax)</span></span><span class="text-outline-variant">|</span><span class="text-secondary">Secure Sandbox Active</span></div></footer></div></body></html>

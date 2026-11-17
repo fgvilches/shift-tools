@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-surface-variant":"#c0c6d6","on-primary-fixed-variant":"#00468d","on-tertiary-fixed-variant":"#7200a3","secondary-container":"#09bf49","surface-dim":"#131319","surface-container-low":"#1b1b21","inverse-surface":"#e4e1ea","on-secondary":"#003910","secondary-fixed-dim":"#47e266","on-error-container":"#ffdad6","tertiary":"#e9b3ff","surface-container-highest":"#34343b","tertiary-fixed-dim":"#e9b3ff","secondary-fixed":"#6cff82","surface-container":"#1f1f25","secondary":"#47e266","inverse-on-surface":"#303036","error-container":"#93000a","surface-bright":"#39383f","primary-container":"#3e90ff","on-tertiary-container":"#460066","primary-fixed-dim":"#aac7ff","on-primary-container":"#002957","background":"#131319","on-secondary-container":"#004615","on-surface":"#e4e1ea","on-background":"#e4e1ea","on-primary":"#003064","on-primary-fixed":"#001b3e","error":"#ffb4ab","tertiary-container":"#c863fb","surface-tint":"#aac7ff","tertiary-fixed":"#f6d9ff","primary":"#aac7ff","on-secondary-fixed":"#002106","on-tertiary-fixed":"#310048","surface":"#131319","primary-fixed":"#d6e3ff","inverse-primary":"#005db8","surface-container-lowest":"#0e0e14","on-tertiary":"#510074","on-error":"#690005","outline-variant":"#414754","surface-variant":"#34343b","surface-container-high":"#2a2930","outline":"#8b91a0","on-secondary-fixed-variant":"#00531a"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"gutter-sm":"0.5rem",margin:"0.75rem","gutter-lg":"1rem","margin-sm":"0.5rem","space-xs":"0.25rem","margin-lg":"1.25rem","space-lg":"1rem","space-md":"0.75rem","space-xl":"1.5rem",gutter:"0.75rem","space-sm":"0.5rem"},fontFamily:{"label-md":["Inter"],"body-sm":["Inter"],"label-sm":["Inter"],"mono-md":["JetBrains Mono"],"headline-sm":["Inter"],"headline-lg":["Inter"],"mono-lg":["JetBrains Mono"],"headline-md":["Inter"],"body-lg":["Inter"],"body-md":["Inter"],"mono-sm":["JetBrains Mono"]},fontSize:{"label-md":["12px",{lineHeight:"16px",letterSpacing:"0em",fontWeight:"500"}],"body-sm":["11px",{lineHeight:"15px",letterSpacing:"0em",fontWeight:"400"}],"label-sm":["10px",{lineHeight:"12px",letterSpacing:"0.03em",fontWeight:"600"}],"mono-md":["12px",{lineHeight:"16px",letterSpacing:"-0.01em",fontWeight:"400"}],"headline-sm":["14px",{lineHeight:"18px",letterSpacing:"-0.008em",fontWeight:"600"}],"headline-lg":["22px",{lineHeight:"28px",letterSpacing:"-0.015em",fontWeight:"600"}],"mono-lg":["13px",{lineHeight:"18px",letterSpacing:"-0.01em",fontWeight:"500"}],"headline-md":["17px",{lineHeight:"22px",letterSpacing:"-0.012em",fontWeight:"600"}],"body-lg":["14px",{lineHeight:"20px",letterSpacing:"-0.004em",fontWeight:"400"}],"body-md":["13px",{lineHeight:"18px",letterSpacing:"-0.002em",fontWeight:"400"}],"mono-sm":["10px",{lineHeight:"13px",letterSpacing:"0.01em",fontWeight:"400"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface select-none antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-60 z-50 bg-surface-container-low/85 backdrop-blur-2xl flex flex-col justify-between shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"><div class="flex flex-col h-full"><div class="h-14 px-margin-lg flex items-center gap-space-sm bg-surface-container-lowest/40 backdrop-blur-md"><img alt="shift-tools App Icon" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UjvTrhC126AmYWPrT2Ix4EmaYPA1it__A83Hwtu4-Xq_WLFRBDxLXBze1IJuIEVwI0THW5kV8amVNmgClGHTHvfsSk9nyGI0qUiZvNqHxrNCRkXDZhymdSyJvngGRwG7rZt7GGrOewgsRsA6MLmrzvMwLD_-NEkOEqn_6fo6nbaDmzAlHsmKVUXNns4Sy6jTmNsvWmW9B-4Cm6xfTVFZe7GG-gqqmHIM5AuDne_GMyNg"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">shift-tools</span><span class="font-mono-sm text-mono-sm text-on-surface-variant leading-tight">macOS native v1.0.0</span></div></div><div class="flex-1 overflow-y-auto px-margin py-space-sm space-y-space-md"><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">DevOps &amp; System</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="process-killer" href="#">Process Killer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="quarantine-remover" href="#">Quarantine Remover</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="port-manager" href="#">Port Manager</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="disk-cleaner" href="#">Disk Cleaner</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ram-monitor" href="#">RAM Monitor</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Networks</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="network-observer" href="#">Network Observer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="wifi-mapper" href="#">WiFi Mapper</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="lan-scanner" href="#">LAN Scanner</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="dns-toolkit" href="#">DNS Toolkit</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="speed-test" href="#">Speed Test</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ping-traceroute" href="#">Ping / Traceroute</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Security &amp; Pentest</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="header-analyzer" href="#">Header Analyzer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ssl-inspector" href="#">SSL Inspector</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="subdomain-finder" href="#">Subdomain Finder</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="hash-generator" href="#">Hash Generator</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="password-auditor" href="#">Password Auditor</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Testing &amp; APIs</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="api-tester" href="#">API Tester</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="json-toolkit" href="#">JSON Toolkit</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="base64-url-encoder" href="#">Base64 / URL Encoder</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="regex-tester" href="#">Regex Tester</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Utilities</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="color-picker" href="#">Color Picker</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="text-diff" href="#">Text Diff</a><a aria-current="page" class="flex items-center px-space-sm py-1.5 rounded-lg transition-colors bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]" data-path="timestamp-converter" href="#">Timestamp Converter</a></nav></div><div class="p-margin m-margin bg-surface-container-lowest/60 rounded-xl space-y-space-xs shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Host Node</span><span class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-high text-primary">Apple M3 Max</span></div><div class="flex items-center justify-between font-mono-sm text-mono-sm text-on-surface-variant"><span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Rust Core</span><span class="text-secondary">0.8ms IPC</span></div></div></div></aside><div class="pl-60 flex flex-col min-h-screen"><header class="fixed top-0 left-60 right-0 h-14 bg-surface-container-low/75 backdrop-blur-2xl z-40 px-margin-lg flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.25)]"><div class="flex items-center gap-space-md"><div class="flex items-center gap-2 pl-1"><span class="w-3 h-3 rounded-full bg-[#ff5f56] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span><span class="w-3 h-3 rounded-full bg-[#ffbd2e] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span><span class="w-3 h-3 rounded-full bg-[#27c93f] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span></div><div class="flex items-center gap-space-xs font-mono-sm text-mono-sm text-on-surface-variant pl-space-sm"><span class="text-on-surface font-semibold">shift-tools</span><span>/</span><span class="text-outline">v1.0.0 (Rust Core)</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm px-space-md py-1 rounded-lg bg-surface-container-lowest/80 text-on-surface-variant font-body-sm text-body-sm shadow-[inset_0_1px_2px_rgba(0,0,0,0.6)]"><span class="material-symbols-outlined text-[16px] text-outline">search</span><span class="text-on-surface-variant pr-space-lg">Quick dispatch...</span><kbd class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface">⌘K</kbd></div><div class="flex items-center gap-space-sm px-space-md py-1 rounded-full bg-surface-container-lowest/50 font-mono-sm text-mono-sm text-on-surface-variant"><span class="text-on-surface">RAM <span class="text-primary">14.2 / 32 GB</span></span><span class="text-outline-variant">•</span><span class="text-on-surface">CPU <span class="text-secondary">8%</span></span><span class="text-outline-variant">•</span><span class="text-on-surface">Svcs <span class="text-tertiary">6 active</span></span></div><div class="flex items-center gap-space-sm"><button class="w-7 h-7 flex items-center justify-center rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[18px]">settings</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 pt-14 pb-8 w-full px-gutter-lg bg-background"><div class="flex flex-col w-full space-y-space-lg text-on-surface">
+<!-- Tool Header -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pb-space-xs">
+<div class="space-y-1">
+<div class="flex items-center gap-space-sm flex-wrap">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Timestamp Converter</h1>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container-highest/60 text-primary font-mono-sm text-mono-sm backdrop-blur-md shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+          chrono 0.4.38 • Rust RTC Engine
+        </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+        Bidirectional Unix epoch conversion, ISO 8601 formatting, sub-millisecond precision, and global synchronous timezone telemetry.
+      </p>
+</div>
+<!-- Global Utility Actions -->
+<div class="flex items-center gap-space-sm flex-wrap">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-md text-label-md transition-all shadow-sm active:scale-95" id="copy-now-btn">
+<span class="material-symbols-outlined text-[16px] text-primary">content_copy</span>
+<span>Copy Unix Timestamp</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary-container text-on-primary-container font-headline-sm text-headline-sm transition-all shadow-sm hover:brightness-110 active:scale-95" id="set-now-btn">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+<span>Set to Now</span>
+<kbd class="font-mono-sm text-mono-sm px-1.5 py-0.2 rounded bg-surface-container-lowest/40 ml-1">Space</kbd>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all shadow-sm">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>Timezone Matrix</span>
+</button>
+</div>
+</div>
+<!-- Section 1: Current Epoch Live Clock Hero Card -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low/70 backdrop-blur-2xl p-space-lg shadow-lg">
+<div class="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-primary/10 blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-24 -left-24 w-80 h-80 rounded-full bg-tertiary/10 blur-3xl pointer-events-none"></div>
+<div class="relative flex flex-col xl:flex-row xl:items-center justify-between gap-space-lg">
+<div class="space-y-space-sm flex-1">
+<div class="flex items-center gap-space-md">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Real-Time Core Hardware Tick</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary/15 text-secondary font-mono-sm text-mono-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            ACTIVE DRIFT: 0.12ms
+          </span>
+<button class="font-mono-sm text-mono-sm text-on-surface-variant hover:text-on-surface underline underline-offset-2 transition-colors" id="toggle-ticker-btn">
+            Pause Ticker
+          </button>
+</div>
+<!-- Big Metric Display -->
+<div class="flex flex-col md:flex-row md:items-baseline gap-space-md">
+<div class="flex items-baseline gap-2">
+<span class="font-mono-lg text-[34px] leading-none text-primary font-bold tracking-tight" id="live-epoch-sec">1741712400</span>
+<span class="font-mono-sm text-mono-sm text-outline uppercase font-semibold">sec</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-mono-md text-[20px] leading-none text-on-surface-variant font-medium" id="live-epoch-ms">1741712400452</span>
+<span class="font-mono-sm text-mono-sm text-outline uppercase font-semibold">ms</span>
+</div>
+<div class="flex items-baseline gap-1.5 px-2.5 py-1 rounded bg-surface-container-highest/60 font-mono-md text-mono-md text-tertiary">
+<span class="text-outline text-mono-sm">HEX</span>
+<span id="live-epoch-hex">0x67CE97E0</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md font-mono-sm text-mono-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="text-outline">UTC:</span> <span class="text-on-surface" id="live-utc-preview">2025-03-11 17:00:00.452 UTC</span></span>
+<span class="text-outline-variant">•</span>
+<span class="flex items-center gap-1"><span class="text-outline">Local (CLT):</span> <span class="text-on-surface" id="live-local-preview">14:00:00 UTC-3</span></span>
+<span class="text-outline-variant">•</span>
+<span class="text-secondary font-medium">Precision: ±0.001µs RTC</span>
+</div>
+</div>
+<!-- Live Clock Radar / Micro Chart -->
+<div class="flex items-center gap-space-md bg-surface-container-lowest/60 p-space-md rounded-xl backdrop-blur-md">
+<svg class="w-16 h-16 transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container-highest stroke-current" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-width="3"></path>
+<path class="text-primary stroke-current transition-all duration-75" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" id="subsecond-gauge" stroke-dasharray="75, 100" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Subsecond Phase</span>
+<span class="font-mono-md text-mono-md text-on-surface font-semibold" id="subsecond-val">452 ms</span>
+<span class="font-mono-sm text-mono-sm text-secondary">Synchronized POSIX</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 2: Bidirectional Converter Panels (2 Columns) -->
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-space-lg">
+<!-- Left Panel: Epoch to Human -->
+<div class="flex flex-col rounded-xl bg-surface-container-low/75 backdrop-blur-2xl p-space-lg shadow-md space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Epoch to Human Readable</h2>
+</div>
+<span class="font-mono-sm text-mono-sm text-outline">Parser: chrono::DateTime</span>
+</div>
+<!-- Input Bar & Unit Tabs -->
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>SOURCE UNIX NUMERIC</span>
+<!-- Precision Selector Tabs -->
+<div class="flex rounded bg-surface-container-lowest p-0.5 font-mono-sm text-mono-sm">
+<button class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-semibold">s</button>
+<button class="px-2 py-0.5 rounded text-on-surface-variant hover:text-on-surface">ms</button>
+<button class="px-2 py-0.5 rounded text-on-surface-variant hover:text-on-surface">µs</button>
+<button class="px-2 py-0.5 rounded text-on-surface-variant hover:text-on-surface">ns</button>
+</div>
+</div>
+<div class="relative flex items-center">
+<input class="w-full px-space-md py-2.5 rounded-lg bg-surface-container-lowest text-primary font-mono-lg text-mono-lg shadow-inner focus:outline-none focus:ring-1 focus:ring-primary transition-all placeholder:text-outline" id="epoch-input" placeholder="Enter Unix timestamp..." type="text" value="1741712400"/>
+<button class="absolute right-2 px-2 py-1 text-on-surface-variant hover:text-on-surface font-mono-sm text-mono-sm bg-surface-container-high rounded transition-colors" id="clear-epoch-btn">
+            Clear
+          </button>
+</div>
+</div>
+<!-- Relative Preset Jumps -->
+<div class="flex items-center gap-1.5 flex-wrap">
+<button class="preset-btn px-2.5 py-1 rounded bg-surface-container-high/80 hover:bg-surface-bright text-on-surface font-mono-sm text-mono-sm transition-all" data-delta="3600">+1 hour</button>
+<button class="preset-btn px-2.5 py-1 rounded bg-surface-container-high/80 hover:bg-surface-bright text-on-surface font-mono-sm text-mono-sm transition-all" data-delta="86400">+1 day</button>
+<button class="preset-btn px-2.5 py-1 rounded bg-surface-container-high/80 hover:bg-surface-bright text-on-surface font-mono-sm text-mono-sm transition-all" data-delta="604800">+7 days</button>
+<button class="preset-btn px-2.5 py-1 rounded bg-surface-container-high/80 hover:bg-surface-bright text-on-surface font-mono-sm text-mono-sm transition-all" data-delta="-2592000">-1 month</button>
+<button class="px-2.5 py-1 rounded bg-surface-container-highest/80 hover:bg-surface-bright text-primary font-mono-sm text-mono-sm transition-all" id="start-day-btn">Start of Day</button>
+<button class="px-2.5 py-1 rounded bg-surface-container-highest/80 hover:bg-surface-bright text-primary font-mono-sm text-mono-sm transition-all" id="end-day-btn">End of Day</button>
+</div>
+<!-- Result Cards Grid -->
+<div class="space-y-space-xs pt-space-xs">
+<!-- ISO 8601 -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-lowest/80 hover:bg-surface-container-lowest transition-colors group">
+<div class="flex flex-col min-w-0 pr-2">
+<span class="font-label-sm text-label-sm text-outline uppercase">ISO 8601 / RFC 3339 (UTC)</span>
+<span class="font-mono-md text-mono-md text-on-surface truncate" id="res-iso">2025-03-11T17:00:00.000Z</span>
+</div>
+<button class="copy-field-btn p-1.5 rounded bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors" data-target="res-iso">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+<!-- RFC 2822 -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-lowest/80 hover:bg-surface-container-lowest transition-colors group">
+<div class="flex flex-col min-w-0 pr-2">
+<span class="font-label-sm text-label-sm text-outline uppercase">RFC 2822 (Email Spec)</span>
+<span class="font-mono-md text-mono-md text-on-surface truncate" id="res-rfc">Tue, 11 Mar 2025 17:00:00 +0000</span>
+</div>
+<button class="copy-field-btn p-1.5 rounded bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors" data-target="res-rfc">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+<!-- Local Time -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-lowest/80 hover:bg-surface-container-lowest transition-colors group">
+<div class="flex flex-col min-w-0 pr-2">
+<span class="font-label-sm text-label-sm text-outline uppercase">Local Time (America/Santiago • CLT / UTC-3)</span>
+<span class="font-body-md text-body-md text-primary font-medium truncate" id="res-local">Martes, 11 de Marzo de 2025, 14:00:00</span>
+</div>
+<button class="copy-field-btn p-1.5 rounded bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors" data-target="res-local">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+<!-- Meta Grid -->
+<div class="grid grid-cols-2 gap-space-xs pt-1">
+<div class="p-space-sm rounded-lg bg-surface-container-lowest/50">
+<span class="font-label-sm text-label-sm text-outline uppercase">Relative Timestamp</span>
+<p class="font-mono-sm text-mono-sm text-secondary font-medium mt-0.5" id="res-rel">Active epoch anchor (Now)</p>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest/50">
+<span class="font-label-sm text-label-sm text-outline uppercase">Calendar Geometry</span>
+<p class="font-mono-sm text-mono-sm text-tertiary mt-0.5" id="res-cal">Day 70 • Week 11 • Non-Leap</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Panel: Human to Epoch -->
+<div class="flex flex-col rounded-xl bg-surface-container-low/75 backdrop-blur-2xl p-space-lg shadow-md space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Human Date &amp; Time to Epoch</h2>
+</div>
+<span class="font-mono-sm text-mono-sm text-outline">IANA TZ Database v2024b</span>
+</div>
+<!-- Interactive Inputs -->
+<div class="space-y-space-xs">
+<span class="font-label-sm text-label-sm text-outline uppercase">Target Date Components</span>
+<div class="grid grid-cols-3 gap-space-xs">
+<div>
+<label class="font-mono-sm text-mono-sm text-on-surface-variant">YEAR</label>
+<input class="w-full px-2.5 py-1.5 rounded bg-surface-container-lowest font-mono-md text-mono-md text-on-surface focus:outline-none focus:ring-1 focus:ring-secondary" id="in-year" type="number" value="2025"/>
+</div>
+<div>
+<label class="font-mono-sm text-mono-sm text-on-surface-variant">MONTH</label>
+<input class="w-full px-2.5 py-1.5 rounded bg-surface-container-lowest font-mono-md text-mono-md text-on-surface focus:outline-none focus:ring-1 focus:ring-secondary" id="in-month" max="12" min="1" type="number" value="3"/>
+</div>
+<div>
+<label class="font-mono-sm text-mono-sm text-on-surface-variant">DAY</label>
+<input class="w-full px-2.5 py-1.5 rounded bg-surface-container-lowest font-mono-md text-mono-md text-on-surface focus:outline-none focus:ring-1 focus:ring-secondary" id="in-day" max="31" min="1" type="number" value="11"/>
+</div>
+</div>
+</div>
+<div class="space-y-space-xs">
+<span class="font-label-sm text-label-sm text-outline uppercase">Time &amp; Precision</span>
+<div class="grid grid-cols-3 gap-space-xs">
+<div>
+<label class="font-mono-sm text-mono-sm text-on-surface-variant">HOURS (24H)</label>
+<input class="w-full px-2.5 py-1.5 rounded bg-surface-container-lowest font-mono-md text-mono-md text-on-surface focus:outline-none focus:ring-1 focus:ring-secondary" id="in-hour" max="23" min="0" type="number" value="17"/>
+</div>
+<div>
+<label class="font-mono-sm text-mono-sm text-on-surface-variant">MINUTES</label>
+<input class="w-full px-2.5 py-1.5 rounded bg-surface-container-lowest font-mono-md text-mono-md text-on-surface focus:outline-none focus:ring-1 focus:ring-secondary" id="in-min" max="59" min="0" type="number" value="00"/>
+</div>
+<div>
+<label class="font-mono-sm text-mono-sm text-on-surface-variant">SECONDS</label>
+<input class="w-full px-2.5 py-1.5 rounded bg-surface-container-lowest font-mono-md text-mono-md text-on-surface focus:outline-none focus:ring-1 focus:ring-secondary" id="in-sec" max="59" min="0" type="number" value="00"/>
+</div>
+</div>
+</div>
+<!-- Timezone Selector Dropdown -->
+<div class="space-y-space-xs">
+<label class="font-label-sm text-label-sm text-outline uppercase">Target Zone Identifier</label>
+<div class="relative">
+<select class="w-full px-3 py-2 rounded-lg bg-surface-container-lowest text-on-surface font-mono-md text-mono-md focus:outline-none focus:ring-1 focus:ring-secondary appearance-none cursor-pointer" id="tz-select">
+<option selected="" value="UTC">UTC (Coordinated Universal Time • +00:00)</option>
+<option value="America/New_York">America/New_York (EDT • UTC-04:00)</option>
+<option value="America/Los_Angeles">America/Los_Angeles (PDT • UTC-07:00)</option>
+<option value="America/Santiago">America/Santiago (CLT • UTC-03:00)</option>
+<option value="Europe/London">Europe/London (GMT/BST • UTC+00:00)</option>
+<option value="Europe/Berlin">Europe/Berlin (CET • UTC+01:00)</option>
+<option value="Asia/Tokyo">Asia/Tokyo (JST • UTC+09:00)</option>
+<option value="Asia/Singapore">Asia/Singapore (SGT • UTC+08:00)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-outline pointer-events-none text-[18px]">expand_more</span>
+</div>
+</div>
+<!-- Computed Epoch Results -->
+<div class="space-y-space-xs pt-1">
+<div class="p-space-sm rounded-lg bg-surface-container-lowest/80 flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase">Unix Epoch Seconds</span>
+<p class="font-mono-lg text-mono-lg text-secondary font-bold" id="out-epoch-sec">1741712400</p>
+</div>
+<button class="copy-field-btn px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-mono-sm text-mono-sm hover:bg-surface-bright transition-colors" data-target="out-epoch-sec">
+            Copy
+          </button>
+</div>
+<div class="grid grid-cols-2 gap-space-xs">
+<div class="p-space-sm rounded-lg bg-surface-container-lowest/60">
+<span class="font-label-sm text-label-sm text-outline uppercase">Milliseconds</span>
+<p class="font-mono-md text-mono-md text-on-surface" id="out-epoch-ms">1741712400000</p>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest/60">
+<span class="font-label-sm text-label-sm text-outline uppercase">Astronomical Julian Date</span>
+<p class="font-mono-md text-mono-md text-tertiary" id="out-julian">2460746.208</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 3: Global World Clock & Timezone Matrix -->
+<div class="flex flex-col space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">public</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Developer Node Grid &amp; Synced World Latency</h2>
+</div>
+<span class="font-mono-sm text-mono-sm text-outline">Network Base: NTP Tier-1 pool.ntp.org</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-space-sm">
+<!-- San Francisco -->
+<div class="flex flex-col p-space-md rounded-xl bg-surface-container-low/75 backdrop-blur-xl shadow-sm space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface">San Francisco</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">wb_sunny</span>
+</div>
+<div class="flex flex-col">
+<span class="font-mono-lg text-mono-lg text-primary font-bold">10:00:00 <span class="text-mono-sm font-normal text-outline">AM</span></span>
+<span class="font-mono-sm text-mono-sm text-on-surface-variant">PDT (UTC-7) • Core Hub</span>
+</div>
+<div class="pt-1 flex items-center justify-between font-mono-sm text-mono-sm text-outline">
+<span>Daylight Active</span>
+<span class="text-secondary">-3h vs NY</span>
+</div>
+</div>
+<!-- New York -->
+<div class="flex flex-col p-space-md rounded-xl bg-surface-container-low/75 backdrop-blur-xl shadow-sm space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface">New York</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">wb_sunny</span>
+</div>
+<div class="flex flex-col">
+<span class="font-mono-lg text-mono-lg text-on-surface font-bold">01:00:00 <span class="text-mono-sm font-normal text-outline">PM</span></span>
+<span class="font-mono-sm text-mono-sm text-on-surface-variant">EDT (UTC-4) • AWS us-east-1</span>
+</div>
+<div class="pt-1 flex items-center justify-between font-mono-sm text-mono-sm text-outline">
+<span>Daylight Active</span>
+<span class="text-primary">-4h vs UTC</span>
+</div>
+</div>
+<!-- London -->
+<div class="flex flex-col p-space-md rounded-xl bg-surface-container-low/75 backdrop-blur-xl shadow-sm space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface">London</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary">wb_twilight</span>
+</div>
+<div class="flex flex-col">
+<span class="font-mono-lg text-mono-lg text-on-surface font-bold">05:00:00 <span class="text-mono-sm font-normal text-outline">PM</span></span>
+<span class="font-mono-sm text-mono-sm text-on-surface-variant">GMT / BST (UTC+0)</span>
+</div>
+<div class="pt-1 flex items-center justify-between font-mono-sm text-mono-sm text-outline">
+<span>Twilight Horizon</span>
+<span class="text-tertiary">Prime Meridian</span>
+</div>
+</div>
+<!-- Frankfurt -->
+<div class="flex flex-col p-space-md rounded-xl bg-surface-container-low/75 backdrop-blur-xl shadow-sm space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Frankfurt</span>
+<span class="material-symbols-outlined text-[16px] text-outline">bedtime</span>
+</div>
+<div class="flex flex-col">
+<span class="font-mono-lg text-mono-lg text-on-surface font-bold">06:00:00 <span class="text-mono-sm font-normal text-outline">PM</span></span>
+<span class="font-mono-sm text-mono-sm text-on-surface-variant">CET (UTC+1) • DE-CIX IXP</span>
+</div>
+<div class="pt-1 flex items-center justify-between font-mono-sm text-mono-sm text-outline">
+<span>Dusk Transition</span>
+<span class="text-on-surface-variant">+1h vs London</span>
+</div>
+</div>
+<!-- Tokyo -->
+<div class="flex flex-col p-space-md rounded-xl bg-surface-container-low/75 backdrop-blur-xl shadow-sm space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Tokyo</span>
+<span class="material-symbols-outlined text-[16px] text-primary">nightlight</span>
+</div>
+<div class="flex flex-col">
+<span class="font-mono-lg text-mono-lg text-tertiary font-bold">02:00:00 <span class="text-mono-sm font-normal text-outline">AM</span></span>
+<span class="font-mono-sm text-mono-sm text-tertiary-fixed-dim">JST (UTC+9) • Tomorrow</span>
+</div>
+<div class="pt-1 flex items-center justify-between font-mono-sm text-mono-sm text-outline">
+<span>Night Phase (+1d)</span>
+<span class="text-primary">+16h vs SF</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 4: Batch Timestamp Converter / Log Parser -->
+<div class="flex flex-col rounded-xl bg-surface-container-low/75 backdrop-blur-2xl p-space-lg shadow-md space-y-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[18px]">terminal</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Batch Log Epoch Ingestion &amp; AST Parser</h2>
+<span class="px-2 py-0.5 rounded bg-surface-container-high font-mono-sm text-mono-sm text-primary">Regex Pattern: ^\[(\d{10}(?:\.\d{3})?)\]</span>
+</div>
+<div class="flex items-center gap-space-md font-mono-sm text-mono-sm">
+<span class="text-outline">Engine: <span class="text-on-surface">SIMD-accelerated</span></span>
+<span class="text-secondary font-semibold">IPC parse latency: 0.04ms</span>
+</div>
+</div>
+<!-- Log Viewer Output -->
+<div class="overflow-x-auto rounded-lg bg-surface-container-lowest/90 p-space-md font-mono-sm text-mono-sm space-y-1.5 shadow-inner">
+<div class="flex items-center gap-space-md py-1 px-2 rounded hover:bg-surface-container-high/40 transition-colors">
+<span class="text-outline select-none w-8">01</span>
+<span class="px-1.5 py-0.5 rounded bg-primary/10 text-primary">[1741712400.120]</span>
+<span class="text-secondary font-semibold">→ 2025-03-11 17:00:00.120Z</span>
+<span class="text-on-surface-variant truncate">GET /api/v2/telemetry/stream 200 OK (latency: 1.84ms) client=192.168.1.104</span>
+</div>
+<div class="flex items-center gap-space-md py-1 px-2 rounded hover:bg-surface-container-high/40 transition-colors">
+<span class="text-outline select-none w-8">02</span>
+<span class="px-1.5 py-0.5 rounded bg-primary/10 text-primary">[1741712402.481]</span>
+<span class="text-secondary font-semibold">→ 2025-03-11 17:00:02.481Z</span>
+<span class="text-on-surface-variant truncate">POST /api/v1/auth/exchange 201 Created token_id=tok_99fa1b2</span>
+</div>
+<div class="flex items-center gap-space-md py-1 px-2 rounded hover:bg-surface-container-high/40 transition-colors">
+<span class="text-outline select-none w-8">03</span>
+<span class="px-1.5 py-0.5 rounded bg-primary/10 text-primary">[1741712405.900]</span>
+<span class="text-secondary font-semibold">→ 2025-03-11 17:00:05.900Z</span>
+<span class="text-error font-semibold">WARN</span>
+<span class="text-on-surface-variant truncate">Upstream gRPC endpoint timeout after 3000ms. Retrying attempt 1/3...</span>
+</div>
+<div class="flex items-center gap-space-md py-1 px-2 rounded hover:bg-surface-container-high/40 transition-colors">
+<span class="text-outline select-none w-8">04</span>
+<span class="px-1.5 py-0.5 rounded bg-primary/10 text-primary">[1741712406.104]</span>
+<span class="text-secondary font-semibold">→ 2025-03-11 17:00:06.104Z</span>
+<span class="text-tertiary">INFO</span>
+<span class="text-on-surface-variant truncate">Worker thread pool rescaled to 16 native OS threads (M3 Max dynamic allocate)</span>
+</div>
+</div>
+<!-- Quick Tool Actions Footer Inside Card -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-sm pt-space-xs font-mono-sm text-mono-sm text-on-surface-variant">
+<span>Matched: 4 epoch occurrences in buffer (100% parsed)</span>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1 rounded bg-surface-container-high text-on-surface hover:bg-surface-bright transition-colors">
+          Export Formatted JSON
+        </button>
+<button class="px-3 py-1 rounded bg-surface-container-high text-on-surface hover:bg-surface-bright transition-colors">
+          Open Raw In Stream Viewer
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function initTimestampConverter() {
+    let tickerActive = true;
+    let baseTime = Math.floor(Date.now() / 1000);
+    const epochInput = document.getElementById('epoch-input');
+    const liveSec = document.getElementById('live-epoch-sec');
+    const liveMs = document.getElementById('live-epoch-ms');
+    const liveHex = document.getElementById('live-epoch-hex');
+    const liveUtc = document.getElementById('live-utc-preview');
+    const subGauge = document.getElementById('subsecond-gauge');
+    const subVal = document.getElementById('subsecond-val');
+    const tickerBtn = document.getElementById('toggle-ticker-btn');
+    const copyNowBtn = document.getElementById('copy-now-btn');
+    const setNowBtn = document.getElementById('set-now-btn');
+
+    // Live Clock Ticker
+    function updateClock() {
+      if (!tickerActive) return;
+      const now = new Date();
+      const ms = now.getTime();
+      const sec = Math.floor(ms / 1000);
+      const subMs = now.getMilliseconds();
+
+      if (liveSec) liveSec.textContent = sec;
+      if (liveMs) liveMs.textContent = ms;
+      if (liveHex) liveHex.textContent = '0x' + sec.toString(16).toUpperCase();
+      if (liveUtc) liveUtc.textContent = now.toISOString().replace('T', ' ').replace('Z', ' UTC');
+      if (subVal) subVal.textContent = subMs + ' ms';
+      if (subGauge) {
+        const percent = Math.floor((subMs / 1000) * 100);
+        subGauge.setAttribute('stroke-dasharray', `${percent}, 100`);
+      }
+    }
+
+    const timer = setInterval(updateClock, 100);
+
+    // Ticker Toggle
+    if (tickerBtn) {
+      tickerBtn.addEventListener('click', () => {
+        tickerActive = !tickerActive;
+        tickerBtn.textContent = tickerActive ? 'Pause Ticker' : 'Resume Ticker';
+        tickerBtn.classList.toggle('text-secondary', !tickerActive);
+      });
+    }
+
+    // Set to now
+    function triggerSetToNow() {
+      const current = Math.floor(Date.now() / 1000);
+      if (epochInput) {
+        epochInput.value = current;
+        recalculateEpoch(current);
+      }
+    }
+
+    if (setNowBtn) setNowBtn.addEventListener('click', triggerSetToNow);
+    window.addEventListener('keydown', (e) => {
+      if (e.code === 'Space' && e.target === document.body) {
+        e.preventDefault();
+        triggerSetToNow();
+      }
+    });
+
+    // Copy Unix Timestamp
+    if (copyNowBtn) {
+      copyNowBtn.addEventListener('click', () => {
+        const current = Math.floor(Date.now() / 1000).toString();
+        navigator.clipboard.writeText(current);
+        const originalText = copyNowBtn.innerHTML;
+        copyNowBtn.innerHTML = '<span class="material-symbols-outlined text-[16px] text-secondary">check</span><span>Copied!</span>';
+        setTimeout(() => {
+          copyNowBtn.innerHTML = originalText;
+        }, 1500);
+      });
+    }
+
+    // Epoch Input Recalculation
+    function recalculateEpoch(secVal) {
+      const d = new Date(secVal * 1000);
+      const resIso = document.getElementById('res-iso');
+      const resRfc = document.getElementById('res-rfc');
+      const resLocal = document.getElementById('res-local');
+      const resRel = document.getElementById('res-rel');
+      const resCal = document.getElementById('res-cal');
+
+      if (!isNaN(d.getTime())) {
+        if (resIso) resIso.textContent = d.toISOString();
+        if (resRfc) resRfc.textContent = d.toUTCString();
+        if (resLocal) resLocal.textContent = d.toLocaleString('es-CL', {
+          timeZone: 'America/Santiago',
+          dateStyle: 'full',
+          timeStyle: 'medium'
+        });
+
+        // Relative calculation
+        const nowSec = Math.floor(Date.now() / 1000);
+        const diff = secVal - nowSec;
+        if (resRel) {
+          if (Math.abs(diff) < 5) resRel.textContent = "Exact current moment (now)";
+          else if (diff > 0) resRel.textContent = `in ~${Math.round(diff / 60)} minutes`;
+          else resRel.textContent = `${Math.abs(Math.round(diff / 60))} minutes ago`;
+        }
+
+        // Day of Year
+        const start = new Date(d.getFullYear(), 0, 0);
+        const diffDays = Math.floor((d - start) / (1000 * 60 * 60 * 24));
+        const leap = (d.getFullYear() % 4 === 0 && d.getFullYear() % 100 !== 0) || (d.getFullYear() % 400 === 0);
+        if (resCal) resCal.textContent = `Day ${diffDays} • Week ${Math.ceil(diffDays / 7)} • ${leap ? 'Leap Year' : 'Non-Leap'}`;
+      }
+    }
+
+    if (epochInput) {
+      epochInput.addEventListener('input', (e) => {
+        const val = parseInt(e.target.value, 10);
+        if (!isNaN(val)) recalculateEpoch(val);
+      });
+    }
+
+    // Preset delta buttons
+    document.querySelectorAll('.preset-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const delta = parseInt(btn.getAttribute('data-delta'), 10);
+        const current = parseInt(epochInput.value || 0, 10);
+        const next = current + delta;
+        epochInput.value = next;
+        recalculateEpoch(next);
+      });
+    });
+
+    const clearEpochBtn = document.getElementById('clear-epoch-btn');
+    if (clearEpochBtn) {
+      clearEpochBtn.addEventListener('click', () => {
+        epochInput.value = '';
+        epochInput.focus();
+      });
+    }
+
+    const startDayBtn = document.getElementById('start-day-btn');
+    if (startDayBtn) {
+      startDayBtn.addEventListener('click', () => {
+        const cur = new Date(parseInt(epochInput.value || (Date.now()/1000), 10) * 1000);
+        cur.setUTCHours(0,0,0,0);
+        const s = Math.floor(cur.getTime() / 1000);
+        epochInput.value = s;
+        recalculateEpoch(s);
+      });
+    }
+
+    const endDayBtn = document.getElementById('end-day-btn');
+    if (endDayBtn) {
+      endDayBtn.addEventListener('click', () => {
+        const cur = new Date(parseInt(epochInput.value || (Date.now()/1000), 10) * 1000);
+        cur.setUTCHours(23,59,59,999);
+        const s = Math.floor(cur.getTime() / 1000);
+        epochInput.value = s;
+        recalculateEpoch(s);
+      });
+    }
+
+    // Copy Field Buttons
+    document.querySelectorAll('.copy-field-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-target');
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) {
+          navigator.clipboard.writeText(targetEl.textContent.trim());
+          const orig = btn.innerHTML;
+          btn.innerHTML = '<span class="material-symbols-outlined text-[16px] text-secondary">check</span>';
+          setTimeout(() => { btn.innerHTML = orig; }, 1200);
+        }
+      });
+    });
+
+    // Human to Epoch live updater
+    const yIn = document.getElementById('in-year');
+    const mIn = document.getElementById('in-month');
+    const dIn = document.getElementById('in-day');
+    const hIn = document.getElementById('in-hour');
+    const minIn = document.getElementById('in-min');
+    const sIn = document.getElementById('in-sec');
+    const outSec = document.getElementById('out-epoch-sec');
+    const outMs = document.getElementById('out-epoch-ms');
+    const outJul = document.getElementById('out-julian');
+
+    function syncHumanToEpoch() {
+      const y = parseInt(yIn.value, 10);
+      const m = parseInt(mIn.value, 10) - 1;
+      const d = parseInt(dIn.value, 10);
+      const h = parseInt(hIn.value, 10);
+      const min = parseInt(minIn.value, 10);
+      const sec = parseInt(sIn.value, 10);
+
+      const utcDate = new Date(Date.UTC(y, m, d, h, min, sec));
+      if (!isNaN(utcDate.getTime())) {
+        const epochS = Math.floor(utcDate.getTime() / 1000);
+        if (outSec) outSec.textContent = epochS;
+        if (outMs) outMs.textContent = utcDate.getTime();
+        if (outJul) {
+          const jd = (utcDate.getTime() / 86400000) + 2440587.5;
+          outJul.textContent = jd.toFixed(4);
+        }
+      }
+    }
+
+    [yIn, mIn, dIn, hIn, minIn, sIn].forEach(input => {
+      if (input) input.addEventListener('input', syncHumanToEpoch);
+    });
+
+    // Initial triggers
+    updateClock();
+    recalculateEpoch(1741712400);
+    syncHumanToEpoch();
+  })();
+</script></main><footer class="fixed bottom-0 left-60 right-0 h-8 bg-surface-container-lowest/90 backdrop-blur-md z-40 px-margin-lg flex items-center justify-between font-mono-sm text-mono-sm text-on-surface-variant shadow-[0_-1px_6px_rgba(0,0,0,0.3)]"><div class="flex items-center gap-space-md"><span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Freed RAM: <span class="text-on-surface font-semibold">4.2 GB session</span></span><span class="text-outline-variant">|</span><span>Active Listeners: <span class="text-primary font-semibold">28 ports</span></span></div><div class="flex items-center gap-space-md"><span>Interface: <span class="text-on-surface font-semibold">en0 • Wi-Fi 6 (802.11ax)</span></span><span class="text-outline-variant">|</span><span class="text-secondary">Secure Sandbox Active</span></div></footer></div></body></html>

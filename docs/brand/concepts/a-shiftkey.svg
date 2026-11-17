@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <title>shift-tools — concept A: the shift key</title>
+  <!-- Arrow: flat-cut apex (16px truncation), 45° wings, tapered stem. -->
+  <path fill="#000" d="M120 44 h16 l72 72 v20 h-40 v72 q0 8 -8 8 h-64 q-8 0 -8 -8 v-72 h-40 v-20 z"/>
+</svg>

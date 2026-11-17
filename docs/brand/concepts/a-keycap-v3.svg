@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <title>shift-tools — concept A v3: keycap with shift glyph</title>
+  <!-- Squircle keycap, shift glyph knocked out. Wide shallow wings = shift, not upload. -->
+  <path fill="#000" fill-rule="evenodd"
+        d="M80 28 H176 A52 52 0 0 1 228 80 V176 A52 52 0 0 1 176 228 H80 A52 52 0 0 1 28 176 V80 A52 52 0 0 1 80 28 Z
+           M119 66 H137 L182 111 V139 H150 V198 H106 V139 H74 V111 Z"/>
+</svg>

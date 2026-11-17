@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <title>shift-tools — concept C v2: cascade</title>
+  <g fill="#000" transform="translate(0 -7)">
+    <rect x="44" y="58" width="124" height="46" rx="16"/>
+    <rect x="66" y="112" width="124" height="46" rx="16"/>
+    <rect x="88" y="166" width="124" height="46" rx="16"/>
+  </g>
+</svg>

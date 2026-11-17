@@ -1,0 +1,234 @@
+/* Rendered Markdown — scoped to the preview pane, driven by the design tokens. */
+
+.md-body {
+  color: var(--color-on-variant);
+  font-size: 13px;
+  line-height: 1.68;
+  overflow-wrap: anywhere;
+}
+
+.md-body > :first-child {
+  margin-top: 0 !important;
+}
+
+.md-body > :last-child {
+  margin-bottom: 0 !important;
+}
+
+.md-body h1,
+.md-body h2,
+.md-body h3,
+.md-body h4,
+.md-body h5,
+.md-body h6 {
+  color: var(--color-on-surface);
+  font-weight: 600;
+  letter-spacing: -0.012em;
+  line-height: 1.3;
+  margin: 22px 0 9px;
+}
+
+.md-body h1 {
+  font-size: 19px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.md-body h2 {
+  font-size: 15.5px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.md-body h3 {
+  font-size: 13.5px;
+}
+
+.md-body h4,
+.md-body h5,
+.md-body h6 {
+  font-size: 10.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-outline);
+}
+
+.md-body p {
+  margin: 0 0 10px;
+}
+
+.md-body a {
+  color: var(--color-primary-soft);
+  text-decoration: underline;
+  text-decoration-color: rgba(170, 199, 255, 0.4);
+  text-underline-offset: 2px;
+  transition: color 120ms var(--ease-out-soft);
+}
+
+.md-body a:hover {
+  color: #d6e3ff;
+  text-decoration-color: currentColor;
+}
+
+.md-body strong {
+  color: var(--color-on-surface);
+  font-weight: 600;
+}
+
+.md-body em {
+  color: var(--color-on-surface);
+}
+
+.md-body del {
+  color: var(--color-outline);
+}
+
+.md-body code {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--color-primary-soft);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.075);
+  border-radius: 4px;
+  padding: 1px 4px;
+}
+
+.md-body pre {
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.075);
+  border-radius: var(--radius-ctl);
+  overflow-x: auto;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.md-body pre code {
+  display: block;
+  background: none;
+  border: 0;
+  padding: 0;
+  color: #d6e3ff;
+  font-size: 11.5px;
+  line-height: 1.6;
+  white-space: pre;
+}
+
+.md-body blockquote {
+  margin: 0 0 12px;
+  padding: 8px 12px;
+  border-left: 2px solid var(--color-primary);
+  border-radius: 0 var(--radius-ctl) var(--radius-ctl) 0;
+  background: rgba(10, 132, 255, 0.075);
+  color: var(--color-on-variant);
+}
+
+.md-body blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+.md-body ul,
+.md-body ol {
+  margin: 0 0 11px;
+  padding-left: 20px;
+}
+
+.md-body ul ul,
+.md-body ol ol,
+.md-body ul ol,
+.md-body ol ul {
+  margin: 4px 0 2px;
+}
+
+.md-body li {
+  margin: 3px 0;
+}
+
+.md-body li::marker {
+  color: var(--color-outline);
+}
+
+.md-body ul.contains-task-list {
+  list-style: none;
+  padding-left: 2px;
+}
+
+.md-body li.task-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+}
+
+.md-body input[type="checkbox"] {
+  margin: 4px 0 0;
+  width: 12px;
+  height: 12px;
+  accent-color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.md-body table {
+  display: block;
+  width: max-content;
+  min-width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin: 0 0 14px;
+  font-size: 11.5px;
+}
+
+.md-body thead {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.md-body th {
+  text-align: left;
+  padding: 6px 10px;
+  color: var(--color-on-surface);
+  font-size: 9.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  white-space: nowrap;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.11);
+}
+
+.md-body td {
+  padding: 6px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+  vertical-align: top;
+}
+
+.md-body tbody tr:hover td {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.md-body hr {
+  border: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 18px 0;
+}
+
+.md-body img {
+  max-width: 100%;
+  border-radius: var(--radius-ctl);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.md-body kbd {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--color-on-variant);
+}
+
+.md-body sup,
+.md-body sub {
+  font-size: 10px;
+}

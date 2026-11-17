@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-secondary-container":"#004615","on-secondary-fixed-variant":"#00531a","on-primary-fixed-variant":"#00468d","primary-fixed":"#d6e3ff","on-surface":"#e4e1ea","error-container":"#93000a","primary-fixed-dim":"#aac7ff","on-background":"#e4e1ea","on-error":"#690005","on-surface-variant":"#c0c6d6","on-primary-fixed":"#001b3e","surface-dim":"#131319","primary-container":"#3e90ff","secondary-fixed":"#6cff82","surface-variant":"#34343b","on-tertiary":"#510074","inverse-primary":"#005db8","surface-tint":"#aac7ff","tertiary-fixed":"#f6d9ff","tertiary":"#e9b3ff","surface":"#131319","on-secondary":"#003910","tertiary-fixed-dim":"#e9b3ff","on-secondary-fixed":"#002106","secondary-container":"#09bf49","error":"#ffb4ab","secondary-fixed-dim":"#47e266","surface-container":"#1f1f25","outline":"#8b91a0","on-primary-container":"#002957","inverse-surface":"#e4e1ea","background":"#131319","surface-container-highest":"#34343b","primary":"#aac7ff","on-tertiary-fixed-variant":"#7200a3","secondary":"#47e266","on-tertiary-container":"#460066","tertiary-container":"#c863fb","inverse-on-surface":"#303036","outline-variant":"#414754","on-tertiary-fixed":"#310048","on-error-container":"#ffdad6","surface-container-high":"#2a2930","surface-bright":"#39383f","surface-container-low":"#1b1b21","on-primary":"#003064","surface-container-lowest":"#0e0e14"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-xs":"0.25rem",margin:"0.75rem","gutter-lg":"1rem","gutter-sm":"0.5rem","margin-sm":"0.5rem","space-xl":"1.5rem","margin-lg":"1.25rem","space-md":"0.75rem","space-lg":"1rem","space-sm":"0.5rem",gutter:"0.75rem"},fontFamily:{"body-md":["Inter"],"body-lg":["Inter"],"headline-sm":["Inter"],"mono-sm":["JetBrains Mono"],"mono-lg":["JetBrains Mono"],"label-md":["Inter"],"body-sm":["Inter"],"mono-md":["JetBrains Mono"],"label-sm":["Inter"],"headline-md":["Inter"],"headline-lg":["Inter"]},fontSize:{"body-md":["13px",{lineHeight:"18px",letterSpacing:"-0.002em",fontWeight:"400"}],"body-lg":["14px",{lineHeight:"20px",letterSpacing:"-0.004em",fontWeight:"400"}],"headline-sm":["14px",{lineHeight:"18px",letterSpacing:"-0.008em",fontWeight:"600"}],"mono-sm":["10px",{lineHeight:"13px",letterSpacing:"0.01em",fontWeight:"400"}],"mono-lg":["13px",{lineHeight:"18px",letterSpacing:"-0.01em",fontWeight:"500"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0em",fontWeight:"500"}],"body-sm":["11px",{lineHeight:"15px",letterSpacing:"0em",fontWeight:"400"}],"mono-md":["12px",{lineHeight:"16px",letterSpacing:"-0.01em",fontWeight:"400"}],"label-sm":["10px",{lineHeight:"12px",letterSpacing:"0.03em",fontWeight:"600"}],"headline-md":["17px",{lineHeight:"22px",letterSpacing:"-0.012em",fontWeight:"600"}],"headline-lg":["22px",{lineHeight:"28px",letterSpacing:"-0.015em",fontWeight:"600"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface select-none antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-60 z-50 bg-surface-container-low/85 backdrop-blur-2xl flex flex-col justify-between shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"><div class="flex flex-col h-full"><div class="h-14 px-margin-lg flex items-center gap-space-sm bg-surface-container-lowest/40 backdrop-blur-md shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"><img alt="shift-tools App Icon" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UjvTrhC126AmYWPrT2Ix4EmaYPA1it__A83Hwtu4-Xq_WLFRBDxLXBze1IJuIEVwI0THW5kV8amVNmgClGHTHvfsSk9nyGI0qUiZvNqHxrNCRkXDZhymdSyJvngGRwG7rZt7GGrOewgsRsA6MLmrzvMwLD_-NEkOEqn_6fo6nbaDmzAlHsmKVUXNns4Sy6jTmNsvWmW9B-4Cm6xfTVFZe7GG-gqqmHIM5AuDne_GMyNg"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">shift-tools</span><span class="font-mono-sm text-mono-sm text-on-surface-variant leading-tight">macOS native v1.0.0</span></div></div><div class="flex-1 overflow-y-auto px-margin py-space-sm space-y-space-md"><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">DevOps &amp; System</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="process-killer" href="#">Process Killer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="quarantine-remover" href="#">Quarantine Remover</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="port-manager" href="#">Port Manager</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="disk-cleaner" href="#">Disk Cleaner</a><a aria-current="page" class="flex items-center px-space-sm py-1.5 rounded-lg transition-colors bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]" data-path="ram-monitor" href="#">RAM Monitor</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Networks</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="network-observer" href="#">Network Observer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="wifi-mapper" href="#">WiFi Mapper</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="lan-scanner" href="#">LAN Scanner</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="dns-toolkit" href="#">DNS Toolkit</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="speed-test" href="#">Speed Test</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ping-traceroute" href="#">Ping / Traceroute</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Security &amp; Pentest</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="header-analyzer" href="#">Header Analyzer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ssl-inspector" href="#">SSL Inspector</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="subdomain-finder" href="#">Subdomain Finder</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="hash-generator" href="#">Hash Generator</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="password-auditor" href="#">Password Auditor</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Testing &amp; APIs</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="api-tester" href="#">API Tester</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="json-toolkit" href="#">JSON Toolkit</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="base64-url-encoder" href="#">Base64 / URL Encoder</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="regex-tester" href="#">Regex Tester</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Utilities</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="color-picker" href="#">Color Picker</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="text-diff" href="#">Text Diff</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="timestamp-converter" href="#">Timestamp Converter</a></nav></div><div class="p-margin m-margin bg-surface-container-lowest/60 rounded-xl space-y-space-xs shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Host Node</span><span class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-high text-primary">Apple M3 Max</span></div><div class="flex items-center justify-between font-mono-sm text-mono-sm text-on-surface-variant"><span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Rust Core</span><span class="text-secondary">0.8ms IPC</span></div></div></div></aside><div class="pl-60 flex flex-col min-h-screen"><header class="fixed top-0 left-60 right-0 h-14 bg-surface-container-low/75 backdrop-blur-2xl z-40 px-margin-lg flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.25)]"><div class="flex items-center gap-space-md"><div class="flex items-center gap-2 pl-1"><span class="w-3 h-3 rounded-full bg-[#ff5f56] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span><span class="w-3 h-3 rounded-full bg-[#ffbd2e] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span><span class="w-3 h-3 rounded-full bg-[#27c93f] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span></div><div class="flex items-center gap-space-xs font-mono-sm text-mono-sm text-on-surface-variant pl-space-sm"><span class="text-on-surface font-semibold">shift-tools</span><span>/</span><span class="text-outline">v1.0.0 (Rust Core)</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm px-space-md py-1 rounded-lg bg-surface-container-lowest/80 text-on-surface-variant font-body-sm text-body-sm shadow-[inset_0_1px_2px_rgba(0,0,0,0.6)]"><span class="material-symbols-outlined text-[16px] text-outline">search</span><span class="text-on-surface-variant pr-space-lg">Quick dispatch...</span><kbd class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface">⌘K</kbd></div><div class="flex items-center gap-space-sm px-space-md py-1 rounded-full bg-surface-container-lowest/50 font-mono-sm text-mono-sm text-on-surface-variant"><span class="text-on-surface">RAM <span class="text-primary">14.2 / 32 GB</span></span><span class="text-outline-variant">•</span><span class="text-on-surface">CPU <span class="text-secondary">8%</span></span><span class="text-outline-variant">•</span><span class="text-on-surface">Svcs <span class="text-tertiary">6 active</span></span></div><div class="flex items-center gap-space-sm"><button class="w-7 h-7 flex items-center justify-center rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[18px]">settings</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 pt-14 pb-8 w-full px-gutter-lg bg-background"><div class="flex flex-col w-full gap-space-lg">
+<!-- Top Utility Subheader & Quick Command Bar -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low/70 backdrop-blur-2xl p-space-lg shadow-xl shadow-surface-container-lowest/50">
+<div class="relative z-10 flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
+<div class="space-y-space-xs max-w-2xl">
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="w-7 h-7 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">memory</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">RAM Monitor</h1>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container-high font-mono-sm text-mono-sm text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+            Darwin Mach VM v1.0
+          </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container font-mono-sm text-mono-sm text-on-surface-variant">
+            PID 0 (kernel_task) Monitored
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Real-time physical memory pressure, wired/compressed buffers breakdown, unified LPDDR5 telemetry, and per-process memory consumption with heap dump tracing.
+        </p>
+</div>
+<!-- Action Pill Group -->
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="flex items-center bg-surface-container-lowest/80 px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-[16px] text-outline mr-1.5">timer</span>
+<span class="font-mono-sm text-mono-sm text-on-surface-variant">Rate:</span>
+<select class="bg-transparent font-mono-sm text-mono-sm text-primary pl-1 focus:outline-none cursor-pointer" id="sampling-rate">
+<option class="bg-surface-container-high text-on-surface" value="0.5s">0.5s (Realtime)</option>
+<option class="bg-surface-container-high text-on-surface" selected="" value="1.0s">1.0s (Nominal)</option>
+<option class="bg-surface-container-high text-on-surface" value="2.5s">2.5s (Eco)</option>
+</select>
+</div>
+<button class="group flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-body-md text-body-md transition-all shadow-md active:scale-95" id="purge-btn">
+<span class="material-symbols-outlined text-[16px] text-secondary group-hover:rotate-180 transition-transform duration-500">cleaning_services</span>
+<span>Purge Inactive Cache</span>
+<kbd class="font-mono-sm text-mono-sm px-1 py-0.2 rounded bg-surface-container-lowest text-outline">sync</kbd>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-error-container hover:bg-error-container/80 text-on-error-container font-body-md text-body-md transition-all shadow-md active:scale-95" id="emergency-btn">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+<span>Emergency Free</span>
+<span class="font-mono-sm text-mono-sm opacity-80">(SIGTERM)</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Telemetry Overview Bento Grid (4 Cards) -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- Card 1: Memory Pressure Gauge -->
+<div class="relative rounded-xl bg-surface-container/60 backdrop-blur-xl p-space-md flex flex-col justify-between shadow-lg overflow-hidden group">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Pressure Status</span>
+<div class="flex items-baseline gap-2 mt-0.5">
+<span class="font-headline-md text-headline-md text-secondary">Normal</span>
+<span class="font-mono-sm text-mono-sm text-on-surface-variant">18% VM Pressure</span>
+</div>
+</div>
+<div class="w-7 h-7 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">speed</span>
+</div>
+</div>
+<!-- Ring Gauge & Trend Line -->
+<div class="my-space-sm flex items-center justify-between gap-space-md">
+<div class="relative w-16 h-16 flex items-center justify-center shrink-0">
+<svg class="w-16 h-16 transform -rotate-90" viewbox="0 0 48 48">
+<circle class="text-surface-container-high" cx="24" cy="24" fill="none" r="20" stroke="currentColor" stroke-width="4.5"></circle>
+<circle class="text-secondary transition-all duration-1000" cx="24" cy="24" fill="none" r="20" stroke="currentColor" stroke-dasharray="125.6" stroke-dashoffset="103" stroke-linecap="round" stroke-width="4.5"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-mono-sm text-mono-sm font-semibold text-on-surface">18%</span>
+</div>
+</div>
+<div class="flex-1 flex flex-col justify-end space-y-1">
+<span class="font-mono-sm text-mono-sm text-on-surface-variant text-right">Pressure Sparkline (60s)</span>
+<svg class="w-full h-8 overflow-visible" preserveaspectratio="none" viewbox="0 0 100 24">
+<path class="text-secondary" d="M0,18 Q15,19 30,15 T60,17 T85,12 T100,14" fill="none" stroke="currentColor" stroke-width="2"></path>
+<path class="text-secondary/10" d="M0,18 Q15,19 30,15 T60,17 T85,12 T100,14 L100,24 L0,24 Z" fill="currentColor"></path>
+</svg>
+</div>
+</div>
+<div class="flex items-center justify-between font-mono-sm text-mono-sm text-outline pt-space-xs">
+<span>Mach Threshold: 65% Warning</span>
+<span class="text-secondary">● Green Tier</span>
+</div>
+</div>
+<!-- Card 2: Physical Memory Allocation -->
+<div class="relative rounded-xl bg-surface-container/60 backdrop-blur-xl p-space-md flex flex-col justify-between shadow-lg overflow-hidden">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Physical Footprint</span>
+<div class="flex items-baseline gap-2 mt-0.5">
+<span class="font-headline-md text-headline-md text-on-surface">14.2 GB</span>
+<span class="font-mono-sm text-mono-sm text-outline">/ 32.0 GB Unified</span>
+</div>
+</div>
+<div class="w-7 h-7 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">developer_board</span>
+</div>
+</div>
+<div class="my-space-sm space-y-1.5">
+<div class="flex justify-between font-mono-sm text-mono-sm text-on-surface-variant">
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-primary"></span>App: 8.6 GB</span>
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-tertiary"></span>Wired: 3.2 GB</span>
+</div>
+<div class="flex justify-between font-mono-sm text-mono-sm text-on-surface-variant">
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-secondary"></span>Compressed: 2.4 GB</span>
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-surface-container-highest"></span>Cached: 5.8 GB</span>
+</div>
+</div>
+<div class="flex items-center justify-between font-mono-sm text-mono-sm pt-space-xs">
+<span class="text-outline">Free Available</span>
+<span class="text-primary font-semibold">17.8 GB (55.6%)</span>
+</div>
+</div>
+<!-- Card 3: Swap Usage & VM Thrashing -->
+<div class="relative rounded-xl bg-surface-container/60 backdrop-blur-xl p-space-md flex flex-col justify-between shadow-lg overflow-hidden">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Swap Thrashing</span>
+<div class="flex items-baseline gap-2 mt-0.5">
+<span class="font-headline-md text-headline-md text-secondary">0.0 MB</span>
+<span class="font-mono-sm text-mono-sm text-outline">/ 4.0 GB File</span>
+</div>
+</div>
+<div class="w-7 h-7 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">sync_alt</span>
+</div>
+</div>
+<div class="my-space-sm space-y-2">
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 1.5%"></div>
+</div>
+<div class="flex items-center justify-between font-mono-sm text-mono-sm text-on-surface-variant">
+<span>Page-ins: 1.4M</span>
+<span>Page-outs: 0 (0 IOPS)</span>
+</div>
+</div>
+<div class="flex items-center justify-between font-mono-sm text-mono-sm pt-space-xs">
+<span class="text-outline">NVMe Swap Write I/O</span>
+<span class="text-secondary font-semibold">Zero Pressure</span>
+</div>
+</div>
+<!-- Card 4: Dev Stack Footprint -->
+<div class="relative rounded-xl bg-surface-container/60 backdrop-blur-xl p-space-md flex flex-col justify-between shadow-lg overflow-hidden">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Developer Toolchain</span>
+<div class="flex items-baseline gap-2 mt-0.5">
+<span class="font-headline-md text-headline-md text-primary">4.71 GB</span>
+<span class="font-mono-sm text-mono-sm text-on-surface-variant">4 Subsystems</span>
+</div>
+</div>
+<div class="w-7 h-7 rounded-lg bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+</div>
+</div>
+<div class="my-space-sm flex items-center gap-1.5 flex-wrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-high font-mono-sm text-mono-sm text-on-surface">
+<span class="text-primary font-semibold">Node</span> 1.48 GB
+        </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-high font-mono-sm text-mono-sm text-on-surface">
+<span class="text-secondary font-semibold">Docker</span> 2.10 GB
+        </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-high font-mono-sm text-mono-sm text-on-surface">
+<span class="text-tertiary font-semibold">Rust</span> 640 MB
+        </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-high font-mono-sm text-mono-sm text-on-surface">
+<span class="text-outline font-semibold">Xcode</span> 490 MB
+        </span>
+</div>
+<div class="flex items-center justify-between font-mono-sm text-mono-sm pt-space-xs">
+<span class="text-outline">Hot Allocators</span>
+<span class="text-on-surface font-semibold">jemalloc • mimalloc</span>
+</div>
+</div>
+</div>
+<!-- Physical RAM Distribution Strip -->
+<div class="rounded-xl bg-surface-container/70 backdrop-blur-xl p-space-md shadow-md space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Physical Memory Spectrum</span>
+<span class="font-mono-sm text-mono-sm text-on-surface-variant">32,768 MB (Unified Substrate)</span>
+</div>
+<div class="flex items-center gap-space-md font-mono-sm text-mono-sm text-on-surface-variant flex-wrap">
+<span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded bg-primary"></span>App Memory (26.9%)</span>
+<span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded bg-tertiary"></span>Wired Kernel (10.0%)</span>
+<span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded bg-secondary"></span>Compressed VM (7.5%)</span>
+<span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded bg-primary-fixed-dim"></span>File Cache (18.1%)</span>
+<span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded bg-surface-container-highest"></span>Purgeable / Free (37.5%)</span>
+</div>
+</div>
+<!-- Segmented Ribbon -->
+<div class="h-3 w-full bg-surface-container-lowest rounded-full overflow-hidden flex p-0.5 gap-0.5 shadow-inner">
+<div class="bg-primary h-full rounded-l-sm transition-all duration-700 hover:opacity-85" style="width: 26.9%" title="App Memory: 8.6 GB"></div>
+<div class="bg-tertiary h-full transition-all duration-700 hover:opacity-85" style="width: 10.0%" title="Wired Memory: 3.2 GB"></div>
+<div class="bg-secondary h-full transition-all duration-700 hover:opacity-85" style="width: 7.5%" title="Compressed Memory: 2.4 GB"></div>
+<div class="bg-primary-fixed-dim h-full transition-all duration-700 hover:opacity-85" style="width: 18.1%" title="Cached: 5.8 GB"></div>
+<div class="bg-surface-container-highest h-full rounded-r-sm transition-all duration-700 hover:opacity-85" style="width: 37.5%" title="Free: 12.0 GB"></div>
+</div>
+</div>
+<!-- Primary Workspace: Split 2-Panel Architecture (Process Table + Memory Pressure Inspector) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md items-start">
+<!-- Left / Center: Interactive Process Table (8 Cols) -->
+<div class="lg:col-span-8 flex flex-col rounded-xl bg-surface-container/60 backdrop-blur-xl shadow-lg overflow-hidden">
+<!-- Search, Segmented Filtering, & Batch Controls -->
+<div class="p-space-md bg-surface-container-high/40 flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<!-- Search Input -->
+<div class="relative flex-1 max-w-sm">
+<span class="material-symbols-outlined text-[16px] absolute left-2.5 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-surface-container-lowest/80 text-on-surface font-mono-sm text-mono-sm pl-8 pr-3 py-1.5 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary shadow-inner placeholder:text-outline" id="process-search" placeholder="Filter by PID, process, comm..." type="text"/>
+</div>
+<!-- Filter Segmented Controller -->
+<div class="flex items-center bg-surface-container-lowest/90 p-0.5 rounded-lg font-mono-sm text-mono-sm">
+<button class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-semibold shadow-sm">All (412)</button>
+<button class="px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface transition-colors">Dev (38)</button>
+<button class="px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface transition-colors">System (184)</button>
+<button class="px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface transition-colors">&gt; 500 MB (9)</button>
+</div>
+</div>
+<!-- Process Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high/60 font-label-sm text-label-sm uppercase tracking-wider text-outline select-none">
+<th class="py-2.5 px-space-md">Process</th>
+<th class="py-2.5 px-space-sm font-mono-sm">PID</th>
+<th class="py-2.5 px-space-sm text-right">Real Mem (RSS)</th>
+<th class="py-2.5 px-space-sm text-right">Virtual Mem</th>
+<th class="py-2.5 px-space-sm text-right">Compressed</th>
+<th class="py-2.5 px-space-sm text-center">Leak Growth</th>
+<th class="py-2.5 px-space-sm text-right">CPU</th>
+<th class="py-2.5 px-space-md text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="font-mono-sm text-mono-sm divide-y divide-transparent">
+<!-- Row 1: Docker Desktop -->
+<tr class="hover:bg-surface-container-high/50 transition-colors group cursor-pointer">
+<td class="py-2.5 px-space-md font-body-md text-body-md text-on-surface">
+<div class="flex items-center gap-space-sm">
+<div class="w-6 h-6 rounded bg-primary/20 flex items-center justify-center text-primary text-xs font-bold">🐳</div>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface group-hover:text-primary transition-colors">Docker Desktop (qemu-system)</span>
+<span class="font-mono-sm text-mono-sm text-outline">com.docker.backend • VM Hypervisor</span>
+</div>
+</div>
+</td>
+<td class="py-2.5 px-space-sm text-outline">3921</td>
+<td class="py-2.5 px-space-sm text-right font-semibold text-primary">2,148.4 MB</td>
+<td class="py-2.5 px-space-sm text-right text-on-surface-variant">36.4 GB</td>
+<td class="py-2.5 px-space-sm text-right text-on-surface-variant">512 MB</td>
+<td class="py-2.5 px-space-sm text-center">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-surface-container-high text-outline text-[9px] font-mono-sm">stable</span>
+</td>
+<td class="py-2.5 px-space-sm text-right text-secondary">3.4%</td>
+<td class="py-2.5 px-space-md text-right">
+<div class="inline-flex items-center gap-1 opacity-80 group-hover:opacity-100 transition-opacity">
+<button class="p-1 rounded bg-surface-container-high hover:bg-surface-variant text-on-surface transition-colors" title="Inspect Memory Map">
+<span class="material-symbols-outlined text-[15px]">analytics</span>
+</button>
+<button class="p-1 rounded bg-surface-container-high hover:bg-surface-variant text-primary transition-colors" title="Dump Heap">
+<span class="material-symbols-outlined text-[15px]">download</span>
+</button>
+<button class="p-1 rounded bg-error-container/20 hover:bg-error-container text-error transition-colors" title="Terminate PID 3921">
+<span class="material-symbols-outlined text-[15px]">close</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Node.js (Leak Alert) -->
+<tr class="hover:bg-surface-container-high/50 transition-colors group cursor-pointer bg-error-container/5">
+<td class="py-2.5 px-space-md font-body-md text-body-md text-on-surface">
+<div class="flex items-center gap-space-sm">
+<div class="w-6 h-6 rounded bg-secondary/20 flex items-center justify-center text-secondary text-xs font-bold">⬢</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-semibold text-on-surface group-hover:text-primary transition-colors">node (Next.js dev SSR)</span>
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span>
+</div>
+<span class="font-mono-sm text-mono-sm text-error">Active Heap Leak Detected</span>
+</div>
+</div>
+</td>
+<td class="py-2.5 px-space-sm text-outline">84102</td>
+<td class="py-2.5 px-space-sm text-right font-semibold text-error">1,482.1 MB</td>
+<td class="py-2.5 px-space-sm text-right text-on-surface-variant">4.8 GB</td>
+<td class="py-2.5 px-space-sm text-right text-on-surface-variant">184 MB</td>
+<td class="py-2.5 px-space-sm text-center">
+<span class="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-error-container text-on-error-container text-[10px] font-mono-sm font-semibold">
+<span class="material-symbols-outlined text-[12px]">trending_up</span> +12 MB/min
+                </span>
+</td>
+<td class="py-2.5 px-space-sm text-right text-secondary">11.8%</td>
+<td class="py-2.5 px-space-md text-right">
+<div class="inline-flex items-center gap-1 opacity-80 group-hover:opacity-100 transition-opacity">
+<button class="p-1 rounded bg-surface-container-high hover:bg-surface-variant text-on-surface transition-colors" title="Inspect Memory Map">
+<span class="material-symbols-outlined text-[15px]">analytics</span>
+</button>
+<button class="p-1 rounded bg-primary-container text-on-primary-container hover:opacity-90 transition-opacity" title="Dump V8 Heap Snapshot">
+<span class="material-symbols-outlined text-[15px]">data_array</span>
+</button>
+<button class="p-1 rounded bg-error-container text-on-error-container hover:opacity-90 transition-opacity" title="Force Kill PID 84102">
+<span class="material-symbols-outlined text-[15px]">close</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: rust-analyzer -->
+<tr class="hover:bg-surface-container-high/50 transition-colors group cursor-pointer">
+<td class="py-2.5 px-space-md font-body-md text-body-md text-on-surface">
+<div class="flex items-center gap-space-sm">
+<div class="w-6 h-6 rounded bg-tertiary/20 flex items-center justify-center text-tertiary text-xs font-bold">⚙</div>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface group-hover:text-primary transition-colors">rust-analyzer (LSP Server)</span>
+<span class="font-mono-sm text-mono-sm text-outline">workspace /cargo/core-engine</span>
+</div>
+</div>
+</td>
+<td class="py-2.5 px-space-sm text-outline">5514</td>
+<td class="py-2.5 px-space-sm text-right font-semibold text-primary">641.8 MB</td>
+<td class="py-2.5 px-space-sm text-right text-on-surface-variant">2.1 GB</td>
+<td class="py-2.5 px-space-sm text-right text-on-surface-variant">92 MB</td>
+<td class="py-2.5 px-space-sm text-center">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-surface-container-high text-outline text-[9px] font-mono-sm">+0.4 MB/min</span>
+</td>
+<td class="py-2.5 px-space-sm text-right text-secondary">0.9%</td>
+<td class="py-2.5 px-space-md text-right">
+<div class="inline-flex items-center gap-1 opacity-80 group-hover:opacity-100 transition-opacity">
+<button class="p-1 rounded bg-surface-container-high hover:bg-surface-variant text-on-surface transition-colors" title="Inspect Memory Map">
+<span class="material-symbols-outlined text-[15px]">analytics</span>
+</button>
+<button class="p-1 rounded bg-surface-container-high hover:bg-surface-variant text-primary transition-colors" title="Dump Heap">
+<span class="material-symbols-outlined text-[15px]">download</span>
+</button>
+<button class="p-1 rounded bg-error-container/20 hover:bg-error-container text-error transition-colors" title="Terminate PID 5514">
+<span class="material-symbols-outlined text-[15px]">close</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Google Chrome Helper (Renderer) -->
+<tr class="hover:bg-surface-container-high/50 transition-colors group cursor-pointer">
+<td class="py-2.5 px-space-md font-body-md text-body-md text-on-surface">
+<div class="flex items-center gap-space-sm">
+<div class="w-6 h-6 rounded bg-primary/20 flex items-center justify-center text-primary text-xs font-bold">🌐</div>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface group-hover:text-primary transition-colors">Google Chrome Helper (GPU)</span>
+<span class="font-mono-sm text-mono-sm text-outline">Metal Pipeline Surface Alloc</span>
+</div>
+</div>
+</td>
+<td class="py-2.5 px-space-sm text-outline">9104</td>
+<td class="py-2.5 px-space-sm text-right font-semibold text-on-surface">532.0 MB</td>
+<td class="py-2.5 px-space-sm text-right text-on-surface-variant">3.9 GB</td>
+<td class="py-2.5 px-space-sm text-right text-on-surface-variant">128 MB</td>
+<td class="py-2.5 px-space-sm text-center">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-surface-container-high text-outline text-[9px] font-mono-sm">stable</span>
+</td>
+<td class="py-2.5 px-space-sm text-right text-secondary">4.2%</td>
+<td class="py-2.5 px-space-md text-right">
+<div class="inline-flex items-center gap-1 opacity-80 group-hover:opacity-100 transition-opacity">
+<button class="p-1 rounded bg-surface-container-high hover:bg-surface-variant text-on-surface transition-colors" title="Inspect Memory Map">
+<span class="material-symbols-outlined text-[15px]">analytics</span>
+</button>
+<button class="p-1 rounded bg-surface-container-high hover:bg-surface-variant text-primary transition-colors" title="Dump Heap">
+<span class="material-symbols-outlined text-[15px]">download</span>
+</button>
+<button class="p-1 rounded bg-error-container/20 hover:bg-error-container text-error transition-colors" title="Terminate PID 9104">
+<span class="material-symbols-outlined text-[15px]">close</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Xcode SourceKit-LSP -->
+<tr class="hover:bg-surface-container-high/50 transition-colors group cursor-pointer">
+<td class="py-2.5 px-space-md font-body-md text-body-md text-on-surface">
+<div class="flex items-center gap-space-sm">
+<div class="w-6 h-6 rounded bg-primary/20 flex items-center justify-center text-primary text-xs font-bold">🔨</div>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface group-hover:text-primary transition-colors">sourcekit-lsp (Xcode 16)</span>
+<span class="font-mono-sm text-mono-sm text-outline">com.apple.dt.SourceKitService</span>
+</div>
+</div>
+</td>
+<td class="py-2.5 px-space-sm text-outline">12844</td>
+<td class="py-2.5 px-space-sm text-right font-semibold text-on-surface">490.5 MB</td>
+<td class="py-2.5 px-space-sm text-right text-on-surface-variant">1.9 GB</td>
+<td class="py-2.5 px-space-sm text-right text-on-surface-variant">44 MB</td>
+<td class="py-2.5 px-space-sm text-center">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-surface-container-high text-outline text-[9px] font-mono-sm">stable</span>
+</td>
+<td class="py-2.5 px-space-sm text-right text-secondary">0.2%</td>
+<td class="py-2.5 px-space-md text-right">
+<div class="inline-flex items-center gap-1 opacity-80 group-hover:opacity-100 transition-opacity">
+<button class="p-1 rounded bg-surface-container-high hover:bg-surface-variant text-on-surface transition-colors" title="Inspect Memory Map">
+<span class="material-symbols-outlined text-[15px]">analytics</span>
+</button>
+<button class="p-1 rounded bg-surface-container-high hover:bg-surface-variant text-primary transition-colors" title="Dump Heap">
+<span class="material-symbols-outlined text-[15px]">download</span>
+</button>
+<button class="p-1 rounded bg-error-container/20 hover:bg-error-container text-error transition-colors" title="Terminate PID 12844">
+<span class="material-symbols-outlined text-[15px]">close</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 6: PostgreSQL Database Server -->
+<tr class="hover:bg-surface-container-high/50 transition-colors group cursor-pointer">
+<td class="py-2.5 px-space-md font-body-md text-body-md text-on-surface">
+<div class="flex items-center gap-space-sm">
+<div class="w-6 h-6 rounded bg-primary/20 flex items-center justify-center text-primary text-xs font-bold">🐘</div>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface group-hover:text-primary transition-colors">postgres (shared buffers)</span>
+<span class="font-mono-sm text-mono-sm text-outline">PostgreSQL 16.2 / local dev pool</span>
+</div>
+</div>
+</td>
+<td class="py-2.5 px-space-sm text-outline">2841</td>
+<td class="py-2.5 px-space-sm text-right font-semibold text-on-surface">312.4 MB</td>
+<td class="py-2.5 px-space-sm text-right text-on-surface-variant">1.4 GB</td>
+<td class="py-2.5 px-space-sm text-right text-on-surface-variant">16 MB</td>
+<td class="py-2.5 px-space-sm text-center">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-surface-container-high text-outline text-[9px] font-mono-sm">stable</span>
+</td>
+<td class="py-2.5 px-space-sm text-right text-secondary">0.1%</td>
+<td class="py-2.5 px-space-md text-right">
+<div class="inline-flex items-center gap-1 opacity-80 group-hover:opacity-100 transition-opacity">
+<button class="p-1 rounded bg-surface-container-high hover:bg-surface-variant text-on-surface transition-colors" title="Inspect Memory Map">
+<span class="material-symbols-outlined text-[15px]">analytics</span>
+</button>
+<button class="p-1 rounded bg-surface-container-high hover:bg-surface-variant text-primary transition-colors" title="Dump Heap">
+<span class="material-symbols-outlined text-[15px]">download</span>
+</button>
+<button class="p-1 rounded bg-error-container/20 hover:bg-error-container text-error transition-colors" title="Terminate PID 2841">
+<span class="material-symbols-outlined text-[15px]">close</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination Metadata -->
+<div class="p-space-sm bg-surface-container-high/30 flex items-center justify-between font-mono-sm text-mono-sm text-outline">
+<div class="flex items-center gap-2">
+<span>Displaying 6 of 412 Darwin Tasks</span>
+<span>•</span>
+<span class="text-secondary">0 Zombie PIDs</span>
+</div>
+<div class="flex items-center gap-2">
+<span>Sort: RSS (Descending)</span>
+<button class="px-2 py-0.5 rounded bg-surface-container hover:text-on-surface transition-colors">Export VM Dump (.json)</button>
+</div>
+</div>
+</div>
+<!-- Right Panel: Memory Pressure & Leak Inspector (4 Cols) -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<!-- Section A: 15-Minute RSS History Chart -->
+<div class="rounded-xl bg-surface-container/60 backdrop-blur-xl p-space-md shadow-lg space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">show_chart</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Resident Set Size (RSS)</span>
+</div>
+<span class="font-mono-sm text-mono-sm text-outline">Past 15m</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Timeline traces global active resident memory vs. memory compressor reclaiming bursts.
+        </p>
+<!-- Inline SVG Area Chart -->
+<div class="h-32 w-full pt-space-xs">
+<svg class="w-full h-full overflow-visible" viewbox="0 0 280 90">
+<!-- Gridlines -->
+<line class="text-outline-variant/30" stroke="currentColor" stroke-dasharray="2 3" x1="0" x2="280" y1="20" y2="20"></line>
+<line class="text-outline-variant/30" stroke="currentColor" stroke-dasharray="2 3" x1="0" x2="280" y1="50" y2="50"></line>
+<line class="text-outline-variant/30" stroke="currentColor" stroke-dasharray="2 3" x1="0" x2="280" y1="80" y2="80"></line>
+<!-- Area Fill -->
+<path class="text-primary/15" d="M0,65 C30,68 60,60 90,52 C120,44 150,55 180,42 C210,30 240,38 280,28 L280,85 L0,85 Z" fill="currentColor"></path>
+<!-- Line Stroke -->
+<path class="text-primary" d="M0,65 C30,68 60,60 90,52 C120,44 150,55 180,42 C210,30 240,38 280,28" fill="none" stroke="currentColor" stroke-width="2.5"></path>
+<!-- Compressor Burst Peak Point -->
+<circle class="text-tertiary" cx="210" cy="30" fill="currentColor" r="3.5"></circle>
+<!-- Current Point -->
+<circle class="text-secondary" cx="280" cy="28" fill="currentColor" r="4"></circle>
+</svg>
+</div>
+<div class="flex items-center justify-between font-mono-sm text-mono-sm pt-1">
+<span class="text-outline">15m ago: 12.8 GB</span>
+<span class="text-tertiary">Peak: 14.8 GB</span>
+<span class="text-secondary font-semibold">Now: 14.2 GB</span>
+</div>
+</div>
+<!-- Section B: VM Regions Breakdown Card -->
+<div class="rounded-xl bg-surface-container/60 backdrop-blur-xl p-space-md shadow-lg space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-tertiary">layers</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Darwin VM Regions</span>
+</div>
+<span class="font-mono-sm text-mono-sm text-secondary">Active Map</span>
+</div>
+<div class="space-y-2 pt-1 font-mono-sm text-mono-sm">
+<div class="p-2 rounded-lg bg-surface-container-high/60 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-on-surface">malloc (Zone 0 Large)</span>
+</div>
+<span class="font-semibold text-primary">5,410 MB</span>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-high/60 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="text-on-surface">Dirty Anonymous Pages</span>
+</div>
+<span class="font-semibold text-tertiary">3,190 MB</span>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-high/60 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-on-surface">Stack &amp; Thread Contexts</span>
+</div>
+<span class="font-semibold text-secondary">384 MB</span>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-high/60 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span class="text-on-surface">IOKit &amp; Metal Buffers</span>
+</div>
+<span class="font-semibold text-on-surface">1,890 MB</span>
+</div>
+</div>
+<!-- Section C: Quick Diagnostic Advisor -->
+<div class="mt-space-md p-space-sm rounded-lg bg-surface-container-lowest/80 space-y-1.5 shadow-inner">
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="font-label-sm text-label-sm font-semibold uppercase">Memory Advisor</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Next.js (PID 84102) heap is expanding exponentially (+12 MB/min). Releasing inactive Webpack compilation caches will reclaim ~680 MB immediately.
+          </p>
+<div class="pt-1 flex gap-2">
+<button class="flex-1 py-1 px-2 rounded bg-surface-container-high hover:bg-surface-variant text-on-surface font-mono-sm text-mono-sm transition-colors text-center">
+              Profile V8 Retainers
+            </button>
+<button class="py-1 px-2.5 rounded bg-primary-container text-on-primary-container font-mono-sm text-mono-sm hover:opacity-90 transition-opacity">
+              Fix
+            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Hardware Telemetry: Apple Silicon Unified Bandwidth & Mach Page Faults -->
+<div class="rounded-xl bg-surface-container-low/80 backdrop-blur-2xl p-space-md shadow-xl flex flex-col md:flex-row items-center justify-between gap-space-md">
+<!-- Telemetry Item 1: Unified Memory Bus -->
+<div class="flex items-center gap-space-md w-full md:w-auto">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary shrink-0 shadow-md">
+<span class="material-symbols-outlined text-[22px]">bolt</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">Apple Silicon Unified Memory Bus</span>
+<span class="px-1.5 py-0.2 rounded bg-primary/20 text-primary font-mono-sm text-mono-sm">LPDDR5</span>
+</div>
+<div class="flex items-center gap-3 font-mono-sm text-mono-sm text-on-surface-variant mt-0.5">
+<span>Throughput: <span class="text-secondary font-semibold">142.6 GB/s</span> / 300 GB/s peak</span>
+<span>•</span>
+<span>Bus Utilization: <span class="text-primary font-semibold">47.5%</span></span>
+</div>
+</div>
+</div>
+<!-- Telemetry Item 2: Mach Kernel Faults -->
+<div class="flex items-center gap-space-lg w-full md:w-auto justify-between md:justify-end font-mono-sm text-mono-sm">
+<div class="flex flex-col text-right">
+<span class="text-outline uppercase text-[10px] tracking-wider">Page Faults Rate</span>
+<span class="text-on-surface font-semibold">1,248 / sec</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="text-outline uppercase text-[10px] tracking-wider">COW (Copy-on-Write)</span>
+<span class="text-primary font-semibold">419 ops/s</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="text-outline uppercase text-[10px] tracking-wider">Compression Engine</span>
+<span class="text-secondary font-semibold">4.8:1 Ratio</span>
+</div>
+<div class="w-2 h-2 rounded-full bg-secondary animate-pulse" title="Mach VM Engine Synced"></div>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    const purgeBtn = document.getElementById('purge-btn');
+    if (purgeBtn) {
+      purgeBtn.addEventListener('click', function() {
+        const originalText = purgeBtn.innerHTML;
+        purgeBtn.disabled = true;
+        purgeBtn.classList.add('opacity-75');
+        purgeBtn.innerHTML = '<span class="material-symbols-outlined text-[16px] animate-spin">refresh</span><span>Purging Darwin VM Cache...</span>';
+        setTimeout(() => {
+          purgeBtn.innerHTML = '<span class="material-symbols-outlined text-[16px] text-secondary">done</span><span>Purged 2.1 GB Cached!</span>';
+          setTimeout(() => {
+            purgeBtn.innerHTML = originalText;
+            purgeBtn.disabled = false;
+            purgeBtn.classList.remove('opacity-75');
+          }, 1800);
+        }, 1200);
+      });
+    }
+
+    const emergencyBtn = document.getElementById('emergency-btn');
+    if (emergencyBtn) {
+      emergencyBtn.addEventListener('click', function() {
+        const confirmed = confirm('Broadcast SIGTERM to all inactive child processes with resident set size over 1 GB?');
+        if (confirmed) {
+          alert('Mach task_for_pid broadcast dispatched: Freed 1.4 GB resident buffers.');
+        }
+      });
+    }
+  })();
+</script></main><footer class="fixed bottom-0 left-60 right-0 h-8 bg-surface-container-lowest/90 backdrop-blur-md z-40 px-margin-lg flex items-center justify-between font-mono-sm text-mono-sm text-on-surface-variant shadow-[0_-1px_6px_rgba(0,0,0,0.3)]"><div class="flex items-center gap-space-md"><span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Freed RAM: <span class="text-on-surface font-semibold">4.2 GB session</span></span><span class="text-outline-variant">|</span><span>Active Listeners: <span class="text-primary font-semibold">28 ports</span></span></div><div class="flex items-center gap-space-md"><span>Interface: <span class="text-on-surface font-semibold">en0 • Wi-Fi 6 (802.11ax)</span></span><span class="text-outline-variant">|</span><span class="text-secondary">Secure Sandbox Active</span></div></footer></div></body></html>

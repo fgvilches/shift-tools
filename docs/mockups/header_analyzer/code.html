@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-surface-variant":"#c0c6d6","on-primary-fixed-variant":"#00468d","on-tertiary-fixed-variant":"#7200a3","secondary-container":"#09bf49","surface-dim":"#131319","surface-container-low":"#1b1b21","inverse-surface":"#e4e1ea","on-secondary":"#003910","secondary-fixed-dim":"#47e266","on-error-container":"#ffdad6","tertiary":"#e9b3ff","surface-container-highest":"#34343b","tertiary-fixed-dim":"#e9b3ff","secondary-fixed":"#6cff82","surface-container":"#1f1f25","secondary":"#47e266","inverse-on-surface":"#303036","error-container":"#93000a","surface-bright":"#39383f","primary-container":"#3e90ff","on-tertiary-container":"#460066","primary-fixed-dim":"#aac7ff","on-primary-container":"#002957","background":"#131319","on-secondary-container":"#004615","on-surface":"#e4e1ea","on-background":"#e4e1ea","on-primary":"#003064","on-primary-fixed":"#001b3e","error":"#ffb4ab","tertiary-container":"#c863fb","surface-tint":"#aac7ff","tertiary-fixed":"#f6d9ff","primary":"#aac7ff","on-secondary-fixed":"#002106","on-tertiary-fixed":"#310048","surface":"#131319","primary-fixed":"#d6e3ff","inverse-primary":"#005db8","surface-container-lowest":"#0e0e14","on-tertiary":"#510074","on-error":"#690005","outline-variant":"#414754","surface-variant":"#34343b","surface-container-high":"#2a2930","outline":"#8b91a0","on-secondary-fixed-variant":"#00531a"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"gutter-sm":"0.5rem",margin:"0.75rem","gutter-lg":"1rem","margin-sm":"0.5rem","space-xs":"0.25rem","margin-lg":"1.25rem","space-lg":"1rem","space-md":"0.75rem","space-xl":"1.5rem",gutter:"0.75rem","space-sm":"0.5rem"},fontFamily:{"label-md":["Inter"],"body-sm":["Inter"],"label-sm":["Inter"],"mono-md":["JetBrains Mono"],"headline-sm":["Inter"],"headline-lg":["Inter"],"mono-lg":["JetBrains Mono"],"headline-md":["Inter"],"body-lg":["Inter"],"body-md":["Inter"],"mono-sm":["JetBrains Mono"]},fontSize:{"label-md":["12px",{lineHeight:"16px",letterSpacing:"0em",fontWeight:"500"}],"body-sm":["11px",{lineHeight:"15px",letterSpacing:"0em",fontWeight:"400"}],"label-sm":["10px",{lineHeight:"12px",letterSpacing:"0.03em",fontWeight:"600"}],"mono-md":["12px",{lineHeight:"16px",letterSpacing:"-0.01em",fontWeight:"400"}],"headline-sm":["14px",{lineHeight:"18px",letterSpacing:"-0.008em",fontWeight:"600"}],"headline-lg":["22px",{lineHeight:"28px",letterSpacing:"-0.015em",fontWeight:"600"}],"mono-lg":["13px",{lineHeight:"18px",letterSpacing:"-0.01em",fontWeight:"500"}],"headline-md":["17px",{lineHeight:"22px",letterSpacing:"-0.012em",fontWeight:"600"}],"body-lg":["14px",{lineHeight:"20px",letterSpacing:"-0.004em",fontWeight:"400"}],"body-md":["13px",{lineHeight:"18px",letterSpacing:"-0.002em",fontWeight:"400"}],"mono-sm":["10px",{lineHeight:"13px",letterSpacing:"0.01em",fontWeight:"400"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface select-none antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-60 z-50 bg-surface-container-low/85 backdrop-blur-2xl flex flex-col justify-between shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"><div class="flex flex-col h-full"><div class="h-14 px-margin-lg flex items-center gap-space-sm bg-surface-container-lowest/40 backdrop-blur-md"><img alt="shift-tools App Icon" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UjvTrhC126AmYWPrT2Ix4EmaYPA1it__A83Hwtu4-Xq_WLFRBDxLXBze1IJuIEVwI0THW5kV8amVNmgClGHTHvfsSk9nyGI0qUiZvNqHxrNCRkXDZhymdSyJvngGRwG7rZt7GGrOewgsRsA6MLmrzvMwLD_-NEkOEqn_6fo6nbaDmzAlHsmKVUXNns4Sy6jTmNsvWmW9B-4Cm6xfTVFZe7GG-gqqmHIM5AuDne_GMyNg"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">shift-tools</span><span class="font-mono-sm text-mono-sm text-on-surface-variant leading-tight">macOS native v1.0.0</span></div></div><div class="flex-1 overflow-y-auto px-margin py-space-sm space-y-space-md"><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">DevOps &amp; System</div><a class="flex items-center justify-between px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="process-killer" href="#">Process Killer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="quarantine-remover" href="#">Quarantine Remover</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="port-manager" href="#">Port Manager</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="disk-cleaner" href="#">Disk Cleaner</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ram-monitor" href="#">RAM Monitor</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Networks</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="network-observer" href="#">Network Observer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="wifi-mapper" href="#">WiFi Mapper</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="lan-scanner" href="#">LAN Scanner</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="dns-toolkit" href="#">DNS Toolkit</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="speed-test" href="#">Speed Test</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ping-traceroute" href="#">Ping / Traceroute</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Security &amp; Pentest</div><a aria-current="page" class="flex items-center px-space-sm py-1.5 rounded-lg transition-colors bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]" data-path="header-analyzer" href="#">Header Analyzer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ssl-inspector" href="#">SSL Inspector</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="subdomain-finder" href="#">Subdomain Finder</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="hash-generator" href="#">Hash Generator</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="password-auditor" href="#">Password Auditor</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Testing &amp; APIs</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="api-tester" href="#">API Tester</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="json-toolkit" href="#">JSON Toolkit</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="base64-url-encoder" href="#">Base64 / URL Encoder</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="regex-tester" href="#">Regex Tester</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Utilities</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="color-picker" href="#">Color Picker</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="text-diff" href="#">Text Diff</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="timestamp-converter" href="#">Timestamp Converter</a></nav></div><div class="p-margin m-margin bg-surface-container-lowest/60 rounded-xl space-y-space-xs shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Host Node</span><span class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-high text-primary">Apple M3 Max</span></div><div class="flex items-center justify-between font-mono-sm text-mono-sm text-on-surface-variant"><span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Rust Core</span><span class="text-secondary">0.8ms IPC</span></div></div></div></aside><div class="pl-60 flex flex-col min-h-screen"><header class="fixed top-0 left-60 right-0 h-14 bg-surface-container-low/75 backdrop-blur-2xl z-40 px-margin-lg flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.25)]"><div class="flex items-center gap-space-md"><div class="flex items-center gap-2 pl-1"><span class="w-3 h-3 rounded-full bg-[#ff5f56] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span><span class="w-3 h-3 rounded-full bg-[#ffbd2e] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span><span class="w-3 h-3 rounded-full bg-[#27c93f] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span></div><div class="flex items-center gap-space-xs font-mono-sm text-mono-sm text-on-surface-variant pl-space-sm"><span class="text-on-surface font-semibold">shift-tools</span><span>/</span><span class="text-outline">v1.0.0 (Rust Core)</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm px-space-md py-1 rounded-lg bg-surface-container-lowest/80 text-on-surface-variant font-body-sm text-body-sm shadow-[inset_0_1px_2px_rgba(0,0,0,0.6)]"><span class="material-symbols-outlined text-[16px] text-outline">search</span><span class="text-on-surface-variant pr-space-lg">Quick dispatch...</span><kbd class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface">⌘K</kbd></div><div class="flex items-center gap-space-sm px-space-md py-1 rounded-full bg-surface-container-lowest/50 font-mono-sm text-mono-sm text-on-surface-variant"><span class="text-on-surface">RAM <span class="text-primary">14.2 / 32 GB</span></span><span class="text-outline-variant">•</span><span class="text-on-surface">CPU <span class="text-secondary">8%</span></span><span class="text-outline-variant">•</span><span class="text-on-surface">Svcs <span class="text-tertiary">6 active</span></span></div><div class="flex items-center gap-space-sm"><button class="w-7 h-7 flex items-center justify-center rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[18px]">settings</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 pt-14 pb-8 w-full px-gutter-lg bg-background"><div class="flex flex-col w-full">
+<div class="flex flex-col gap-space-lg w-full">
+<!-- Top Breadcrumb & Metadata Action Bar -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs font-mono-sm text-mono-sm text-outline">
+<span class="text-on-surface-variant font-label-md text-label-md">Security &amp; Pentest</span>
+<span>/</span>
+<span class="text-primary font-mono-sm text-mono-sm font-semibold">audit_core::http_analyzer</span>
+<span class="px-1.5 py-0.5 rounded-full bg-secondary-container/20 text-secondary text-label-sm font-label-sm uppercase tracking-wider ml-1">Live Engine</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mt-0.5">Header Analyzer</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+          Inspect HTTP/HTTPS response headers, enforce security policies, evaluate CSP &amp; CORS, and compute hardening grade.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm self-start md:self-auto">
+<button class="flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary">history</span>
+<span>Recent Scans</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">download</span>
+<span>Export JSON</span>
+</button>
+</div>
+</div>
+<!-- URL Dispatch Workbench -->
+<div class="rounded-xl bg-surface-container-low/90 backdrop-blur-2xl p-space-md shadow-md flex flex-col gap-space-md">
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center gap-space-sm">
+<!-- Method Selector -->
+<div class="relative shrink-0">
+<select class="appearance-none bg-surface-container-highest text-on-surface font-mono-md text-mono-md font-semibold pl-space-md pr-8 py-2 rounded-lg focus:outline-none focus:bg-surface-bright cursor-pointer shadow-inner" id="methodSelector">
+<option value="GET">GET</option>
+<option value="HEAD">HEAD</option>
+<option value="OPTIONS">OPTIONS</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2 top-2.5 text-[16px] text-outline">expand_more</span>
+</div>
+<!-- Target Input with History Auto-fill -->
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-[18px] text-primary">link</span>
+<input class="w-full bg-surface-container-lowest/80 text-on-surface font-mono-md text-mono-md pl-10 pr-24 py-2 rounded-lg placeholder-outline focus:outline-none focus:bg-surface-container-lowest transition-colors shadow-inner" id="targetUrlInput" placeholder="https://domain.com or https://api.endpoint/v1" type="text" value="https://api.github.com"/>
+<div class="absolute right-2 top-1.5 flex items-center gap-1">
+<span class="font-mono-sm text-mono-sm text-outline bg-surface-container-high px-1.5 py-0.5 rounded">200 OK</span>
+<button class="font-label-sm text-label-sm text-primary hover:text-primary-fixed underline px-1" onclick="document.getElementById('targetUrlInput').value='https://dash.cloudflare.com'">Cloudflare</button>
+</div>
+</div>
+<!-- Action Button -->
+<button class="flex items-center justify-center gap-space-xs px-space-xl py-2 rounded-lg bg-primary-container text-on-primary-container font-headline-sm text-headline-sm hover:opacity-95 active:scale-[0.98] transition-all shadow-md shrink-0" id="runScanBtn">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+<span>Analyze Headers</span>
+<kbd class="font-mono-sm text-mono-sm bg-on-primary-container/20 px-1 rounded text-on-primary-container">↵</kbd>
+</button>
+</div>
+<!-- Execution Toggles & Sandbox Parameters -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs font-label-md text-label-md text-on-surface-variant">
+<div class="flex flex-wrap items-center gap-space-lg">
+<label class="flex items-center gap-2 cursor-pointer hover:text-on-surface">
+<input checked="" class="accent-primary rounded w-3.5 h-3.5 bg-surface-container-highest cursor-pointer" type="checkbox"/>
+<span>Follow Redirects (Max 5)</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer hover:text-on-surface">
+<input checked="" class="accent-primary rounded w-3.5 h-3.5 bg-surface-container-highest cursor-pointer" type="checkbox"/>
+<span>Strict SSL Verification (ALPN h2)</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer hover:text-on-surface">
+<input class="accent-primary rounded w-3.5 h-3.5 bg-surface-container-highest cursor-pointer" type="checkbox"/>
+<span>Simulate Mobile User-Agent</span>
+</label>
+</div>
+<div class="flex items-center gap-space-md font-mono-sm text-mono-sm">
+<span class="text-outline">Latency: <span class="text-secondary font-semibold">41.8ms</span></span>
+<span class="text-outline">IP: <span class="text-on-surface">140.82.121.6</span></span>
+<span class="text-outline">HTTP: <span class="text-primary font-semibold">2.0</span></span>
+</div>
+</div>
+</div>
+<!-- Security Score & Audit Summary Banner -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-md">
+<!-- Primary Grade Gauge Bento Tile -->
+<div class="xl:col-span-4 rounded-xl bg-surface-container-low/90 backdrop-blur-2xl p-space-lg shadow-md flex items-center justify-between gap-space-lg relative overflow-hidden">
+<div class="absolute -right-8 -top-8 w-36 h-36 rounded-full bg-secondary/10 blur-2xl pointer-events-none"></div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Overall Security Grade</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-headline-lg text-headline-lg text-secondary font-extrabold tracking-tight">Grade A-</span>
+<span class="font-mono-sm text-mono-sm text-on-surface-variant font-medium">(High Resiliency)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 max-w-xs">
+            Host strictly implements transport isolation, referrer constraints, and frame defense. Minor CSP directive ambiguities present.
+          </p>
+<div class="flex items-center gap-2 mt-4 font-mono-sm text-mono-sm text-secondary">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span>PCI-DSS &amp; OWASP Top 10 Compliant</span>
+</div>
+</div>
+<!-- SVG Radial Progress Meter -->
+<div class="relative shrink-0 flex items-center justify-center">
+<svg class="w-28 h-28 transform -rotate-90" viewbox="0 0 100 100">
+<circle class="text-surface-container-highest" cx="50" cy="50" fill="none" r="40" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-secondary" cx="50" cy="50" fill="none" r="40" stroke="currentColor" stroke-dasharray="251.2" stroke-dashoffset="35.16" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-headline-md text-headline-md text-on-surface font-bold leading-none">86</span>
+<span class="font-mono-sm text-mono-sm text-outline mt-0.5">/ 100</span>
+</div>
+</div>
+</div>
+<!-- Metric Diagnostics Counters (4-card bento) -->
+<div class="xl:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-space-sm">
+<!-- Passed -->
+<div class="rounded-xl bg-surface-container-low/90 backdrop-blur-2xl p-space-md shadow-md flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Passed</span>
+<span class="w-6 h-6 rounded-md bg-secondary/15 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+</span>
+</div>
+<div class="mt-4">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold">6</span>
+<span class="font-label-sm text-label-sm text-secondary ml-1">Policies</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 truncate">Zero critical flaws</p>
+</div>
+</div>
+<!-- Warnings -->
+<div class="rounded-xl bg-surface-container-low/90 backdrop-blur-2xl p-space-md shadow-md flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Warnings</span>
+<span class="w-6 h-6 rounded-md bg-tertiary-container/30 text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+</span>
+</div>
+<div class="mt-4">
+<span class="font-headline-lg text-headline-lg text-tertiary font-bold">2</span>
+<span class="font-label-sm text-label-sm text-tertiary ml-1">Medium</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 truncate">CSP &amp; Permissions tweak</p>
+</div>
+</div>
+<!-- Critical Missing -->
+<div class="rounded-xl bg-surface-container-low/90 backdrop-blur-2xl p-space-md shadow-md flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Missing</span>
+<span class="w-6 h-6 rounded-md bg-error-container/40 text-error flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">gpp_bad</span>
+</span>
+</div>
+<div class="mt-4">
+<span class="font-headline-lg text-headline-lg text-error font-bold">1</span>
+<span class="font-label-sm text-label-sm text-error ml-1">High Risk</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 truncate">COEP header absent</p>
+</div>
+</div>
+<!-- Cookies Checked -->
+<div class="rounded-xl bg-surface-container-low/90 backdrop-blur-2xl p-space-md shadow-md flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Cookies</span>
+<span class="w-6 h-6 rounded-md bg-primary-container/30 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">cookie</span>
+</span>
+</div>
+<div class="mt-4">
+<span class="font-headline-lg text-headline-lg text-primary font-bold">4</span>
+<span class="font-label-sm text-label-sm text-primary ml-1">Tracked</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 truncate">100% Secure &amp; HttpOnly</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Categorized Security Headers Evaluation Table -->
+<div class="rounded-xl bg-surface-container-low/90 backdrop-blur-2xl p-space-md shadow-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between px-space-xs py-1">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">shield</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold">Security Header Compliance Matrix</h2>
+</div>
+<div class="flex items-center gap-2 font-mono-sm text-mono-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">RFC 6797</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">W3C CSP Level 3</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-md text-body-md border-collapse">
+<thead>
+<tr class="bg-surface-container-highest/40 text-outline font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-2.5 px-space-md rounded-l-lg">Header Directive</th>
+<th class="py-2.5 px-space-md">Assessment</th>
+<th class="py-2.5 px-space-md">Captured Configuration</th>
+<th class="py-2.5 px-space-md rounded-r-lg text-right">Action</th>
+</tr>
+</thead>
+<tbody class="font-mono-md text-mono-md divide-y-0">
+<!-- HSTS -->
+<tr class="hover:bg-surface-container-high/40 transition-colors">
+<td class="py-2.5 px-space-md font-semibold text-on-surface flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Strict-Transport-Security</span>
+</td>
+<td class="py-2.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary/15 text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px]">check</span> Hardened
+                </span>
+</td>
+<td class="py-2.5 px-space-md text-on-surface-variant font-mono-sm text-mono-sm">
+<span class="text-secondary">max-age=31536000;</span> includeSubDomains; preload
+              </td>
+<td class="py-2.5 px-space-md text-right">
+<button class="text-outline hover:text-on-surface p-1 rounded hover:bg-surface-container-highest" title="Inspect Specification">
+<span class="material-symbols-outlined text-[16px]">info</span>
+</button>
+</td>
+</tr>
+<!-- CSP -->
+<tr class="hover:bg-surface-container-high/40 transition-colors">
+<td class="py-2.5 px-space-md font-semibold text-on-surface flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>Content-Security-Policy</span>
+</td>
+<td class="py-2.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary/15 text-tertiary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px]">warning</span> Partial Weakness
+                </span>
+</td>
+<td class="py-2.5 px-space-md text-on-surface-variant font-mono-sm text-mono-sm truncate max-w-md">
+                default-src 'none'; base-uri 'self'; <span class="text-tertiary">script-src 'self' 'unsafe-inline'</span>; object-src 'none';
+              </td>
+<td class="py-2.5 px-space-md text-right">
+<button class="text-tertiary hover:text-on-surface p-1 rounded hover:bg-surface-container-highest" title="Review unsafe-inline flaw">
+<span class="material-symbols-outlined text-[16px]">build</span>
+</button>
+</td>
+</tr>
+<!-- X-Frame-Options -->
+<tr class="hover:bg-surface-container-high/40 transition-colors">
+<td class="py-2.5 px-space-md font-semibold text-on-surface flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>X-Frame-Options</span>
+</td>
+<td class="py-2.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary/15 text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px]">check</span> Protected
+                </span>
+</td>
+<td class="py-2.5 px-space-md text-on-surface-variant font-mono-sm text-mono-sm">
+<span class="text-primary font-semibold">DENY</span> (Clickjacking prevention active)
+              </td>
+<td class="py-2.5 px-space-md text-right">
+<button class="text-outline hover:text-on-surface p-1 rounded hover:bg-surface-container-highest">
+<span class="material-symbols-outlined text-[16px]">info</span>
+</button>
+</td>
+</tr>
+<!-- X-Content-Type-Options -->
+<tr class="hover:bg-surface-container-high/40 transition-colors">
+<td class="py-2.5 px-space-md font-semibold text-on-surface flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>X-Content-Type-Options</span>
+</td>
+<td class="py-2.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary/15 text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px]">check</span> Sniff Shield
+                </span>
+</td>
+<td class="py-2.5 px-space-md text-on-surface-variant font-mono-sm text-mono-sm">
+<span class="text-primary font-semibold">nosniff</span>
+</td>
+<td class="py-2.5 px-space-md text-right">
+<button class="text-outline hover:text-on-surface p-1 rounded hover:bg-surface-container-highest">
+<span class="material-symbols-outlined text-[16px]">info</span>
+</button>
+</td>
+</tr>
+<!-- Referrer-Policy -->
+<tr class="hover:bg-surface-container-high/40 transition-colors">
+<td class="py-2.5 px-space-md font-semibold text-on-surface flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Referrer-Policy</span>
+</td>
+<td class="py-2.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary/15 text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px]">check</span> Leak-Free
+                </span>
+</td>
+<td class="py-2.5 px-space-md text-on-surface-variant font-mono-sm text-mono-sm">
+                strict-origin-when-cross-origin
+              </td>
+<td class="py-2.5 px-space-md text-right">
+<button class="text-outline hover:text-on-surface p-1 rounded hover:bg-surface-container-highest">
+<span class="material-symbols-outlined text-[16px]">info</span>
+</button>
+</td>
+</tr>
+<!-- Permissions-Policy -->
+<tr class="hover:bg-surface-container-high/40 transition-colors">
+<td class="py-2.5 px-space-md font-semibold text-on-surface flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span>Permissions-Policy</span>
+</td>
+<td class="py-2.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary/15 text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px]">tune</span> Configured
+                </span>
+</td>
+<td class="py-2.5 px-space-md text-on-surface-variant font-mono-sm text-mono-sm truncate max-w-md">
+                geolocation=(), camera=(), microphone=(), interest-cohort=()
+              </td>
+<td class="py-2.5 px-space-md text-right">
+<button class="text-outline hover:text-on-surface p-1 rounded hover:bg-surface-container-highest">
+<span class="material-symbols-outlined text-[16px]">info</span>
+</button>
+</td>
+</tr>
+<!-- COOP / COEP -->
+<tr class="hover:bg-surface-container-high/40 transition-colors">
+<td class="py-2.5 px-space-md font-semibold text-on-surface flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span>Cross-Origin-Embedder-Policy</span>
+</td>
+<td class="py-2.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-error/15 text-error font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px]">close</span> Unenforced
+                </span>
+</td>
+<td class="py-2.5 px-space-md text-error/80 font-mono-sm text-mono-sm">
+                Missing header; host allows arbitrary cross-origin script/media embeddings
+              </td>
+<td class="py-2.5 px-space-md text-right">
+<button class="text-primary hover:text-primary-fixed p-1 rounded hover:bg-surface-container-highest font-label-sm text-label-sm">
+                  Fix Snippet
+                </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Bottom Split Views: Cookies Audit vs Raw Header Inspector -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- Left Split: Cookie Security Audit -->
+<div class="lg:col-span-6 rounded-xl bg-surface-container-low/90 backdrop-blur-2xl p-space-md shadow-md flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">cookie</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Cookie Security Audit</h3>
+</div>
+<span class="font-mono-sm text-mono-sm text-outline">4 Cookies Analyzed</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-mono-sm text-mono-sm border-collapse">
+<thead>
+<tr class="bg-surface-container-highest/30 text-outline font-label-sm text-label-sm uppercase">
+<th class="py-2 px-space-sm rounded-l">Identifier</th>
+<th class="py-2 px-space-sm">Secure</th>
+<th class="py-2 px-space-sm">HttpOnly</th>
+<th class="py-2 px-space-sm">SameSite</th>
+<th class="py-2 px-space-sm rounded-r">Domain Scope</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<tr class="hover:bg-surface-container-high/30">
+<td class="py-2 px-space-sm text-on-surface font-semibold">__Host-user_session</td>
+<td class="py-2 px-space-sm text-secondary"><span class="material-symbols-outlined text-[15px]">verified</span></td>
+<td class="py-2 px-space-sm text-secondary"><span class="material-symbols-outlined text-[15px]">verified</span></td>
+<td class="py-2 px-space-sm"><span class="px-1.5 py-0.5 rounded bg-surface-container text-primary">Strict</span></td>
+<td class="py-2 px-space-sm text-on-surface-variant truncate">api.github.com</td>
+</tr>
+<tr class="hover:bg-surface-container-high/30">
+<td class="py-2 px-space-sm text-on-surface font-semibold">_octo</td>
+<td class="py-2 px-space-sm text-secondary"><span class="material-symbols-outlined text-[15px]">verified</span></td>
+<td class="py-2 px-space-sm text-secondary"><span class="material-symbols-outlined text-[15px]">verified</span></td>
+<td class="py-2 px-space-sm"><span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant">Lax</span></td>
+<td class="py-2 px-space-sm text-on-surface-variant truncate">.github.com</td>
+</tr>
+<tr class="hover:bg-surface-container-high/30">
+<td class="py-2 px-space-sm text-on-surface font-semibold">logged_in</td>
+<td class="py-2 px-space-sm text-secondary"><span class="material-symbols-outlined text-[15px]">verified</span></td>
+<td class="py-2 px-space-sm text-secondary"><span class="material-symbols-outlined text-[15px]">verified</span></td>
+<td class="py-2 px-space-sm"><span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant">Lax</span></td>
+<td class="py-2 px-space-sm text-on-surface-variant truncate">.github.com</td>
+</tr>
+<tr class="hover:bg-surface-container-high/30">
+<td class="py-2 px-space-sm text-on-surface font-semibold">_gh_sess</td>
+<td class="py-2 px-space-sm text-secondary"><span class="material-symbols-outlined text-[15px]">verified</span></td>
+<td class="py-2 px-space-sm text-secondary"><span class="material-symbols-outlined text-[15px]">verified</span></td>
+<td class="py-2 px-space-sm"><span class="px-1.5 py-0.5 rounded bg-surface-container text-primary">Strict</span></td>
+<td class="py-2 px-space-sm text-on-surface-variant truncate">api.github.com</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="mt-space-md p-space-sm rounded-lg bg-surface-container-lowest/60 flex items-center justify-between">
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[16px]">verified_user</span>
+<span>Zero cookies susceptible to Cross-Site Scripting (XSS) extraction.</span>
+</div>
+<span class="font-mono-sm text-mono-sm text-outline">Prefixed: 1/4</span>
+</div>
+</div>
+<!-- Right Split: Raw Response Headers Inspector -->
+<div class="lg:col-span-6 rounded-xl bg-surface-container-low/90 backdrop-blur-2xl p-space-md shadow-md flex flex-col">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">terminal</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Raw Header Stream</h3>
+</div>
+<div class="flex items-center gap-space-xs">
+<input class="bg-surface-container-highest text-on-surface font-mono-sm text-mono-sm px-2 py-0.5 rounded placeholder-outline focus:outline-none w-28" placeholder="Filter header..." type="text"/>
+<button class="flex items-center gap-1 font-mono-sm text-mono-sm bg-surface-container-high hover:bg-surface-bright text-on-surface px-2 py-1 rounded transition-colors" id="copyRawBtn" title="Copy raw header string">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+<span>Copy</span>
+</button>
+</div>
+</div>
+<div class="flex-1 bg-surface-container-lowest/90 rounded-lg p-space-md overflow-y-auto max-h-56 font-mono-sm text-mono-sm select-text text-on-surface-variant leading-relaxed shadow-inner">
+<div class="text-outline font-semibold mb-1"># HTTP/2.0 Response Headers:</div>
+<div><span class="text-primary">date:</span> Sun, 19 Apr 2026 14:22:01 GMT</div>
+<div><span class="text-primary">server:</span> GitHub.com</div>
+<div><span class="text-primary">content-type:</span> application/json; charset=utf-8</div>
+<div><span class="text-primary">cache-control:</span> public, max-age=60, s-maxage=60</div>
+<div><span class="text-primary">vary:</span> Accept, Accept-Encoding, Accept, X-Requested-With</div>
+<div><span class="text-primary">etag:</span> W/"a8fa9969ca1e2e1f20b30bbcaef57d9f"</div>
+<div><span class="text-secondary">strict-transport-security:</span> max-age=31536000; includeSubDomains; preload</div>
+<div><span class="text-secondary">x-frame-options:</span> DENY</div>
+<div><span class="text-secondary">x-content-type-options:</span> nosniff</div>
+<div><span class="text-secondary">x-xss-protection:</span> 0</div>
+<div><span class="text-secondary">referrer-policy:</span> strict-origin-when-cross-origin</div>
+<div><span class="text-tertiary">content-security-policy:</span> default-src 'none'; style-src 'unsafe-inline';</div>
+<div><span class="text-primary">x-github-request-id:</span> E421:1A7B:9A13:C2D4:66184C0F</div>
+</div>
+</div>
+</div>
+<!-- Remediation & Hardening Drawer / Server Snippets -->
+<div class="rounded-xl bg-surface-container-low/90 backdrop-blur-2xl p-space-md shadow-md flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">healing</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold">Remediation Snippets</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Inject ready-to-deploy directives to elevate score to 100/100 (Grade A+).</p>
+</div>
+<!-- Segmented Server Switcher -->
+<div class="flex items-center rounded-lg bg-surface-container-highest/60 p-0.5 font-label-md text-label-md" id="serverTabs">
+<button class="tab-btn px-space-md py-1 rounded-md text-on-surface bg-surface-container shadow-sm font-semibold transition-all" data-server="nginx">Nginx</button>
+<button class="tab-btn px-space-md py-1 rounded-md text-outline hover:text-on-surface transition-all" data-server="caddy">Caddy</button>
+<button class="tab-btn px-space-md py-1 rounded-md text-outline hover:text-on-surface transition-all" data-server="cloudflare">Cloudflare Rules</button>
+<button class="tab-btn px-space-md py-1 rounded-md text-outline hover:text-on-surface transition-all" data-server="apache">Apache (.htaccess)</button>
+</div>
+</div>
+<!-- Active Code Snippet Container -->
+<div class="relative bg-surface-container-lowest/90 rounded-lg p-space-md font-mono-sm text-mono-sm shadow-inner">
+<button class="absolute right-3 top-3 flex items-center gap-1 font-label-sm text-label-sm bg-surface-container-high hover:bg-surface-bright text-on-surface px-2.5 py-1 rounded transition-colors shadow" id="copySnippetBtn">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+<span id="copySnippetLabel">Copy Config</span>
+</button>
+<pre class="text-on-surface select-text overflow-x-auto leading-relaxed pt-1" id="snippetCode"><code><span class="text-outline"># Remediation for Cross-Origin-Embedder-Policy &amp; Strict CSP</span>
+add_header Cross-Origin-Embedder-Policy "require-corp" always;
+add_header Cross-Origin-Opener-Policy "same-origin" always;
+add_header Content-Security-Policy "default-src 'self'; script-src 'self'; object-src 'none'; base-uri 'self';" always;
+add_header Permissions-Policy "camera=(), microphone=(), geolocation=(), interest-cohort=()" always;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function () {
+    const snippets = {
+      nginx: `# Remediation for Cross-Origin-Embedder-Policy & Strict CSP
+add_header Cross-Origin-Embedder-Policy "require-corp" always;
+add_header Cross-Origin-Opener-Policy "same-origin" always;
+add_header Content-Security-Policy "default-src 'self'; script-src 'self'; object-src 'none'; base-uri 'self';" always;
+add_header Permissions-Policy "camera=(), microphone=(), geolocation=(), interest-cohort=()" always;`,
+
+      caddy: `# Caddyfile Directives for Grade A+ Hardening
+header {
+    Cross-Origin-Embedder-Policy "require-corp"
+    Cross-Origin-Opener-Policy "same-origin"
+    Content-Security-Policy "default-src 'self'; script-src 'self'; object-src 'none';"
+    Permissions-Policy "camera=(), microphone=(), geolocation=()"
+    Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+}`,
+
+      cloudflare: `# Cloudflare Transform Rules (HTTP Response Header Modification)
+Header Name: Cross-Origin-Embedder-Policy -> Value: "require-corp"
+Header Name: Cross-Origin-Opener-Policy   -> Value: "same-origin"
+Header Name: Content-Security-Policy     -> Value: "default-src 'self'; object-src 'none';"`,
+
+      apache: `# Apache 2.4+ VirtualHost / .htaccess
+<IfModule mod_headers.c>
+    Header always set Cross-Origin-Embedder-Policy "require-corp"
+    Header always set Cross-Origin-Opener-Policy "same-origin"
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; object-src 'none';"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>`
+    };
+
+    const tabButtons = document.querySelectorAll('#serverTabs .tab-btn');
+    const snippetCode = document.querySelector('#snippetCode code');
+    const copySnippetBtn = document.getElementById('copySnippetBtn');
+    const copySnippetLabel = document.getElementById('copySnippetLabel');
+    const copyRawBtn = document.getElementById('copyRawBtn');
+    const runScanBtn = document.getElementById('runScanBtn');
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabButtons.forEach(b => {
+          b.className = 'tab-btn px-space-md py-1 rounded-md text-outline hover:text-on-surface transition-all font-label-md text-label-md';
+        });
+        btn.className = 'tab-btn px-space-md py-1 rounded-md text-on-surface bg-surface-container shadow-sm font-semibold transition-all font-label-md text-label-md';
+
+        const server = btn.getAttribute('data-server');
+        if (snippets[server]) {
+          snippetCode.textContent = snippets[server];
+        }
+      });
+    });
+
+    copySnippetBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(snippetCode.textContent).then(() => {
+        copySnippetLabel.textContent = 'Copied!';
+        setTimeout(() => {
+          copySnippetLabel.textContent = 'Copy Config';
+        }, 1800);
+      });
+    });
+
+    copyRawBtn.addEventListener('click', () => {
+      const rawText = document.querySelector('.select-text').innerText;
+      navigator.clipboard.writeText(rawText).then(() => {
+        copyRawBtn.innerHTML = '<span class="material-symbols-outlined text-[14px]">check</span><span>Copied</span>';
+        setTimeout(() => {
+          copyRawBtn.innerHTML = '<span class="material-symbols-outlined text-[14px]">content_copy</span><span>Copy</span>';
+        }, 1800);
+      });
+    });
+
+    runScanBtn.addEventListener('click', () => {
+      const orig = runScanBtn.innerHTML;
+      runScanBtn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span><span>Scanning...</span>';
+      setTimeout(() => {
+        runScanBtn.innerHTML = orig;
+      }, 700);
+    });
+
+    document.getElementById('targetUrlInput').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        runScanBtn.click();
+      }
+    });
+  })();
+</script></main><footer class="fixed bottom-0 left-60 right-0 h-8 bg-surface-container-lowest/90 backdrop-blur-md z-40 px-margin-lg flex items-center justify-between font-mono-sm text-mono-sm text-on-surface-variant shadow-[0_-1px_6px_rgba(0,0,0,0.3)]"><div class="flex items-center gap-space-md"><span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Freed RAM: <span class="text-on-surface font-semibold">4.2 GB session</span></span><span class="text-outline-variant">|</span><span>Active Listeners: <span class="text-primary font-semibold">28 ports</span></span></div><div class="flex items-center gap-space-md"><span>Interface: <span class="text-on-surface font-semibold">en0 • Wi-Fi 6 (802.11ax)</span></span><span class="text-outline-variant">|</span><span class="text-secondary">Secure Sandbox Active</span></div></footer></div></body></html>

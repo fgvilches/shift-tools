@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-surface-variant":"#c0c6d6","on-primary-fixed-variant":"#00468d","on-tertiary-fixed-variant":"#7200a3","secondary-container":"#09bf49","surface-dim":"#131319","surface-container-low":"#1b1b21","inverse-surface":"#e4e1ea","on-secondary":"#003910","secondary-fixed-dim":"#47e266","on-error-container":"#ffdad6","tertiary":"#e9b3ff","surface-container-highest":"#34343b","tertiary-fixed-dim":"#e9b3ff","secondary-fixed":"#6cff82","surface-container":"#1f1f25","secondary":"#47e266","inverse-on-surface":"#303036","error-container":"#93000a","surface-bright":"#39383f","primary-container":"#3e90ff","on-tertiary-container":"#460066","primary-fixed-dim":"#aac7ff","on-primary-container":"#002957","background":"#131319","on-secondary-container":"#004615","on-surface":"#e4e1ea","on-background":"#e4e1ea","on-primary":"#003064","on-primary-fixed":"#001b3e","error":"#ffb4ab","tertiary-container":"#c863fb","surface-tint":"#aac7ff","tertiary-fixed":"#f6d9ff","primary":"#aac7ff","on-secondary-fixed":"#002106","on-tertiary-fixed":"#310048","surface":"#131319","primary-fixed":"#d6e3ff","inverse-primary":"#005db8","surface-container-lowest":"#0e0e14","on-tertiary":"#510074","on-error":"#690005","outline-variant":"#414754","surface-variant":"#34343b","surface-container-high":"#2a2930","outline":"#8b91a0","on-secondary-fixed-variant":"#00531a"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"gutter-sm":"0.5rem",margin:"0.75rem","gutter-lg":"1rem","margin-sm":"0.5rem","space-xs":"0.25rem","margin-lg":"1.25rem","space-lg":"1rem","space-md":"0.75rem","space-xl":"1.5rem",gutter:"0.75rem","space-sm":"0.5rem"},fontFamily:{"label-md":["Inter"],"body-sm":["Inter"],"label-sm":["Inter"],"mono-md":["JetBrains Mono"],"headline-sm":["Inter"],"headline-lg":["Inter"],"mono-lg":["JetBrains Mono"],"headline-md":["Inter"],"body-lg":["Inter"],"body-md":["Inter"],"mono-sm":["JetBrains Mono"]},fontSize:{"label-md":["12px",{lineHeight:"16px",letterSpacing:"0em",fontWeight:"500"}],"body-sm":["11px",{lineHeight:"15px",letterSpacing:"0em",fontWeight:"400"}],"label-sm":["10px",{lineHeight:"12px",letterSpacing:"0.03em",fontWeight:"600"}],"mono-md":["12px",{lineHeight:"16px",letterSpacing:"-0.01em",fontWeight:"400"}],"headline-sm":["14px",{lineHeight:"18px",letterSpacing:"-0.008em",fontWeight:"600"}],"headline-lg":["22px",{lineHeight:"28px",letterSpacing:"-0.015em",fontWeight:"600"}],"mono-lg":["13px",{lineHeight:"18px",letterSpacing:"-0.01em",fontWeight:"500"}],"headline-md":["17px",{lineHeight:"22px",letterSpacing:"-0.012em",fontWeight:"600"}],"body-lg":["14px",{lineHeight:"20px",letterSpacing:"-0.004em",fontWeight:"400"}],"body-md":["13px",{lineHeight:"18px",letterSpacing:"-0.002em",fontWeight:"400"}],"mono-sm":["10px",{lineHeight:"13px",letterSpacing:"0.01em",fontWeight:"400"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface select-none antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-60 z-50 bg-surface-container-low/85 backdrop-blur-2xl flex flex-col justify-between shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"><div class="flex flex-col h-full"><div class="h-14 px-margin-lg flex items-center gap-space-sm bg-surface-container-lowest/40 backdrop-blur-md"><img alt="shift-tools App Icon" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UjvTrhC126AmYWPrT2Ix4EmaYPA1it__A83Hwtu4-Xq_WLFRBDxLXBze1IJuIEVwI0THW5kV8amVNmgClGHTHvfsSk9nyGI0qUiZvNqHxrNCRkXDZhymdSyJvngGRwG7rZt7GGrOewgsRsA6MLmrzvMwLD_-NEkOEqn_6fo6nbaDmzAlHsmKVUXNns4Sy6jTmNsvWmW9B-4Cm6xfTVFZe7GG-gqqmHIM5AuDne_GMyNg"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">shift-tools</span><span class="font-mono-sm text-mono-sm text-on-surface-variant leading-tight">macOS native v1.0.0</span></div></div><div class="flex-1 overflow-y-auto px-margin py-space-sm space-y-space-md"><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">DevOps &amp; System</div><a class="flex items-center justify-between px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="process-killer" href="#">Process Killer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="quarantine-remover" href="#">Quarantine Remover</a><a aria-current="page" class="flex items-center px-space-sm py-1.5 rounded-lg transition-colors bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]" data-path="port-manager" href="#">Port Manager</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="disk-cleaner" href="#">Disk Cleaner</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ram-monitor" href="#">RAM Monitor</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Networks</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="network-observer" href="#">Network Observer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="wifi-mapper" href="#">WiFi Mapper</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="lan-scanner" href="#">LAN Scanner</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="dns-toolkit" href="#">DNS Toolkit</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="speed-test" href="#">Speed Test</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ping-traceroute" href="#">Ping / Traceroute</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Security &amp; Pentest</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="header-analyzer" href="#">Header Analyzer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ssl-inspector" href="#">SSL Inspector</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="subdomain-finder" href="#">Subdomain Finder</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="hash-generator" href="#">Hash Generator</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="password-auditor" href="#">Password Auditor</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Testing &amp; APIs</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="api-tester" href="#">API Tester</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="json-toolkit" href="#">JSON Toolkit</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="base64-url-encoder" href="#">Base64 / URL Encoder</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="regex-tester" href="#">Regex Tester</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Utilities</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="color-picker" href="#">Color Picker</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="text-diff" href="#">Text Diff</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="timestamp-converter" href="#">Timestamp Converter</a></nav></div><div class="p-margin m-margin bg-surface-container-lowest/60 rounded-xl space-y-space-xs shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Host Node</span><span class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-high text-primary">Apple M3 Max</span></div><div class="flex items-center justify-between font-mono-sm text-mono-sm text-on-surface-variant"><span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Rust Core</span><span class="text-secondary">0.8ms IPC</span></div></div></div></aside><div class="pl-60 flex flex-col min-h-screen"><header class="fixed top-0 left-60 right-0 h-14 bg-surface-container-low/75 backdrop-blur-2xl z-40 px-margin-lg flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.25)]"><div class="flex items-center gap-space-md"><div class="flex items-center gap-2 pl-1"><span class="w-3 h-3 rounded-full bg-[#ff5f56] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span><span class="w-3 h-3 rounded-full bg-[#ffbd2e] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span><span class="w-3 h-3 rounded-full bg-[#27c93f] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span></div><div class="flex items-center gap-space-xs font-mono-sm text-mono-sm text-on-surface-variant pl-space-sm"><span class="text-on-surface font-semibold">shift-tools</span><span>/</span><span class="text-outline">v1.0.0 (Rust Core)</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm px-space-md py-1 rounded-lg bg-surface-container-lowest/80 text-on-surface-variant font-body-sm text-body-sm shadow-[inset_0_1px_2px_rgba(0,0,0,0.6)]"><span class="material-symbols-outlined text-[16px] text-outline">search</span><span class="text-on-surface-variant pr-space-lg">Quick dispatch...</span><kbd class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface">⌘K</kbd></div><div class="flex items-center gap-space-sm px-space-md py-1 rounded-full bg-surface-container-lowest/50 font-mono-sm text-mono-sm text-on-surface-variant"><span class="text-on-surface">RAM <span class="text-primary">14.2 / 32 GB</span></span><span class="text-outline-variant">•</span><span class="text-on-surface">CPU <span class="text-secondary">8%</span></span><span class="text-outline-variant">•</span><span class="text-on-surface">Svcs <span class="text-tertiary">6 active</span></span></div><div class="flex items-center gap-space-sm"><button class="w-7 h-7 flex items-center justify-center rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[18px]">settings</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 pt-14 pb-8 w-full px-gutter-lg bg-background"><div class="flex flex-col w-full">
+<div class="flex flex-col gap-space-lg">
+<!-- Header Section -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md bg-surface-container-low/70 p-margin-lg rounded-xl shadow-md backdrop-blur-xl">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[26px]">lan</span>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Port Manager</h1>
+<span class="font-mono-sm text-mono-sm px-2 py-0.5 rounded-full bg-secondary/15 text-secondary flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+            Darwin Socket Core
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+          Real-time Darwin socket inspection via <code class="font-mono-sm text-mono-sm bg-surface-container-highest px-1.5 py-0.5 rounded text-primary">lsof</code> and <code class="font-mono-sm text-mono-sm bg-surface-container-highest px-1.5 py-0.5 rounded text-primary">netstat</code>. Identify port hogging, reverse tunnels, and terminate listeners with zero latency.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm self-start lg:self-center">
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface transition-colors font-headline-sm text-headline-sm flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary">bolt</span>
+<span>Quick Release</span>
+</button>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface transition-colors font-headline-sm text-headline-sm flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">radar</span>
+<span>Scan All Sockets</span>
+</button>
+<button class="px-space-md py-1.5 rounded-lg bg-primary-container text-on-primary-container transition-opacity hover:opacity-95 font-headline-sm text-headline-sm flex items-center gap-1.5 shadow-sm" id="refreshToggle">
+<span class="material-symbols-outlined text-[16px] animate-spin" style="animation-duration: 3s;">sync</span>
+<span>Auto-refresh: 2s</span>
+</button>
+</div>
+</div>
+<!-- Quick Finder Hero Search Bar -->
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-r from-surface-container-low via-surface-container to-surface-container-low p-space-lg shadow-md">
+<div class="relative z-10 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-space-md">
+<div class="flex-1 flex items-center gap-space-md bg-surface-container-lowest/80 px-space-lg py-2.5 rounded-lg shadow-inner">
+<span class="material-symbols-outlined text-primary text-[22px]">manage_search</span>
+<div class="flex-1 flex flex-col sm:flex-row sm:items-center gap-space-xs sm:gap-space-md">
+<span class="font-mono-md text-mono-md text-on-surface-variant whitespace-nowrap">Who is using port</span>
+<input class="w-full bg-transparent font-mono-lg text-mono-lg text-primary placeholder:text-outline focus:outline-none tracking-wider" id="portQuickFinder" placeholder="e.g. 3000, 5432, 8080" type="text" value="3000"/>
+</div>
+<button class="px-space-sm py-1 rounded bg-surface-container-high font-mono-sm text-mono-sm text-on-surface-variant hover:text-on-surface transition-colors">
+            ESC to clear
+          </button>
+</div>
+<div class="flex items-center gap-space-md bg-surface-container-high/80 px-space-lg py-2 rounded-lg backdrop-blur-md" id="quickLookupResult">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary animate-ping"></span>
+<span class="font-mono-md text-mono-md text-on-surface">Port 3000 matched:</span>
+</div>
+<div class="flex items-center gap-space-xs font-mono-sm text-mono-sm">
+<span class="px-2 py-0.5 rounded bg-primary/20 text-primary font-semibold">PID 41920</span>
+<span class="text-on-surface-variant">node (Vite Server)</span>
+</div>
+<button class="px-space-sm py-1 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm hover:opacity-90 transition-opacity" onclick="inspectProcess(41920, '3000', 'node', 'vite dev --host 0.0.0.0')">
+            Inspect
+          </button>
+</div>
+</div>
+</div>
+<!-- Summary KPI Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<div class="bg-surface-container-low/75 p-space-lg rounded-xl shadow-sm backdrop-blur-md flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Total Active Ports</span>
+<span class="material-symbols-outlined text-[20px] text-primary">sensors</span>
+</div>
+<div class="mt-space-md flex items-baseline justify-between">
+<span class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight">34</span>
+<span class="font-mono-sm text-mono-sm text-primary">28 TCP <span class="text-outline">/</span> 6 UDP</span>
+</div>
+<div class="mt-space-sm h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden flex">
+<div class="h-full bg-primary" style="width: 82%;"></div>
+<div class="h-full bg-tertiary" style="width: 18%;"></div>
+</div>
+</div>
+<div class="bg-surface-container-low/75 p-space-lg rounded-xl shadow-sm backdrop-blur-md flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Dev Collisions</span>
+<span class="material-symbols-outlined text-[20px] text-[#ffd60a]">warning</span>
+</div>
+<div class="mt-space-md flex items-baseline justify-between">
+<span class="font-headline-lg text-headline-lg text-[#ffd60a] font-semibold tracking-tight">3 Conflicts</span>
+<span class="font-mono-sm text-mono-sm px-2 py-0.5 rounded bg-[#ffd60a]/15 text-[#ffd60a]">Review Required</span>
+</div>
+<div class="mt-space-sm font-mono-sm text-mono-sm text-on-surface-variant truncate">
+          Ports 3000, 8080, 5432 flagged
+        </div>
+</div>
+<div class="bg-surface-container-low/75 p-space-lg rounded-xl shadow-sm backdrop-blur-md flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Orphaned Sockets</span>
+<span class="material-symbols-outlined text-[20px] text-error">link_off</span>
+</div>
+<div class="mt-space-md flex items-baseline justify-between">
+<span class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight">2 Listeners</span>
+<span class="font-mono-sm text-mono-sm px-2 py-0.5 rounded bg-error-container text-on-error-container">No Parent TTY</span>
+</div>
+<div class="mt-space-sm font-mono-sm text-mono-sm text-on-surface-variant truncate">
+          PID 8831 (python3), PID 9110 (ruby)
+        </div>
+</div>
+<div class="bg-surface-container-low/75 p-space-lg rounded-xl shadow-sm backdrop-blur-md flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Gateway Binding</span>
+<span class="material-symbols-outlined text-[20px] text-secondary">router</span>
+</div>
+<div class="mt-space-md flex items-baseline justify-between">
+<span class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight truncate">127.0.0.1</span>
+<span class="font-mono-sm text-mono-sm text-secondary">::1 Localhost</span>
+</div>
+<div class="mt-space-sm font-mono-sm text-mono-sm text-on-surface-variant truncate">
+          Loopback • darwin-xnu kernel
+        </div>
+</div>
+</div>
+<!-- Filter & Search Toolbar -->
+<div class="flex flex-wrap items-center justify-between gap-space-md bg-surface-container-low/80 p-space-md rounded-xl backdrop-blur-md shadow-sm">
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Protocol Segmented Control -->
+<div class="flex items-center p-0.5 rounded-lg bg-surface-container-lowest shadow-inner" id="protoFilterGroup">
+<button class="px-space-md py-1 rounded font-label-sm text-label-sm bg-surface-container-high text-on-surface font-semibold shadow-sm transition-all" data-filter="all">All</button>
+<button class="px-space-md py-1 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all" data-filter="tcp">TCP</button>
+<button class="px-space-md py-1 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all" data-filter="udp">UDP</button>
+</div>
+<!-- State Selector -->
+<div class="flex items-center p-0.5 rounded-lg bg-surface-container-lowest shadow-inner" id="stateFilterGroup">
+<button class="px-space-md py-1 rounded font-label-sm text-label-sm bg-surface-container-high text-on-surface font-semibold shadow-sm transition-all" data-state="all">All States</button>
+<button class="px-space-md py-1 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all" data-state="LISTEN">LISTEN</button>
+<button class="px-space-md py-1 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all" data-state="ESTABLISHED">ESTABLISHED</button>
+<button class="px-space-md py-1 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all" data-state="CLOSE_WAIT">CLOSE_WAIT</button>
+</div>
+</div>
+<div class="flex items-center gap-space-sm flex-1 sm:flex-initial min-w-[240px]">
+<div class="w-full flex items-center gap-space-xs bg-surface-container-lowest px-space-md py-1.5 rounded-lg shadow-inner">
+<span class="material-symbols-outlined text-[16px] text-outline">filter_list</span>
+<input class="bg-transparent font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none w-full" id="tableFilterInput" placeholder="Filter by process, port, PID..." type="text"/>
+</div>
+</div>
+</div>
+<!-- Main Content Workspace with Inspector Slide-over Layout -->
+<div class="relative flex flex-col xl:flex-row items-start gap-space-lg w-full">
+<!-- High-fidelity Socket Data Table -->
+<div class="flex-1 w-full bg-surface-container-low/70 rounded-xl overflow-hidden shadow-md backdrop-blur-xl">
+<div class="overflow-x-auto">
+<table class="w-full text-left" id="socketsTable">
+<thead class="bg-surface-container-high/60 text-outline font-label-sm text-label-sm uppercase tracking-wider backdrop-blur-md">
+<tr>
+<th class="py-2.5 px-space-md">Port</th>
+<th class="py-2.5 px-space-md">Protocol</th>
+<th class="py-2.5 px-space-md">Process</th>
+<th class="py-2.5 px-space-md">PID</th>
+<th class="py-2.5 px-space-md">User</th>
+<th class="py-2.5 px-space-md">Local Address</th>
+<th class="py-2.5 px-space-md">State</th>
+<th class="py-2.5 px-space-md text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-transparent font-body-md text-body-md text-on-surface">
+<!-- Row 1: 3000 (Vite) -->
+<tr class="hover:bg-surface-container-high/40 transition-colors group cursor-pointer" onclick="inspectProcess(41920, '3000', 'node', 'vite dev --host 0.0.0.0', '/Users/alex/projects/web-app')">
+<td class="py-2 px-space-md whitespace-nowrap">
+<span class="font-mono-md text-mono-md px-2 py-0.5 rounded bg-primary/20 text-primary font-semibold">3000</span>
+</td>
+<td class="py-2 px-space-md whitespace-nowrap">
+<span class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-medium">TCP</span>
+</td>
+<td class="py-2 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">javascript</span>
+<span class="font-mono-md text-mono-md text-on-surface font-medium">node</span>
+<span class="font-body-sm text-body-sm text-outline hidden sm:inline">(Vite Dev)</span>
+</div>
+</td>
+<td class="py-2 px-space-md whitespace-nowrap font-mono-sm text-mono-sm text-on-surface-variant">41920</td>
+<td class="py-2 px-space-md whitespace-nowrap font-body-sm text-body-sm text-on-surface-variant">alex</td>
+<td class="py-2 px-space-md whitespace-nowrap font-mono-sm text-mono-sm text-primary">0.0.0.0:3000</td>
+<td class="py-2 px-space-md whitespace-nowrap">
+<span class="font-mono-sm text-mono-sm px-2 py-0.5 rounded bg-secondary/15 text-secondary flex items-center gap-1 w-max font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> LISTEN
+                  </span>
+</td>
+<td class="py-2 px-space-md whitespace-nowrap text-right" onclick="event.stopPropagation()">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-2 py-1 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-sm text-label-sm transition-colors" onclick="inspectProcess(41920, '3000', 'node', 'vite dev --host 0.0.0.0')">
+                      Inspect
+                    </button>
+<button class="px-2 py-1 rounded bg-error/15 hover:bg-error/25 text-error font-label-sm text-label-sm transition-colors" onclick="confirmKill(41920, '3000', 'node')">
+                      Free Port
+                    </button>
+</div>
+</td>
+</tr>
+<!-- Row 2: 5432 (Postgres) -->
+<tr class="hover:bg-surface-container-high/40 transition-colors group cursor-pointer" onclick="inspectProcess(812, '5432', 'postgres', '/opt/homebrew/opt/postgresql@15/bin/postgres -D /opt/homebrew/var/postgres', '/opt/homebrew/var/postgres')">
+<td class="py-2 px-space-md whitespace-nowrap">
+<span class="font-mono-md text-mono-md px-2 py-0.5 rounded bg-primary/20 text-primary font-semibold">5432</span>
+</td>
+<td class="py-2 px-space-md whitespace-nowrap">
+<span class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-medium">TCP</span>
+</td>
+<td class="py-2 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">database</span>
+<span class="font-mono-md text-mono-md text-on-surface font-medium">postgres</span>
+</div>
+</td>
+<td class="py-2 px-space-md whitespace-nowrap font-mono-sm text-mono-sm text-on-surface-variant">812</td>
+<td class="py-2 px-space-md whitespace-nowrap font-body-sm text-body-sm text-on-surface-variant">alex</td>
+<td class="py-2 px-space-md whitespace-nowrap font-mono-sm text-mono-sm text-on-surface">127.0.0.1:5432</td>
+<td class="py-2 px-space-md whitespace-nowrap">
+<span class="font-mono-sm text-mono-sm px-2 py-0.5 rounded bg-secondary/15 text-secondary flex items-center gap-1 w-max font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> LISTEN
+                  </span>
+</td>
+<td class="py-2 px-space-md whitespace-nowrap text-right" onclick="event.stopPropagation()">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-2 py-1 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-sm text-label-sm transition-colors" onclick="inspectProcess(812, '5432', 'postgres', 'postgres master daemon')">
+                      Inspect
+                    </button>
+<button class="px-2 py-1 rounded bg-error/15 hover:bg-error/25 text-error font-label-sm text-label-sm transition-colors" onclick="confirmKill(812, '5432', 'postgres')">
+                      Free Port
+                    </button>
+</div>
+</td>
+</tr>
+<!-- Row 3: 8080 (Docker Proxy) -->
+<tr class="hover:bg-surface-container-high/40 transition-colors group cursor-pointer" onclick="inspectProcess(19488, '8080', 'docker-proxy', 'docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 8080 -container-ip 172.17.0.2', '/var/run/docker')">
+<td class="py-2 px-space-md whitespace-nowrap">
+<span class="font-mono-md text-mono-md px-2 py-0.5 rounded bg-primary/20 text-primary font-semibold">8080</span>
+</td>
+<td class="py-2 px-space-md whitespace-nowrap">
+<span class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-medium">TCP</span>
+</td>
+<td class="py-2 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary">deployed_code</span>
+<span class="font-mono-md text-mono-md text-on-surface font-medium">docker-proxy</span>
+</div>
+</td>
+<td class="py-2 px-space-md whitespace-nowrap font-mono-sm text-mono-sm text-on-surface-variant">19488</td>
+<td class="py-2 px-space-md whitespace-nowrap font-body-sm text-body-sm text-on-surface-variant">root</td>
+<td class="py-2 px-space-md whitespace-nowrap font-mono-sm text-mono-sm text-primary">0.0.0.0:8080</td>
+<td class="py-2 px-space-md whitespace-nowrap">
+<span class="font-mono-sm text-mono-sm px-2 py-0.5 rounded bg-secondary/15 text-secondary flex items-center gap-1 w-max font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> LISTEN
+                  </span>
+</td>
+<td class="py-2 px-space-md whitespace-nowrap text-right" onclick="event.stopPropagation()">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-2 py-1 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-sm text-label-sm transition-colors" onclick="inspectProcess(19488, '8080', 'docker-proxy', 'docker-proxy -proto tcp')">
+                      Inspect
+                    </button>
+<button class="px-2 py-1 rounded bg-error/15 hover:bg-error/25 text-error font-label-sm text-label-sm transition-colors" onclick="confirmKill(19488, '8080', 'docker-proxy')">
+                      Free Port
+                    </button>
+</div>
+</td>
+</tr>
+<!-- Row 4: 6379 (Redis) -->
+<tr class="hover:bg-surface-container-high/40 transition-colors group cursor-pointer" onclick="inspectProcess(1402, '6379', 'redis-server', 'redis-server *:6379', '/opt/homebrew/var/db/redis')">
+<td class="py-2 px-space-md whitespace-nowrap">
+<span class="font-mono-md text-mono-md px-2 py-0.5 rounded bg-primary/20 text-primary font-semibold">6379</span>
+</td>
+<td class="py-2 px-space-md whitespace-nowrap">
+<span class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-medium">TCP</span>
+</td>
+<td class="py-2 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-error">memory</span>
+<span class="font-mono-md text-mono-md text-on-surface font-medium">redis-server</span>
+</div>
+</td>
+<td class="py-2 px-space-md whitespace-nowrap font-mono-sm text-mono-sm text-on-surface-variant">1402</td>
+<td class="py-2 px-space-md whitespace-nowrap font-body-sm text-body-sm text-on-surface-variant">alex</td>
+<td class="py-2 px-space-md whitespace-nowrap font-mono-sm text-mono-sm text-on-surface">127.0.0.1:6379</td>
+<td class="py-2 px-space-md whitespace-nowrap">
+<span class="font-mono-sm text-mono-sm px-2 py-0.5 rounded bg-secondary/15 text-secondary flex items-center gap-1 w-max font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> LISTEN
+                  </span>
+</td>
+<td class="py-2 px-space-md whitespace-nowrap text-right" onclick="event.stopPropagation()">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-2 py-1 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-sm text-label-sm transition-colors" onclick="inspectProcess(1402, '6379', 'redis-server', 'redis-server *:6379')">
+                      Inspect
+                    </button>
+<button class="px-2 py-1 rounded bg-error/15 hover:bg-error/25 text-error font-label-sm text-label-sm transition-colors" onclick="confirmKill(1402, '6379', 'redis-server')">
+                      Free Port
+                    </button>
+</div>
+</td>
+</tr>
+<!-- Row 5: 22 (SSH) -->
+<tr class="hover:bg-surface-container-high/40 transition-colors group cursor-pointer" onclick="inspectProcess(119, '22', 'sshd', '/usr/sbin/sshd -D', '/var/empty')">
+<td class="py-2 px-space-md whitespace-nowrap">
+<span class="font-mono-md text-mono-md px-2 py-0.5 rounded bg-primary/20 text-primary font-semibold">22</span>
+</td>
+<td class="py-2 px-space-md whitespace-nowrap">
+<span class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-medium">TCP</span>
+</td>
+<td class="py-2 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">terminal</span>
+<span class="font-mono-md text-mono-md text-on-surface font-medium">sshd</span>
+</div>
+</td>
+<td class="py-2 px-space-md whitespace-nowrap font-mono-sm text-mono-sm text-on-surface-variant">119</td>
+<td class="py-2 px-space-md whitespace-nowrap font-body-sm text-body-sm text-on-surface-variant">root</td>
+<td class="py-2 px-space-md whitespace-nowrap font-mono-sm text-mono-sm text-on-surface">127.0.0.1:22</td>
+<td class="py-2 px-space-md whitespace-nowrap">
+<span class="font-mono-sm text-mono-sm px-2 py-0.5 rounded bg-secondary/15 text-secondary flex items-center gap-1 w-max font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> LISTEN
+                  </span>
+</td>
+<td class="py-2 px-space-md whitespace-nowrap text-right" onclick="event.stopPropagation()">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-2 py-1 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-sm text-label-sm transition-colors" onclick="inspectProcess(119, '22', 'sshd', '/usr/sbin/sshd -D')">
+                      Inspect
+                    </button>
+<button class="px-2 py-1 rounded bg-error/15 hover:bg-error/25 text-error font-label-sm text-label-sm transition-colors" onclick="confirmKill(119, '22', 'sshd')">
+                      Free Port
+                    </button>
+</div>
+</td>
+</tr>
+<!-- Row 6: 8831 (Python Orphan) -->
+<tr class="hover:bg-surface-container-high/40 transition-colors group cursor-pointer" onclick="inspectProcess(8831, '8831', 'python3', 'python3 -m http.server 8831', '/Users/alex/Downloads/temp-assets')">
+<td class="py-2 px-space-md whitespace-nowrap">
+<span class="font-mono-md text-mono-md px-2 py-0.5 rounded bg-error/20 text-error font-semibold">8831</span>
+</td>
+<td class="py-2 px-space-md whitespace-nowrap">
+<span class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-medium">TCP</span>
+</td>
+<td class="py-2 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary">code</span>
+<span class="font-mono-md text-mono-md text-on-surface font-medium">python3</span>
+<span class="font-mono-sm text-mono-sm px-1.5 py-0.2 rounded bg-error-container text-on-error-container">orphan</span>
+</div>
+</td>
+<td class="py-2 px-space-md whitespace-nowrap font-mono-sm text-mono-sm text-on-surface-variant">8831</td>
+<td class="py-2 px-space-md whitespace-nowrap font-body-sm text-body-sm text-on-surface-variant">alex</td>
+<td class="py-2 px-space-md whitespace-nowrap font-mono-sm text-mono-sm text-on-surface">127.0.0.1:8831</td>
+<td class="py-2 px-space-md whitespace-nowrap">
+<span class="font-mono-sm text-mono-sm px-2 py-0.5 rounded bg-secondary/15 text-secondary flex items-center gap-1 w-max font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> LISTEN
+                  </span>
+</td>
+<td class="py-2 px-space-md whitespace-nowrap text-right" onclick="event.stopPropagation()">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-2 py-1 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-sm text-label-sm transition-colors" onclick="inspectProcess(8831, '8831', 'python3', 'python3 -m http.server 8831')">
+                      Inspect
+                    </button>
+<button class="px-2 py-1 rounded bg-error/15 hover:bg-error/25 text-error font-label-sm text-label-sm transition-colors" onclick="confirmKill(8831, '8831', 'python3')">
+                      Free Port
+                    </button>
+</div>
+</td>
+</tr>
+<!-- Row 7: 5353 (mDNSResponder UDP) -->
+<tr class="hover:bg-surface-container-high/40 transition-colors group cursor-pointer" onclick="inspectProcess(92, '5353', 'mDNSResponder', '/usr/sbin/mDNSResponder', '/private/var/run')">
+<td class="py-2 px-space-md whitespace-nowrap">
+<span class="font-mono-md text-mono-md px-2 py-0.5 rounded bg-primary/20 text-primary font-semibold">5353</span>
+</td>
+<td class="py-2 px-space-md whitespace-nowrap">
+<span class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-tertiary font-medium">UDP</span>
+</td>
+<td class="py-2 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-outline">wifi_tethering</span>
+<span class="font-mono-md text-mono-md text-on-surface font-medium">mDNSResponder</span>
+</div>
+</td>
+<td class="py-2 px-space-md whitespace-nowrap font-mono-sm text-mono-sm text-on-surface-variant">92</td>
+<td class="py-2 px-space-md whitespace-nowrap font-body-sm text-body-sm text-on-surface-variant">_mdnsresponder</td>
+<td class="py-2 px-space-md whitespace-nowrap font-mono-sm text-mono-sm text-on-surface">*:5353</td>
+<td class="py-2 px-space-md whitespace-nowrap">
+<span class="font-mono-sm text-mono-sm px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant flex items-center gap-1 w-max font-medium">
+                    • UNCONNECTED
+                  </span>
+</td>
+<td class="py-2 px-space-md whitespace-nowrap text-right" onclick="event.stopPropagation()">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-2 py-1 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-sm text-label-sm transition-colors" onclick="inspectProcess(92, '5353', 'mDNSResponder', '/usr/sbin/mDNSResponder')">
+                      Inspect
+                    </button>
+<button class="px-2 py-1 rounded bg-surface-container-highest text-outline font-label-sm text-label-sm opacity-50 cursor-not-allowed" disabled="">
+                      Protected
+                    </button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Slide-over / Inspector Drawer -->
+<aside class="w-full xl:w-96 bg-surface-container-low/90 rounded-xl p-space-lg shadow-xl backdrop-blur-2xl flex flex-col gap-space-md shrink-0" id="inspectorDrawer">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">troubleshoot</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Process Inspector</h2>
+</div>
+<span class="font-mono-sm text-mono-sm px-2 py-0.5 rounded bg-secondary/15 text-secondary">Active Socket</span>
+</div>
+<!-- Selected Entity Header -->
+<div class="bg-surface-container-lowest/80 p-space-md rounded-lg flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-mono-lg text-mono-lg text-primary font-bold" id="inspectPortBadge">Port 3000</span>
+<span class="font-headline-sm text-headline-sm text-on-surface" id="inspectProcessName">node (Vite Dev Server)</span>
+</div>
+<span class="font-mono-sm text-mono-sm px-2 py-1 rounded bg-surface-container-high text-on-surface-variant" id="inspectPidBadge">PID 41920</span>
+</div>
+<!-- Metric Readout / Specs -->
+<div class="space-y-space-sm font-mono-sm text-mono-sm">
+<div class="flex flex-col gap-1 p-space-sm rounded bg-surface-container-lowest/40">
+<span class="text-outline uppercase font-label-sm text-label-sm">Working Directory</span>
+<span class="text-on-surface break-all" id="inspectCwd">/Users/alex/projects/web-app</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="flex flex-col gap-1 p-space-sm rounded bg-surface-container-lowest/40">
+<span class="text-outline uppercase font-label-sm text-label-sm">Parent PID</span>
+<span class="text-primary font-semibold" id="inspectPpid">1422 (zsh)</span>
+</div>
+<div class="flex flex-col gap-1 p-space-sm rounded bg-surface-container-lowest/40">
+<span class="text-outline uppercase font-label-sm text-label-sm">FD Descriptor</span>
+<span class="text-on-surface" id="inspectFd">23u IPv4 (TCP)</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 p-space-sm rounded bg-surface-container-lowest/40">
+<span class="text-outline uppercase font-label-sm text-label-sm">Command Executed</span>
+<code class="text-on-surface-variant break-all font-mono-xs" id="inspectCmd">vite dev --host 0.0.0.0 --port 3000</code>
+</div>
+<div class="flex flex-col gap-1 p-space-sm rounded bg-surface-container-lowest/40">
+<div class="flex items-center justify-between text-outline uppercase font-label-sm text-label-sm">
+<span>Open Connections</span>
+<span class="text-secondary">4 Established</span>
+</div>
+<div class="space-y-1 mt-1 font-mono-sm text-mono-sm text-on-surface-variant">
+<div class="flex items-center justify-between text-body-sm">
+<span>127.0.0.1:51842</span>
+<span class="text-secondary">→ ESTAB</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<span>127.0.0.1:51843</span>
+<span class="text-secondary">→ ESTAB</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Safeguard Action Buttons -->
+<div class="pt-space-sm flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<button class="flex-1 py-2 px-space-md rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-headline-sm text-headline-sm transition-colors flex items-center justify-center gap-1.5 shadow-sm" id="sigtermBtn" onclick="terminateSelected('SIGTERM')">
+<span class="material-symbols-outlined text-[16px] text-tertiary">power_settings_new</span>
+<span>SIGTERM (15)</span>
+</button>
+<button class="flex-1 py-2 px-space-md rounded-lg bg-error-container hover:opacity-90 text-on-error-container font-headline-sm text-headline-sm transition-opacity flex items-center justify-center gap-1.5 shadow-sm" id="sigkillBtn" onclick="terminateSelected('SIGKILL')">
+<span class="material-symbols-outlined text-[16px]">cancel</span>
+<span>SIGKILL (9)</span>
+</button>
+</div>
+<p class="font-mono-sm text-mono-sm text-center text-outline">
+            Darwin kernel enforces strict ownership checks. Root escalation available.
+          </p>
+</div>
+</aside>
+</div>
+</div>
+<!-- Interactive Client-side Script -->
+<script>
+    let currentSelectedPid = 41920;
+    let currentSelectedPort = "3000";
+    let currentSelectedName = "node";
+
+    function inspectProcess(pid, port, name, cmd = '', cwd = '/Users/alex/projects') {
+      currentSelectedPid = pid;
+      currentSelectedPort = port;
+      currentSelectedName = name;
+
+      document.getElementById('inspectPortBadge').textContent = 'Port ' + port;
+      document.getElementById('inspectProcessName').textContent = name;
+      document.getElementById('inspectPidBadge').textContent = 'PID ' + pid;
+      document.getElementById('inspectCwd').textContent = cwd;
+      document.getElementById('inspectCmd').textContent = cmd || (name + ' [runtime listener]');
+      
+      const drawer = document.getElementById('inspectorDrawer');
+      drawer.classList.add('shadow-primary/10');
+      setTimeout(() => drawer.classList.remove('shadow-primary/10'), 300);
+    }
+
+    function confirmKill(pid, port, name) {
+      if (confirm(`Terminate PID ${pid} (${name}) currently occupying Port ${port}?`)) {
+        alert(`SIGTERM signal dispatched to PID ${pid}. Socket ${port} cleared.`);
+      }
+    }
+
+    function terminateSelected(signal) {
+      if (confirm(`Send ${signal} to ${currentSelectedName} (PID ${currentSelectedPid}) on Port ${currentSelectedPort}?`)) {
+        alert(`Dispatched ${signal} to PID ${currentSelectedPid}. Listener released.`);
+      }
+    }
+
+    // Quick Finder filter handler
+    const portFinder = document.getElementById('portQuickFinder');
+    const quickResult = document.getElementById('quickLookupResult');
+
+    portFinder.addEventListener('input', (e) => {
+      const val = e.target.value.trim();
+      const rows = document.querySelectorAll('#socketsTable tbody tr');
+      let found = false;
+
+      rows.forEach(row => {
+        const portCol = row.querySelector('td:nth-child(1)').textContent.trim();
+        if (portCol.includes(val) && val !== '') {
+          row.classList.remove('hidden');
+          if (!found) {
+            found = true;
+            quickResult.innerHTML = `
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-secondary animate-ping"></span>
+                <span class="font-mono-md text-mono-md text-on-surface">Port ${portCol} matched:</span>
+              </div>
+              <div class="flex items-center gap-space-xs font-mono-sm text-mono-sm">
+                <span class="px-2 py-0.5 rounded bg-primary/20 text-primary font-semibold">${row.querySelector('td:nth-child(4)').textContent.trim()}</span>
+                <span class="text-on-surface-variant">${row.querySelector('td:nth-child(3)').textContent.trim()}</span>
+              </div>
+            `;
+          }
+        } else if (val !== '') {
+          row.classList.add('hidden');
+        } else {
+          row.classList.remove('hidden');
+        }
+      });
+
+      if (!found && val !== '') {
+        quickResult.innerHTML = `
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-error"></span>
+            <span class="font-mono-md text-mono-md text-on-surface">No process listening on ${val}</span>
+          </div>
+        `;
+      }
+    });
+
+    // Toolbar text filter
+    const textFilter = document.getElementById('tableFilterInput');
+    textFilter.addEventListener('input', (e) => {
+      const q = e.target.value.toLowerCase();
+      document.querySelectorAll('#socketsTable tbody tr').forEach(row => {
+        const text = row.textContent.toLowerCase();
+        row.style.display = text.includes(q) ? '' : 'none';
+      });
+    });
+
+    // Protocol filter buttons
+    document.querySelectorAll('#protoFilterGroup button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#protoFilterGroup button').forEach(b => {
+          b.className = 'px-space-md py-1 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all';
+        });
+        btn.className = 'px-space-md py-1 rounded font-label-sm text-label-sm bg-surface-container-high text-on-surface font-semibold shadow-sm transition-all';
+
+        const filter = btn.getAttribute('data-filter').toUpperCase();
+        document.querySelectorAll('#socketsTable tbody tr').forEach(row => {
+          const proto = row.querySelector('td:nth-child(2)').textContent.trim();
+          if (filter === 'ALL' || proto === filter) {
+            row.style.display = '';
+          } else {
+            row.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Auto-refresh pulse toggle
+    const refreshBtn = document.getElementById('refreshToggle');
+    let refreshing = true;
+    refreshBtn.addEventListener('click', () => {
+      refreshing = !refreshing;
+      if (refreshing) {
+        refreshBtn.innerHTML = '<span class="material-symbols-outlined text-[16px] animate-spin" style="animation-duration: 3s;">sync</span><span>Auto-refresh: 2s</span>';
+        refreshBtn.className = 'px-space-md py-1.5 rounded-lg bg-primary-container text-on-primary-container transition-opacity hover:opacity-95 font-headline-sm text-headline-sm flex items-center gap-1.5 shadow-sm';
+      } else {
+        refreshBtn.innerHTML = '<span class="material-symbols-outlined text-[16px]">sync_disabled</span><span>Paused</span>';
+        refreshBtn.className = 'px-space-md py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant transition-opacity hover:opacity-95 font-headline-sm text-headline-sm flex items-center gap-1.5 shadow-sm';
+      }
+    });
+  </script>
+</div></main><footer class="fixed bottom-0 left-60 right-0 h-8 bg-surface-container-lowest/90 backdrop-blur-md z-40 px-margin-lg flex items-center justify-between font-mono-sm text-mono-sm text-on-surface-variant shadow-[0_-1px_6px_rgba(0,0,0,0.3)]"><div class="flex items-center gap-space-md"><span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Freed RAM: <span class="text-on-surface font-semibold">4.2 GB session</span></span><span class="text-outline-variant">|</span><span>Active Listeners: <span class="text-primary font-semibold">28 ports</span></span></div><div class="flex items-center gap-space-md"><span>Interface: <span class="text-on-surface font-semibold">en0 • Wi-Fi 6 (802.11ax)</span></span><span class="text-outline-variant">|</span><span class="text-secondary">Secure Sandbox Active</span></div></footer></div></body></html>

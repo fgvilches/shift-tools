@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>NSLocationWhenInUseUsageDescription</key>
+  <string>shift-tools reads the nearby Wi-Fi access-point list. macOS only returns SSIDs and BSSIDs to apps with Location permission. No coordinates are requested, stored or transmitted.</string>
+  <key>NSLocationUsageDescription</key>
+  <string>shift-tools reads the nearby Wi-Fi access-point list so access points can show their SSID instead of a redacted name. No location is recorded.</string>
+</dict>
+</plist>

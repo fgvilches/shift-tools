@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-surface-variant":"#c0c6d6","on-primary-fixed-variant":"#00468d","on-tertiary-fixed-variant":"#7200a3","secondary-container":"#09bf49","surface-dim":"#131319","surface-container-low":"#1b1b21","inverse-surface":"#e4e1ea","on-secondary":"#003910","secondary-fixed-dim":"#47e266","on-error-container":"#ffdad6","tertiary":"#e9b3ff","surface-container-highest":"#34343b","tertiary-fixed-dim":"#e9b3ff","secondary-fixed":"#6cff82","surface-container":"#1f1f25","secondary":"#47e266","inverse-on-surface":"#303036","error-container":"#93000a","surface-bright":"#39383f","primary-container":"#3e90ff","on-tertiary-container":"#460066","primary-fixed-dim":"#aac7ff","on-primary-container":"#002957","background":"#131319","on-secondary-container":"#004615","on-surface":"#e4e1ea","on-background":"#e4e1ea","on-primary":"#003064","on-primary-fixed":"#001b3e","error":"#ffb4ab","tertiary-container":"#c863fb","surface-tint":"#aac7ff","tertiary-fixed":"#f6d9ff","primary":"#aac7ff","on-secondary-fixed":"#002106","on-tertiary-fixed":"#310048","surface":"#131319","primary-fixed":"#d6e3ff","inverse-primary":"#005db8","surface-container-lowest":"#0e0e14","on-tertiary":"#510074","on-error":"#690005","outline-variant":"#414754","surface-variant":"#34343b","surface-container-high":"#2a2930","outline":"#8b91a0","on-secondary-fixed-variant":"#00531a"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"gutter-sm":"0.5rem",margin:"0.75rem","gutter-lg":"1rem","margin-sm":"0.5rem","space-xs":"0.25rem","margin-lg":"1.25rem","space-lg":"1rem","space-md":"0.75rem","space-xl":"1.5rem",gutter:"0.75rem","space-sm":"0.5rem"},fontFamily:{"label-md":["Inter"],"body-sm":["Inter"],"label-sm":["Inter"],"mono-md":["JetBrains Mono"],"headline-sm":["Inter"],"headline-lg":["Inter"],"mono-lg":["JetBrains Mono"],"headline-md":["Inter"],"body-lg":["Inter"],"body-md":["Inter"],"mono-sm":["JetBrains Mono"]},fontSize:{"label-md":["12px",{lineHeight:"16px",letterSpacing:"0em",fontWeight:"500"}],"body-sm":["11px",{lineHeight:"15px",letterSpacing:"0em",fontWeight:"400"}],"label-sm":["10px",{lineHeight:"12px",letterSpacing:"0.03em",fontWeight:"600"}],"mono-md":["12px",{lineHeight:"16px",letterSpacing:"-0.01em",fontWeight:"400"}],"headline-sm":["14px",{lineHeight:"18px",letterSpacing:"-0.008em",fontWeight:"600"}],"headline-lg":["22px",{lineHeight:"28px",letterSpacing:"-0.015em",fontWeight:"600"}],"mono-lg":["13px",{lineHeight:"18px",letterSpacing:"-0.01em",fontWeight:"500"}],"headline-md":["17px",{lineHeight:"22px",letterSpacing:"-0.012em",fontWeight:"600"}],"body-lg":["14px",{lineHeight:"20px",letterSpacing:"-0.004em",fontWeight:"400"}],"body-md":["13px",{lineHeight:"18px",letterSpacing:"-0.002em",fontWeight:"400"}],"mono-sm":["10px",{lineHeight:"13px",letterSpacing:"0.01em",fontWeight:"400"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface select-none antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-60 z-50 bg-surface-container-low/85 backdrop-blur-2xl flex flex-col justify-between shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"><div class="flex flex-col h-full"><div class="h-14 px-margin-lg flex items-center gap-space-sm bg-surface-container-lowest/40 backdrop-blur-md"><img alt="shift-tools App Icon" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UjvTrhC126AmYWPrT2Ix4EmaYPA1it__A83Hwtu4-Xq_WLFRBDxLXBze1IJuIEVwI0THW5kV8amVNmgClGHTHvfsSk9nyGI0qUiZvNqHxrNCRkXDZhymdSyJvngGRwG7rZt7GGrOewgsRsA6MLmrzvMwLD_-NEkOEqn_6fo6nbaDmzAlHsmKVUXNns4Sy6jTmNsvWmW9B-4Cm6xfTVFZe7GG-gqqmHIM5AuDne_GMyNg"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">shift-tools</span><span class="font-mono-sm text-mono-sm text-on-surface-variant leading-tight">macOS native v1.0.0</span></div></div><div class="flex-1 overflow-y-auto px-margin py-space-sm space-y-space-md"><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">DevOps & System</div><a class="flex items-center justify-between px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="process-killer" href="#"><span>Process Killer</span><span class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_rgba(71,226,102,0.6)]"></span></a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="quarantine-remover" href="#">Quarantine Remover</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="port-manager" href="#">Port Manager</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="disk-cleaner" href="#">Disk Cleaner</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ram-monitor" href="#">RAM Monitor</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Networks</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="network-observer" href="#">Network Observer</a><a aria-current="page" class="flex items-center px-space-sm py-1.5 rounded-lg transition-colors bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]" data-path="wifi-mapper" href="#">WiFi Mapper</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="lan-scanner" href="#">LAN Scanner</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="dns-toolkit" href="#">DNS Toolkit</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="speed-test" href="#">Speed Test</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ping-traceroute" href="#">Ping / Traceroute</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Security & Pentest</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="header-analyzer" href="#">Header Analyzer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ssl-inspector" href="#">SSL Inspector</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="subdomain-finder" href="#">Subdomain Finder</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="hash-generator" href="#">Hash Generator</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="password-auditor" href="#">Password Auditor</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Testing & APIs</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="api-tester" href="#">API Tester</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="json-toolkit" href="#">JSON Toolkit</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="base64-url-encoder" href="#">Base64 / URL Encoder</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="regex-tester" href="#">Regex Tester</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Utilities</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="color-picker" href="#">Color Picker</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="text-diff" href="#">Text Diff</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="timestamp-converter" href="#">Timestamp Converter</a></nav></div><div class="p-margin m-margin bg-surface-container-lowest/60 rounded-xl space-y-space-xs shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Host Node</span><span class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-high text-primary">Apple M3 Max</span></div><div class="flex items-center justify-between font-mono-sm text-mono-sm text-on-surface-variant"><span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Rust Core</span><span class="text-secondary">0.8ms IPC</span></div></div></div></aside><div class="pl-60 flex flex-col min-h-screen"><header class="fixed top-0 left-60 right-0 h-14 bg-surface-container-low/75 backdrop-blur-2xl z-40 px-margin-lg flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.25)]"><div class="flex items-center gap-space-md"><div class="flex items-center gap-2 pl-1"><span class="w-3 h-3 rounded-full bg-[#ff5f56] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span><span class="w-3 h-3 rounded-full bg-[#ffbd2e] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span><span class="w-3 h-3 rounded-full bg-[#27c93f] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span></div><div class="flex items-center gap-space-xs font-mono-sm text-mono-sm text-on-surface-variant pl-space-sm"><span class="text-on-surface font-semibold">shift-tools</span><span>/</span><span class="text-outline">v1.0.0 (Rust Core)</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm px-space-md py-1 rounded-lg bg-surface-container-lowest/80 text-on-surface-variant font-body-sm text-body-sm shadow-[inset_0_1px_2px_rgba(0,0,0,0.6)]"><span class="material-symbols-outlined text-[16px] text-outline">search</span><span class="text-on-surface-variant pr-space-lg">Quick dispatch...</span><kbd class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface">⌘K</kbd></div><div class="flex items-center gap-space-sm px-space-md py-1 rounded-full bg-surface-container-lowest/50 font-mono-sm text-mono-sm text-on-surface-variant"><span class="text-on-surface">RAM <span class="text-primary">14.2 / 32 GB</span></span><span class="text-outline-variant">•</span><span class="text-on-surface">CPU <span class="text-secondary">8%</span></span><span class="text-outline-variant">•</span><span class="text-on-surface">Svcs <span class="text-tertiary">6 active</span></span></div><div class="flex items-center gap-space-sm"><button class="w-7 h-7 flex items-center justify-center rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[18px]">settings</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 pt-14 pb-8 w-full px-gutter-lg bg-background"><div class="flex flex-col w-full gap-space-md">
+<!-- Top Glass Toolbar / Command Hub -->
+<header class="w-full bg-surface-container-low/80 backdrop-blur-2xl rounded-xl p-space-md shadow-md flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high/90 flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[24px]">wifi_tethering</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-md text-headline-md text-on-surface">WiFi Mapper</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary/15 text-secondary font-mono-sm text-mono-sm">RSSI v2.4 Active</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-mono-sm text-mono-sm">M3 Max Metal Accel</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Physical space signal mapping, site survey floorplan editor, RSSI heatmaps, and channel optimization analytics.</p>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center flex-wrap gap-space-xs">
+<button class="h-7 px-space-sm rounded-lg bg-surface-container-high/90 text-on-surface hover:bg-surface-bright font-label-md text-label-md flex items-center gap-1.5 transition-all shadow-sm">
+<span class="material-symbols-outlined text-[15px]">add_box</span>
+<span>New Floorplan</span>
+</button>
+<button class="h-7 px-space-sm rounded-lg bg-surface-container-high/90 text-on-surface hover:bg-surface-bright font-label-md text-label-md flex items-center gap-1.5 transition-all shadow-sm">
+<span class="material-symbols-outlined text-[15px]">file_upload</span>
+<span>Import Blueprint</span>
+</button>
+<button class="h-7 px-space-sm rounded-lg bg-surface-container-high/90 text-on-surface hover:bg-surface-bright font-label-md text-label-md flex items-center gap-1.5 transition-all shadow-sm">
+<span class="material-symbols-outlined text-[15px]">picture_as_pdf</span>
+<span>Export Report</span>
+</button>
+<button class="h-7 px-space-md rounded-lg bg-primary-container text-on-primary-container hover:bg-primary-container/85 font-headline-sm text-headline-sm flex items-center gap-1.5 transition-all shadow-sm" id="scanTriggerBtn">
+<span class="material-symbols-outlined text-[16px]">radar</span>
+<span>Scan Position</span>
+<kbd class="font-mono-sm text-mono-sm px-1 rounded bg-surface-container-lowest/40 text-on-primary-container ml-1">⌘Space</kbd>
+</button>
+</div>
+</header>
+<!-- Dual Workstation Grid: Canvas (70%) + Telemetry Inspector (30%) -->
+<div class="grid grid-cols-1 lg:grid-cols-10 gap-space-md items-start">
+<!-- LEFT 70%: Interactive Architectural Blueprint & Heatmap Canvas -->
+<div class="lg:col-span-7 flex flex-col bg-surface-container-low/70 backdrop-blur-2xl rounded-xl shadow-md overflow-hidden">
+<!-- Sub-toolbar: Vector Tools, Heatmap layers, Zoom & Calibration -->
+<div class="h-11 px-space-md bg-surface-container-lowest/70 backdrop-blur-xl flex items-center justify-between gap-space-sm text-on-surface-variant flex-wrap">
+<div class="flex items-center gap-space-xs">
+<!-- Tool Palette -->
+<div class="flex items-center bg-surface-container-high/60 rounded-lg p-0.5 shadow-inner">
+<button class="w-7 h-7 rounded bg-surface-bright text-primary flex items-center justify-center transition-all" title="Select / Inspect Point">
+<span class="material-symbols-outlined text-[16px]">near_me</span>
+</button>
+<button class="w-7 h-7 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-bright/50 flex items-center justify-center transition-all" title="Draw Wall">
+<span class="material-symbols-outlined text-[16px]">crop_square</span>
+</button>
+<button class="w-7 h-7 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-bright/50 flex items-center justify-center transition-all" title="Door Aperture">
+<span class="material-symbols-outlined text-[16px]">meeting_room</span>
+</button>
+<button class="w-7 h-7 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-bright/50 flex items-center justify-center transition-all" title="Drop Survey Marker">
+<span class="material-symbols-outlined text-[16px]">location_searching</span>
+</button>
+</div>
+<!-- Heatmap Layer Selector -->
+<div class="flex items-center bg-surface-container-high/60 rounded-lg p-0.5 font-label-md text-label-md text-on-surface-variant ml-2 shadow-inner">
+<button class="px-2.5 py-1 rounded bg-primary-container text-on-primary-container font-headline-sm text-headline-sm transition-all shadow-sm">5GHz Heatmap</button>
+<button class="px-2.5 py-1 rounded hover:text-on-surface transition-all">2.4GHz</button>
+<button class="px-2.5 py-1 rounded hover:text-on-surface transition-all">SNR Spread</button>
+</div>
+</div>
+<div class="flex items-center gap-space-sm font-mono-sm text-mono-sm">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">grid_4x4</span>
+<span>1.0m Snap</span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-high/50 px-2 py-0.5 rounded text-on-surface">
+<span class="material-symbols-outlined text-[14px]">zoom_in</span>
+<span>100%</span>
+</div>
+<button class="w-6 h-6 rounded bg-surface-container-high text-on-surface-variant hover:text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">fullscreen</span>
+</button>
+</div>
+</div>
+<!-- Blueprint SVG Engine Canvas -->
+<div class="relative w-full h-[540px] bg-surface-container-lowest/90 overflow-hidden flex items-center justify-center select-none cursor-crosshair">
+<!-- Live Blueprint SVG with architectural elements, heatmaps, APs, and survey points -->
+<svg class="w-full h-full object-contain pointer-events-auto" viewbox="0 0 1000 650">
+<defs>
+<!-- Blueprint Grid Pattern -->
+<pattern height="20" id="gridMinor" patternunits="userSpaceOnUse" width="20">
+<path class="text-surface-container-high/30" d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" stroke-width="0.5"></path>
+</pattern>
+<pattern height="100" id="gridMajor" patternunits="userSpaceOnUse" width="100">
+<rect fill="url(#gridMinor)" height="100" width="100"></rect>
+<path class="text-outline-variant/35" d="M 100 0 L 0 0 0 100" fill="none" stroke="currentColor" stroke-width="1.2"></path>
+</pattern>
+<!-- Radial Signal Gradients for AP-1 (Hallway) -->
+<radialgradient cx="320" cy="220" gradientunits="userSpaceOnUse" id="ap1-heat" r="420">
+<stop offset="0%" stop-color="#47e266" stop-opacity="0.45"></stop>
+<stop offset="25%" stop-color="#47e266" stop-opacity="0.32"></stop>
+<stop offset="50%" stop-color="#3e90ff" stop-opacity="0.22"></stop>
+<stop offset="75%" stop-color="#e9b3ff" stop-opacity="0.10"></stop>
+<stop offset="100%" stop-color="#ffb4ab" stop-opacity="0.0"></stop>
+</radialgradient>
+<!-- Radial Signal Gradients for AP-2 (Conference Room) -->
+<radialgradient cx="740" cy="420" gradientunits="userSpaceOnUse" id="ap2-heat" r="380">
+<stop offset="0%" stop-color="#47e266" stop-opacity="0.40"></stop>
+<stop offset="28%" stop-color="#3e90ff" stop-opacity="0.28"></stop>
+<stop offset="60%" stop-color="#c863fb" stop-opacity="0.18"></stop>
+<stop offset="85%" stop-color="#ffb4ab" stop-opacity="0.08"></stop>
+<stop offset="100%" stop-color="#93000a" stop-opacity="0.0"></stop>
+</radialgradient>
+</defs>
+<!-- Architectural 1m Grid Base -->
+<rect fill="url(#gridMajor)" height="650" width="1000"></rect>
+<!-- Heatmap Layer Emitted from APs -->
+<g class="mix-blend-screen opacity-90 transition-opacity duration-300" id="heatmap-radiance">
+<circle cx="320" cy="220" fill="url(#ap1-heat)" r="420"></circle>
+<circle cx="740" cy="420" fill="url(#ap2-heat)" r="380"></circle>
+</g>
+<!-- Physical Layout: Walls (Thick concrete outer = 8px, Drywall interior = 3px, Glass = 2px) -->
+<g class="pointer-events-none" id="architectural-walls">
+<!-- Exterior Concrete Envelope -->
+<rect class="text-on-surface-variant/70" fill="none" height="540" stroke="currentColor" stroke-width="6" width="880" x="60" y="50"></rect>
+<!-- Interior Rooms & Partitions -->
+<!-- Conference Room (East) -->
+<path class="text-on-surface-variant/80" d="M 620 50 L 620 340 M 620 420 L 620 590" fill="none" stroke="currentColor" stroke-width="4"></path>
+<!-- Lab / Server Room (North-West) -->
+<path class="text-on-surface-variant/80" d="M 60 220 L 220 220 M 270 220 L 380 220" fill="none" stroke="currentColor" stroke-width="4"></path>
+<path class="text-on-surface-variant/80" d="M 380 50 L 380 220" fill="none" stroke="currentColor" stroke-width="4"></path>
+<!-- Acoustic Glass Partition (Studio / Main Bay) -->
+<line class="text-primary-container/80" stroke="currentColor" stroke-dasharray="6 3" stroke-width="2" x1="60" x2="480" y1="390" y2="390"></line>
+<!-- Glass Door swing marker -->
+<path class="text-primary" d="M 480 390 A 40 40 0 0 1 520 430" fill="none" stroke="currentColor" stroke-width="1.5"></path>
+<!-- Executive Suite Partition -->
+<path class="text-on-surface-variant/80" d="M 620 340 L 940 340" fill="none" stroke="currentColor" stroke-width="4"></path>
+<!-- Thick Fire Core / Elevator Shaft (RF deadening block) -->
+<rect class="text-surface-container-highest fill-current opacity-70" fill="currentColor" height="110" width="100" x="440" y="160"></rect>
+<rect class="text-outline-variant" fill="none" height="110" stroke="currentColor" stroke-width="6" width="100" x="440" y="160"></rect>
+<line class="text-outline-variant/60" stroke="currentColor" stroke-width="1.5" x1="440" x2="540" y1="160" y2="270"></line>
+<line class="text-outline-variant/60" stroke="currentColor" stroke-width="1.5" x1="540" x2="440" y1="160" y2="270"></line>
+<text class="font-mono-sm text-mono-sm fill-on-surface-variant font-semibold text-[10px]" text-anchor="middle" x="490" y="220">CONCRETE CORE</text>
+<text class="font-mono-sm text-mono-sm fill-error font-semibold text-[9px]" text-anchor="middle" x="490" y="235">-24 dBm Atten</text>
+<!-- Room Labels -->
+<text class="font-mono-sm text-mono-sm fill-on-surface-variant/60 text-[10px] uppercase tracking-wider" x="90" y="85">SECURE LAB (RF SHIELDED)</text>
+<text class="font-mono-sm text-mono-sm fill-on-surface-variant/60 text-[10px] uppercase tracking-wider" x="90" y="420">OPEN ENGINEERING BAY</text>
+<text class="font-mono-sm text-mono-sm fill-on-surface-variant/60 text-[10px] uppercase tracking-wider" x="645" y="85">BOARDROOM / CONF A</text>
+<text class="font-mono-sm text-mono-sm fill-on-surface-variant/60 text-[10px] uppercase tracking-wider" x="645" y="375">EXECUTIVE SUITE B</text>
+<text class="font-mono-sm text-mono-sm fill-on-surface-variant/60 text-[10px] uppercase tracking-wider" x="240" y="280">CENTRAL GALLERIA / ATRIUM</text>
+<!-- Architectural Desks & Furniture -->
+<g class="text-surface-container-high/60" fill="none" stroke="currentColor" stroke-width="1">
+<!-- Desks row 1 in Eng Bay -->
+<rect height="40" rx="2" width="80" x="110" y="450"></rect>
+<rect height="40" rx="2" width="80" x="210" y="450"></rect>
+<rect height="40" rx="2" width="80" x="310" y="450"></rect>
+<!-- Desks row 2 -->
+<rect height="40" rx="2" width="80" x="110" y="520"></rect>
+<rect height="40" rx="2" width="80" x="210" y="520"></rect>
+<rect height="40" rx="2" width="80" x="310" y="520"></rect>
+<!-- Conf Table -->
+<rect height="70" rx="14" width="140" x="710" y="160"></rect>
+</g>
+</g>
+<!-- AP 1 Marker (UniFi U6-Pro) -->
+<g class="cursor-pointer group" id="ap-1">
+<circle class="text-surface-container-lowest" cx="320" cy="220" fill="currentColor" r="18"></circle>
+<circle class="text-secondary" cx="320" cy="220" fill="none" r="18" stroke="currentColor" stroke-width="2"></circle>
+<!-- Pulsing Radar Wave Rings -->
+<circle class="text-secondary/40 animate-ping" cx="320" cy="220" fill="none" r="28" stroke="currentColor" stroke-width="1"></circle>
+<circle class="text-secondary/30" cx="320" cy="220" fill="none" r="42" stroke="currentColor" stroke-dasharray="4 2" stroke-width="0.8"></circle>
+<text class="font-mono-sm text-mono-sm fill-secondary font-bold text-[10px]" text-anchor="middle" x="320" y="224">AP1</text>
+<!-- Badge Tooltip -->
+<g transform="translate(240, 160)">
+<rect class="text-surface-container-high/95" fill="currentColor" height="34" rx="6" width="160"></rect>
+<text class="font-headline-sm text-headline-sm fill-on-surface text-[10px] font-semibold" x="10" y="15">AP-1 UniFi U6-Pro</text>
+<text class="font-mono-sm text-mono-sm fill-secondary text-[9px]" x="10" y="27">Ch 36 (80MHz) • Tx 22dBm</text>
+</g>
+</g>
+<!-- AP 2 Marker (UniFi U6-Mesh) -->
+<g class="cursor-pointer group" id="ap-2">
+<circle class="text-surface-container-lowest" cx="780" cy="460" fill="currentColor" r="18"></circle>
+<circle class="text-primary" cx="780" cy="460" fill="none" r="18" stroke="currentColor" stroke-width="2"></circle>
+<circle class="text-primary/40 animate-pulse" cx="780" cy="460" fill="none" r="32" stroke="currentColor" stroke-dasharray="3 3" stroke-width="1"></circle>
+<text class="font-mono-sm text-mono-sm fill-primary font-bold text-[10px]" text-anchor="middle" x="780" y="464">AP2</text>
+<g transform="translate(700, 500)">
+<rect class="text-surface-container-high/95" fill="currentColor" height="34" rx="6" width="160"></rect>
+<text class="font-headline-sm text-headline-sm fill-on-surface text-[10px] font-semibold" x="10" y="15">AP-2 UniFi U6-Mesh</text>
+<text class="font-mono-sm text-mono-sm fill-primary text-[9px]" x="10" y="27">Ch 149 (80MHz) • Tx 20dBm</text>
+</g>
+</g>
+<!-- Survey Points P1 through P8 -->
+<!-- P1: Near AP-1 in Hallway (-43 dBm, Pristine Green) -->
+<g class="cursor-pointer">
+<circle cx="280" cy="180" fill="#47e266" fill-opacity="0.3" r="10"></circle>
+<circle cx="280" cy="180" fill="#47e266" r="6"></circle>
+<text class="font-mono-sm fill-on-surface font-semibold text-[9px]" text-anchor="middle" x="280" y="165">P-01</text>
+<text class="font-mono-sm fill-secondary text-[8px]" text-anchor="middle" x="280" y="174">-43dBm</text>
+</g>
+<!-- P2: Lab Inner (-56 dBm, Light Cyan/Primary) -->
+<g class="cursor-pointer">
+<circle cx="150" cy="140" fill="#3e90ff" fill-opacity="0.3" r="9"></circle>
+<circle cx="150" cy="140" fill="#3e90ff" r="5"></circle>
+<text class="font-mono-sm fill-on-surface font-semibold text-[9px]" text-anchor="middle" x="150" y="125">P-02</text>
+<text class="font-mono-sm fill-primary text-[8px]" text-anchor="middle" x="150" y="160">-56dBm</text>
+</g>
+<!-- P3: Atrium East (-61 dBm, Blue) -->
+<g class="cursor-pointer">
+<circle cx="580" cy="220" fill="#3e90ff" fill-opacity="0.3" r="9"></circle>
+<circle cx="580" cy="220" fill="#3e90ff" r="5"></circle>
+<text class="font-mono-sm fill-on-surface font-semibold text-[9px]" text-anchor="middle" x="580" y="205">P-03</text>
+<text class="font-mono-sm fill-primary text-[8px]" text-anchor="middle" x="580" y="240">-61dBm</text>
+</g>
+<!-- P4: SELECTED ACTIVE POINT -> Main Studio Desk (-51 dBm, Emerald Green with focus aura) -->
+<g class="cursor-pointer" id="survey-p4">
+<circle class="animate-pulse" cx="250" cy="470" fill="#47e266" fill-opacity="0.25" r="22"></circle>
+<circle cx="250" cy="470" fill="none" r="14" stroke="#47e266" stroke-dasharray="3 2" stroke-width="2"></circle>
+<circle cx="250" cy="470" fill="#47e266" r="7"></circle>
+<rect class="text-surface-container-high/95" fill="currentColor" height="20" rx="4" width="100" x="200" y="420"></rect>
+<text class="font-mono-sm fill-secondary font-bold text-[9px]" text-anchor="middle" x="250" y="434">★ P-04 (Selected)</text>
+</g>
+<!-- P5: Eng Bay Far Corner (-68 dBm, Soft Amber/Tertiary) -->
+<g class="cursor-pointer">
+<circle cx="100" cy="550" fill="#e9b3ff" fill-opacity="0.3" r="9"></circle>
+<circle cx="100" cy="550" fill="#e9b3ff" r="5"></circle>
+<text class="font-mono-sm fill-on-surface font-semibold text-[9px]" text-anchor="middle" x="100" y="535">P-05</text>
+<text class="font-mono-sm fill-tertiary text-[8px]" text-anchor="middle" x="100" y="570">-68dBm</text>
+</g>
+<!-- P6: Boardroom Center Table (-49 dBm, Strong Secondary) -->
+<g class="cursor-pointer">
+<circle cx="780" cy="200" fill="#47e266" fill-opacity="0.35" r="10"></circle>
+<circle cx="780" cy="200" fill="#47e266" r="6"></circle>
+<text class="font-mono-sm fill-on-surface font-semibold text-[9px]" text-anchor="middle" x="780" y="185">P-06</text>
+<text class="font-mono-sm fill-secondary text-[8px]" text-anchor="middle" x="780" y="222">-49dBm</text>
+</g>
+<!-- P7: Executive Suite North (-52 dBm, Good Signal) -->
+<g class="cursor-pointer">
+<circle cx="780" cy="380" fill="#47e266" fill-opacity="0.3" r="9"></circle>
+<circle cx="780" cy="380" fill="#47e266" r="5"></circle>
+<text class="font-mono-sm fill-on-surface font-semibold text-[9px]" text-anchor="middle" x="780" y="365">P-07</text>
+<text class="font-mono-sm fill-secondary text-[8px]" text-anchor="middle" x="780" y="402">-52dBm</text>
+</g>
+<!-- P8: Behind Heavy Concrete Core (-84 dBm, Critical Red Drop) -->
+<g class="cursor-pointer">
+<circle cx="565" cy="180" fill="#ffb4ab" fill-opacity="0.4" r="11"></circle>
+<circle cx="565" cy="180" fill="#ffb4ab" r="6"></circle>
+<text class="font-mono-sm fill-error font-bold text-[9px]" text-anchor="middle" x="565" y="165">P-08 (Attenuated)</text>
+<text class="font-mono-sm fill-error text-[8px]" text-anchor="middle" x="565" y="200">-84dBm</text>
+</g>
+</svg>
+<!-- Dynamic Floating Mini-HUD on Canvas Bottom Left -->
+<div class="absolute bottom-3 left-3 bg-surface-container-high/90 backdrop-blur-xl px-space-md py-space-xs rounded-xl shadow-lg flex items-center gap-space-md">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary shadow-[0_0_8px_rgba(71,226,102,0.8)]"></span>
+<span class="font-mono-sm text-mono-sm text-on-surface font-semibold">Live Spectrum: en0</span>
+</div>
+<div class="h-3 w-px bg-outline-variant/40"></div>
+<div class="font-mono-sm text-mono-sm text-on-surface-variant">
+            Cursor: <span class="text-on-surface">X: 25.0m, Y: 47.0m</span>
+</div>
+<div class="h-3 w-px bg-outline-variant/40"></div>
+<div class="flex items-center gap-1.5 font-mono-sm text-mono-sm">
+<span class="text-outline">Scale:</span>
+<span class="text-primary">1px = 0.125m</span>
+</div>
+</div>
+<!-- Heatmap Gradient Legend on Canvas Bottom Right -->
+<div class="absolute bottom-3 right-3 bg-surface-container-high/90 backdrop-blur-xl p-space-xs rounded-xl shadow-lg flex flex-col gap-1 w-44">
+<div class="flex justify-between font-mono-sm text-mono-sm text-on-surface-variant">
+<span>-30 dBm</span>
+<span>RSSI Spread</span>
+<span>-90 dBm</span>
+</div>
+<div class="h-2 rounded-full w-full bg-gradient-to-r from-secondary via-primary-container via-tertiary to-error"></div>
+<div class="flex justify-between font-mono-sm text-mono-sm text-outline text-[9px]">
+<span>Optimal</span>
+<span>Degraded</span>
+<span>Deadzone</span>
+</div>
+</div>
+</div>
+<!-- Quick Canvas Metrics Bar -->
+<div class="h-10 px-space-md bg-surface-container-lowest/60 backdrop-blur-md flex items-center justify-between font-mono-sm text-mono-sm text-on-surface-variant">
+<div class="flex items-center gap-space-md">
+<span>Surveyed: <strong class="text-on-surface">8 points (100% density)</strong></span>
+<span>Boundary: <strong class="text-on-surface">120 m²</strong></span>
+<span>Active Radio: <strong class="text-secondary">WiFi 6 (802.11ax) 80MHz</strong></span>
+</div>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[14px]">auto_fix_high</span>
+<span>Spatial Path Loss Model: Wall Attenuation Factor (WAF)</span>
+</div>
+</div>
+</div>
+<!-- RIGHT 30%: Measurement & Analytics Panel -->
+<div class="lg:col-span-3 flex flex-col gap-space-md">
+<!-- Selected Point Card -->
+<div class="bg-surface-container-low/80 backdrop-blur-2xl rounded-xl p-space-md shadow-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary shadow-[0_0_10px_rgba(71,226,102,0.7)]"></span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">P-04 (Main Studio Desk)</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-high font-mono-sm text-mono-sm text-on-surface-variant">Active Target</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Coordinates: X: 25.0m, Y: 47.0m • Height: 1.1m (Desk Height)</p>
+<!-- Large Gauge Readouts -->
+<div class="grid grid-cols-3 gap-space-xs mt-1">
+<div class="bg-surface-container-lowest/80 p-space-sm rounded-lg flex flex-col">
+<span class="font-mono-sm text-mono-sm text-outline">Signal RSSI</span>
+<span class="font-headline-lg text-headline-lg text-secondary font-bold">-51</span>
+<span class="font-mono-sm text-mono-sm text-secondary">dBm (Strong)</span>
+</div>
+<div class="bg-surface-container-lowest/80 p-space-sm rounded-lg flex flex-col">
+<span class="font-mono-sm text-mono-sm text-outline">Floor Noise</span>
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold">-94</span>
+<span class="font-mono-sm text-mono-sm text-outline-variant">dBm</span>
+</div>
+<div class="bg-surface-container-lowest/80 p-space-sm rounded-lg flex flex-col">
+<span class="font-mono-sm text-mono-sm text-outline">Signal/Noise</span>
+<span class="font-headline-lg text-headline-lg text-primary font-bold">43</span>
+<span class="font-mono-sm text-mono-sm text-primary">dB SNR</span>
+</div>
+</div>
+<!-- Signal Strength Quality Bar -->
+<div class="flex flex-col gap-1 mt-1">
+<div class="flex justify-between font-mono-sm text-mono-sm">
+<span class="text-on-surface-variant">Physical Link Rate</span>
+<span class="text-on-surface font-semibold">1,201 Mbps (2x2 MIMO)</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 86%;"></div>
+</div>
+</div>
+</div>
+<!-- Detected SSIDs & BSSID Table -->
+<div class="bg-surface-container-low/80 backdrop-blur-2xl rounded-xl p-space-md shadow-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Over-The-Air Beacons (P-04)</span>
+<span class="font-mono-sm text-mono-sm text-primary">2 Active SSIDs</span>
+</div>
+<div class="flex flex-col gap-space-xs mt-1">
+<!-- Primary SSID -->
+<div class="p-space-sm rounded-lg bg-surface-container-lowest/70 flex flex-col gap-1 hover:bg-surface-container-lowest transition-colors">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">wifi_lock</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Studio_Office_5G</span>
+</div>
+<span class="font-mono-sm text-mono-sm text-secondary font-bold">-51 dBm</span>
+</div>
+<div class="flex items-center justify-between font-mono-sm text-mono-sm text-on-surface-variant">
+<span>BSSID: c4:2f:90:ea:7b:10</span>
+<span class="text-primary">Ch 36 (5 GHz)</span>
+</div>
+</div>
+<!-- Rogue / Neighbor SSID -->
+<div class="p-space-sm rounded-lg bg-surface-container-lowest/70 flex flex-col gap-1 hover:bg-surface-container-lowest transition-colors">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-outline">wifi</span>
+<span class="font-headline-sm text-headline-sm text-on-surface-variant">AdjacentTenant_5G</span>
+</div>
+<span class="font-mono-sm text-mono-sm text-tertiary">-79 dBm</span>
+</div>
+<div class="flex items-center justify-between font-mono-sm text-mono-sm text-on-surface-variant">
+<span>BSSID: 10:82:86:14:df:38</span>
+<span class="text-error">Ch 36 (Overlap!)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Channel Optimization Engine Recommendation -->
+<div class="bg-surface-container-low/80 backdrop-blur-2xl rounded-xl p-space-md shadow-md flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-primary">
+<span class="material-symbols-outlined text-[18px]">lightbulb</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">AI Channel Optimization</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Co-channel interference detected on AP-1. Adjacent network overlaps by 20% spectral duty cycle.
+        </p>
+<div class="p-space-sm rounded-lg bg-primary-container/15 flex items-center justify-between mt-1">
+<div class="flex flex-col">
+<span class="font-mono-sm text-mono-sm text-primary font-bold">Suggested Migration</span>
+<span class="font-body-sm text-body-sm text-on-surface">Move AP-1 to <strong>Channel 48 (UNII-1)</strong></span>
+</div>
+<button class="px-space-sm py-1 rounded-lg bg-primary text-on-primary font-headline-sm text-headline-sm hover:bg-primary-fixed-dim transition-all shadow-sm">
+            Apply
+          </button>
+</div>
+</div>
+<!-- Site Survey Aggregation Statistics -->
+<div class="bg-surface-container-low/80 backdrop-blur-2xl rounded-xl p-space-md shadow-md flex flex-col gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Survey Campaign Status</span>
+<div class="grid grid-cols-2 gap-space-xs font-mono-sm text-mono-sm">
+<div class="bg-surface-container-lowest/60 p-2 rounded flex flex-col">
+<span class="text-outline">Floor Area</span>
+<span class="text-on-surface font-bold">120.4 m²</span>
+</div>
+<div class="bg-surface-container-lowest/60 p-2 rounded flex flex-col">
+<span class="text-outline">Points Sampled</span>
+<span class="text-on-surface font-bold">8 / 8 Target</span>
+</div>
+<div class="bg-surface-container-lowest/60 p-2 rounded flex flex-col">
+<span class="text-outline">Avg Signal</span>
+<span class="text-secondary font-bold">-58 dBm</span>
+</div>
+<div class="bg-surface-container-lowest/60 p-2 rounded flex flex-col">
+<span class="text-outline">Dead Zones</span>
+<span class="text-secondary font-bold">0 Detected (>-85)</span>
+</div>
+</div>
+<!-- Action Button: Record Scan Here with Progress Ring -->
+<button class="mt-2 w-full h-11 rounded-lg bg-primary-container text-on-primary-container hover:bg-primary-container/90 font-headline-sm text-headline-sm flex items-center justify-center gap-space-sm transition-all shadow-md" id="recordSampleBtn">
+<!-- Animated Progress Ring SVG -->
+<svg class="w-5 h-5 -rotate-90 animate-spin" viewbox="0 0 24 24">
+<circle class="opacity-25" cx="12" cy="12" fill="none" r="9" stroke="currentColor" stroke-width="2.5"></circle>
+<circle class="opacity-90" cx="12" cy="12" fill="none" r="9" stroke="currentColor" stroke-dasharray="56.5" stroke-dashoffset="18" stroke-width="2.5"></circle>
+</svg>
+<span>Record Scan Here (3 Samples Avg)</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple micro-interaction for scan simulation
+  const scanBtn = document.getElementById('scanTriggerBtn');
+  const recordBtn = document.getElementById('recordSampleBtn');
+  
+  function triggerMockScan() {
+    if (recordBtn) {
+      const originalText = recordBtn.innerHTML;
+      recordBtn.innerHTML = `
+        <span class="material-symbols-outlined text-[18px] animate-spin">sync</span>
+        <span>Averaging RSSI Packet Bursts (2/3)...</span>
+      `;
+      recordBtn.classList.add('opacity-80');
+      
+      setTimeout(() => {
+        recordBtn.innerHTML = `
+          <span class="material-symbols-outlined text-[18px]">check_circle</span>
+          <span>Sample Recorded: -51 dBm (Lock)</span>
+        `;
+        setTimeout(() => {
+          recordBtn.innerHTML = originalText;
+          recordBtn.classList.remove('opacity-80');
+        }, 1800);
+      }, 1200);
+    }
+  }
+
+  if (scanBtn) scanBtn.addEventListener('click', triggerMockScan);
+  if (recordBtn) recordBtn.addEventListener('click', triggerMockScan);
+
+  // Keyboard shortcut Cmd+Space listener
+  window.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.code === 'Space') {
+      e.preventDefault();
+      triggerMockScan();
+    }
+  });
+</script></main><footer class="fixed bottom-0 left-60 right-0 h-8 bg-surface-container-lowest/90 backdrop-blur-md z-40 px-margin-lg flex items-center justify-between font-mono-sm text-mono-sm text-on-surface-variant shadow-[0_-1px_6px_rgba(0,0,0,0.3)]"><div class="flex items-center gap-space-md"><span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Freed RAM: <span class="text-on-surface font-semibold">4.2 GB session</span></span><span class="text-outline-variant">|</span><span>Active Listeners: <span class="text-primary font-semibold">28 ports</span></span></div><div class="flex items-center gap-space-md"><span>Interface: <span class="text-on-surface font-semibold">en0 • Wi-Fi 6 (802.11ax)</span></span><span class="text-outline-variant">|</span><span class="text-secondary">Secure Sandbox Active</span></div></footer></div></body></html>

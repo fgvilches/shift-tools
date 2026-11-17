@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-surface-variant":"#c0c6d6","on-primary-fixed-variant":"#00468d","on-tertiary-fixed-variant":"#7200a3","secondary-container":"#09bf49","surface-dim":"#131319","surface-container-low":"#1b1b21","inverse-surface":"#e4e1ea","on-secondary":"#003910","secondary-fixed-dim":"#47e266","on-error-container":"#ffdad6","tertiary":"#e9b3ff","surface-container-highest":"#34343b","tertiary-fixed-dim":"#e9b3ff","secondary-fixed":"#6cff82","surface-container":"#1f1f25","secondary":"#47e266","inverse-on-surface":"#303036","error-container":"#93000a","surface-bright":"#39383f","primary-container":"#3e90ff","on-tertiary-container":"#460066","primary-fixed-dim":"#aac7ff","on-primary-container":"#002957","background":"#131319","on-secondary-container":"#004615","on-surface":"#e4e1ea","on-background":"#e4e1ea","on-primary":"#003064","on-primary-fixed":"#001b3e","error":"#ffb4ab","tertiary-container":"#c863fb","surface-tint":"#aac7ff","tertiary-fixed":"#f6d9ff","primary":"#aac7ff","on-secondary-fixed":"#002106","on-tertiary-fixed":"#310048","surface":"#131319","primary-fixed":"#d6e3ff","inverse-primary":"#005db8","surface-container-lowest":"#0e0e14","on-tertiary":"#510074","on-error":"#690005","outline-variant":"#414754","surface-variant":"#34343b","surface-container-high":"#2a2930","outline":"#8b91a0","on-secondary-fixed-variant":"#00531a"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"gutter-sm":"0.5rem",margin:"0.75rem","gutter-lg":"1rem","margin-sm":"0.5rem","space-xs":"0.25rem","margin-lg":"1.25rem","space-lg":"1rem","space-md":"0.75rem","space-xl":"1.5rem",gutter:"0.75rem","space-sm":"0.5rem"},fontFamily:{"label-md":["Inter"],"body-sm":["Inter"],"label-sm":["Inter"],"mono-md":["JetBrains Mono"],"headline-sm":["Inter"],"headline-lg":["Inter"],"mono-lg":["JetBrains Mono"],"headline-md":["Inter"],"body-lg":["Inter"],"body-md":["Inter"],"mono-sm":["JetBrains Mono"]},fontSize:{"label-md":["12px",{lineHeight:"16px",letterSpacing:"0em",fontWeight:"500"}],"body-sm":["11px",{lineHeight:"15px",letterSpacing:"0em",fontWeight:"400"}],"label-sm":["10px",{lineHeight:"12px",letterSpacing:"0.03em",fontWeight:"600"}],"mono-md":["12px",{lineHeight:"16px",letterSpacing:"-0.01em",fontWeight:"400"}],"headline-sm":["14px",{lineHeight:"18px",letterSpacing:"-0.008em",fontWeight:"600"}],"headline-lg":["22px",{lineHeight:"28px",letterSpacing:"-0.015em",fontWeight:"600"}],"mono-lg":["13px",{lineHeight:"18px",letterSpacing:"-0.01em",fontWeight:"500"}],"headline-md":["17px",{lineHeight:"22px",letterSpacing:"-0.012em",fontWeight:"600"}],"body-lg":["14px",{lineHeight:"20px",letterSpacing:"-0.004em",fontWeight:"400"}],"body-md":["13px",{lineHeight:"18px",letterSpacing:"-0.002em",fontWeight:"400"}],"mono-sm":["10px",{lineHeight:"13px",letterSpacing:"0.01em",fontWeight:"400"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface select-none antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-60 z-50 bg-surface-container-low/85 backdrop-blur-2xl flex flex-col justify-between shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"><div class="flex flex-col h-full"><div class="h-14 px-margin-lg flex items-center gap-space-sm bg-surface-container-lowest/40 backdrop-blur-md"><img alt="shift-tools App Icon" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UjvTrhC126AmYWPrT2Ix4EmaYPA1it__A83Hwtu4-Xq_WLFRBDxLXBze1IJuIEVwI0THW5kV8amVNmgClGHTHvfsSk9nyGI0qUiZvNqHxrNCRkXDZhymdSyJvngGRwG7rZt7GGrOewgsRsA6MLmrzvMwLD_-NEkOEqn_6fo6nbaDmzAlHsmKVUXNns4Sy6jTmNsvWmW9B-4Cm6xfTVFZe7GG-gqqmHIM5AuDne_GMyNg"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">shift-tools</span><span class="font-mono-sm text-mono-sm text-on-surface-variant leading-tight">macOS native v1.0.0</span></div></div><div class="flex-1 overflow-y-auto px-margin py-space-sm space-y-space-md"><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">DevOps &amp; System</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="process-killer" href="#">Process Killer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="quarantine-remover" href="#">Quarantine Remover</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="port-manager" href="#">Port Manager</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="disk-cleaner" href="#">Disk Cleaner</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ram-monitor" href="#">RAM Monitor</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Networks</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="network-observer" href="#">Network Observer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="wifi-mapper" href="#">WiFi Mapper</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="lan-scanner" href="#">LAN Scanner</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="dns-toolkit" href="#">DNS Toolkit</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="speed-test" href="#">Speed Test</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ping-traceroute" href="#">Ping / Traceroute</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Security &amp; Pentest</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="header-analyzer" href="#">Header Analyzer</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ssl-inspector" href="#">SSL Inspector</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="subdomain-finder" href="#">Subdomain Finder</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="hash-generator" href="#">Hash Generator</a><a aria-current="page" class="flex items-center px-space-sm py-1.5 rounded-lg transition-colors bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]" data-path="password-auditor" href="#">Password Auditor</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Testing &amp; APIs</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="api-tester" href="#">API Tester</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="json-toolkit" href="#">JSON Toolkit</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="base64-url-encoder" href="#">Base64 / URL Encoder</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="regex-tester" href="#">Regex Tester</a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Utilities</div><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="color-picker" href="#">Color Picker</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="text-diff" href="#">Text Diff</a><a class="flex items-center px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="timestamp-converter" href="#">Timestamp Converter</a></nav></div><div class="p-margin m-margin bg-surface-container-lowest/60 rounded-xl space-y-space-xs shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Host Node</span><span class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-high text-primary">Apple M3 Max</span></div><div class="flex items-center justify-between font-mono-sm text-mono-sm text-on-surface-variant"><span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Rust Core</span><span class="text-secondary">0.8ms IPC</span></div></div></div></aside><div class="pl-60 flex flex-col min-h-screen"><header class="fixed top-0 left-60 right-0 h-14 bg-surface-container-low/75 backdrop-blur-2xl z-40 px-margin-lg flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.25)]"><div class="flex items-center gap-space-md"><div class="flex items-center gap-2 pl-1"><span class="w-3 h-3 rounded-full bg-[#ff5f56] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span><span class="w-3 h-3 rounded-full bg-[#ffbd2e] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span><span class="w-3 h-3 rounded-full bg-[#27c93f] inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"></span></div><div class="flex items-center gap-space-xs font-mono-sm text-mono-sm text-on-surface-variant pl-space-sm"><span class="text-on-surface font-semibold">shift-tools</span><span>/</span><span class="text-outline">v1.0.0 (Rust Core)</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm px-space-md py-1 rounded-lg bg-surface-container-lowest/80 text-on-surface-variant font-body-sm text-body-sm shadow-[inset_0_1px_2px_rgba(0,0,0,0.6)]"><span class="material-symbols-outlined text-[16px] text-outline">search</span><span class="text-on-surface-variant pr-space-lg">Quick dispatch...</span><kbd class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface">⌘K</kbd></div><div class="flex items-center gap-space-sm px-space-md py-1 rounded-full bg-surface-container-lowest/50 font-mono-sm text-mono-sm text-on-surface-variant"><span class="text-on-surface">RAM <span class="text-primary">14.2 / 32 GB</span></span><span class="text-outline-variant">•</span><span class="text-on-surface">CPU <span class="text-secondary">8%</span></span><span class="text-outline-variant">•</span><span class="text-on-surface">Svcs <span class="text-tertiary">6 active</span></span></div><div class="flex items-center gap-space-sm"><button class="w-7 h-7 flex items-center justify-center rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[18px]">settings</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 pt-14 pb-8 w-full px-gutter-lg bg-background"><div class="flex flex-col w-full">
+<div class="flex flex-col gap-space-lg w-full max-w-7xl mx-auto py-space-sm">
+<!-- Tool Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md p-space-lg rounded-xl bg-surface-container-low shadow-sm">
+<div class="flex flex-col gap-space-xs">
+<div class="flex flex-wrap items-center gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Password Auditor</h1>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-primary/10 text-primary font-mono-sm text-mono-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            zxcvbn-rs + k-Anonymity HIBP • Offline First
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+          Cryptographic entropy calculation, password strength auditing, k-anonymity breach lookup, and customizable high-entropy password generator.
+        </p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary-container text-on-primary-container font-headline-sm text-headline-sm hover:opacity-90 shadow-sm transition-all active:scale-[0.98]" id="btn-quick-generate">
+<span class="material-symbols-outlined text-[18px]">autorenew</span>
+<span>Generate New</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-container-highest font-headline-sm text-headline-sm transition-colors">
+<span class="material-symbols-outlined text-[18px]">upload_file</span>
+<span>Bulk Audit (.csv)</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-container-highest font-headline-sm text-headline-sm transition-colors">
+<span class="material-symbols-outlined text-[18px]">ios_share</span>
+<span>Export Report</span>
+</button>
+</div>
+</div>
+<!-- Generator & Customizer Interactive Workbench -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Primary Display Card (LHS - 7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-md p-space-lg rounded-xl bg-surface-container shadow-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">vpn_key</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Target Candidate</span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-lowest p-1 rounded-lg">
+<button class="px-2.5 py-1 rounded font-label-md text-label-md bg-surface-container-high text-on-surface transition-all" id="mode-random">Random Chars</button>
+<button class="px-2.5 py-1 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" id="mode-passphrase">Passphrase</button>
+<button class="px-2.5 py-1 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" id="mode-pin">Numeric PIN</button>
+</div>
+</div>
+<!-- Monospace Interactive Display Field -->
+<div class="relative flex flex-col p-space-md rounded-xl bg-surface-container-lowest shadow-inner gap-space-sm">
+<div class="flex items-center justify-between font-mono-sm text-mono-sm text-outline">
+<span id="target-spec">CSPRNG OUTPUT (24 CHARACTERS)</span>
+<span class="text-secondary font-semibold" id="target-char-counter">24 chars • 192 raw bits</span>
+</div>
+<div class="flex items-center justify-between gap-space-sm min-h-[56px]">
+<input autocomplete="off" class="w-full bg-transparent font-mono-lg text-headline-md text-primary tracking-wider focus:outline-none select-all" id="password-output" spellcheck="false" type="text" value="v9#Kx!8$mZ@2QpL7#rN9*bT4"/>
+<div class="flex items-center gap-1">
+<button class="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" id="toggle-obfuscate" title="Toggle Visibility">
+<span class="material-symbols-outlined text-[18px]" id="icon-visibility">visibility</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary hover:text-on-surface transition-colors" id="btn-refresh" title="Regenerate">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-primary-container text-on-primary-container font-headline-sm text-label-md hover:opacity-90 transition-all" id="btn-copy" title="Copy to Clipboard">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+<span id="copy-label">Copy</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Customization Controls Grid -->
+<div class="flex flex-col gap-space-md pt-space-xs">
+<!-- Length Slider -->
+<div class="flex flex-col gap-1.5" id="container-length-slider">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="text-on-surface">Password Length</span>
+<span class="font-mono-md text-mono-md text-primary font-bold"><span id="length-val">24</span> characters</span>
+</div>
+<input class="w-full h-1.5 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary" id="input-length" max="128" min="8" type="range" value="24"/>
+<div class="flex justify-between font-mono-sm text-mono-sm text-outline">
+<span>8 min</span>
+<span>24 recommended</span>
+<span>64</span>
+<span>128 max</span>
+</div>
+</div>
+<!-- Passphrase Word Count (Hidden initially) -->
+<div class="hidden flex-col gap-1.5" id="container-words-slider">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="text-on-surface">Diceware Word Count</span>
+<span class="font-mono-md text-mono-md text-tertiary font-bold"><span id="words-val">5</span> words</span>
+</div>
+<input class="w-full h-1.5 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-tertiary" id="input-words" max="12" min="3" type="range" value="5"/>
+<div class="flex justify-between font-mono-sm text-mono-sm text-outline">
+<span>3 words (45 bits)</span>
+<span>5 recommended (78 bits)</span>
+<span>12 max (187 bits)</span>
+</div>
+</div>
+<!-- Rules Toggles -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm pt-space-xs">
+<label class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low hover:bg-surface-container-high cursor-pointer transition-colors">
+<input checked="" class="w-4 h-4 rounded bg-surface-container-highest text-primary accent-primary cursor-pointer" id="opt-upper" type="checkbox"/>
+<span class="font-label-md text-label-md text-on-surface">A-Z (Upper)</span>
+</label>
+<label class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low hover:bg-surface-container-high cursor-pointer transition-colors">
+<input checked="" class="w-4 h-4 rounded bg-surface-container-highest text-primary accent-primary cursor-pointer" id="opt-lower" type="checkbox"/>
+<span class="font-label-md text-label-md text-on-surface">a-z (Lower)</span>
+</label>
+<label class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low hover:bg-surface-container-high cursor-pointer transition-colors">
+<input checked="" class="w-4 h-4 rounded bg-surface-container-highest text-primary accent-primary cursor-pointer" id="opt-digits" type="checkbox"/>
+<span class="font-label-md text-label-md text-on-surface">0-9 (Digits)</span>
+</label>
+<label class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low hover:bg-surface-container-high cursor-pointer transition-colors">
+<input checked="" class="w-4 h-4 rounded bg-surface-container-highest text-primary accent-primary cursor-pointer" id="opt-symbols" type="checkbox"/>
+<span class="font-label-md text-label-md text-on-surface">!@#$ (Symbols)</span>
+</label>
+</div>
+<!-- Sub-options -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-lowest">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[18px]">filter_alt</span>
+<span class="font-body-sm text-body-sm text-on-surface">Avoid Ambiguous Characters</span>
+<span class="font-mono-sm text-mono-sm text-outline px-1.5 py-0.5 rounded bg-surface-container-high">(O, 0, l, 1, I)</span>
+</div>
+<input checked="" class="w-4 h-4 rounded accent-primary cursor-pointer" id="opt-avoid-ambiguous" type="checkbox"/>
+</div>
+</div>
+</div>
+<!-- Live Cryptographic Entropy & Strength (RHS - 5 cols) -->
+<div class="lg:col-span-5 flex flex-col justify-between p-space-lg rounded-xl bg-surface-container shadow-md gap-space-md">
+<!-- Grade & Visual Gauge -->
+<div class="flex items-center justify-between">
+<div class="flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Entropy Assessment</span>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-secondary font-bold" id="score-text">100 / 100</span>
+<span class="font-mono-sm text-mono-sm px-2 py-0.5 rounded-full bg-secondary/15 text-secondary font-semibold" id="grade-badge">Grade S+ (Exceptional)</span>
+</div>
+</div>
+<!-- Dynamic SVG Radial Gauge -->
+<div class="relative w-16 h-16 flex items-center justify-center">
+<svg class="w-16 h-16 transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container-highest" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-secondary transition-all duration-500 ease-out" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" id="svg-meter" stroke="currentColor" stroke-dasharray="100, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="absolute font-mono-sm text-mono-sm font-bold text-on-surface">100%</span>
+</div>
+</div>
+<!-- Telemetry Breakdown Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
+<div class="flex flex-col p-space-sm rounded-lg bg-surface-container-low shadow-sm">
+<span class="font-label-sm text-label-sm text-outline uppercase">Shannon Entropy</span>
+<span class="font-mono-md text-mono-md text-primary font-bold mt-1" id="val-entropy">138.4 bits</span>
+<span class="font-mono-sm text-mono-sm text-secondary leading-tight mt-0.5">High resistance</span>
+</div>
+<div class="flex flex-col p-space-sm rounded-lg bg-surface-container-low shadow-sm">
+<span class="font-label-sm text-label-sm text-outline uppercase">Crack Time (100B/s)</span>
+<span class="font-mono-md text-mono-md text-on-surface font-bold mt-1 truncate" id="val-crack-time">3.2 × 10¹⁸ c</span>
+<span class="font-mono-sm text-mono-sm text-outline leading-tight mt-0.5">GPU cluster resistant</span>
+</div>
+<div class="flex flex-col p-space-sm rounded-lg bg-surface-container-low shadow-sm">
+<span class="font-label-sm text-label-sm text-outline uppercase">zxcvbn Score</span>
+<span class="font-mono-md text-mono-md text-secondary font-bold mt-1" id="val-zxcvbn">Score 4 / 4</span>
+<span class="font-mono-sm text-mono-sm text-secondary leading-tight mt-0.5">Very strong</span>
+</div>
+</div>
+<!-- Heuristics Checklist -->
+<div class="flex flex-col gap-1.5 p-space-sm rounded-lg bg-surface-container-lowest">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-outline uppercase pb-1">
+<span>Pattern &amp; Weakness Detection</span>
+<span class="text-secondary font-mono-sm">0 flaws found</span>
+</div>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span>Zero dictionary matches or common leetspeak substitutions</span>
+</div>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span>No sequential runs or key-walk repeats (e.g. abc, 123, qwert)</span>
+</div>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span>High character space cardinality (printable ASCII 95 symbols)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- HaveIBeenPwned k-Anonymity Leak Verification Section -->
+<div class="flex flex-col gap-space-md p-space-lg rounded-xl bg-surface-container shadow-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">verified_user</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">k-Anonymity Breach Verification (HIBP Core)</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest text-outline font-mono-sm text-mono-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span>Queried via 5-char SHA-1 prefix • Zero disclosure</span>
+</div>
+</div>
+<!-- Breach Status Container -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between p-space-md rounded-xl bg-surface-container-low gap-space-md transition-all" id="leak-status-box">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-secondary/15 flex items-center justify-center shrink-0" id="leak-icon-container">
+<span class="material-symbols-outlined text-secondary text-[24px]" id="leak-icon">gshield</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-secondary font-semibold" id="leak-headline">Clean: Zero Compromised Database Matches</span>
+<span class="px-2 py-0.5 rounded bg-secondary/15 text-secondary font-mono-sm text-mono-sm" id="leak-badge">PASSED</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5" id="leak-desc">
+              Verified against 847,192,408 breached credentials recorded worldwide. SHA-1 hash suffix checked against remote k-cluster of 412 anonymized entries.
+            </p>
+</div>
+</div>
+<!-- Testing Simulation Toggle -->
+<div class="flex items-center gap-2 shrink-0">
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md transition-colors" id="btn-simulate-leak">
+<span class="material-symbols-outlined text-[16px] text-error">bug_report</span>
+<span>Simulate Leaked Sample ("password123")</span>
+</button>
+</div>
+</div>
+<!-- SHA-1 Telemetry Hash Strip -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-sm p-space-sm rounded-lg bg-surface-container-lowest font-mono-sm text-mono-sm">
+<div class="flex items-center justify-between md:justify-start gap-2 text-outline">
+<span>Prefix (Sent):</span>
+<span class="text-primary font-semibold" id="hash-prefix">A94A8</span>
+</div>
+<div class="flex items-center justify-between md:justify-start gap-2 text-outline">
+<span>Suffix (Local):</span>
+<span class="text-on-surface truncate" id="hash-suffix">FE5CCB19BA61C4C0873D391E987982FBBD3</span>
+</div>
+<div class="flex items-center justify-between md:justify-start gap-2 text-outline">
+<span>k-Range Matches:</span>
+<span class="text-secondary font-semibold" id="hash-matches">0 occurrences</span>
+</div>
+<div class="flex items-center justify-between md:justify-start gap-2 text-outline">
+<span>Latency:</span>
+<span class="text-on-surface font-semibold">22ms (Cloudflare Edge)</span>
+</div>
+</div>
+</div>
+<!-- Recommendations, Storage & Crypto Engine Telemetry -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Vault Guidance -->
+<div class="flex flex-col p-space-md rounded-xl bg-surface-container shadow-sm gap-space-xs">
+<div class="flex items-center gap-2 text-primary pb-1">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Secure Vault Storage</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Never write master credentials in raw text. Automatically commit to macOS native Keychain or synchronized password managers.
+        </p>
+<div class="flex items-center gap-2 pt-space-xs mt-auto">
+<button class="px-2.5 py-1 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-sm text-label-sm transition-colors">
+            macOS Keychain
+          </button>
+<button class="px-2.5 py-1 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-sm text-label-sm transition-colors">
+            1Password / Bitwarden
+          </button>
+</div>
+</div>
+<!-- Engine Telemetry -->
+<div class="flex flex-col p-space-md rounded-xl bg-surface-container shadow-sm gap-space-xs">
+<div class="flex items-center gap-2 text-secondary pb-1">
+<span class="material-symbols-outlined text-[20px]">memory</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Rust Cryptographic Core</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Built on <span class="font-mono-sm text-primary">ring</span> and <span class="font-mono-sm text-primary">zxcvbn-rs</span>. True CSPRNG randomness sourced from native OS entropy pools.
+        </p>
+<div class="flex items-center justify-between font-mono-sm text-mono-sm text-outline pt-space-xs mt-auto">
+<span>Source: <span class="text-on-surface font-semibold">/dev/urandom</span></span>
+<span class="text-secondary">ChaCha20 Engine</span>
+</div>
+</div>
+<!-- Operational Policy -->
+<div class="flex flex-col p-space-md rounded-xl bg-surface-container shadow-sm gap-space-xs">
+<div class="flex items-center gap-2 text-tertiary pb-1">
+<span class="material-symbols-outlined text-[20px]">policy</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Zero Knowledge Guarantee</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          All entropy computation executes strictly in isolated client memory. No plaintext, hash suffixes, or salt sequences are retained or indexed.
+        </p>
+<div class="flex items-center gap-1.5 font-mono-sm text-mono-sm text-secondary pt-space-xs mt-auto">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Zero Persistent Disk Write</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+(function() {
+  const passwordOutput = document.getElementById('password-output');
+  const btnRefresh = document.getElementById('btn-refresh');
+  const btnQuickGen = document.getElementById('btn-quick-generate');
+  const btnCopy = document.getElementById('btn-copy');
+  const copyLabel = document.getElementById('copy-label');
+  const toggleObfuscate = document.getElementById('toggle-obfuscate');
+  const iconVisibility = document.getElementById('icon-visibility');
+  const inputLength = document.getElementById('input-length');
+  const lengthVal = document.getElementById('length-val');
+  const inputWords = document.getElementById('input-words');
+  const wordsVal = document.getElementById('words-val');
+  
+  const optUpper = document.getElementById('opt-upper');
+  const optLower = document.getElementById('opt-lower');
+  const optDigits = document.getElementById('opt-digits');
+  const optSymbols = document.getElementById('opt-symbols');
+  const optAvoidAmbiguous = document.getElementById('opt-avoid-ambiguous');
+
+  const modeRandom = document.getElementById('mode-random');
+  const modePassphrase = document.getElementById('mode-passphrase');
+  const modePin = document.getElementById('mode-pin');
+  const containerLengthSlider = document.getElementById('container-length-slider');
+  const containerWordsSlider = document.getElementById('container-words-slider');
+
+  const targetSpec = document.getElementById('target-spec');
+  const targetCharCounter = document.getElementById('target-char-counter');
+  const scoreText = document.getElementById('score-text');
+  const gradeBadge = document.getElementById('grade-badge');
+  const svgMeter = document.getElementById('svg-meter');
+  const valEntropy = document.getElementById('val-entropy');
+  const valCrackTime = document.getElementById('val-crack-time');
+  const valZxcvbn = document.getElementById('val-zxcvbn');
+
+  const btnSimulateLeak = document.getElementById('btn-simulate-leak');
+  const leakStatusBox = document.getElementById('leak-status-box');
+  const leakIconContainer = document.getElementById('leak-icon-container');
+  const leakIcon = document.getElementById('leak-icon');
+  const leakHeadline = document.getElementById('leak-headline');
+  const leakBadge = document.getElementById('leak-badge');
+  const leakDesc = document.getElementById('leak-desc');
+  const hashPrefix = document.getElementById('hash-prefix');
+  const hashSuffix = document.getElementById('hash-suffix');
+  const hashMatches = document.getElementById('hash-matches');
+
+  let currentMode = 'random';
+  let isObfuscated = false;
+  let simulatedCompromise = false;
+
+  const wordList = [
+    'correct', 'horse', 'battery', 'staple', 'quantum', 'cipher', 'vector', 'horizon',
+    'matrix', 'vertex', 'nebula', 'protocol', 'reactor', 'orbital', 'zenith', 'pulse',
+    'shuttle', 'beacon', 'cascade', 'monolith', 'cobalt', 'argon', 'plasma', 'glacier'
+  ];
+
+  function generatePassword() {
+    simulatedCompromise = false;
+    resetLeakBanner();
+
+    if (currentMode === 'random') {
+      const len = parseInt(inputLength.value, 10);
+      let chars = '';
+      if (optUpper.checked) chars += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      if (optLower.checked) chars += 'abcdefghijklmnopqrstuvwxyz';
+      if (optDigits.checked) chars += '0123456789';
+      if (optSymbols.checked) chars += '!@#$%^&*()_+-=[]{}|;:,.<>?';
+
+      if (optAvoidAmbiguous.checked) {
+        chars = chars.replace(/[O0l1I]/g, '');
+      }
+
+      if (!chars) chars = 'abcdefghijklmnopqrstuvwxyz';
+
+      let result = '';
+      const array = new Uint32Array(len);
+      crypto.getRandomValues(array);
+      for (let i = 0; i < len; i++) {
+        result += chars[array[i] % chars.length];
+      }
+      passwordOutput.value = result;
+      updateMetrics(result, len, chars.length);
+
+    } else if (currentMode === 'passphrase') {
+      const count = parseInt(inputWords.value, 10);
+      const chosen = [];
+      const array = new Uint32Array(count);
+      crypto.getRandomValues(array);
+      for (let i = 0; i < count; i++) {
+        chosen.push(wordList[array[i] % wordList.length]);
+      }
+      const result = chosen.join('-');
+      passwordOutput.value = result;
+      updateMetrics(result, result.length, wordList.length);
+
+    } else if (currentMode === 'pin') {
+      const len = parseInt(inputLength.value, 10);
+      let result = '';
+      const array = new Uint32Array(len);
+      crypto.getRandomValues(array);
+      for (let i = 0; i < len; i++) {
+        result += (array[i] % 10).toString();
+      }
+      passwordOutput.value = result;
+      updateMetrics(result, len, 10);
+    }
+  }
+
+  function updateMetrics(pwd, len, poolSize) {
+    targetCharCounter.textContent = `${pwd.length} chars • ${(pwd.length * 8)} raw bits`;
+    
+    // Shannon entropy approximation: L * log2(poolSize)
+    const pool = poolSize || 95;
+    const entropy = Math.min(192, Math.round(pwd.length * Math.log2(pool) * 10) / 10);
+    valEntropy.textContent = `${entropy} bits`;
+
+    let score = 100;
+    let grade = 'Grade S+ (Exceptional)';
+    let crack = '3.2 × 10¹⁸ c';
+    let zxcvbn = 'Score 4 / 4';
+
+    if (entropy < 35 || pwd.length < 8) {
+      score = 25;
+      grade = 'Grade F (Vulnerable)';
+      crack = '< 1 millisecond';
+      zxcvbn = 'Score 0 / 4';
+    } else if (entropy < 60) {
+      score = 55;
+      grade = 'Grade C (Moderate)';
+      crack = '3.4 days';
+      zxcvbn = 'Score 2 / 4';
+    } else if (entropy < 90) {
+      score = 80;
+      grade = 'Grade A (Strong)';
+      crack = '1,200 years';
+      zxcvbn = 'Score 3 / 4';
+    }
+
+    scoreText.textContent = `${score} / 100`;
+    gradeBadge.textContent = grade;
+    svgMeter.setAttribute('stroke-dasharray', `${score}, 100`);
+
+    valCrackTime.textContent = crack;
+    valZxcvbn.textContent = zxcvbn;
+
+    // Simulate SHA-1 prefix/suffix
+    const pseudoHash = Array.from(pwd).reduce((acc, char) => (acc * 31 + char.charCodeAt(0)) % 0xFFFFFFFFFF, 0).toString(16).padStart(40, '0').toUpperCase();
+    hashPrefix.textContent = pseudoHash.substring(0, 5);
+    hashSuffix.textContent = pseudoHash.substring(5);
+    hashMatches.textContent = '0 occurrences';
+  }
+
+  function resetLeakBanner() {
+    leakIconContainer.className = 'w-10 h-10 rounded-lg bg-secondary/15 flex items-center justify-center shrink-0';
+    leakIcon.className = 'material-symbols-outlined text-secondary text-[24px]';
+    leakIcon.textContent = 'gshield';
+    leakHeadline.className = 'font-headline-sm text-headline-sm text-secondary font-semibold';
+    leakHeadline.textContent = 'Clean: Zero Compromised Database Matches';
+    leakBadge.className = 'px-2 py-0.5 rounded bg-secondary/15 text-secondary font-mono-sm text-mono-sm';
+    leakBadge.textContent = 'PASSED';
+    leakDesc.textContent = 'Verified against 847,192,408 breached credentials recorded worldwide. SHA-1 hash suffix checked against remote k-cluster of 412 anonymized entries.';
+  }
+
+  // Event Listeners
+  inputLength.addEventListener('input', (e) => {
+    lengthVal.textContent = e.target.value;
+    generatePassword();
+  });
+
+  inputWords.addEventListener('input', (e) => {
+    wordsVal.textContent = e.target.value;
+    generatePassword();
+  });
+
+  [optUpper, optLower, optDigits, optSymbols, optAvoidAmbiguous].forEach(cb => {
+    cb.addEventListener('change', generatePassword);
+  });
+
+  btnRefresh.addEventListener('click', generatePassword);
+  btnQuickGen.addEventListener('click', generatePassword);
+
+  toggleObfuscate.addEventListener('click', () => {
+    isObfuscated = !isObfuscated;
+    passwordOutput.type = isObfuscated ? 'password' : 'text';
+    iconVisibility.textContent = isObfuscated ? 'visibility_off' : 'visibility';
+  });
+
+  btnCopy.addEventListener('click', () => {
+    navigator.clipboard.writeText(passwordOutput.value);
+    copyLabel.textContent = 'Copied!';
+    setTimeout(() => {
+      copyLabel.textContent = 'Copy';
+    }, 1400);
+  });
+
+  modeRandom.addEventListener('click', () => {
+    currentMode = 'random';
+    modeRandom.className = 'px-2.5 py-1 rounded font-label-md text-label-md bg-surface-container-high text-on-surface transition-all';
+    modePassphrase.className = 'px-2.5 py-1 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all';
+    modePin.className = 'px-2.5 py-1 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all';
+    containerLengthSlider.classList.remove('hidden');
+    containerWordsSlider.classList.add('hidden');
+    targetSpec.textContent = 'CSPRNG OUTPUT (RANDOM CHARACTERS)';
+    generatePassword();
+  });
+
+  modePassphrase.addEventListener('click', () => {
+    currentMode = 'passphrase';
+    modePassphrase.className = 'px-2.5 py-1 rounded font-label-md text-label-md bg-surface-container-high text-on-surface transition-all';
+    modeRandom.className = 'px-2.5 py-1 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all';
+    modePin.className = 'px-2.5 py-1 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all';
+    containerLengthSlider.classList.add('hidden');
+    containerWordsSlider.classList.remove('hidden');
+    containerWordsSlider.classList.add('flex');
+    targetSpec.textContent = 'DICEWARE PASSPHRASE (MEMORABLE TOKENS)';
+    generatePassword();
+  });
+
+  modePin.addEventListener('click', () => {
+    currentMode = 'pin';
+    modePin.className = 'px-2.5 py-1 rounded font-label-md text-label-md bg-surface-container-high text-on-surface transition-all';
+    modeRandom.className = 'px-2.5 py-1 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all';
+    modePassphrase.className = 'px-2.5 py-1 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all';
+    containerLengthSlider.classList.remove('hidden');
+    containerWordsSlider.classList.add('hidden');
+    targetSpec.textContent = 'HIGH DENSITY NUMERIC PIN';
+    generatePassword();
+  });
+
+  btnSimulateLeak.addEventListener('click', () => {
+    simulatedCompromise = !simulatedCompromise;
+    if (simulatedCompromise) {
+      passwordOutput.value = 'password123';
+      updateMetrics('password123', 11, 26);
+      leakIconContainer.className = 'w-10 h-10 rounded-lg bg-error-container flex items-center justify-center shrink-0';
+      leakIcon.className = 'material-symbols-outlined text-error text-[24px]';
+      leakIcon.textContent = 'warning';
+      leakHeadline.className = 'font-headline-sm text-headline-sm text-error font-semibold';
+      leakHeadline.textContent = 'Alert: Found in 3,412 Known Data Breaches!';
+      leakBadge.className = 'px-2 py-0.5 rounded bg-error/20 text-error font-mono-sm text-mono-sm';
+      leakBadge.textContent = 'CRITICAL EXPOSURE';
+      leakDesc.textContent = 'Plaintext signature confirmed in LinkedIn, Adobe, and RockYou breaches. Change this password immediately across all services.';
+      hashPrefix.textContent = 'CBFD2';
+      hashSuffix.textContent = '80A69F68B6E3245BA8FB8F5A6729A09A321';
+      hashMatches.textContent = '3,412 matches';
+    } else {
+      generatePassword();
+    }
+  });
+
+  // Init
+  generatePassword();
+})();
+</script></main><footer class="fixed bottom-0 left-60 right-0 h-8 bg-surface-container-lowest/90 backdrop-blur-md z-40 px-margin-lg flex items-center justify-between font-mono-sm text-mono-sm text-on-surface-variant shadow-[0_-1px_6px_rgba(0,0,0,0.3)]"><div class="flex items-center gap-space-md"><span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Freed RAM: <span class="text-on-surface font-semibold">4.2 GB session</span></span><span class="text-outline-variant">|</span><span>Active Listeners: <span class="text-primary font-semibold">28 ports</span></span></div><div class="flex items-center gap-space-md"><span>Interface: <span class="text-on-surface font-semibold">en0 • Wi-Fi 6 (802.11ax)</span></span><span class="text-outline-variant">|</span><span class="text-secondary">Secure Sandbox Active</span></div></footer></div></body></html>
