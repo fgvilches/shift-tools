@@ -1196,6 +1196,7 @@ pub struct LargeFile {
     pub kind: String,
 }
 
+#[cfg_attr(not(test), allow(dead_code))]
 fn size_and_count(path: &std::path::Path) -> (u64, u64) {
     let mut size = 0u64;
     let mut files = 0u64;
@@ -1312,6 +1313,7 @@ fn collect_cache_dirs(roots: &[String]) -> Vec<(String, String, String)> {
 pub async fn scan_caches(app: tauri::AppHandle, roots: Vec<String>) -> Result<Vec<CacheEntry>, String> {
     tauri::async_runtime::spawn_blocking(move || {
         use std::sync::atomic::{AtomicU64, Ordering};
+        use std::sync::mpsc::{channel, RecvTimeoutError};
         use std::sync::{Arc, Mutex};
         use tauri::Emitter;
 
@@ -1321,78 +1323,99 @@ pub async fn scan_caches(app: tauri::AppHandle, roots: Vec<String>) -> Result<Ve
             return Ok(Vec::new());
         }
 
-        // Measuring a cache directory is dominated by syscalls, so this is
-        // IO-bound enough that a handful of threads cut the sweep ~8x. The
-        // directory count on a busy Mac (app containers alone can be hundreds)
-        // made a single-threaded walk take minutes.
+        // Measuring cache directories is IO-bound, so a small thread pool cuts
+        // the sweep by an order of magnitude. The threads are *detached* and
+        // report over a channel: a single syscall that blocks (a TCC-protected
+        // container, a stale network mount) used to hang the whole command,
+        // because joining workers waits forever. Now the command returns what
+        // arrived before the deadline and leaves the stuck worker behind.
         let workers = std::thread::available_parallelism()
             .map(|n| n.get())
             .unwrap_or(4)
             .clamp(2, 12)
             .min(candidates.len());
         let queue = Arc::new(Mutex::new(candidates.into_iter()));
-        let out: Arc<Mutex<Vec<CacheEntry>>> = Arc::new(Mutex::new(Vec::with_capacity(total as usize)));
         let done = Arc::new(AtomicU64::new(0));
+        let (tx, rx) = channel::<(CacheEntry, u64)>();
 
-        std::thread::scope(|scope| {
-            for _ in 0..workers {
-                let queue = Arc::clone(&queue);
-                let out = Arc::clone(&out);
-                let done = Arc::clone(&done);
-                let app = app.clone();
-                scope.spawn(move || loop {
-                    let next = { queue.lock().ok().and_then(|mut q| q.next()) };
-                    let Some((path, kind, root)) = next else { break };
-                    let p = std::path::PathBuf::from(&path);
-                    let label = p
-                        .file_name()
-                        .map(|n| n.to_string_lossy().to_string())
-                        .unwrap_or_else(|| path.clone());
-                    let (size_bytes, file_count, partial) =
-                        size_and_count_bounded(&p, std::time::Duration::from_secs(2));
-                    let writable_flag = writable(&p);
-                    let scanned = done.fetch_add(1, Ordering::Relaxed) + 1;
-                    if scanned % 8 == 0 || scanned == total {
-                        let found = out.lock().map(|v| v.len()).unwrap_or(0);
+        for _ in 0..workers {
+            let queue = Arc::clone(&queue);
+            let done = Arc::clone(&done);
+            let tx = tx.clone();
+            std::thread::spawn(move || loop {
+                let next = { queue.lock().ok().and_then(|mut q| q.next()) };
+                let Some((path, kind, root)) = next else { break };
+                let p = std::path::PathBuf::from(&path);
+                let label = p
+                    .file_name()
+                    .map(|n| n.to_string_lossy().to_string())
+                    .unwrap_or_else(|| path.clone());
+                let (size_bytes, file_count, partial) =
+                    size_and_count_bounded(&p, std::time::Duration::from_millis(1200));
+                let writable_flag = writable(&p);
+                let scanned = done.fetch_add(1, Ordering::Relaxed) + 1;
+                let entry = CacheEntry {
+                    path,
+                    label,
+                    kind,
+                    size_bytes,
+                    file_count,
+                    writable: writable_flag,
+                    root,
+                    partial,
+                };
+                if tx.send((entry, scanned)).is_err() {
+                    break;
+                }
+            });
+        }
+        drop(tx);
+
+        let deadline = std::time::Instant::now() + std::time::Duration::from_secs(45);
+        let mut entries: Vec<CacheEntry> = Vec::with_capacity(total as usize);
+        let mut last_emit = std::time::Instant::now();
+        // If every worker but a wedged one has drained the queue, waiting for
+        // the deadline just makes the user stare at a finished scan.
+        let mut idle_since = std::time::Instant::now();
+        loop {
+            let remaining = deadline.saturating_duration_since(std::time::Instant::now());
+            if remaining.is_zero() {
+                break;
+            }
+            match rx.recv_timeout(remaining.min(std::time::Duration::from_millis(250))) {
+                Ok((entry, scanned)) => {
+                    if last_emit.elapsed() > std::time::Duration::from_millis(150) || scanned == total {
                         let _ = app.emit(
                             "disk-scan-progress",
                             DiskScanProgress {
                                 phase: "caches".into(),
                                 scanned,
                                 total,
-                                current: label.clone(),
-                                found,
+                                current: entry.label.clone(),
+                                found: entries.len(),
                                 done: false,
                             },
                         );
+                        last_emit = std::time::Instant::now();
                     }
-                    if let Ok(mut v) = out.lock() {
-                        v.push(CacheEntry {
-                            path,
-                            label,
-                            kind,
-                            size_bytes,
-                            file_count,
-                            writable: writable_flag,
-                            root,
-                            partial,
-                        });
+                    entries.push(entry);
+                    idle_since = std::time::Instant::now();
+                }
+                Err(RecvTimeoutError::Timeout) => {
+                    if idle_since.elapsed() > std::time::Duration::from_secs(3) {
+                        break;
                     }
-                });
+                }
+                Err(RecvTimeoutError::Disconnected) => break,
             }
-        });
+        }
 
-        let mut entries = Arc::try_unwrap(out)
-            .map_err(|_| "cache scan lost its result set".to_string())?
-            .into_inner()
-            .map_err(|e| e.to_string())?;
         entries.sort_by_key(|e| std::cmp::Reverse(e.size_bytes));
-
         let _ = app.emit(
             "disk-scan-progress",
             DiskScanProgress {
                 phase: "caches".into(),
-                scanned: total,
+                scanned: entries.len() as u64,
                 total,
                 current: String::new(),
                 found: entries.len(),
