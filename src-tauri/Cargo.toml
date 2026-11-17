@@ -1,8 +1,10 @@
 [package]
 name = "shift-tools"
 version = "1.0.0"
+license = "MIT"
+repository = "https://github.com/fgvilches/shift-tools"
+authors = ["Felipe González (shift)"]
 description = "shift-tools — a macOS Swiss army knife for developers"
-authors = ["shift"]
 edition = "2021"
 rust-version = "1.77"
 
