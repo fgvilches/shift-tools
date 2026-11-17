@@ -1,23 +1,28 @@
-export function Logo({ size = 26 }: { size?: number }) {
+/**
+ * The shift-tools mark: the letter S leaned 9°, drawn on the 256 grid so it stays
+ * crisp at every size. Single colour — the accent — because in the sidebar the
+ * tile would eat the counters at 26 px.
+ */
+export function Logo({ size = 26, color = "#0a84ff" }: { size?: number; color?: string }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 32 32" fill="none" aria-hidden role="presentation">
-      <defs>
-        <linearGradient id="st-mark" x1="4" y1="2" x2="28" y2="30" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#5aa8ff" />
-          <stop offset="0.55" stopColor="#0a84ff" />
-          <stop offset="1" stopColor="#0055b3" />
-        </linearGradient>
-        <linearGradient id="st-gloss" x1="16" y1="1" x2="16" y2="16" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#ffffff" stopOpacity="0.45" />
-          <stop offset="1" stopColor="#ffffff" stopOpacity="0" />
-        </linearGradient>
-      </defs>
-      <rect x="1" y="1" width="30" height="30" rx="8.5" fill="url(#st-mark)" />
-      <rect x="1" y="1" width="30" height="30" rx="8.5" fill="url(#st-gloss)" />
-      <rect x="1.5" y="1.5" width="29" height="29" rx="8" stroke="#ffffff" strokeOpacity="0.28" />
-      {/* Stylized shift arrow: a bolt made of two offset strokes */}
-      <path d="M11 10.5h9.2l-3.4 4.6h4.2L12.4 23l2.1-5.6h-4.3l3.4-4.6H11z" fill="#ffffff" fillOpacity="0.96" />
-      <path d="M20.6 10.5 17.2 15h3.6" stroke="#ffffff" strokeOpacity="0.35" strokeWidth="1" strokeLinecap="round" />
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 256 256"
+      fill="none"
+      aria-hidden
+      role="presentation"
+      focusable="false"
+    >
+      <g transform="rotate(-9 128 128)">
+        <path
+          d="M182 64 H104 A32 32 0 0 0 104 128 H152 A32 32 0 0 1 152 192 H74"
+          stroke={color}
+          strokeWidth={42}
+          strokeLinecap="round"
+          fill="none"
+        />
+      </g>
     </svg>
   );
 }
