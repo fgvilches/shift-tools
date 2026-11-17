@@ -212,7 +212,13 @@ export function UniversalPanel({ tabs }: { tabs: ReactNode }) {
       sortable: true,
       sortValue: (e) => e.sizeBytes,
       render: (e) => (
-        <span className={e.sizeBytes > 2 * 1024 ** 3 ? "text-warning" : "text-on-surface"}>{bytes(e.sizeBytes)}</span>
+        <span
+          className={e.sizeBytes > 2 * 1024 ** 3 ? "text-warning" : "text-on-surface"}
+          title={e.partial ? "Walk stopped at the time budget: real size is at least this" : undefined}
+        >
+          {e.partial ? "≥ " : ""}
+          {bytes(e.sizeBytes)}
+        </span>
       ),
     },
     {

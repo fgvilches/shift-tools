@@ -42,6 +42,18 @@ npm run app:build    # release .app + .dmg in src-tauri/target/release/bundle
 
 Requires macOS 13+, Xcode Command Line Tools, Rust stable and Node 20+.
 
+## Screenshots
+
+| Process Killer — every process, dev ones split out | Disk Cleaner — universal cache sweep |
+|---|---|
+| ![](docs/screenshots/process-killer.png) | ![](docs/screenshots/disk-cleaner-universal.png) |
+
+| Disk Cleaner — curated targets | Port Manager — listening sockets and owners |
+|---|---|
+| ![](docs/screenshots/disk-cleaner.png) | ![](docs/screenshots/port-manager.png) |
+
+Captured from a real session on an Apple-silicon Mac; no mock data.
+
 ## What is inside
 
 | Category | Tools |

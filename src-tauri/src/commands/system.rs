@@ -1171,6 +1171,8 @@ pub struct CacheEntry {
     pub file_count: u64,
     pub writable: bool,
     pub root: String,
+    /// True when the walk hit its time budget: the size is a lower bound.
+    pub partial: bool,
 }
 
 #[derive(Serialize, Clone)]
@@ -1206,6 +1208,32 @@ fn size_and_count(path: &std::path::Path) -> (u64, u64) {
         }
     }
     (size, files)
+}
+
+/// Same as `size_and_count`, but gives up after `budget` so a single
+/// pathological directory (a container with millions of entries, a stale
+/// network mount) cannot stall the whole sweep. The third value says the walk
+/// was cut short, so the UI can mark the size as a lower bound.
+fn size_and_count_bounded(path: &std::path::Path, budget: std::time::Duration) -> (u64, u64, bool) {
+    let deadline = std::time::Instant::now() + budget;
+    let mut size = 0u64;
+    let mut files = 0u64;
+    let mut seen = 0u64;
+    let mut partial = false;
+    for entry in walkdir::WalkDir::new(path).follow_links(false).into_iter().flatten() {
+        seen += 1;
+        if seen % 256 == 0 && std::time::Instant::now() > deadline {
+            partial = true;
+            break;
+        }
+        if let Ok(meta) = entry.metadata() {
+            if meta.is_file() {
+                size += meta.len();
+                files += 1;
+            }
+        }
+    }
+    (size, files, partial)
 }
 
 fn writable(path: &std::path::Path) -> bool {
@@ -1283,42 +1311,83 @@ fn collect_cache_dirs(roots: &[String]) -> Vec<(String, String, String)> {
 #[tauri::command]
 pub async fn scan_caches(app: tauri::AppHandle, roots: Vec<String>) -> Result<Vec<CacheEntry>, String> {
     tauri::async_runtime::spawn_blocking(move || {
+        use std::sync::atomic::{AtomicU64, Ordering};
+        use std::sync::{Arc, Mutex};
         use tauri::Emitter;
+
         let candidates = collect_cache_dirs(&roots);
         let total = candidates.len() as u64;
-        let mut out = Vec::new();
-
-        for (index, (path, kind, root)) in candidates.into_iter().enumerate() {
-            let p = std::path::PathBuf::from(&path);
-            let label = p
-                .file_name()
-                .map(|n| n.to_string_lossy().to_string())
-                .unwrap_or_else(|| path.clone());
-            let _ = app.emit(
-                "disk-scan-progress",
-                DiskScanProgress {
-                    phase: "caches".into(),
-                    scanned: index as u64,
-                    total,
-                    current: label.clone(),
-                    found: out.len(),
-                    done: false,
-                },
-            );
-            let (size_bytes, file_count) = size_and_count(&p);
-            let writable_flag = writable(&p);
-            out.push(CacheEntry {
-                path,
-                label,
-                kind,
-                size_bytes,
-                file_count,
-                writable: writable_flag,
-                root,
-            });
+        if candidates.is_empty() {
+            return Ok(Vec::new());
         }
 
-        out.sort_by_key(|a| std::cmp::Reverse(a.size_bytes));
+        // Measuring a cache directory is dominated by syscalls, so this is
+        // IO-bound enough that a handful of threads cut the sweep ~8x. The
+        // directory count on a busy Mac (app containers alone can be hundreds)
+        // made a single-threaded walk take minutes.
+        let workers = std::thread::available_parallelism()
+            .map(|n| n.get())
+            .unwrap_or(4)
+            .clamp(2, 12)
+            .min(candidates.len());
+        let queue = Arc::new(Mutex::new(candidates.into_iter()));
+        let out: Arc<Mutex<Vec<CacheEntry>>> = Arc::new(Mutex::new(Vec::with_capacity(total as usize)));
+        let done = Arc::new(AtomicU64::new(0));
+
+        std::thread::scope(|scope| {
+            for _ in 0..workers {
+                let queue = Arc::clone(&queue);
+                let out = Arc::clone(&out);
+                let done = Arc::clone(&done);
+                let app = app.clone();
+                scope.spawn(move || loop {
+                    let next = { queue.lock().ok().and_then(|mut q| q.next()) };
+                    let Some((path, kind, root)) = next else { break };
+                    let p = std::path::PathBuf::from(&path);
+                    let label = p
+                        .file_name()
+                        .map(|n| n.to_string_lossy().to_string())
+                        .unwrap_or_else(|| path.clone());
+                    let (size_bytes, file_count, partial) =
+                        size_and_count_bounded(&p, std::time::Duration::from_secs(2));
+                    let writable_flag = writable(&p);
+                    let scanned = done.fetch_add(1, Ordering::Relaxed) + 1;
+                    if scanned % 8 == 0 || scanned == total {
+                        let found = out.lock().map(|v| v.len()).unwrap_or(0);
+                        let _ = app.emit(
+                            "disk-scan-progress",
+                            DiskScanProgress {
+                                phase: "caches".into(),
+                                scanned,
+                                total,
+                                current: label.clone(),
+                                found,
+                                done: false,
+                            },
+                        );
+                    }
+                    if let Ok(mut v) = out.lock() {
+                        v.push(CacheEntry {
+                            path,
+                            label,
+                            kind,
+                            size_bytes,
+                            file_count,
+                            writable: writable_flag,
+                            root,
+                            partial,
+                        });
+                    }
+                });
+            }
+        });
+
+        let mut entries = Arc::try_unwrap(out)
+            .map_err(|_| "cache scan lost its result set".to_string())?
+            .into_inner()
+            .map_err(|e| e.to_string())?;
+        entries.sort_by_key(|e| std::cmp::Reverse(e.size_bytes));
+
         let _ = app.emit(
             "disk-scan-progress",
             DiskScanProgress {
@@ -1326,11 +1395,11 @@ pub async fn scan_caches(app: tauri::AppHandle, roots: Vec<String>) -> Result<Ve
                 scanned: total,
                 total,
                 current: String::new(),
-                found: out.len(),
+                found: entries.len(),
                 done: true,
             },
         );
-        Ok::<_, String>(out)
+        Ok::<_, String>(entries)
     })
     .await
     .map_err(|e| e.to_string())?

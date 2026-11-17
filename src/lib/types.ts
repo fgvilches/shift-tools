@@ -100,6 +100,8 @@ export interface CacheEntry {
   fileCount: number;
   writable: boolean;
   root: string;
+  /** The walk hit its time budget; the size is a lower bound. */
+  partial?: boolean;
 }
 
 export interface DiskScanProgress {
