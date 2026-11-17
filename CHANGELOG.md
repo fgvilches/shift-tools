@@ -6,7 +6,11 @@ and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [Unreleased]
 
 ### Added
-- Identity: three logo concept studies under `docs/brand/` with an audit + render pipeline.
+- **Identity**: the *Leaned S* mark — the letter S leaned 9°, graphite tile with accent blue.
+  Ships as `.icns`/`.ico`/PNG ladder for the app, plus a favicon set and an outlined
+  `shift-tools` lockup. Guidelines in `docs/brand/BRAND.md`; `npm run icons` regenerates
+  every size from `docs/brand/master/logo-1024.png`.
+- Three evaluated concept directions kept under `docs/brand/concepts/` for the record.
 
 ## [1.0.0] — 2026-11-11
 

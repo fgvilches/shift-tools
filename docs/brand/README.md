@@ -5,13 +5,17 @@ concept studies they came from.
 
 ## Status
 
-**Concepts — awaiting a pick.** Three directions were built, audited with `svg_audit.py` (100/99/100
-production-readiness) and rendered at 64 / 32 / 16 px. `concepts.png` is the overview sheet.
+**Approved: B · Leaned S.** The mark is shipped in `master/` and wired into the app (`.icns`, `.ico`,
+PNG ladder, favicon set). Guidelines live in [BRAND.md](BRAND.md).
+
+Three directions were built, audited with `svg_audit.py` and rendered at 64 / 32 / 16 px.
+`concepts.png` is the overview sheet; B was chosen for holding up best at small sizes and for
+carrying the name.
 
 | File | Concept | Type | Note |
 |---|---|---|---|
 | `concepts/a-keycap-v3.svg` | **A · Keycap** | pictorial | The shift glyph knocked out of the app tile. Reads instantly at Dock size; risks reading as a generic "up". |
-| `concepts/b-shifts-v2.svg` | **B · Leaned S** | letterform | The S leaned 9° — the name as a form. Survives 16 px best. |
+| `concepts/b-shifts-v2.svg` | **B · Leaned S** ✅ | letterform | The S leaned 9° — the name as a form. Survives 16 px best. |
 | `concepts/c-plates-v2.svg` | **C · Cascade** | abstract | Three plates stepping off-axis: a multitool in motion. Weakest at small sizes. |
 
 `concepts/a-shiftkey.svg`, `b-shifts.svg`, `c-plates.svg` are the first round, kept for comparison.

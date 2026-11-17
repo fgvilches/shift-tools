@@ -1,5 +1,12 @@
 # shift-tools
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/brand/master/logo-horizontal.svg">
+    <img src="docs/brand/master/logo-horizontal-ink.svg" alt="shift-tools" width="420">
+  </picture>
+</p>
+
 **A macOS Swiss army knife for developers, network engineers and testers.** 26 tools, one window,
 a Rust core and a Tauri 2 shell. No Electron, no bundled Chromium, no telemetry.
 
