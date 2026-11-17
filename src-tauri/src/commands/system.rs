@@ -1196,22 +1196,7 @@ pub struct LargeFile {
     pub kind: String,
 }
 
-#[cfg_attr(not(test), allow(dead_code))]
-fn size_and_count(path: &std::path::Path) -> (u64, u64) {
-    let mut size = 0u64;
-    let mut files = 0u64;
-    for entry in walkdir::WalkDir::new(path).follow_links(false).into_iter().flatten() {
-        if let Ok(meta) = entry.metadata() {
-            if meta.is_file() {
-                size += meta.len();
-                files += 1;
-            }
-        }
-    }
-    (size, files)
-}
-
-/// Same as `size_and_count`, but gives up after `budget` so a single
+/// Measures a directory with a time budget so a single
 /// pathological directory (a container with millions of entries, a stale
 /// network mount) cannot stall the whole sweep. The third value says the walk
 /// was cut short, so the UI can mark the size as a lower bound.
@@ -1647,6 +1632,7 @@ pub async fn scan_large_files(
     limit: usize,
 ) -> Result<Vec<LargeFile>, String> {
     tauri::async_runtime::spawn_blocking(move || {
+        use std::sync::mpsc::{channel, RecvTimeoutError};
         use tauri::Emitter;
 
         let start_root = if root.trim().is_empty() {
@@ -1658,25 +1644,56 @@ pub async fn scan_large_files(
             return Err(format!("{} is not a directory", start_root.display()));
         }
 
-        let files = walk_large_files(
-            &start_root,
-            min_bytes,
-            limit,
-            std::time::Duration::from_secs(90),
-            |scanned, current, kept| {
+        // The walk runs on a detached thread for the same reason the cache
+        // sweep does: a single metadata call on a TCC-protected or stale path
+        // can block past any in-loop deadline. Here the caller gives up and
+        // says so, instead of leaving the UI spinning forever.
+        let (tx, rx) = channel::<Vec<LargeFile>>();
+        let walk_app = app.clone();
+        std::thread::spawn(move || {
+            let files = walk_large_files(
+                &start_root,
+                min_bytes,
+                limit,
+                std::time::Duration::from_secs(120),
+                |scanned, current, kept| {
+                    let _ = walk_app.emit(
+                        "disk-scan-progress",
+                        DiskScanProgress {
+                            phase: "files".into(),
+                            scanned,
+                            total: 0,
+                            current: current.to_string_lossy().to_string(),
+                            found: kept,
+                            done: false,
+                        },
+                    );
+                },
+            );
+            let _ = tx.send(files);
+        });
+
+        let files = match rx.recv_timeout(std::time::Duration::from_secs(60)) {
+            Ok(files) => files,
+            Err(RecvTimeoutError::Timeout) => {
                 let _ = app.emit(
                     "disk-scan-progress",
                     DiskScanProgress {
                         phase: "files".into(),
-                        scanned,
+                        scanned: 0,
                         total: 0,
-                        current: current.to_string_lossy().to_string(),
-                        found: kept,
-                        done: false,
+                        current: String::new(),
+                        found: 0,
+                        done: true,
                     },
                 );
-            },
-        );
+                return Err(
+                    "The scan stopped after 60 s: a directory under this path blocked the walk. Try a narrower folder."
+                        .to_string(),
+                );
+            }
+            Err(RecvTimeoutError::Disconnected) => return Err("file scan worker died".into()),
+        };
 
         let _ = app.emit(
             "disk-scan-progress",
@@ -1689,7 +1706,7 @@ pub async fn scan_large_files(
                 done: true,
             },
         );
-        Ok::<_, String>(files)
+        Ok(files)
     })
     .await
     .map_err(|e| e.to_string())?
@@ -1752,13 +1769,34 @@ mod disk_tests {
         let dirs = collect_cache_dirs(&["user".into()]);
         println!("user cache dirs: {}", dirs.len());
         assert!(!dirs.is_empty(), "macOS always has ~/Library/Caches subdirectories");
-        let biggest = dirs
-            .iter()
-            .map(|(path, _, _)| (path.clone(), size_and_count(std::path::Path::new(path)).0))
-            .max_by_key(|(_, size)| *size)
-            .unwrap();
-        println!("largest cache: {} = {} MB", biggest.0, biggest.1 / 1_048_576);
         assert!(dirs.iter().all(|(p, _, _)| std::path::Path::new(p).is_dir()));
+
+        // Measure a bounded, harmless sample: walking every container on a real
+        // machine can block on a TCC-protected path for minutes, which is a
+        // property of the filesystem, not of this code.
+        let sample = dirs.iter().take(3);
+        for (path, kind, root) in sample {
+            assert_eq!(kind, "user-cache");
+            assert_eq!(root, "user");
+            let (size, files, partial) = size_and_count_bounded(
+                std::path::Path::new(path),
+                std::time::Duration::from_millis(120),
+            );
+            println!("  {path} -> {size} B in {files} files (partial={partial})");
+        }
+    }
+
+    #[test]
+    fn bounded_walk_counts_a_known_tree() {
+        let dir = std::env::temp_dir().join(format!("shift-tools-bounded-{}", std::process::id()));
+        std::fs::create_dir_all(&dir).unwrap();
+        std::fs::write(dir.join("a.bin"), vec![0u8; 1024]).unwrap();
+        std::fs::write(dir.join("b.bin"), vec![0u8; 2048]).unwrap();
+        let (size, files, partial) = size_and_count_bounded(&dir, std::time::Duration::from_secs(5));
+        assert_eq!(size, 3072);
+        assert_eq!(files, 2);
+        assert!(!partial);
+        std::fs::remove_dir_all(&dir).ok();
     }
 
     #[test]
@@ -1787,16 +1825,30 @@ mod large_file_tests {
     use super::*;
 
     #[test]
-    fn scans_the_home_default_root_like_the_ui_does() {
-        let root = crate::util::expand_home("~");
-        assert!(root.is_dir());
-        let files = walk_large_files(&root, 512 * 1024 * 1024, 25, std::time::Duration::from_secs(40), |_, _, _| {});
-        println!(
-            "home scan >=512MB: {:?}",
-            files.iter().take(4).map(|f| (f.name.clone(), f.size_bytes / 1_048_576, f.kind.clone())).collect::<Vec<_>>()
-        );
-        assert!(!files.is_empty(), "a working Mac home holds files above 512 MB");
+    fn walks_a_temporary_tree_and_ranks_it() {
+        let root = std::env::temp_dir().join(format!("shift-tools-scan-{}", std::process::id()));
+        std::fs::create_dir_all(root.join("nested")).unwrap();
+        std::fs::write(root.join("small.txt"), vec![0u8; 1024]).unwrap();
+        std::fs::write(root.join("nested/big.bin"), vec![0u8; 5 * 1024 * 1024]).unwrap();
+        std::fs::write(root.join("nested/mid.zip"), vec![0u8; 2 * 1024 * 1024]).unwrap();
 
+        let files = walk_large_files(
+            &root,
+            1024 * 1024,
+            10,
+            std::time::Duration::from_secs(5),
+            |_, _, _| {},
+        );
+        println!(
+            "temp scan: {:?}",
+            files.iter().map(|f| (f.name.clone(), f.size_bytes, f.kind.clone())).collect::<Vec<_>>()
+        );
+        assert_eq!(files.len(), 2, "only files above 1 MB are reported");
+        assert_eq!(files[0].name, "big.bin");
+        assert_eq!(files[0].size_bytes, 5 * 1024 * 1024);
+        assert_eq!(files[0].kind, "file");
+        assert_eq!(files[1].kind, "archive");
+        std::fs::remove_dir_all(&root).ok();
     }
 
     #[test]
