@@ -10,7 +10,12 @@ permissions:
 
 jobs:
   build:
+    # Same constraint as CI: macOS runners need a paid plan for private
+    # repositories. Set ENABLE_MACOS_CI=true in the repository variables when
+    # one is available (or when the repo is public), otherwise a tag push will
+    # fail in one second.
     name: Build .dmg (${{ matrix.label }})
+    if: vars.ENABLE_MACOS_CI == 'true'
     runs-on: macos-14
     timeout-minutes: 45
     strategy:

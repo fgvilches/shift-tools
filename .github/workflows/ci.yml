@@ -11,8 +11,37 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  check:
-    name: Typecheck · tests · bundle
+  web:
+    name: Typecheck · frontend bundle
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build frontend
+        run: npm run build
+
+  rust:
+    # macOS runners are not available to private repositories on the free plan:
+    # the job fails in one second with "configuration ... is not supported".
+    # Set the repository variable ENABLE_MACOS_CI=true (Settings → Secrets and
+    # variables → Actions → Variables) once a macOS runner is available, or when
+    # the repository is public.
+    name: Rust tests · clippy
+    if: vars.ENABLE_MACOS_CI == 'true'
     runs-on: macos-14
     timeout-minutes: 30
 
@@ -36,9 +65,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Typecheck
-        run: npm run typecheck
-
+      # tauri-build validates the frontend directory while compiling.
       - name: Build frontend
         run: npm run build
 

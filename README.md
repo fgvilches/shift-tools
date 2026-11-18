@@ -148,8 +148,10 @@ fetch of example.com, a DNS A lookup) so it needs connectivity; it is the only p
 failure is expected to fail the suite. The disk tests assert that the deletion guard refuses `~`,
 `/etc` and `~/Documents` — a regression there would be destructive.
 
-CI runs all of it on every push and pull request; releases build signed-able `.dmg` and `.zip`
-artifacts for Apple silicon and Intel on tag push.
+CI runs the typecheck and the frontend bundle on every push and pull request. The Rust job (tests +
+clippy) and the release workflow need a macOS runner, which GitHub does not provide for private
+repositories on the free plan — set the repository variable `ENABLE_MACOS_CI=true` to switch them on.
+Releases build `.dmg` and `.zip` artifacts for Apple silicon and Intel on tag push.
 
 ## License
 
