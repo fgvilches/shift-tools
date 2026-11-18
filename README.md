@@ -48,9 +48,13 @@ Requires macOS 13+, Xcode Command Line Tools, Rust stable and Node 20+.
 |---|---|
 | ![](docs/screenshots/process-killer.png) | ![](docs/screenshots/disk-cleaner-universal.png) |
 
-| Disk Cleaner — curated targets | Port Manager — listening sockets and owners |
+| Disk Cleaner — curated targets | Largest files, ranked |
 |---|---|
-| ![](docs/screenshots/disk-cleaner.png) | ![](docs/screenshots/port-manager.png) |
+| ![](docs/screenshots/disk-cleaner.png) | ![](docs/screenshots/disk-cleaner-largest.png) |
+
+| Port Manager — listening sockets and owners | |
+|---|---|
+| ![](docs/screenshots/port-manager.png) | |
 
 Captured from a real session on an Apple-silicon Mac; no mock data.
 

@@ -54,6 +54,7 @@ export function FilesPanel({ tabs }: { tabs: ReactNode }) {
   const [progress, setProgress] = useState<DiskScanProgress | null>(null);
   const [elapsed, setElapsed] = useState(0);
   const [scannedRoot, setScannedRoot] = useState<string | null>(null);
+  const [timedOut, setTimedOut] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [reports, setReports] = useState<CleanReport[] | null>(null);
   const [confirmOpen, setConfirmOpen] = useState(false);
@@ -78,8 +79,9 @@ export function FilesPanel({ tabs }: { tabs: ReactNode }) {
       if (payload.phase === "files") setProgress(payload);
     });
     try {
-      const list = await system.scanLargeFiles(root, Number(minSize) * 1024 * 1024, 200);
-      setFiles(list);
+      const result = await system.scanLargeFiles(root, Number(minSize) * 1024 * 1024, 200);
+      setFiles(result.files);
+      setTimedOut(result.timedOut);
       setScannedRoot(root);
       setSelected(new Set());
     } catch (err) {
@@ -281,14 +283,19 @@ export function FilesPanel({ tabs }: { tabs: ReactNode }) {
         {error && <ErrorNotice title="File scan failed" message={error} onRetry={() => void scan()} />}
 
         <InfoNotice tone="neutral" icon={<ShieldAlert size={12} />}>
-          Files are never deleted here: moving to Trash keeps them recoverable. The walk is bounded to 90 seconds, so a
-          huge volume may report partial results — run it again on a narrower folder for a full pass.
+          Files are never deleted here: moving to Trash keeps them recoverable. Build folders, app containers and
+          cloud-synced paths are skipped, each top-level folder is walked on its own thread, and a folder that blocks
+          costs only itself. After 40 seconds you get what was found so far, marked partial.
         </InfoNotice>
 
         <Card className="flex min-h-0 flex-1 flex-col overflow-hidden">
           <CardHeader
             title="Largest files"
-            hint={`${plural(files.length, "file")} · sorted by size descending`}
+            hint={
+              timedOut
+                ? `${plural(files.length, "file")} so far · the walk is still going`
+                : `${plural(files.length, "file")} · sorted by size descending`
+            }
             icon={<Trophy size={13} />}
             actions={
               <>
@@ -298,6 +305,11 @@ export function FilesPanel({ tabs }: { tabs: ReactNode }) {
                 <Badge tone="tertiary" mono>
                   {bytes(totalBytes)} listed
                 </Badge>
+                {timedOut && (
+                  <Badge tone="warning" dot>
+                    partial
+                  </Badge>
+                )}
               </>
             }
           />

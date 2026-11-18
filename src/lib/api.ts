@@ -13,7 +13,7 @@ import type {
   HeaderAnalysis,
   KillResult,
   LanScanProgress,
-  LargeFile,
+  LargeFileScan,
   MapSummary,
   PasswordStrength,
   PingSample,
@@ -48,7 +48,7 @@ export const system = {
   onDiskScan: (handler: (p: DiskScanProgress) => void) => onEvent<DiskScanProgress>("disk-scan-progress", handler),
   cleanCachePaths: (paths: string[]) => cmd<CleanReport[]>("clean_cache_paths", { paths }),
   scanLargeFiles: (root: string, minBytes: number, limit: number) =>
-    cmd<LargeFile[]>("scan_large_files", { root, minBytes, limit }),
+    cmd<LargeFileScan>("scan_large_files", { root, minBytes, limit }),
   trashPaths: (paths: string[]) => cmd<CleanReport[]>("trash_paths", { paths }),
   inspectBundle: (path: string) => cmd<BundleInspection>("inspect_bundle", { path }),
   clearQuarantine: (path: string, recursive = true) =>

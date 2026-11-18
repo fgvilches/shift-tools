@@ -113,6 +113,13 @@ export interface DiskScanProgress {
   done: boolean;
 }
 
+export interface LargeFileScan {
+  files: LargeFile[];
+  /** The walk hit its time budget: the list is the top-N so far. */
+  timedOut: boolean;
+  scannedEntries: number;
+}
+
 export interface LargeFile {
   path: string;
   name: string;

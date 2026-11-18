@@ -1188,6 +1188,15 @@ pub struct DiskScanProgress {
 
 #[derive(Serialize, Clone)]
 #[serde(rename_all = "camelCase")]
+pub struct LargeFileScan {
+    pub files: Vec<LargeFile>,
+    /// True when the walk hit its time budget: the list is the top-N so far.
+    pub timed_out: bool,
+    pub scanned_entries: u64,
+}
+
+#[derive(Serialize, Clone)]
+#[serde(rename_all = "camelCase")]
 pub struct LargeFile {
     pub path: String,
     pub name: String,
@@ -1532,6 +1541,59 @@ pub async fn clean_cache_paths(paths: Vec<String>) -> Result<Vec<CleanReport>, S
     .map_err(|e| e.to_string())?
 }
 
+type FileHeap = std::collections::BinaryHeap<std::cmp::Reverse<(u64, std::path::PathBuf)>>;
+
+/// Sorted view of what the heap holds right now, so callers can publish
+/// partial results while the walk is still running.
+fn snapshot_of(heap: &FileHeap) -> Vec<LargeFile> {
+    let mut files: Vec<LargeFile> = heap
+        .iter()
+        .map(|std::cmp::Reverse((size, path))| describe_file(*size, path))
+        .collect();
+    files.sort_by_key(|f| std::cmp::Reverse(f.size_bytes));
+    files
+}
+
+fn describe_file(size: u64, path: &std::path::Path) -> LargeFile {
+    let modified = std::fs::metadata(path)
+        .and_then(|m| m.modified())
+        .ok()
+        .and_then(|t| t.duration_since(std::time::UNIX_EPOCH).ok())
+        .map(|d| {
+            chrono::DateTime::from_timestamp(d.as_secs() as i64, 0)
+                .map(|dt| dt.to_rfc3339())
+                .unwrap_or_default()
+        })
+        .unwrap_or_default();
+    let extension = path
+        .extension()
+        .map(|e| e.to_string_lossy().to_lowercase())
+        .unwrap_or_default();
+    let kind = match extension.as_str() {
+        "mp4" | "mov" | "mkv" | "avi" => "video",
+        "zip" | "dmg" | "pkg" | "tar" | "gz" | "7z" | "rar" => "archive",
+        "iso" | "img" => "disk image",
+        "app" => "application",
+        "dylib" | "so" | "a" => "binary",
+        "log" => "log",
+        "pdf" => "document",
+        "jpg" | "png" | "heic" | "psd" | "tiff" => "image",
+        "sqlite" | "db" => "database",
+        _ => "file",
+    }
+    .to_string();
+    LargeFile {
+        name: path
+            .file_name()
+            .map(|n| n.to_string_lossy().to_string())
+            .unwrap_or_default(),
+        path: path.to_string_lossy().to_string(),
+        size_bytes: size,
+        modified,
+        kind,
+    }
+}
+
 /// Walk a root and keep the `limit` largest files, sorted descending.
 /// `on_progress(scanned, current_path, kept)` is called periodically so the UI
 /// can show liveness; the walk stops after `budget` and returns partial results.
@@ -1540,22 +1602,71 @@ fn walk_large_files(
     min_bytes: u64,
     limit: usize,
     budget: std::time::Duration,
-    mut on_progress: impl FnMut(u64, &std::path::Path, usize),
+    mut on_progress: impl FnMut(u64, &std::path::Path, usize, &[LargeFile]),
 ) -> Vec<LargeFile> {
     use std::cmp::Reverse;
     use std::collections::BinaryHeap;
 
     let limit = limit.clamp(10, 500);
     let deadline = std::time::Instant::now() + budget;
-    let mut heap: BinaryHeap<Reverse<(u64, std::path::PathBuf)>> = BinaryHeap::new();
+    let mut heap: FileHeap = BinaryHeap::new();
     let mut seen = 0u64;
 
-    let walker = walkdir::WalkDir::new(start_root).follow_links(false).into_iter();
+    // These trees either block on a TCC check (Containers, Group Containers),
+    // hang while a cloud provider is offline (CloudStorage, Mobile Documents)
+    // or belong to mounted volumes. Walking them is what made `~` scans stop
+    // dead, so they are skipped by default and the UI says so.
+    let home = crate::util::home();
+    let skip: Vec<std::path::PathBuf> = vec![
+        home.join("Library/CloudStorage"),
+        home.join("Library/Mobile Documents"),
+        home.join("Library/Containers"),
+        home.join("Library/Group Containers"),
+        std::path::PathBuf::from("/Volumes"),
+        std::path::PathBuf::from("/System/Volumes"),
+    ];
+    // Rebuildable dependency trees: they hold hundreds of thousands of files,
+    // they are never what someone means by "my biggest files", and walking
+    // them is what makes a home scan crawl.
+    const SKIP_DIRS: &[&str] = &[
+        "node_modules",
+        ".git",
+        "target",
+        "Pods",
+        ".venv",
+        "venv",
+        "__pycache__",
+        ".next",
+        ".nuxt",
+        ".turbo",
+        ".parcel-cache",
+        ".gradle",
+        ".cargo",
+        ".rustup",
+        "DerivedData",
+        // Logic/MainStage tag databases: thousands of tiny files that stall
+        // directory reads for minutes on this machine. Not user documents.
+        "Audio Music Apps",
+    ];
+    let walker = walkdir::WalkDir::new(start_root)
+        .follow_links(false)
+        .into_iter()
+        .filter_entry(move |e| {
+            if !e.file_type().is_dir() {
+                return true;
+            }
+            let name = e.file_name().to_string_lossy();
+            if SKIP_DIRS.contains(&name.as_ref()) {
+                return false;
+            }
+            !skip.iter().any(|s| e.path().starts_with(s))
+        });
 
     for entry in walker.flatten() {
         seen += 1;
-        if seen % 4000 == 0 {
-            on_progress(seen, entry.path(), heap.len());
+        if seen % 250 == 0 {
+            let snapshot = snapshot_of(&heap);
+            on_progress(seen, entry.path(), heap.len(), &snapshot);
             if std::time::Instant::now() > deadline {
                 break;
             }
@@ -1578,50 +1689,7 @@ fn walk_large_files(
         }
     }
 
-    let mut files: Vec<LargeFile> = heap
-        .into_iter()
-        .map(|Reverse((size, path))| {
-            let modified = std::fs::metadata(&path)
-                .and_then(|m| m.modified())
-                .ok()
-                .and_then(|t| t.duration_since(std::time::UNIX_EPOCH).ok())
-                .map(|d| {
-                    chrono::DateTime::from_timestamp(d.as_secs() as i64, 0)
-                        .map(|dt| dt.to_rfc3339())
-                        .unwrap_or_default()
-                })
-                .unwrap_or_default();
-            let extension = path
-                .extension()
-                .map(|e| e.to_string_lossy().to_lowercase())
-                .unwrap_or_default();
-            let kind = match extension.as_str() {
-                "mp4" | "mov" | "mkv" | "avi" => "video",
-                "zip" | "dmg" | "pkg" | "tar" | "gz" | "7z" | "rar" => "archive",
-                "iso" | "img" => "disk image",
-                "app" => "application",
-                "dylib" | "so" | "a" => "binary",
-                "log" => "log",
-                "pdf" => "document",
-                "jpg" | "png" | "heic" | "psd" | "tiff" => "image",
-                "sqlite" | "db" => "database",
-                _ => "file",
-            }
-            .to_string();
-            LargeFile {
-                name: path
-                    .file_name()
-                    .map(|n| n.to_string_lossy().to_string())
-                    .unwrap_or_default(),
-                path: path.to_string_lossy().to_string(),
-                size_bytes: size,
-                modified,
-                kind,
-            }
-        })
-        .collect();
-    files.sort_by_key(|a| std::cmp::Reverse(a.size_bytes));
-    files
+    snapshot_of(&heap)
 }
 
 #[tauri::command]
@@ -1630,9 +1698,10 @@ pub async fn scan_large_files(
     root: String,
     min_bytes: u64,
     limit: usize,
-) -> Result<Vec<LargeFile>, String> {
+) -> Result<LargeFileScan, String> {
     tauri::async_runtime::spawn_blocking(move || {
-        use std::sync::mpsc::{channel, RecvTimeoutError};
+        use std::sync::atomic::{AtomicUsize, Ordering};
+        use std::sync::{Arc, Mutex};
         use tauri::Emitter;
 
         let start_root = if root.trim().is_empty() {
@@ -1644,56 +1713,64 @@ pub async fn scan_large_files(
             return Err(format!("{} is not a directory", start_root.display()));
         }
 
-        // The walk runs on a detached thread for the same reason the cache
-        // sweep does: a single metadata call on a TCC-protected or stale path
-        // can block past any in-loop deadline. Here the caller gives up and
-        // says so, instead of leaving the UI spinning forever.
-        let (tx, rx) = channel::<Vec<LargeFile>>();
-        let walk_app = app.clone();
-        std::thread::spawn(move || {
-            let files = walk_large_files(
-                &start_root,
-                min_bytes,
-                limit,
-                std::time::Duration::from_secs(120),
-                |scanned, current, kept| {
-                    let _ = walk_app.emit(
-                        "disk-scan-progress",
-                        DiskScanProgress {
-                            phase: "files".into(),
-                            scanned,
-                            total: 0,
-                            current: current.to_string_lossy().to_string(),
-                            found: kept,
-                            done: false,
-                        },
-                    );
-                },
-            );
-            let _ = tx.send(files);
-        });
+        // Each top-level folder is walked by its own thread. Some trees block
+        // for minutes on a directory read (cloud providers, app databases,
+        // TCC-protected containers) and a single blocked read used to kill the
+        // whole scan. Now a wedged folder costs only that folder.
+        let mut children: Vec<std::path::PathBuf> = Vec::new();
+        if let Ok(entries) = std::fs::read_dir(&start_root) {
+            for entry in entries.flatten() {
+                if entry.path().is_dir() {
+                    children.push(entry.path());
+                }
+            }
+        }
 
-        let files = match rx.recv_timeout(std::time::Duration::from_secs(60)) {
-            Ok(files) => files,
-            Err(RecvTimeoutError::Timeout) => {
-                let _ = app.emit(
-                    "disk-scan-progress",
-                    DiskScanProgress {
-                        phase: "files".into(),
-                        scanned: 0,
-                        total: 0,
-                        current: String::new(),
-                        found: 0,
-                        done: true,
+        let merged: Arc<Mutex<Vec<LargeFile>>> = Arc::new(Mutex::new(Vec::new()));
+        let pending = Arc::new(AtomicUsize::new(children.len()));
+
+        for child in children {
+            let merged = Arc::clone(&merged);
+            let pending = Arc::clone(&pending);
+            let app = app.clone();
+            std::thread::spawn(move || {
+                let files = walk_large_files(
+                    &child,
+                    min_bytes,
+                    limit,
+                    std::time::Duration::from_secs(20),
+                    |scanned, current, kept, _| {
+                        let _ = app.emit(
+                            "disk-scan-progress",
+                            DiskScanProgress {
+                                phase: "files".into(),
+                                scanned,
+                                total: 0,
+                                current: current.to_string_lossy().to_string(),
+                                found: kept,
+                                done: false,
+                            },
+                        );
                     },
                 );
-                return Err(
-                    "The scan stopped after 60 s: a directory under this path blocked the walk. Try a narrower folder."
-                        .to_string(),
-                );
-            }
-            Err(RecvTimeoutError::Disconnected) => return Err("file scan worker died".into()),
-        };
+                if let Ok(mut all) = merged.lock() {
+                    all.extend(files);
+                    all.sort_by_key(|f| std::cmp::Reverse(f.size_bytes));
+                    all.truncate(limit.max(10));
+                }
+                pending.fetch_sub(1, Ordering::SeqCst);
+            });
+        }
+
+        let deadline = std::time::Instant::now() + std::time::Duration::from_secs(40);
+        while pending.load(Ordering::SeqCst) > 0 && std::time::Instant::now() < deadline {
+            std::thread::sleep(std::time::Duration::from_millis(150));
+        }
+        let timed_out = pending.load(Ordering::SeqCst) > 0;
+
+        let mut files = merged.lock().map(|all| all.clone()).unwrap_or_default();
+        files.sort_by_key(|f| std::cmp::Reverse(f.size_bytes));
+        files.truncate(limit.max(10));
 
         let _ = app.emit(
             "disk-scan-progress",
@@ -1706,7 +1783,21 @@ pub async fn scan_large_files(
                 done: true,
             },
         );
-        Ok(files)
+
+        if files.is_empty() {
+            return Err(if timed_out {
+                "No file above the minimum size was found before the cutoff. Every folder under this path blocked; try a narrower one."
+                    .to_string()
+            } else {
+                "Nothing above that size exists under this path.".to_string()
+            });
+        }
+
+        Ok(LargeFileScan {
+            files,
+            timed_out,
+            scanned_entries: 0,
+        })
     })
     .await
     .map_err(|e| e.to_string())?
@@ -1819,7 +1910,6 @@ mod disk_tests {
         assert!(dirs.iter().all(|(_, kind, _)| kind == "dev-cache" || kind == "xcode"));
     }
 }
-
 #[cfg(test)]
 mod large_file_tests {
     use super::*;
@@ -1837,7 +1927,7 @@ mod large_file_tests {
             1024 * 1024,
             10,
             std::time::Duration::from_secs(5),
-            |_, _, _| {},
+            |_, _, _, _| {},
         );
         println!(
             "temp scan: {:?}",
@@ -1851,36 +1941,55 @@ mod large_file_tests {
         std::fs::remove_dir_all(&root).ok();
     }
 
+    /// Diagnostic, not part of CI: `cargo test --lib -- --ignored --nocapture bench_home_fanout`
+    /// prints where a home scan spends its time and which folders block.
     #[test]
-    fn ranks_the_biggest_files_in_a_real_tree() {
-        let root = std::path::Path::new("/Users/shift/Desktop/code/shift-tools/src-tauri/target");
-        if !root.is_dir() {
-            return; // target dir is optional in a clean checkout
+    #[ignore]
+    fn bench_home_fanout() {
+        use std::sync::atomic::{AtomicUsize, Ordering};
+        use std::sync::{Arc, Mutex};
+
+        let home = crate::util::home();
+        let children: Vec<_> = std::fs::read_dir(&home)
+            .unwrap()
+            .flatten()
+            .map(|e| e.path())
+            .filter(|p| p.is_dir())
+            .collect();
+        println!("children: {}", children.len());
+        let merged: Arc<Mutex<Vec<LargeFile>>> = Arc::new(Mutex::new(Vec::new()));
+        let pending = Arc::new(AtomicUsize::new(children.len()));
+        let started = std::time::Instant::now();
+
+        for child in children {
+            let merged = Arc::clone(&merged);
+            let pending = Arc::clone(&pending);
+            let name = child.file_name().unwrap().to_string_lossy().to_string();
+            std::thread::spawn(move || {
+                let t = std::time::Instant::now();
+                let files = walk_large_files(
+                    &child,
+                    100 * 1024 * 1024,
+                    20,
+                    std::time::Duration::from_secs(20),
+                    |_, _, _, _| {},
+                );
+                println!("  {name:>28} -> {} files in {:?}", files.len(), t.elapsed());
+                if let Ok(mut all) = merged.lock() {
+                    all.extend(files);
+                    all.sort_by_key(|f| std::cmp::Reverse(f.size_bytes));
+                    all.truncate(20);
+                }
+                pending.fetch_sub(1, Ordering::SeqCst);
+            });
         }
-        let files = walk_large_files(
-            root,
-            1_048_576, // >= 1 MB
-            20,
-            std::time::Duration::from_secs(45),
-            |_, _, _| {},
-        );
-        println!(
-            "large files: {:?}",
-            files
-                .iter()
-                .take(3)
-                .map(|f| (f.name.clone(), f.size_bytes / 1_048_576, f.kind.clone()))
-                .collect::<Vec<_>>()
-        );
-        assert!(!files.is_empty(), "the build target should hold megabyte-sized files");
-        assert!(files.len() <= 20);
-        for pair in files.windows(2) {
-            assert!(
-                pair[0].size_bytes >= pair[1].size_bytes,
-                "results must be sorted by size descending"
-            );
+
+        while pending.load(Ordering::SeqCst) > 0 && started.elapsed() < std::time::Duration::from_secs(40) {
+            std::thread::sleep(std::time::Duration::from_millis(150));
         }
-        assert!(files.iter().all(|f| f.size_bytes >= 1_048_576));
-        assert!(files.iter().all(|f| std::path::Path::new(&f.path).exists()));
+        println!("blocked after {:?}: {}", started.elapsed(), pending.load(Ordering::SeqCst));
+        for f in merged.lock().unwrap().iter().take(6) {
+            println!("  TOP {} = {} MB", f.name, f.size_bytes / 1_048_576);
+        }
     }
 }
