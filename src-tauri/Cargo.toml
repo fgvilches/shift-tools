@@ -36,7 +36,7 @@ md-5 = "0.10"
 blake3 = "1"
 hex = "0.4"
 rand = "0.8"
-base64 = "0.22"
+base64 = "0.23"
 regex = "1"
 chrono = { version = "0.4", features = ["serde"] }
 uuid = { version = "1", features = ["v4", "serde"] }
