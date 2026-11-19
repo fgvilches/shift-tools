@@ -54,7 +54,7 @@ jobs:
       # pushed tag. Both matrix jobs write to the same release, so a tag ends up
       # with an Apple-silicon and an Intel .dmg.
       - name: Build and publish
-        uses: tauri-apps/tauri-action@v0
+        uses: tauri-apps/tauri-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
