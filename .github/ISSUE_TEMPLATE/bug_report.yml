@@ -1,0 +1,43 @@
+name: Bug report
+description: Something behaves differently than it should
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happens
+      description: What you expected instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open ...
+        2. Click ...
+        3. See ...
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version and macOS
+      description: From the status bar and  → About This Mac.
+      placeholder: shift-tools 1.0.0 · macOS 26.5.1 (Apple silicon)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: permissions
+    attributes:
+      label: Permissions granted
+      description: Many tools need one of these; a missing permission is the most common cause.
+      multiple: true
+      options:
+        - Full Disk Access
+        - Location Services
+        - Screen Recording
+        - None
