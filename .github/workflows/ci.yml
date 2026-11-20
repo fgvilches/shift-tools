@@ -42,7 +42,7 @@ jobs:
     # the repository is public.
     name: Rust tests · clippy
     if: vars.ENABLE_MACOS_CI == 'true'
-    runs-on: macos-14
+    runs-on: macos-latest
     timeout-minutes: 30
 
     steps:

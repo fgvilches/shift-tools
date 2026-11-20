@@ -16,7 +16,7 @@ jobs:
     # fail in one second.
     name: Publish .dmg (${{ matrix.label }})
     if: vars.ENABLE_MACOS_CI == 'true'
-    runs-on: macos-14
+    runs-on: macos-latest
     timeout-minutes: 45
     strategy:
       fail-fast: false
