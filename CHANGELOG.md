@@ -3,12 +3,17 @@
 Notable changes to shift-tools. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
 and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.1.0] — 2026-11-20
 
 ### Added
 - **Auto-update**: signed updates from the GitHub release. The app checks on launch and from the
   version chip in the status bar; a strip inside the window offers the install and a restart.
   `npm run app:build` now signs the updater artifacts with `~/.tauri/shift-tools.key`.
+- **Largest files** ranks the biggest files on disk across every folder, each top-level folder
+  walked on its own thread, build trees skipped, partial results after 40 s.
+- **Universal cache sweep** measures every cache directory on the Mac in parallel.
+- Repository is public: CI runs typecheck, the frontend bundle, the Rust tests and clippy on a
+  macOS runner, and a tag publishes signed artifacts plus `latest.json`.
 - **Identity**: the *Leaned S* mark — the letter S leaned 9°, graphite tile with accent blue.
   Ships as `.icns`/`.ico`/PNG ladder for the app, plus a favicon set and an outlined
   `shift-tools` lockup. Guidelines in `docs/brand/BRAND.md`; `npm run icons` regenerates
