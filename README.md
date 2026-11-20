@@ -81,6 +81,25 @@ on disk. Cleaning deletes the *contents* of cache directories only, behind a bac
 refuses anything outside your home or `/Library/Caches` and anything whose name is not cache-shaped.
 Large files are **moved to the Trash**, never deleted.
 
+## Auto-update
+
+Installed copies check `https://github.com/fgvilches/shift-tools/releases/latest/download/latest.json`
+four seconds after launch and whenever you click the version chip in the status bar. When a newer
+release exists, a strip appears above the content with the release notes and an **Install update**
+button — never a modal, and never an interruption.
+
+Updates are signed with minisign. The public key is baked into `tauri.conf.json`; the private key
+signs the artifact at build time and lives only in `~/.tauri/shift-tools.key` and the repository
+secrets. A build with `createUpdaterArtifacts` on but no key cannot be bundled, so use:
+
+```bash
+npm run app:build            # reads ~/.tauri/shift-tools.key (and .key.password)
+npm run app:build:unsigned   # config overlay, no updater artifacts
+```
+
+`SHIFT_TOOLS_UPDATE_ENDPOINT` overrides the endpoint, which is how the check is tested against a
+local manifest without publishing a release.
+
 ## Permissions
 
 macOS gates some of this data behind TCC. Each prompt is triggered by the action that needs it, and

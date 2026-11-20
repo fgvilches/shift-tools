@@ -4,6 +4,7 @@ import { TitleBar } from "@/components/layout/TitleBar";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { StatusBar } from "@/components/layout/StatusBar";
 import { CommandPalette } from "@/components/layout/CommandPalette";
+import { UpdateBanner, useStartupUpdateCheck } from "@/components/layout/UpdateBanner";
 import { Toaster } from "@/components/ui/Toast";
 import { EmptyState, ErrorNotice } from "@/components/ui/Feedback";
 import { useAppStore } from "@/stores/appStore";
@@ -54,6 +55,7 @@ export default function App() {
   const paletteOpen = useAppStore((s) => s.paletteOpen);
   const pushRecent = useAppStore((s) => s.pushRecent);
   const tool = findTool(activeTool) ?? TOOLS[0]!;
+  useStartupUpdateCheck();
   const Component = tool.component;
 
   const activate = useCallback(
@@ -92,7 +94,9 @@ export default function App() {
       <TitleBar />
       <div className="flex-1 flex min-h-0">
         <Sidebar />
-        <main id="main-content" className="flex-1 min-w-0 overflow-y-auto overflow-x-hidden" aria-label={`${tool.title} workspace`}>
+        <main className="flex-1 min-w-0 flex flex-col min-h-0">
+          <UpdateBanner />
+          <div id="main-content" className="flex-1 min-w-0 overflow-y-auto overflow-x-hidden" aria-label={`${tool.title} workspace`}>
           <ViewBoundary key={tool.id} toolId={tool.id}>
             <Suspense fallback={<ViewFallback title={tool.title} />}>
               <Component />
@@ -101,6 +105,7 @@ export default function App() {
           {!findTool(activeTool) && (
             <EmptyState title="Tool not found" description={`No view is registered for "${activeTool}".`} />
           )}
+          </div>
         </main>
       </div>
       <StatusBar />

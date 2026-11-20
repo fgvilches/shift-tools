@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { RefreshCw } from "lucide-react";
+import { useUpdater } from "@/stores/updaterStore";
 import { useAppStore } from "@/stores/appStore";
 import { findTool } from "@/tools/registry";
 import { isTauri } from "@/lib/ipc";
@@ -8,6 +10,10 @@ export function StatusBar() {
   const activeTool = useAppStore((s) => s.activeTool);
   const tool = findTool(activeTool);
   const [now, setNow] = useState(() => new Date());
+  const current = useUpdater((s) => s.current);
+  const info = useUpdater((s) => s.info);
+  const checking = useUpdater((s) => s.checking);
+  const check = useUpdater((s) => s.check);
 
   useEffect(() => {
     const timer = window.setInterval(() => setNow(new Date()), 1000);
@@ -35,7 +41,20 @@ export function StatusBar() {
         <span className="text-white/12">|</span>
         <span className="text-on-variant tnum">{now.toLocaleTimeString("en-GB", { hour12: false })}</span>
         <span className="text-white/12">|</span>
-        <span className="text-outline/70">v1.0.0</span>
+        <button
+          type="button"
+          onClick={() => void check(true)}
+          className="group flex items-center gap-1 rounded px-1 -mx-1 text-outline/70 transition-colors hover:text-on-variant focus-ring"
+          aria-label={info?.available ? `Version ${info.version} available — check for updates` : "Check for updates"}
+          title={info?.available ? `Version ${info.version} available` : "Check for updates"}
+        >
+          <span className="tnum">v{current ?? "1.0.0"}</span>
+          {checking ? (
+            <RefreshCw size={9} className="animate-spin opacity-70" />
+          ) : info?.available ? (
+            <span className="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_6px_var(--color-primary)]" />
+          ) : null}
+        </button>
       </div>
     </footer>
   );

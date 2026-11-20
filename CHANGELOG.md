@@ -6,6 +6,9 @@ and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [Unreleased]
 
 ### Added
+- **Auto-update**: signed updates from the GitHub release. The app checks on launch and from the
+  version chip in the status bar; a strip inside the window offers the install and a restart.
+  `npm run app:build` now signs the updater artifacts with `~/.tauri/shift-tools.key`.
 - **Identity**: the *Leaned S* mark — the letter S leaned 9°, graphite tile with accent blue.
   Ships as `.icns`/`.ico`/PNG ladder for the app, plus a favicon set and an outlined
   `shift-tools` lockup. Guidelines in `docs/brand/BRAND.md`; `npm run icons` regenerates

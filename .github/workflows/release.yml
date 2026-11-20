@@ -50,13 +50,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # Builds the bundle for this target and attaches it to the release for the
-      # pushed tag. Both matrix jobs write to the same release, so a tag ends up
-      # with an Apple-silicon and an Intel .dmg.
+      # Builds the bundle for this target, signs the updater artifacts and
+      # attaches everything to the release for the pushed tag. Both matrix jobs
+      # write to the same release; `includeUpdaterJson` merges them into the
+      # latest.json the installed app polls.
       - name: Build and publish
         uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
         with:
           tagName: v__VERSION__
           releaseName: "shift-tools v__VERSION__"
@@ -66,7 +69,9 @@ jobs:
             Drag **shift-tools** into `/Applications`. The build is not notarised
             yet, so the first launch needs right-click → Open.
 
-            Nothing leaves your machine: no telemetry, no analytics, no update pings.
+            Installed copies update themselves from the version chip in the
+            status bar. Nothing leaves your machine: no telemetry, no analytics.
           releaseDraft: false
           prerelease: false
+          includeUpdaterJson: true
           args: --target ${{ matrix.target }}

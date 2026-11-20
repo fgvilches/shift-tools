@@ -13,6 +13,10 @@ import type {
   HeaderAnalysis,
   KillResult,
   LanScanProgress,
+  UpdateCheck,
+  UpdateInstallResult,
+  UpdateProgress,
+  AppVersion,
   LargeFileScan,
   MapSummary,
   PasswordStrength,
@@ -105,4 +109,17 @@ export const util = {
   requestLocationPermission: () => cmd<string>("request_location_permission"),
   openPrivacySettings: (pane: "location" | "screen-recording" | "bluetooth" | "microphone" | "privacy" = "privacy") =>
     cmd<void>("open_privacy_settings", { pane }),
+};
+
+export const app = {
+  /** Installed version, platform and architecture. */
+  currentVersion: () => cmd<AppVersion>("update_current_version"),
+  /** Asks the release endpoint whether a newer build exists. */
+  checkUpdates: () => cmd<UpdateCheck>("update_check"),
+  /** Downloads and installs the pending update; progress arrives as an event. */
+  installUpdate: () => cmd<UpdateInstallResult>("update_install"),
+  /** Relaunches into the freshly installed version. */
+  restartApp: () => cmd<void>("update_restart"),
+  onUpdateProgress: (handler: (p: UpdateProgress) => void) =>
+    onEvent<UpdateProgress>("app-update:progress", handler),
 };

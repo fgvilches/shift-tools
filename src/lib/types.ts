@@ -471,3 +471,29 @@ export interface ColorSample {
   g: number;
   b: number;
 }
+
+export interface AppVersion {
+  version: string;
+  platform: string;
+  arch: string;
+}
+
+export interface UpdateCheck {
+  available: boolean;
+  version?: string;
+  currentVersion?: string;
+  notes?: string | null;
+  date?: string | null;
+  error?: string;
+}
+
+export interface UpdateInstallResult {
+  installed: boolean;
+  version?: string;
+  reason?: string;
+}
+
+export interface UpdateProgress {
+  chunk: number;
+  total: number | null;
+}

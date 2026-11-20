@@ -10,10 +10,11 @@
     "preview": "vite preview",
     "tauri": "tauri",
     "app": "tauri dev",
-    "app:build": "tauri build",
+    "app:build": "bash scripts/build-signed.sh",
     "icons": "tauri icon docs/brand/app-icon-1024.png",
     "lint:rust": "cargo clippy --manifest-path src-tauri/Cargo.toml --all-targets -- -D warnings",
-    "test:rust": "cargo test --lib --manifest-path src-tauri/Cargo.toml -- --test-threads=1"
+    "test:rust": "cargo test --lib --manifest-path src-tauri/Cargo.toml -- --test-threads=1",
+    "app:build:unsigned": "tauri build --config src-tauri/tauri.unsigned.conf.json"
   },
   "dependencies": {
     "@tauri-apps/api": "^2.9.0",
