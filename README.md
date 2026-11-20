@@ -153,6 +153,17 @@ clippy) and the release workflow need a macOS runner, which GitHub does not prov
 repositories on the free plan — set the repository variable `ENABLE_MACOS_CI=true` to switch them on.
 Releases build `.dmg` and `.zip` artifacts for Apple silicon and Intel on tag push.
 
+## First run
+
+Builds are **not code-signed with a Developer ID and not notarized** — there is no certificate in the build. The binary only carries the linker's ad-hoc signature, which is why macOS shows the "unidentified developer" warning when the app arrives from a download.
+
+Until a Developer ID is set up, executing this code on terminal.app:
+
+```bash
+xattr -dr com.apple.quarantine /Applications/shift-tools.app
+```
+
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
