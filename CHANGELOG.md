@@ -3,6 +3,13 @@
 Notable changes to shift-tools. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
 and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.1] — 2026-11-20
+
+### Fixed
+- The sidebar version chip was hard-coded to `v1.0`; it now follows the running build, so an
+  updated app never shows two different versions at once.
+- A failed update install now says why in the strip instead of leaving the button looking dead.
+
 ## [1.1.0] — 2026-11-20
 
 ### Added

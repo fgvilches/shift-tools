@@ -48,6 +48,12 @@ export function UpdateBanner() {
         {info.currentVersion ?? "?"} → {info.version}
       </Badge>
 
+      {info.error && (
+        <span className="basis-full text-[11px] text-error/90">
+          Update failed: {info.error}
+        </span>
+      )}
+
       {installing ? (
         <div className="ml-auto flex items-center gap-3 min-w-[220px]">
           <Progress

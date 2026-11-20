@@ -7,12 +7,14 @@ import { Logo } from "./Logo";
 import { Dot } from "@/components/ui/Badge";
 import { useSystemStats } from "@/hooks/useSystemStats";
 import { isTauri } from "@/lib/ipc";
+import { useUpdater } from "@/stores/updaterStore";
 
 export function Sidebar() {
   const activeTool = useAppStore((s) => s.activeTool);
   const setActiveTool = useAppStore((s) => s.setActiveTool);
   const pushRecent = useAppStore((s) => s.pushRecent);
   const collapsed = useAppStore((s) => s.sidebarCollapsed);
+  const appVersion = useUpdater((s) => s.current);
   const toggle = useAppStore((s) => s.toggleSidebar);
   const stats = useSystemStats(8000);
   const activeCategory = TOOLS.find((t) => t.id === activeTool)?.category;
@@ -99,7 +101,7 @@ export function Sidebar() {
                 shift-tools
               </span>
               <span className="shrink-0 text-[8.5px] font-mono leading-none px-1 py-[2px] rounded bg-primary/15 text-primary-soft border border-primary/25">
-                v1.0
+                v{appVersion ?? "1.0"}
               </span>
             </div>
             <span

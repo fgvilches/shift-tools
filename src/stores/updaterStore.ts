@@ -60,10 +60,13 @@ export const useUpdater = create<UpdaterState>()((set, get) => ({
       const result = await app.installUpdate();
       set({ installing: false, installed: result.installed ? (result.version ?? null) : null });
     } catch (err) {
+      const message = errorMessage(err);
+      // A failed install must say why: silence here reads as a dead button.
+      console.error("[updater] install failed:", message);
       set({
         installing: false,
         progress: null,
-        info: { available: true, error: errorMessage(err) },
+        info: { available: true, version: get().info?.version, error: message },
       });
     } finally {
       unsubscribe();
